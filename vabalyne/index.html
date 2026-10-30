@@ -4,154 +4,179 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Vabalynė</title>
-<meta name="description" content="Pirčių kompleksas ir poilsis senoje girioje prie Merkio vingio.">
+<meta name="description" content="Sveikos gyvensenos sodyba Merkio upės aukštupyje, 35 km nuo Vilniaus.">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="Vabalynė">
-<meta property="og:description" content="Pirčių kompleksas ir poilsis senoje girioje prie Merkio vingio.">
-<meta property="og:image" content="https://designwaitcuss.github.io/sodybos/vabalyne/img/vabalyne-055-l.jpg">
+<meta property="og:description" content="Sveikos gyvensenos sodyba Merkio upės aukštupyje, 35 km nuo Vilniaus.">
+<meta property="og:image" content="https://designwaitcuss.github.io/sodybos/vabalyne/img/vabalyne-079-l.jpg">
 <meta property="og:url" content="https://designwaitcuss.github.io/sodybos/vabalyne/">
-<meta name="theme-color" content="#3b4a2c">
+<meta name="theme-color" content="#2e2419">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root { --dark: #3b4a2c; --accent: #d9a441; --paper: #f5f1e6; --ink: #1c1b19; --muted: #6b675f; --line: rgba(0,0,0,.09); }
+:root {
+  --paper: #f7f1e6;
+  --card: #fffaf2;
+  --ink: #2e2419;
+  --muted: #7a6b5a;
+  --honey: #e3a547;
+  --honey-ink: #2e2419;
+  --line: rgba(46, 36, 25, .12);
+}
 * { box-sizing: border-box; margin: 0; }
 html { scroll-behavior: smooth; }
 body { font: 400 17px/1.6 Inter, system-ui, sans-serif; color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; }
-h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 600; line-height: 1.1; letter-spacing: -.01em; }
-h2 { font-size: clamp(28px, 5vw, 40px); margin-bottom: 20px; }
-svg { width: 1em; height: 1em; fill: currentColor; flex: none; }
-.wrap { max-width: 1080px; margin: 0 auto; padding: 72px 20px; }
-.hero { position: relative; min-height: 92svh; display: flex; align-items: flex-end; color: #fff; background: var(--dark); }
-.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,.72) 100%); }
-.hero .inner { position: relative; z-index: 1; width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 20px 56px; }
-.logo { width: 120px; border-radius: 14px; margin-bottom: 18px; }
-.kicker { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; opacity: .9; }
-.hero h1 { font-size: clamp(44px, 11vw, 92px); margin: 8px 0 12px; }
-.hero p.lead { font-size: clamp(18px, 2.6vw, 22px); max-width: 620px; opacity: .95; }
-.rating { display: inline-flex; align-items: center; gap: 6px; margin-top: 18px; padding: 7px 12px; border-radius: 99px; background: rgba(255,255,255,.16); backdrop-filter: blur(6px); font-size: 14px; }
-.rating svg { color: #ffc94a; }
-.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
-.btn { display: inline-flex; align-items: center; gap: 9px; padding: 15px 22px; border-radius: 99px; font: 600 16px Inter, sans-serif; text-decoration: none; }
-.btn.main { background: var(--accent); color: #1c1b19; }
-.btn.ghost { background: rgba(255,255,255,.14); color: #fff; border: 1px solid rgba(255,255,255,.4); }
-.intro { display: grid; gap: 36px; }
-.intro p { font-size: clamp(19px, 2.4vw, 23px); line-height: 1.55; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
-.chips li { padding: 8px 14px; border-radius: 99px; background: #fff; border: 1px solid var(--line); font-size: 15px; }
-.label { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
-.features { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; padding: 0; list-style: none; }
-.features li { display: flex; align-items: center; gap: 10px; padding: 13px 14px; background: #fff; border-radius: 14px; border: 1px solid var(--line); font-weight: 500; font-size: 15px; line-height: 1.3; }
-.features li::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); flex: none; }
+h1, h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; line-height: 1.1; letter-spacing: -.01em; }
+h2 { font-size: clamp(28px, 7vw, 40px); margin-bottom: 20px; }
+img { display: block; max-width: 100%; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 64px 16px; }
+
+/* Hero */
+.hero { position: relative; min-height: 88svh; display: flex; align-items: flex-end; color: #fff; background: var(--ink); }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 45% 50%; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,14,8,.15) 0%, rgba(20,14,8,0) 30%, rgba(20,14,8,.6) 55%, rgba(20,14,8,.88) 100%); }
+.hero .inner { position: relative; z-index: 1; width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 16px calc(40px + env(safe-area-inset-bottom)); }
+.kicker { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; opacity: .9; }
+.hero h1 { font-size: clamp(48px, 15vw, 96px); margin: 6px 0 10px; }
+.lead { font-size: clamp(18px, 4.6vw, 22px); line-height: 1.45; max-width: 560px; opacity: .95; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 22px; border-radius: 99px; font: 600 16px/1.25 Inter, sans-serif; text-decoration: none; text-align: center; }
+.btn svg { width: 20px; height: 20px; fill: currentColor; flex: none; }
+.btn.main { background: var(--honey); color: var(--honey-ink); }
+.btn.line { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+.hero .btn { width: 100%; margin-top: 26px; }
+
+/* About */
+.about p { font-size: clamp(19px, 4.8vw, 23px); line-height: 1.55; max-width: 680px; }
+.about p + p { margin-top: 16px; }
+
+/* Gallery */
 .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
-.tile { padding: 0; border: 0; background: #ddd; border-radius: 12px; overflow: hidden; aspect-ratio: 1; cursor: zoom-in; }
-.tile.wide { grid-column: span 2; aspect-ratio: 2 / 1.15; }
-.tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
-.tile:hover img { transform: scale(1.03); }
-.stays { display: grid; gap: 14px; }
-.stay { display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 12px; }
-.stay img { width: 120px; height: 120px; object-fit: cover; border-radius: 10px; }
-.stay h3 { font-size: 22px; margin-bottom: 4px; }
-.stay p { color: var(--muted); font-size: 16px; }
-.reviews { background: var(--dark); color: #fff; }
-.quotes { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(280px, 86%); gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
-.quote { scroll-snap-align: start; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 14px; }
-.quote blockquote { font-family: Fraunces, Georgia, serif; font-size: 20px; line-height: 1.45; }
-.quote figcaption { opacity: .7; font-size: 14px; margin-top: auto; }
-.stars { color: #ffc94a; display: flex; gap: 2px; }
-.big-rating { display: flex; align-items: baseline; gap: 12px; margin-bottom: 28px; }
-.big-rating b { font: 600 56px Fraunces, serif; }
-.contact { display: grid; gap: 28px; }
-.contact .phone { font: 600 clamp(32px, 7vw, 52px) Fraunces, serif; color: var(--ink); text-decoration: none; }
-.contact p { color: var(--muted); }
-.map { width: 100%; height: 320px; border: 0; border-radius: 18px; background: #e7e3da; }
-footer { padding: 28px 20px 110px; text-align: center; color: var(--muted); font-size: 13px; }
-.bar { position: fixed; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: 10; display: flex; gap: 8px; padding: 8px; border-radius: 99px; background: rgba(28,27,25,.88); backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,.25); transition: transform .3s, opacity .3s; }
-.bar.hidden { transform: translateY(140%); opacity: 0; }
-.bar a { flex: 1; justify-content: center; padding: 13px 10px; }
-.bar .ghost { border: 0; }
-dialog { border: 0; padding: 0; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; background: rgba(10,10,10,.94); }
+.tile { padding: 0; border: 0; background: #e4dccd; border-radius: 12px; overflow: hidden; aspect-ratio: 1; cursor: zoom-in; }
+.tile.wide { grid-column: span 2; aspect-ratio: 16 / 10; }
+.tile img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Reviews */
+.quotes { display: grid; gap: 14px; }
+.quote { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 24px 22px; display: flex; flex-direction: column; gap: 16px; }
+.quote blockquote { font-family: Fraunces, Georgia, serif; font-size: 20px; line-height: 1.5; }
+.quote blockquote::before { content: "„"; }
+.quote blockquote::after { content: "“"; }
+.quote figcaption { color: var(--muted); font-size: 15px; margin-top: auto; }
+
+/* Location */
+.address { font-size: 20px; font-weight: 500; margin-bottom: 18px; }
+.map { width: 100%; height: 300px; border: 0; border-radius: 18px; background: #e4dccd; display: block; margin-bottom: 14px; }
+
+/* Contact */
+.contact { background: var(--ink); color: var(--paper); }
+.contact h2 { color: #fff; }
+.contact p { opacity: .85; margin-bottom: 18px; }
+.phone { display: inline-block; font: 600 clamp(34px, 10vw, 54px)/1.1 Fraunces, Georgia, serif; color: #fff; text-decoration: none; margin-bottom: 24px; }
+.actions { display: grid; gap: 10px; }
+.contact .btn.line { color: var(--paper); border-color: rgba(247,241,230,.5); }
+footer { background: var(--ink); color: rgba(247,241,230,.55); text-align: center; font-size: 13px; padding: 0 16px calc(28px + env(safe-area-inset-bottom)); }
+
+/* Lightbox */
+dialog { border: 0; padding: 0; width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh; background: rgba(12,9,6,.95); }
 dialog img { width: 100%; height: 100%; object-fit: contain; }
-dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255,255,255,.15); color: #fff; font-size: 24px; }
+dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255,255,255,.16); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; }
+
 @media (min-width: 760px) {
   .wrap { padding: 96px 32px; }
-  .hero .inner { padding: 0 32px 80px; }
-  .intro { grid-template-columns: 1.3fr 1fr; align-items: start; }
+  .hero .inner { padding: 0 32px 72px; }
+  .hero .btn { width: auto; }
   .gallery { grid-template-columns: repeat(4, 1fr); gap: 10px; }
-  .quotes { grid-auto-flow: row; grid-template-columns: repeat(2, 1fr); overflow: visible; }
-  .stays { grid-template-columns: 1fr 1fr; }
-  .contact { grid-template-columns: 1fr 1.2fr; align-items: center; }
-  .bar { left: auto; right: 24px; bottom: 24px; width: 360px; }
+  .quotes { grid-template-columns: repeat(3, 1fr); }
+  .location { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; align-items: start; }
+  .map { height: 380px; }
+  .actions { grid-template-columns: auto auto; justify-content: start; }
 }
 </style>
 </head>
 <body>
+
 <header class="hero">
-  <img src="img/vabalyne-055-l.jpg" alt="Vabalynė" fetchpriority="high">
+  <img src="img/vabalyne-079-l.jpg" alt="Vabalynės medinis namas" fetchpriority="high">
   <div class="inner">
-    <img class="logo" src="img/logo.jpg" alt="">
-    <div class="kicker">Pirtys prie Merkio, Šalčininkų rajone</div>
+    <div class="kicker">Vilkiškės, Šalčininkų r.</div>
     <h1>Vabalynė</h1>
-    <p class="lead">Pirčių kompleksas ir poilsis senoje girioje prie Merkio vingio.</p>
-    <div class="rating"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg> <span>4,8 iš 75 atsiliepimų Google</span></div>
-    <div class="actions">
-      <a class="btn main" href="tel:+37068720316"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg> Skambinti</a>
-      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=54.4621489,25.4089304&amp;query_place_id=ChIJ111XYTjE3UYRJbhD9iAutWU"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Kaip atvykti</a>
-    </div>
+    <p class="lead">Sveikos gyvensenos sodyba Merkio upės aukštupyje, 35 km nuo Vilniaus.</p>
+    <a class="btn main" href="#kontaktai">Skambinkite arba rašykite, kad rezervuotumėte</a>
   </div>
 </header>
 
-<section class="wrap intro">
-  <p>Galima rinktis dūminę, baltąją pirtį arba pirtį jurtoje. Šalia teka Merkys, o tvenkinys su šaltiniais tinka maudynėms. Nakvynei yra etnografinio stiliaus namai, o renginiams didelė salė ir pavėsinės.</p>
-  <div>
-    <div class="label">Tinka</div>
-    <ul class="chips"><li>Pirties ritualai</li><li>Joga ir dvasinės praktikos</li><li>Renginiai ir stovyklos</li><li>Poilsis su šeima ir draugais</li></ul>
-  </div>
+<section class="wrap about">
+  <h2>Apie sodybą</h2>
+  <p>Sodyba stovi senoje girioje prie Merkio vingio, toli nuo miesto triukšmo. Čia rasite dūminę, baltąją pirtį ir pirtį jurtoje, apiterapijos namelį ir tvenkinį su šaltiniais maudynėms.</p>
+  <p>Dėl nakvynės galima susitarti. Atvažiuoti galima ir su vaikais.</p>
 </section>
-
-<section class="wrap" style="padding-top:0">
-  <h2>Ką rasite</h2>
-  <ul class="features"><li>Dūminė pirtis</li><li>Baltoji pirtis</li><li>Pirtis jurtoje</li><li>Apiterapijos namelis</li><li>Tvenkinys su šaltiniais</li><li>Merkio upė</li><li>Didelė salė renginiams</li><li>Atskira salė maitinimui</li><li>Lauko pavėsinės</li><li>Futbolo aikštė</li><li>Nakvynė etnografinio stiliaus namuose</li></ul>
-</section>
-
-
 
 <section class="wrap" style="padding-top:0">
   <h2>Nuotraukos</h2>
-  <div class="gallery"><button class="tile wide" data-full="img/vabalyne-031-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-031-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-002-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-002-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-023-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-023-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-012-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-012-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-030-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-030-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-024-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-024-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-009-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-009-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile wide" data-full="img/vabalyne-021-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-021-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-036-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-036-s.jpg" alt="" loading="lazy" width="1364" height="913"></button><button class="tile" data-full="img/vabalyne-056-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-056-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-064-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-064-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-079-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-079-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-038-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-038-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-015-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-015-s.jpg" alt="" loading="lazy" width="1600" height="2133"></button><button class="tile" data-full="img/vabalyne-069-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-069-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-017-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-017-s.jpg" alt="" loading="lazy" width="1600" height="1116"></button><button class="tile" data-full="img/vabalyne-044-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-044-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-076-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-076-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-000-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-000-s.jpg" alt="" loading="lazy" width="1600" height="1200"></button><button class="tile" data-full="img/vabalyne-006-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-006-s.jpg" alt="" loading="lazy" width="1600" height="2133"></button></div>
-</section>
-
-<section class="reviews">
-  <div class="wrap">
-    <div class="big-rating"><b>4,8</b><div><div class="stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg></div><div style="opacity:.75">75 atsiliepimai Google</div></div></div>
-    <div class="quotes"><figure class="quote"><div class="stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg></div><blockquote>Nuostabi vieta, ypač norintiems pabėgti nuo miesto triukšmo ir dulkių. Apsupta miško, žydinčių pievų ir Merkio vingio. Čia galima pailsinti sielą ir kūną ne tik gamtoje, bet ir pirtyse ar apiterapijos namelyje, kur raminančiai dūzgia bitės. Yra tvenkinys…</blockquote><figcaption>Edita M., 2025</figcaption></figure><figure class="quote"><div class="stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg></div><blockquote>Nuostabiai jauki, autentiška pirtis su nepakartojama aplinka kaip išorėje, taip ir viduje! Labai senas miškas (giria!), labai gaivus ežerėlis su šaltiniais jame, labai kvapnios pirtys, labai malonūs pirtininkai. 😇 Labai labai geri įspūdžiai!!! 👍👍👍👌</blockquote><figcaption>Brigita P., 2022</figcaption></figure><figure class="quote"><div class="stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg></div><blockquote>Puiki vieta dvasinėms praktikoms, jogos mokymams, renginiams, kurie puoselėja dvasingumą. Švaru, tvarkinga, didelė salė, lauko pavėsinė - salė, atskira salė maitinimui. Puikios trys pirtys. Yra tvenkinys ir upė. Galima maudytis. Puiki vieta poilsiui.</blockquote><figcaption>Vyrenijus A., 2019</figcaption></figure><figure class="quote"><div class="stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.3l6.2 3.7-1.6-7 5.4-4.7-7.2-.6L12 2 9.2 8.7 2 9.3l5.4 4.7-1.6 7z"/></svg></div><blockquote>Pati autentiškiausia pirtis kokioje teko būti, norisi grįžti jau dabar. Pačios nuoširdžiausios rekomendacijos!</blockquote><figcaption>Ieva V., 2025</figcaption></figure></div>
+  <div class="gallery">
+    <button class="tile wide" data-full="img/vabalyne-055-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-055-s.jpg" alt="Medinis namas ant kalvos" loading="lazy"></button>
+    <button class="tile" data-full="img/vabalyne-000-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-000-s.jpg" alt="Medinis namelis miške" loading="lazy"></button>
+    <button class="tile" data-full="img/vabalyne-015-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-015-s.jpg" alt="Jurta" loading="lazy"></button>
+    <button class="tile wide" data-full="img/vabalyne-023-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-023-s.jpg" alt="Lieptas tvenkinyje" loading="lazy"></button>
+    <button class="tile" data-full="img/vabalyne-017-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-017-s.jpg" alt="Džiovintos žolelės ir vantos" loading="lazy"></button>
+    <button class="tile" data-full="img/vabalyne-024-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-024-s.jpg" alt="Krosnis ir samovaras" loading="lazy"></button>
+    <button class="tile wide" data-full="img/vabalyne-056-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-056-s.jpg" alt="Upė" loading="lazy"></button>
+    <button class="tile" data-full="img/vabalyne-064-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-064-s.jpg" alt="Medinis takas į sodybą" loading="lazy"></button>
+    <button class="tile" data-full="img/vabalyne-002-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-002-s.jpg" alt="Pavėsinė pievoje" loading="lazy"></button>
+    <button class="tile wide" data-full="img/vabalyne-036-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-036-s.jpg" alt="Sodyba žiemą" loading="lazy"></button>
+    <button class="tile" data-full="img/vabalyne-030-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-030-s.jpg" alt="Salė" loading="lazy"></button>
+    <button class="tile" data-full="img/vabalyne-012-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-012-s.jpg" alt="Stalas prie langų" loading="lazy"></button>
+    <button class="tile" data-full="img/vabalyne-009-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-009-s.jpg" alt="Miegamasis" loading="lazy"></button>
+    <button class="tile" data-full="img/vabalyne-021-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-021-s.jpg" alt="Stalas su medinėmis kėdėmis" loading="lazy"></button>
+    <button class="tile wide" data-full="img/vabalyne-031-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/vabalyne-031-s.jpg" alt="Sodyba vakare" loading="lazy"></button>
   </div>
 </section>
 
-<section class="wrap contact" id="kontaktai">
+<section class="wrap" style="padding-top:0">
+  <h2>Ką sako svečiai</h2>
+  <div class="quotes">
+    <figure class="quote">
+      <blockquote>Pati autentiškiausia pirtis kokioje teko būti, norisi grįžti jau dabar.<br>Pačios nuoširdžiausios rekomendacijos!</blockquote>
+      <figcaption>Ieva V., Google, 2025</figcaption>
+    </figure>
+    <figure class="quote">
+      <blockquote>Nuostabi vieta, ypač norintiems pabėgti nuo miesto triukšmo ir dulkių. Apsupta miško, žydinčių pievų ir Merkio vingio. Čia galima pailsinti sielą ir kūną ne tik gamtoje, bet ir pirtyse ar apiterapijos namelyje, kur raminančiai dūzgia bitės. Yra tvenkinys maudynėms, futbolo aikštė, poilsinės pavėsinės ir daug kitų smagių dalykų</blockquote>
+      <figcaption>Edita M., Google, 2025</figcaption>
+    </figure>
+    <figure class="quote">
+      <blockquote>Nustebino šeimininkų svetingumas. Nuostabiai malonūs žmonės. Norisi grįžti į tokią vietą tikrai. Jaučiausi kaip namuose. Labai jauki aplinka. :)</blockquote>
+      <figcaption>Asta L., Google, 2020</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="wrap location" style="padding-top:0">
   <div>
-    <h2>Rezervacija</h2>
-    <p style="margin-bottom:18px">Apsilankymą reikia suderinti iš anksto. Paskambinkite ir susitarsime.</p>
-    <a class="phone" href="tel:+37068720316">+370 687 20316</a>
-    <p style="margin-top:14px">Vilkiškės, Šalčininkų r.</p>
+    <h2>Kur mus rasti</h2>
+    <p class="address">Vilkiškės, 17279 Šalčininkų r. sav.</p>
   </div>
-  <iframe class="map" loading="lazy" title="Žemėlapis" src="https://www.google.com/maps?q=54.4621489,25.4089304&z=12&output=embed"></iframe>
+  <div>
+    <iframe class="map" loading="lazy" title="Vabalynė žemėlapyje" src="https://www.google.com/maps?q=54.4621489,25.4089304&amp;z=12&amp;output=embed"></iframe>
+    <a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=Vabalyn%C4%97&amp;query_place_id=ChIJ111XYTjE3UYRJbhD9iAutWU" target="_blank" rel="noopener">Atidaryti Google Maps</a>
+  </div>
 </section>
 
+<section class="contact" id="kontaktai">
+  <div class="wrap">
+    <h2>Rezervacija</h2>
+    <p>Skambinkite arba rašykite. Apsilankymą geriausia suderinti iš anksto.</p>
+    <a class="phone" href="tel:+37068720316">+370 687 20316</a>
+    <div class="actions">
+      <a class="btn main" href="tel:+37068720316"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Skambinti</a>
+      <a class="btn line" href="sms:+37068720316"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM7 9h10v2H7zm6 5H7v-2h6zm4-6H7V6h10z"/></svg>Rašyti SMS</a>
+    </div>
+  </div>
+</section>
 <footer>Demo versija. Nuotraukos ir atsiliepimai iš Google Maps.</footer>
-
-<nav class="bar hidden">
-  <a class="btn main" href="tel:+37068720316"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg> Skambinti</a>
-  <a class="btn ghost" href="sms:+37068720316"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM7 9h10v2H7zm6 5H7v-2h6zm4-6H7V6h10z"/></svg> SMS</a>
-</nav>
 
 <dialog id="lb"><img alt=""><button aria-label="Uždaryti">×</button></dialog>
 <script>
-const bar = document.querySelector('.bar'), hero = document.querySelector('.hero');
-const toggleBar = () => bar.classList.toggle('hidden', scrollY < hero.offsetHeight * 0.7);
-addEventListener('scroll', toggleBar, { passive: true }); toggleBar();
 const lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
 document.querySelectorAll('.tile').forEach(t => t.addEventListener('click', () => { lbImg.src = t.dataset.full; lb.showModal(); }));
 lb.addEventListener('click', () => lb.close());
