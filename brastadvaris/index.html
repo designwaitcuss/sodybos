@@ -24,6 +24,8 @@
   --lav-soft: #ece6f6;
   --lav-deep: #5a4886;
   --line: rgba(42, 39, 51, .12);
+  --gold: #fbbc04;
+  --booking: #003b95;
 }
 * { box-sizing: border-box; margin: 0; }
 [hidden] { display: none !important; }
@@ -41,9 +43,10 @@ img { display: block; max-width: 100%; }
 /* Hero */
 .hero { position: relative; min-height: 86svh; display: flex; align-items: flex-end; color: #fff; background: var(--ink); }
 .hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 50%; }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,16,24,.25) 0%, rgba(18,16,24,0) 28%, rgba(18,16,24,.55) 58%, rgba(18,16,24,.9) 100%); }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,16,24,.25) 0%, rgba(18,16,24,0) 18%, rgba(18,16,24,.6) 42%, rgba(18,16,24,.92) 78%); }
 .hero .inner { position: relative; z-index: 1; width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px calc(36px + env(safe-area-inset-bottom)); }
 .kicker { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; opacity: .9; }
+.hero .kicker, .hero h1, .hero .lead { text-shadow: 0 1px 14px rgba(10,8,14,.55); }
 .hero h1 { font-size: clamp(58px, 17vw, 112px); margin: 4px 0 8px; }
 .lead { font-size: clamp(19px, 4.8vw, 23px); line-height: 1.4; max-width: 560px; opacity: .95; }
 .hero-actions { display: grid; gap: 10px; margin-top: 26px; }
@@ -53,11 +56,20 @@ img { display: block; max-width: 100%; }
 .btn.ghost { background: rgba(255,255,255,.12); color: #fff; border: 1.5px solid rgba(255,255,255,.55); }
 .btn.line { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
 
-/* Ratings strip */
-.ratings { background: var(--ink); color: #fff; }
-.ratings .wrap { padding-top: 22px; padding-bottom: 22px; display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: center; }
-.rating { display: flex; align-items: baseline; gap: 8px; font-size: 15px; color: rgba(255,255,255,.75); }
-.rating b { font: 600 28px/1 "Cormorant Garamond", Georgia, serif; color: #fff; }
+/* Stars and rating badges */
+.stars { display: inline-flex; gap: 2px; color: var(--gold); }
+.stars svg { width: 18px; height: 18px; fill: currentColor; flex: none; }
+.rate { position: relative; display: inline-flex; line-height: 0; }
+.rate .bg { color: rgba(42,39,51,.18); }
+.rate .fg { position: absolute; inset: 0 auto 0 0; width: var(--w); overflow: hidden; }
+.gmark { width: 26px; height: 26px; border-radius: 50%; background: #fff; display: grid; place-items: center; flex: none; box-shadow: 0 0 0 1px rgba(42,39,51,.08); }
+.gmark svg { width: 15px; height: 15px; }
+.bscore { background: var(--booking); color: #fff; font-weight: 600; font-size: 14px; line-height: 1; padding: 6px 7px; border-radius: 7px 7px 7px 0; flex: none; }
+.hero-rating { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px 6px 6px; border-radius: 99px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); color: #fff; text-decoration: none; font-size: 14px; white-space: nowrap; }
+.pill b { font-size: 15px; }
+.pill .rate .bg { color: rgba(255,255,255,.35); }
+.pill .stars svg { width: 16px; height: 16px; }
 
 /* Facts */
 .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 30px 0 8px; }
@@ -91,12 +103,26 @@ img { display: block; max-width: 100%; }
 .tile img { width: 100%; height: 100%; object-fit: cover; }
 
 /* Reviews */
+.summary { display: grid; gap: 12px; margin-bottom: 22px; }
+.score { display: flex; align-items: center; gap: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; }
+.score > b { font: 600 46px/1 "Cormorant Garamond", Georgia, serif; }
+.score .bscore { font-size: 22px; padding: 10px 10px; border-radius: 10px 10px 10px 0; }
+.score small { display: block; color: var(--muted); font-size: 15px; margin-top: 4px; }
+.score .stars svg { width: 22px; height: 22px; }
+.score .gmark { margin-left: auto; width: 34px; height: 34px; }
+.score .gmark svg { width: 19px; height: 19px; }
 .quotes { display: grid; gap: 14px; }
-.quote { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 24px 22px; display: flex; flex-direction: column; gap: 16px; }
-.quote blockquote { font-family: "Cormorant Garamond", Georgia, serif; font-size: 23px; line-height: 1.4; }
+.quote { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.who { display: flex; align-items: center; gap: 12px; }
+.av { width: 42px; height: 42px; border-radius: 50%; background: var(--c); color: #fff; display: grid; place-items: center; font-weight: 600; font-size: 18px; flex: none; }
+.who b { display: block; font-weight: 600; line-height: 1.25; }
+.who small { display: block; color: var(--muted); font-size: 14px; }
+.who .gmark { margin-left: auto; }
+.meta { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 14px; }
+.quote blockquote { font-size: 17px; line-height: 1.55; }
 .quote blockquote::before { content: "„"; }
 .quote blockquote::after { content: "“"; }
-.quote figcaption { color: var(--muted); font-size: 15px; margin-top: auto; }
+.all { margin-top: 18px; }
 
 /* Booking */
 .book { background: var(--lav-soft); }
@@ -152,8 +178,14 @@ dialog { border: 0; padding: 0; width: 100vw; height: 100vh; max-width: 100vw; m
 dialog img { width: 100%; height: 100%; object-fit: contain; }
 dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255,255,255,.16); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; }
 
+@media (max-width: 759px) {
+  .quotes { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -16px; padding: 0 16px 6px; scroll-padding: 0 16px; scrollbar-width: none; }
+  .quotes::-webkit-scrollbar { display: none; }
+  .quote { flex: 0 0 86%; scroll-snap-align: start; }
+}
 @media (min-width: 760px) {
   .wrap { padding: 96px 32px; }
+  .summary { grid-template-columns: 1fr 1fr; }
   .hero .inner { padding: 0 32px 72px; }
   .hero-actions { grid-template-columns: auto auto; justify-content: start; }
   .ratings .wrap { padding-top: 26px; padding-bottom: 26px; }
@@ -162,6 +194,7 @@ dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height:
   .split { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: start; }
   .rooms { margin-top: 0; }
   .gallery { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .gallery .tile.wide:last-child { grid-column: span 4; aspect-ratio: 21 / 8; }
   .quotes { grid-template-columns: repeat(3, 1fr); }
   .form { padding: 32px; margin-top: 0; }
   .send { grid-template-columns: 1fr 1fr; }
@@ -172,6 +205,10 @@ dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height:
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17.4l-6 3.3 1.3-6.6-4.9-4.6 6.7-.8z"/></symbol>
+  <symbol id="g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></symbol>
+</svg>
 
 <header class="hero">
   <img src="img/brastadvaris-075-l.jpg" alt="Brastadvario pagrindinis pastatas vakare, svečiai ant terasos" fetchpriority="high">
@@ -179,19 +216,22 @@ dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height:
     <div class="kicker">Lankupiai, Klaipėdos r.</div>
     <h1>Brastadvaris</h1>
     <p class="lead">Ypatingai šventei ypatinga vieta. Provanso stiliaus sodyba ant Minijos upės kranto.</p>
+    <div class="hero-rating">
+      <a class="pill" href="#atsiliepimai" aria-label="Google įvertinimas 4,6 iš 5, 199 atsiliepimai">
+        <span class="gmark"><svg><use href="#g"/></svg></span>
+        <span class="rate" style="--w:92%"><span class="stars bg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span class="stars fg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></span>
+        <b>4,6</b><span>(199)</span>
+      </a>
+      <a class="pill" href="#atsiliepimai" aria-label="Booking.com įvertinimas 9,2, 80 atsiliepimų">
+        <span class="bscore">9,2</span><span>Booking.com (80)</span>
+      </a>
+    </div>
     <div class="hero-actions">
       <a class="btn main" href="#rezervacija">Užklausti laisvų datų</a>
       <a class="btn ghost" href="tel:+37069826348"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>+370 698 26348</a>
     </div>
   </div>
 </header>
-
-<section class="ratings" aria-label="Įvertinimai">
-  <div class="wrap">
-    <div class="rating"><b>4,6</b> Google, 199 atsiliepimai</div>
-    <div class="rating"><b>9,2</b> Booking.com, 80 atsiliepimų</div>
-  </div>
-</section>
 
 <section class="wrap">
   <div class="eyebrow">Apie sodybą</div>
@@ -274,23 +314,46 @@ dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height:
   </div>
 </section>
 
-<section class="wrap" style="padding-top:0">
+<section class="wrap" style="padding-top:0" id="atsiliepimai">
   <div class="eyebrow">Atsiliepimai</div>
   <h2>Ką sako svečiai</h2>
+  <div class="summary">
+    <div class="score"><b>4,6</b><div><span class="rate" style="--w:92%"><span class="stars bg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span class="stars fg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></span><small>199 atsiliepimai Google</small></div><span class="gmark"><svg><use href="#g"/></svg></span></div>
+    <div class="score"><span class="bscore">9,2</span><div><b>Nuostabus</b><small>80 atsiliepimų Booking.com</small></div></div>
+  </div>
   <div class="quotes">
     <figure class="quote">
+      <div class="who"><span class="av" style="--c:#6a55b0">A</span><div><b>Algirdas D.</b><small>Vietinis gidas, 29 atsiliepimai</small></div><span class="gmark" title="Google"><svg><use href="#g"/></svg></span></div>
+      <div class="meta"><span class="stars" aria-label="5 iš 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span>2026 m. rugsėjis</span></div>
       <blockquote>Labai rami, prižiūrima, nuostabioje vietoje prie pat Minijos upes esanti dvaro sodyba. Puikiai tinka visiems kas nori privačios šventės ar tiesiog pabūti tyloje. 10/10</blockquote>
-      <figcaption>Algirdas D., Google, 2026</figcaption>
     </figure>
     <figure class="quote">
+      <div class="who"><span class="av" style="--c:#3f8a68">I</span><div><b>Inga M.</b><small>Google atsiliepimas</small></div><span class="gmark" title="Google"><svg><use href="#g"/></svg></span></div>
+      <div class="meta"><span class="stars" aria-label="5 iš 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span>2026 m. rugsėjis</span></div>
+      <blockquote>Neapsakomo grožio teritorija, įspūdingas vidaus stilius, aptarnaujantis personalas, rekomendacijos kiekvienam!</blockquote>
+    </figure>
+    <figure class="quote">
+      <div class="who"><span class="av" style="--c:#b8613a">D</span><div><b>Donny S.</b><small>Google atsiliepimas</small></div><span class="gmark" title="Google"><svg><use href="#g"/></svg></span></div>
+      <div class="meta"><span class="stars" aria-label="5 iš 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span>2026 m. birželis</span></div>
+      <blockquote>Labai graži ir erdvi vieta, su įvairiom zonom poilsiui ir ne tik. Labai svetingi šeimininkai ir ypač aptarnaujantis dviejų vyrukų personalas - Puikiausias Aptarnavimas!🙌🤩🙏 Vienas malonumas bendradarbiauti renginiuose čia!!!🫶</blockquote>
+    </figure>
+    <figure class="quote">
+      <div class="who"><span class="av" style="--c:#3b6aae">A</span><div><b>Asta B.</b><small>Google atsiliepimas</small></div><span class="gmark" title="Google"><svg><use href="#g"/></svg></span></div>
+      <div class="meta"><span class="stars" aria-label="5 iš 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span>2025 m. rugpjūtis</span></div>
+      <blockquote>Nuostabi vieta, jaukus kambarys su vaizdu į Minijos upę, atgaiva akims ir sielai. Jei esat su automobiliu, vieni juokai mėgautis nuostabiu saulėlydžiu, ziūrint į Neringos kopas tolumoje, nes čia pat Kuršių marios, Dreverna, Svencelė.</blockquote>
+    </figure>
+    <figure class="quote">
+      <div class="who"><span class="av" style="--c:#9a4e78">R</span><div><b>Rasa V.</b><small>Vietinis gidas, 11 atsiliepimų</small></div><span class="gmark" title="Google"><svg><use href="#g"/></svg></span></div>
+      <div class="meta"><span class="stars" aria-label="5 iš 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span>2024 m. liepa</span></div>
+      <blockquote>Puiki vieta bet kokiai šventei!!! Šventėm draugų vestuves Rugsėjo 9d. Labiausiai patiko nerealaus profesionalumo padavejai, jiems po 10* Maistas irgi labai skanus, nuo stalo nešė tuščias lėkštes 👍</blockquote>
+    </figure>
+    <figure class="quote">
+      <div class="who"><span class="av" style="--c:#6d7a2e">S</span><div><b>Simona A.</b><small>Vietinis gidas, 7 atsiliepimai</small></div><span class="gmark" title="Google"><svg><use href="#g"/></svg></span></div>
+      <div class="meta"><span class="stars" aria-label="5 iš 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span>2022 m. rugpjūtis</span></div>
       <blockquote>Sventeme mergaites krikštynas ir švente buvo tiesiog super. Kiekvienas kampas toks gražus kad tik fotografuotis. Dekoracijos sukurtos šeimininkės Esteros pranuko visus lūkesčius ir dar daugiau. Nuostabu!</blockquote>
-      <figcaption>Simona A., Google, 2022</figcaption>
-    </figure>
-    <figure class="quote">
-      <blockquote>Nuostabi vieta, jaukus kambarys su vaizdu į Minijos upę, atgaiva akims ir sielai.</blockquote>
-      <figcaption>Asta B., Google, 2025</figcaption>
     </figure>
   </div>
+  <a class="btn line all" href="https://www.google.com/maps/search/?api=1&amp;query=Brastadvaris&amp;query_place_id=ChIJUQn7ltbt5EYRAIgHhRpE2Vk" target="_blank" rel="noopener">Visi 199 atsiliepimai Google</a>
 </section>
 
 <section class="book" id="rezervacija">
