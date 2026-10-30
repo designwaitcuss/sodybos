@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brastadvaris</title>
+<meta name="description" content="Provanso stiliaus sodyba šventėms ir poilsiui ant Minijos upės kranto, Lankupiuose, netoli Klaipėdos.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Brastadvaris">
+<meta property="og:description" content="Ypatingai šventei ypatinga vieta. Provanso stiliaus sodyba ant Minijos upės kranto.">
+<meta property="og:image" content="https://designwaitcuss.github.io/sodybos/brastadvaris/img/brastadvaris-075-l.jpg">
+<meta property="og:url" content="https://designwaitcuss.github.io/sodybos/brastadvaris/">
+<meta name="theme-color" content="#2a2733">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f7f4ef;
+  --card: #fffdf9;
+  --ink: #2a2733;
+  --muted: #6c6575;
+  --lav: #b9a6de;
+  --lav-soft: #ece6f6;
+  --lav-deep: #5a4886;
+  --line: rgba(42, 39, 51, .12);
+}
+* { box-sizing: border-box; margin: 0; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body { font: 400 17px/1.6 Inter, system-ui, sans-serif; color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; line-height: 1.05; letter-spacing: -.005em; }
+h2 { font-size: clamp(34px, 9vw, 52px); margin-bottom: 18px; }
+h3 { font-size: 26px; margin-bottom: 6px; }
+img { display: block; max-width: 100%; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 64px 16px; }
+.eyebrow { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--lav-deep); font-weight: 600; margin-bottom: 10px; }
+.intro { font-size: clamp(19px, 4.8vw, 22px); line-height: 1.55; max-width: 700px; }
+.intro + .intro { margin-top: 14px; }
+
+/* Hero */
+.hero { position: relative; min-height: 86svh; display: flex; align-items: flex-end; color: #fff; background: var(--ink); }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 50%; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(18,16,24,.25) 0%, rgba(18,16,24,0) 28%, rgba(18,16,24,.55) 58%, rgba(18,16,24,.9) 100%); }
+.hero .inner { position: relative; z-index: 1; width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px calc(36px + env(safe-area-inset-bottom)); }
+.kicker { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; opacity: .9; }
+.hero h1 { font-size: clamp(58px, 17vw, 112px); margin: 4px 0 8px; }
+.lead { font-size: clamp(19px, 4.8vw, 23px); line-height: 1.4; max-width: 560px; opacity: .95; }
+.hero-actions { display: grid; gap: 10px; margin-top: 26px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 22px; border-radius: 99px; font: 600 16px/1.25 Inter, sans-serif; text-decoration: none; text-align: center; border: 0; cursor: pointer; }
+.btn svg { width: 20px; height: 20px; fill: currentColor; flex: none; }
+.btn.main { background: var(--lav); color: var(--ink); }
+.btn.ghost { background: rgba(255,255,255,.12); color: #fff; border: 1.5px solid rgba(255,255,255,.55); }
+.btn.line { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+
+/* Ratings strip */
+.ratings { background: var(--ink); color: #fff; }
+.ratings .wrap { padding-top: 22px; padding-bottom: 22px; display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: center; }
+.rating { display: flex; align-items: baseline; gap: 8px; font-size: 15px; color: rgba(255,255,255,.75); }
+.rating b { font: 600 28px/1 "Cormorant Garamond", Georgia, serif; color: #fff; }
+
+/* Facts */
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 30px 0 8px; }
+.fact { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 14px; }
+.fact b { display: block; font: 600 clamp(34px, 9vw, 46px)/1 "Cormorant Garamond", Georgia, serif; }
+.fact span { display: block; color: var(--muted); font-size: 14px; line-height: 1.35; margin-top: 6px; }
+
+/* Cards */
+.cards { display: grid; gap: 12px; margin-top: 28px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+.card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.card .body { padding: 20px 20px 22px; }
+.card p { color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.chip { background: var(--lav-soft); color: var(--lav-deep); border-radius: 99px; padding: 8px 14px; font-size: 15px; font-weight: 500; }
+
+/* Rooms */
+.rooms { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 26px; }
+.rooms .tile:first-child { grid-column: span 2; aspect-ratio: 16 / 10; }
+.list { list-style: none; padding: 0; display: grid; gap: 10px; margin-top: 22px; }
+.list li { display: flex; gap: 12px; align-items: baseline; }
+.list li::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--lav); transform: translateY(-2px); }
+.price { margin-top: 22px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+.price b { font: 600 30px/1.1 "Cormorant Garamond", Georgia, serif; }
+.price span { display: block; color: var(--muted); font-size: 15px; margin-top: 4px; }
+
+/* Gallery */
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.tile { padding: 0; border: 0; background: #e6e0d6; border-radius: 12px; overflow: hidden; aspect-ratio: 1; cursor: zoom-in; }
+.tile.wide { grid-column: span 2; aspect-ratio: 16 / 10; }
+.tile img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Reviews */
+.quotes { display: grid; gap: 14px; }
+.quote { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 24px 22px; display: flex; flex-direction: column; gap: 16px; }
+.quote blockquote { font-family: "Cormorant Garamond", Georgia, serif; font-size: 23px; line-height: 1.4; }
+.quote blockquote::before { content: "„"; }
+.quote blockquote::after { content: "“"; }
+.quote figcaption { color: var(--muted); font-size: 15px; margin-top: auto; }
+
+/* Booking */
+.book { background: var(--lav-soft); }
+.form { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 22px 18px; margin-top: 26px; }
+.seg { display: grid; grid-template-columns: 1fr 1fr; background: var(--paper); border: 1px solid var(--line); border-radius: 99px; padding: 4px; margin-bottom: 20px; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg label { text-align: center; padding: 12px 8px; border-radius: 99px; font-weight: 600; cursor: pointer; color: var(--muted); }
+.seg input:checked + label { background: var(--ink); color: #fff; }
+.seg input:focus-visible + label { outline: 2px solid var(--lav-deep); outline-offset: 2px; }
+.fields { display: grid; gap: 14px; }
+.field label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.field input, .field select, .field textarea { width: 100%; font: 400 17px/1.4 Inter, sans-serif; color: var(--ink); background: #fff; border: 1.5px solid rgba(42,39,51,.22); border-radius: 12px; padding: 13px 14px; min-height: 52px; appearance: none; -webkit-appearance: none; }
+.field select { background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%); background-position: calc(100% - 20px) 50%, calc(100% - 14px) 50%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 40px; }
+.field textarea { min-height: 96px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--lav-deep); box-shadow: 0 0 0 3px rgba(90,72,134,.18); }
+.field.invalid input { border-color: #b3261e; }
+.check { display: flex; gap: 10px; align-items: center; font-weight: 500; }
+.check input { width: 22px; height: 22px; accent-color: var(--lav-deep); }
+.row2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+.field { min-width: 0; }
+.field input { min-width: 0; max-width: 100%; display: block; }
+.field input[type=date] { padding-left: 12px; padding-right: 8px; }
+.nights { color: var(--muted); font-size: 15px; margin-top: -6px; }
+.nights:empty { display: none; }
+.send { display: grid; gap: 10px; margin-top: 22px; }
+.send .btn.main { background: var(--ink); color: #fff; }
+.hint { color: var(--muted); font-size: 14px; margin-top: 12px; }
+.done { display: none; margin-top: 16px; background: var(--lav-soft); border-radius: 14px; padding: 14px 16px; font-size: 15px; }
+.done.show { display: block; }
+.error { display: none; color: #b3261e; font-size: 15px; font-weight: 500; margin-top: 12px; }
+.error.show { display: block; }
+.steps { list-style: none; padding: 0; counter-reset: s; display: grid; gap: 14px; margin-top: 28px; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: start; }
+.steps li::before { content: counter(s); width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: #fff; display: grid; place-items: center; font-weight: 600; font-size: 15px; }
+.terms { color: var(--muted); font-size: 15px; margin-top: 18px; }
+
+/* Location */
+.address { font-size: 20px; font-weight: 500; margin-bottom: 12px; }
+.map { width: 100%; height: 300px; border: 0; border-radius: 20px; background: #e6e0d6; display: block; margin-bottom: 14px; }
+
+/* Contact */
+.contact { background: var(--ink); color: var(--paper); }
+.contact h2 { color: #fff; }
+.contact p { opacity: .8; margin-bottom: 18px; }
+.phone { display: inline-block; font: 600 clamp(38px, 11vw, 58px)/1.1 "Cormorant Garamond", Georgia, serif; color: #fff; text-decoration: none; margin-bottom: 8px; }
+.mail { display: inline-block; color: var(--lav); font-size: 18px; margin-bottom: 26px; word-break: break-all; }
+.actions { display: grid; gap: 10px; }
+.contact .btn.line { color: var(--paper); border-color: rgba(247,244,239,.5); }
+footer { background: var(--ink); color: rgba(247,244,239,.55); text-align: center; font-size: 13px; padding: 0 16px calc(28px + env(safe-area-inset-bottom)); }
+
+/* Lightbox */
+dialog { border: 0; padding: 0; width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh; background: rgba(12,10,16,.95); }
+dialog img { width: 100%; height: 100%; object-fit: contain; }
+dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255,255,255,.16); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; }
+
+@media (min-width: 760px) {
+  .wrap { padding: 96px 32px; }
+  .hero .inner { padding: 0 32px 72px; }
+  .hero-actions { grid-template-columns: auto auto; justify-content: start; }
+  .ratings .wrap { padding-top: 26px; padding-bottom: 26px; }
+  .facts { max-width: 720px; }
+  .cards { grid-template-columns: repeat(3, 1fr); }
+  .split { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: start; }
+  .rooms { margin-top: 0; }
+  .gallery { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .quotes { grid-template-columns: repeat(3, 1fr); }
+  .form { padding: 32px; margin-top: 0; }
+  .send { grid-template-columns: 1fr 1fr; }
+  .location { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; align-items: start; }
+  .map { height: 380px; }
+  .actions { grid-template-columns: auto auto; justify-content: start; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="img/brastadvaris-075-l.jpg" alt="Brastadvario pagrindinis pastatas vakare, svečiai ant terasos" fetchpriority="high">
+  <div class="inner">
+    <div class="kicker">Lankupiai, Klaipėdos r.</div>
+    <h1>Brastadvaris</h1>
+    <p class="lead">Ypatingai šventei ypatinga vieta. Provanso stiliaus sodyba ant Minijos upės kranto.</p>
+    <div class="hero-actions">
+      <a class="btn main" href="#rezervacija">Užklausti laisvų datų</a>
+      <a class="btn ghost" href="tel:+37069826348"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>+370 698 26348</a>
+    </div>
+  </div>
+</header>
+
+<section class="ratings" aria-label="Įvertinimai">
+  <div class="wrap">
+    <div class="rating"><b>4,6</b> Google, 199 atsiliepimai</div>
+    <div class="rating"><b>9,2</b> Booking.com, 80 atsiliepimų</div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="eyebrow">Apie sodybą</div>
+  <h2>Šventė, kuri lieka tik jūsų</h2>
+  <p class="intro">Brastadvaris stovi Minijos upės regioniniame parke, pusiaukelėje tarp Klaipėdos ir Šilutės. Du atnaujinti pastatai, didelė terasa, stiklinė pavėsinė ir sodas iki pat upės.</p>
+  <p class="intro">Visa teritorija aptverta, todėl šventė lieka privati. Naktį apšviesta visa teritorija ir automobilių aikštelė.</p>
+  <div class="facts">
+    <div class="fact"><b>75</b><span>svečiai šventei</span></div>
+    <div class="fact"><b>60</b><span>vietų nakvynei</span></div>
+    <div class="fact"><b>15</b><span>numerių</span></div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:0" id="sventes">
+  <div class="eyebrow">Šventės</div>
+  <h2>Vestuvės, krikštynos, jubiliejai</h2>
+  <p class="intro">Ceremoniją galima surengti ant Minijos kranto arba 200 m² terasoje, o pokylį vienoje iš dviejų salių.</p>
+  <div class="cards">
+    <article class="card">
+      <img src="img/brastadvaris-022-s.jpg" alt="Didžioji salė su apvaliais stalais ir sietynais" loading="lazy">
+      <div class="body"><h3>Didžioji salė</h3><p>Iki 70 svečių. Provanso stiliaus pastatas, kondicionavimas, garso ir vaizdo aparatūra.</p></div>
+    </article>
+    <article class="card">
+      <img src="img/brastadvaris-044-s.jpg" alt="Vokiško stiliaus namas sode" loading="lazy">
+      <div class="body"><h3>Mažoji salė</h3><p>25 vietos vokiško stiliaus name. Mažesnėms šventėms, o kambariuose ramu net per didelę šventę.</p></div>
+    </article>
+    <article class="card">
+      <img src="img/brastadvaris-074-s.jpg" alt="Vestuvių ceremonijos arka ir kėdės pievoje" loading="lazy">
+      <div class="body"><h3>Ceremonija lauke</h3><p>Ant Minijos upės kranto arba terasoje. Stiklinėje pavėsinėje svečiai laukia grįžtančių jaunųjų.</p></div>
+    </article>
+  </div>
+  <div class="chips">
+    <span class="chip">Vestuvės</span><span class="chip">Krikštynos</span><span class="chip">Jubiliejai</span><span class="chip">Gimtadieniai</span>
+  </div>
+</section>
+
+<section class="wrap split" style="padding-top:0" id="nakvyne">
+  <div>
+    <div class="eyebrow">Nakvynė</div>
+    <h2>15 jaukių numerių</h2>
+    <p class="intro">Kai kurie numeriai su vaizdu į Minijos upę. Galima apsistoti ir be šventės, tiesiog pailsėti gamtoje.</p>
+    <ul class="list">
+      <li>Dušas ir WC kiekviename numeryje</li>
+      <li>TV, mini baras, seifas</li>
+      <li>Nemokamas WiFi ir automobilių stovėjimas</li>
+      <li>Atvykimas nuo 15:00, išvykimas iki 12:00</li>
+      <li>Kalbame lietuviškai, angliškai, rusiškai</li>
+    </ul>
+    <div class="price"><b>Nuo 50 iki 90 €</b><span>už numerį</span></div>
+  </div>
+  <div class="rooms">
+    <button class="tile" data-full="img/brastadvaris-b37-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-b37-s.jpg" alt="Numerio langas su užuolaidomis į sodą" loading="lazy"></button>
+    <button class="tile" data-full="img/brastadvaris-b26-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-b26-s.jpg" alt="Dvivietė lova numeryje" loading="lazy"></button>
+    <button class="tile" data-full="img/brastadvaris-b34-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-b34-s.jpg" alt="Lova su pagalvėmis" loading="lazy"></button>
+    <button class="tile" data-full="img/brastadvaris-b35-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-b35-s.jpg" alt="Balkonas su vaizdu į upę" loading="lazy"></button>
+    <button class="tile" data-full="img/brastadvaris-b20-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-b20-s.jpg" alt="Minijos upė pro medžius" loading="lazy"></button>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:0">
+  <div class="eyebrow">Nuotraukos</div>
+  <h2>Brastadvaris iš arti</h2>
+  <div class="gallery">
+    <button class="tile wide" data-full="img/brastadvaris-074-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-074-s.jpg" alt="Ceremonijos arka pievoje" loading="lazy"></button>
+    <button class="tile" data-full="img/brastadvaris-022-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-022-s.jpg" alt="Pokylių salė" loading="lazy"></button>
+    <button class="tile" data-full="img/brastadvaris-004-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-004-s.jpg" alt="Gėlių kompozicija ant stalo" loading="lazy"></button>
+    <button class="tile wide" data-full="img/brastadvaris-009-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-009-s.jpg" alt="Ceremonija prie vandens" loading="lazy"></button>
+    <button class="tile" data-full="img/brastadvaris-b07-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-b07-s.jpg" alt="Levandos sode" loading="lazy"></button>
+    <button class="tile" data-full="img/brastadvaris-097-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-097-s.jpg" alt="Balta pavėsinė" loading="lazy"></button>
+    <button class="tile wide" data-full="img/brastadvaris-058-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-058-s.jpg" alt="Raudonas kilimas prie įėjimo" loading="lazy"></button>
+    <button class="tile" data-full="img/brastadvaris-081-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-081-s.jpg" alt="Serviruotas stalas" loading="lazy"></button>
+    <button class="tile" data-full="img/brastadvaris-060-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-060-s.jpg" alt="Jaunieji prie įėjimo" loading="lazy"></button>
+    <button class="tile wide" data-full="img/brastadvaris-032-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-032-s.jpg" alt="Minijos upė" loading="lazy"></button>
+    <button class="tile" data-full="img/brastadvaris-017-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-017-s.jpg" alt="Terasa" loading="lazy"></button>
+    <button class="tile" data-full="img/brastadvaris-005-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-005-s.jpg" alt="Stalas su žvakėmis" loading="lazy"></button>
+    <button class="tile wide" data-full="img/brastadvaris-b18-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-b18-s.jpg" alt="Sodyba naktį" loading="lazy"></button>
+    <button class="tile" data-full="img/brastadvaris-041-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-041-s.jpg" alt="Salė su sietynais" loading="lazy"></button>
+    <button class="tile" data-full="img/brastadvaris-037-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-037-s.jpg" alt="Kabantis tiltas per Miniją" loading="lazy"></button>
+    <button class="tile wide" data-full="img/brastadvaris-103-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/brastadvaris-103-s.jpg" alt="Sodybos kiemas ir pavėsinė" loading="lazy"></button>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:0">
+  <div class="eyebrow">Atsiliepimai</div>
+  <h2>Ką sako svečiai</h2>
+  <div class="quotes">
+    <figure class="quote">
+      <blockquote>Labai rami, prižiūrima, nuostabioje vietoje prie pat Minijos upes esanti dvaro sodyba. Puikiai tinka visiems kas nori privačios šventės ar tiesiog pabūti tyloje. 10/10</blockquote>
+      <figcaption>Algirdas D., Google, 2026</figcaption>
+    </figure>
+    <figure class="quote">
+      <blockquote>Sventeme mergaites krikštynas ir švente buvo tiesiog super. Kiekvienas kampas toks gražus kad tik fotografuotis. Dekoracijos sukurtos šeimininkės Esteros pranuko visus lūkesčius ir dar daugiau. Nuostabu!</blockquote>
+      <figcaption>Simona A., Google, 2022</figcaption>
+    </figure>
+    <figure class="quote">
+      <blockquote>Nuostabi vieta, jaukus kambarys su vaizdu į Minijos upę, atgaiva akims ir sielai.</blockquote>
+      <figcaption>Asta B., Google, 2025</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="book" id="rezervacija">
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Rezervacija</div>
+      <h2>Rezervuokite tiesiogiai</h2>
+      <p class="intro">Užklausa keliauja tiesiai šeimininkams, be tarpininkų.</p>
+      <ol class="steps">
+        <li><span>Atsiųskite užklausą su datomis ir svečių skaičiumi.</span></li>
+        <li><span>Patvirtinsime, ar datos laisvos, ir pasakysime kainą.</span></li>
+        <li><span>Rezervacija patvirtinama pervedus 30% avansą banko pavedimu.</span></li>
+        <li><span>Likusią sumą sumokate atvykę, grynaisiais arba pavedimu.</span></li>
+      </ol>
+      <p class="terms">Nemokamai atšaukti galima likus savaitei iki atvykimo. Vėliau avansas negrąžinamas.</p>
+    </div>
+
+    <form class="form" id="form" novalidate>
+      <div class="seg" role="radiogroup" aria-label="Užklausos tipas">
+        <input type="radio" name="kind" id="k-stay" value="stay" checked><label for="k-stay">Nakvynė</label>
+        <input type="radio" name="kind" id="k-event" value="event"><label for="k-event">Šventė</label>
+      </div>
+
+      <div class="fields">
+        <div class="field" data-for="event" hidden>
+          <label for="event-type">Kokia šventė?</label>
+          <select id="event-type">
+            <option>Vestuvės</option><option>Krikštynos</option><option>Jubiliejus</option><option>Gimtadienis</option><option>Kita šventė</option>
+          </select>
+        </div>
+        <div class="row2">
+          <div class="field" id="f-from">
+            <label for="from" id="from-label">Atvykimas</label>
+            <input type="date" id="from" required>
+          </div>
+          <div class="field" id="f-to" data-for="stay">
+            <label for="to">Išvykimas</label>
+            <input type="date" id="to" required>
+          </div>
+          <div class="field" data-for="event" hidden>
+            <label for="guests-e">Svečių</label>
+            <input type="number" id="guests-e" min="1" max="200" inputmode="numeric" placeholder="pvz. 60">
+          </div>
+        </div>
+        <div class="nights" id="nights" aria-live="polite"></div>
+        <div class="field" data-for="stay">
+          <label for="guests">Svečių skaičius</label>
+          <input type="number" id="guests" min="1" max="60" inputmode="numeric" placeholder="pvz. 2">
+        </div>
+        <label class="check" data-for="event" hidden><input type="checkbox" id="stay-too"> Reikės ir nakvynės</label>
+        <div class="field" id="f-name">
+          <label for="name">Vardas</label>
+          <input type="text" id="name" autocomplete="name" required>
+        </div>
+        <div class="field" id="f-phone">
+          <label for="phone">Telefonas</label>
+          <input type="tel" id="phone" autocomplete="tel" inputmode="tel" placeholder="+370" required>
+        </div>
+        <div class="field">
+          <label for="note">Žinutė (nebūtina)</label>
+          <textarea id="note" placeholder="Klausimai, pageidavimai"></textarea>
+        </div>
+      </div>
+
+      <div class="error" id="error" role="alert">Užpildykite datas, vardą ir telefoną.</div>
+      <div class="send">
+        <button class="btn main" type="submit" value="sms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM7 9h10v2H7zm6 5H7v-2h6zm4-6H7V6h10z"/></svg>Siųsti SMS</button>
+        <button class="btn line" type="submit" value="mail"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>Siųsti el. laišku</button>
+      </div>
+      <p class="hint">Atsidarys jūsų žinučių arba pašto programėlė su paruoštu tekstu. Belieka paspausti „Siųsti“.</p>
+      <div class="done" id="done" role="status">Užklausa paruošta. Jei programėlė neatsidarė, skambinkite <a href="tel:+37069826348">+370 698 26348</a>.</div>
+    </form>
+  </div>
+</section>
+
+<section class="wrap location">
+  <div>
+    <div class="eyebrow">Kur mus rasti</div>
+    <h2>Lankupiai</h2>
+    <p class="address">M. Šapalo g. 43, Lankupiai, Klaipėdos r.</p>
+    <p>Pusiaukelėje tarp Klaipėdos ir Šilutės. Iki Kuršių marių apie 7 km, šalia Lankupių kabantis tiltas per Miniją.</p>
+  </div>
+  <div>
+    <iframe class="map" loading="lazy" title="Brastadvaris žemėlapyje" src="https://www.google.com/maps?q=55.4898542,21.3623124&amp;z=12&amp;output=embed"></iframe>
+    <a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=Brastadvaris&amp;query_place_id=ChIJUQn7ltbt5EYRAIgHhRpE2Vk" target="_blank" rel="noopener">Atidaryti Google Maps</a>
+  </div>
+</section>
+
+<section class="contact" id="kontaktai">
+  <div class="wrap">
+    <h2>Susisiekite</h2>
+    <p>Dirbame visus metus. Skambinkite arba rašykite.</p>
+    <a class="phone" href="tel:+37069826348">+370 698 26348</a><br>
+    <a class="mail" href="mailto:brastadvarisinfo@gmail.com">brastadvarisinfo@gmail.com</a>
+    <div class="actions">
+      <a class="btn main" href="#rezervacija">Užklausti laisvų datų</a>
+      <a class="btn line" href="https://www.facebook.com/Brastadvaris" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</section>
+<footer>Demo versija. Nuotraukos iš Google Maps ir Booking.com, atsiliepimai iš Google.</footer>
+
+<dialog id="lb"><img alt=""><button aria-label="Uždaryti">×</button></dialog>
+<script>
+const lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
+document.querySelectorAll('.tile').forEach(t => t.addEventListener('click', () => { lbImg.src = t.dataset.full; lb.showModal(); }));
+lb.addEventListener('click', () => lb.close());
+
+const PHONE = '+37069826348', EMAIL = 'brastadvarisinfo@gmail.com';
+const form = document.getElementById('form'), $ = id => document.getElementById(id);
+const from = $('from'), to = $('to');
+const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+const today = new Date();
+from.min = iso(today);
+to.min = iso(new Date(today.getTime() + 864e5));
+
+const kind = () => form.querySelector('input[name=kind]:checked').value;
+function setKind() {
+  const k = kind();
+  form.querySelectorAll('[data-for]').forEach(el => { el.hidden = el.dataset.for !== k; });
+  $('from-label').textContent = k === 'event' ? 'Šventės data' : 'Atvykimas';
+  to.required = k === 'stay';
+  showNights();
+}
+form.querySelectorAll('input[name=kind]').forEach(r => r.addEventListener('change', setKind));
+
+function nightsCount() {
+  if (!from.value || !to.value) return 0;
+  return Math.round((new Date(to.value) - new Date(from.value)) / 864e5);
+}
+function nightsWord(n) {
+  if (n % 10 === 1 && n % 100 !== 11) return 'naktis';
+  if (n % 10 === 0 || (n % 100 > 10 && n % 100 < 20)) return 'naktų';
+  return 'naktys';
+}
+function showNights() {
+  const n = nightsCount();
+  $('nights').textContent = kind() === 'stay' && n > 0 ? `${n} ${nightsWord(n)}` : '';
+}
+from.addEventListener('change', () => {
+  if (from.value) {
+    const next = new Date(new Date(from.value).getTime() + 864e5);
+    to.min = iso(next);
+    if (!to.value || to.value <= from.value) to.value = iso(next);
+  }
+  showNights();
+});
+to.addEventListener('change', showNights);
+
+function message() {
+  const lines = [];
+  if (kind() === 'stay') {
+    const n = nightsCount();
+    lines.push('Laba diena! Norėčiau rezervuoti nakvynę Brastadvaryje.');
+    lines.push(`Atvykimas ${from.value}, išvykimas ${to.value} (${n} ${nightsWord(n)}).`);
+    if ($('guests').value) lines.push(`Svečių skaičius ${$('guests').value}.`);
+  } else {
+    lines.push('Laba diena! Norėčiau surengti šventę Brastadvaryje.');
+    lines.push(`${$('event-type').value}, data ${from.value}.`);
+    if ($('guests-e').value) lines.push(`Svečių apie ${$('guests-e').value}.`);
+    if ($('stay-too').checked) lines.push('Reikės ir nakvynės.');
+  }
+  if ($('note').value.trim()) lines.push($('note').value.trim());
+  lines.push(`${$('name').value.trim()}, tel. ${$('phone').value.trim()}`);
+  return lines.join('\n');
+}
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const need = [['f-from', from], ['f-name', $('name')], ['f-phone', $('phone')]];
+  if (kind() === 'stay') need.push(['f-to', to]);
+  let ok = true;
+  need.forEach(([f, input]) => {
+    const bad = !input.value.trim() || (input === to && nightsCount() < 1);
+    $(f).classList.toggle('invalid', bad);
+    if (bad) ok = false;
+  });
+  $('error').classList.toggle('show', !ok);
+  if (!ok) return;
+  const text = message();
+  const how = e.submitter ? e.submitter.value : 'sms';
+  const subject = kind() === 'stay' ? 'Nakvynės užklausa' : 'Šventės užklausa';
+  location.href = how === 'mail'
+    ? `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`
+    : `sms:${PHONE}?&body=${encodeURIComponent(text)}`;
+  $('done').classList.add('show');
+});
+form.addEventListener('input', e => { const f = e.target.closest('.field'); if (f) f.classList.remove('invalid'); });
+setKind();
+</script>
+</body>
+</html>
