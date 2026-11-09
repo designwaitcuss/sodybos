@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grožio salonas ir kirpykla</title>
+<meta name="description" content="Kirpimas, kosmetologijos paslaugos ir masažas vienoje vietoje, Justiniškių g. 144D.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Grožio salonas ir kirpykla">
+<meta property="og:description" content="Kirpimas, kosmetologijos paslaugos ir masažas vienoje vietoje, Justiniškių g. 144D.">
+<meta property="og:image" content="https://designwaitcuss.github.io/sodybos/grozio-kirpykla/img/grozio-kirpykla-107-l.jpg">
+<meta property="og:url" content="https://designwaitcuss.github.io/sodybos/grozio-kirpykla/">
+<meta name="theme-color" content="#3b2420">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --dark: #3b2420; --accent: #c06a2b; --on-accent: #ffffff; --paper: #f7f1ea; --accent-soft: color-mix(in srgb, #c06a2b 14%, #f7f1ea); --accent-deep: color-mix(in srgb, #c06a2b 72%, #000); --card: #fffdf9; --text: #24221e; --muted: #6b665d; --line: rgba(36,34,30,.12); --gold: #fbbc04; --booking: #003b95; }
+.hero > img { object-position: 50% 50%; }
+
+* { box-sizing: border-box; margin: 0; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body { font: 400 17px/1.6 Inter, system-ui, sans-serif; color: var(--text); background: var(--paper); -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; line-height: 1.1; letter-spacing: -.005em; text-wrap: balance; }
+p, blockquote { text-wrap: pretty; }
+::selection { background: var(--accent); color: var(--on-accent); }
+input, textarea { caret-color: var(--accent-deep); }
+a { text-underline-offset: .18em; text-decoration-thickness: 1px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2.5px solid var(--accent-deep); outline-offset: 3px; }
+.hero :focus-visible, .contact :focus-visible { outline-color: #fff; }
+html { scrollbar-color: color-mix(in srgb, var(--dark) 45%, transparent) var(--paper); }
+h2 { font-size: clamp(34px, 9vw, 52px); margin-bottom: 18px; }
+h3 { font-size: 26px; margin-bottom: 6px; }
+img { display: block; max-width: 100%; }
+svg { width: 1em; height: 1em; fill: currentColor; flex: none; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 64px 16px; }
+.intro { font-size: clamp(19px, 4.8vw, 22px); line-height: 1.55; max-width: 700px; }
+.hero { position: relative; min-height: 86svh; display: flex; align-items: flex-end; color: #fff; background: var(--dark); }
+.hero { overflow: hidden; }
+.hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: settle 1.8s cubic-bezier(.23, 1, .32, 1) both; }
+@keyframes settle { from { transform: scale(1.06); } to { transform: none; } }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,13,12,.25) 0%, rgba(14,13,12,0) 18%, rgba(14,13,12,.55) 45%, rgba(14,13,12,.9) 80%); }
+.hero .inner { position: relative; z-index: 1; width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 16px calc(36px + env(safe-area-inset-bottom)); }
+.logo { width: 120px; border-radius: 14px; margin-bottom: 18px; }
+.hero h1, .hero .lead, .hero .where { text-shadow: 0 1px 14px rgba(10,8,6,.55); }
+.hero h1 { font-size: clamp(54px, 15vw, 96px); margin: 0 0 10px; }
+.where { display: flex; align-items: center; gap: 7px; margin-top: 12px; font-size: 15px; opacity: .9; }
+.where svg { width: 17px; height: 17px; opacity: .85; }
+.lead { font-size: clamp(19px, 4.8vw, 23px); line-height: 1.4; max-width: 580px; opacity: .95; }
+.hero-actions { display: grid; gap: 10px; margin-top: 26px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 22px; border-radius: 99px; font: 600 16px/1.25 Inter, sans-serif; text-decoration: none; text-align: center; border: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: transform 160ms cubic-bezier(.23, 1, .32, 1), background-color 150ms ease, border-color 150ms ease, color 150ms ease; }
+.btn:active { transform: scale(.97); }
+.btn svg { width: 20px; height: 20px; }
+.btn.main { background: var(--accent); color: var(--on-accent); }
+.btn.ghost { background: rgba(255,255,255,.12); color: #fff; border: 1.5px solid rgba(255,255,255,.55); }
+.btn.line { background: transparent; color: var(--text); border: 1.5px solid var(--text); }
+.btn.booking { background: var(--booking); color: #fff; }
+.stars { display: inline-flex; gap: 2px; color: var(--gold); }
+.stars svg { width: 18px; height: 18px; }
+.rate { position: relative; display: inline-flex; line-height: 0; }
+.rate .bg { color: rgba(36,34,30,.18); }
+.rate .fg { position: absolute; inset: 0 auto 0 0; width: var(--w); overflow: hidden; }
+.gmark { width: 26px; height: 26px; border-radius: 50%; background: #fff; display: grid; place-items: center; flex: none; box-shadow: 0 0 0 1px rgba(36,34,30,.08); }
+.gmark svg { width: 15px; height: 15px; }
+.bscore { background: var(--booking); color: #fff; font-weight: 600; font-size: 14px; line-height: 1; padding: 6px 7px; border-radius: 7px 7px 7px 0; flex: none; }
+.hero-rating { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px 6px 6px; border-radius: 99px; background: rgba(16,14,12,.42); border: 1px solid rgba(255,255,255,.22); color: #fff; text-decoration: none; font-size: 14px; white-space: nowrap; font-variant-numeric: lining-nums; }
+.pill b { font-size: 15px; }
+.pill .rate .bg { color: rgba(255,255,255,.35); }
+.pill .stars svg { width: 16px; height: 16px; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 30px 0 8px; }
+.fact { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 14px; }
+.fact b { display: block; font: 600 clamp(34px, 9vw, 46px)/1 "Cormorant Garamond", Georgia, serif; }
+.fact span { display: block; color: var(--muted); font-size: 14px; line-height: 1.35; margin-top: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; padding: 0; list-style: none; }
+.chips li { background: var(--accent-soft); color: var(--accent-deep); border-radius: 99px; padding: 8px 14px; font-size: 15px; font-weight: 500; }
+.features { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.features li { display: flex; align-items: baseline; gap: 11px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 16px; line-height: 1.35; }
+.features li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex: none; transform: translateY(-2px); }
+.stays { display: grid; gap: 12px; }
+.stay { background: var(--card); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+.stay img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.stay div { padding: 20px 20px 22px; }
+.stay p { color: var(--muted); }
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.tile { padding: 0; border: 0; background: #e6e0d6; border-radius: 12px; overflow: hidden; aspect-ratio: 1; cursor: zoom-in; }
+.tile.wide { grid-column: span 2; aspect-ratio: 16 / 10; }
+.tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms cubic-bezier(.23, 1, .32, 1); }
+.summary { display: grid; gap: 12px; margin-bottom: 22px; }
+.score { display: flex; align-items: center; gap: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; color: inherit; text-decoration: none; }
+.score > b { font: 600 46px/1 "Cormorant Garamond", Georgia, serif; font-variant-numeric: lining-nums; }
+.score .bscore { font-size: 22px; padding: 10px; border-radius: 10px 10px 10px 0; }
+.score small { display: block; color: var(--muted); font-size: 15px; margin-top: 4px; }
+.score .stars svg { width: 22px; height: 22px; }
+.score .gmark { margin-left: auto; width: 34px; height: 34px; }
+.score .gmark svg { width: 19px; height: 19px; }
+.quotes { display: grid; gap: 14px; }
+.quote { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.who { display: flex; align-items: center; gap: 12px; }
+.av { width: 42px; height: 42px; border-radius: 50%; background: var(--c); color: #fff; display: grid; place-items: center; font-weight: 600; font-size: 18px; flex: none; }
+.who b { display: block; font-weight: 600; line-height: 1.25; }
+.who small { display: block; color: var(--muted); font-size: 14px; }
+.who .gmark { margin-left: auto; }
+.meta { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 14px; }
+.quote blockquote { font-size: 17px; line-height: 1.55; }
+.quote blockquote::before { content: "„"; }
+.quote blockquote::after { content: "“"; }
+.all { margin-top: 18px; }
+.book { background: var(--accent-soft); }
+.alt { margin-top: 28px; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 18px; display: grid; gap: 14px; }
+.alt-head { display: flex; align-items: center; gap: 12px; }
+.alt-head .bscore { font-size: 20px; padding: 9px; border-radius: 9px 9px 9px 0; }
+.alt-head small { display: block; color: var(--muted); font-size: 15px; }
+.form { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 22px 18px; margin-top: 26px; }
+.seg { display: grid; grid-template-columns: 1fr 1fr; background: var(--paper); border: 1px solid var(--line); border-radius: 99px; padding: 4px; margin-bottom: 20px; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg label { text-align: center; padding: 12px 8px; border-radius: 99px; font-weight: 600; cursor: pointer; color: var(--muted); }
+.seg input:checked + label { background: var(--dark); color: #fff; }
+.fields { display: grid; gap: 14px; }
+.field { min-width: 0; }
+.field label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.field input, .field select, .field textarea { width: 100%; min-width: 0; max-width: 100%; display: block; font: 400 17px/1.4 Inter, sans-serif; color: var(--text); background: #fff; border: 1.5px solid rgba(36,34,30,.22); border-radius: 12px; padding: 13px 14px; min-height: 52px; appearance: none; -webkit-appearance: none; }
+.field textarea { min-height: 96px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent-deep); box-shadow: 0 0 0 3px var(--accent-soft); }
+.field.invalid input { border-color: #b3261e; }
+.field input[type=date] { padding-left: 12px; padding-right: 8px; }
+.check { display: flex; gap: 10px; align-items: center; font-weight: 500; }
+.check input { width: 22px; height: 22px; accent-color: var(--accent-deep); }
+.row2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+.nights { color: var(--muted); font-size: 15px; margin-top: -6px; }
+.nights:empty { display: none; }
+.send { display: grid; gap: 10px; margin-top: 22px; }
+.send .btn.main { background: var(--dark); color: #fff; }
+.hint { color: var(--muted); font-size: 14px; margin-top: 12px; }
+.done { display: none; margin-top: 16px; background: var(--accent-soft); border-radius: 14px; padding: 14px 16px; font-size: 15px; }
+.done.show { display: block; }
+.error { display: none; color: #b3261e; font-size: 15px; font-weight: 500; margin-top: 12px; }
+.error.show { display: block; }
+.steps { list-style: none; padding: 0; counter-reset: s; display: grid; gap: 14px; margin-top: 28px; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 36px 1fr; gap: 12px; align-items: start; }
+.steps li::before { content: counter(s); width: 36px; height: 36px; border-radius: 50%; background: var(--dark); color: #fff; display: grid; place-items: center; font-weight: 600; font-size: 15px; }
+.terms { color: var(--muted); font-size: 15px; margin-top: 18px; }
+.address { font-size: 20px; font-weight: 500; margin-bottom: 12px; }
+.map { width: 100%; height: 300px; border: 0; border-radius: 20px; background: #e6e0d6; display: block; margin-bottom: 14px; }
+.contact { background: var(--dark); color: var(--paper); }
+.contact h2 { color: #fff; }
+.contact p { opacity: .8; margin-bottom: 18px; }
+.phone { display: inline-block; font: 600 clamp(38px, 11vw, 58px)/1.1 "Cormorant Garamond", Georgia, serif; font-variant-numeric: lining-nums; color: #fff; text-decoration: none; margin-bottom: 8px; }
+.mail { display: inline-block; color: #fff; opacity: .85; font-size: 18px; margin-bottom: 26px; word-break: break-all; }
+.actions { display: grid; gap: 10px; margin-top: 18px; }
+.contact .btn.line { color: var(--paper); border-color: rgba(255,255,255,.5); }
+footer { background: var(--dark); color: rgba(255,255,255,.55); text-align: center; font-size: 13px; padding: 0 16px calc(28px + env(safe-area-inset-bottom)); }
+dialog { border: 0; padding: 0; width: 100vw; height: 100vh; max-width: 100vw; max-height: 100vh; background: rgba(12,10,8,.95); opacity: 0; transition: opacity 220ms cubic-bezier(.23, 1, .32, 1), display 220ms allow-discrete, overlay 220ms allow-discrete; }
+dialog[open] { opacity: 1; }
+@starting-style { dialog[open] { opacity: 0; } }
+dialog::backdrop { background: transparent; }
+dialog img { width: 100%; height: 100%; object-fit: contain; }
+dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255,255,255,.16); color: #fff; font-size: 26px; line-height: 1; cursor: pointer; }
+@media (hover: hover) and (pointer: fine) {
+  .btn.main:hover { background: color-mix(in srgb, var(--accent) 86%, #000); }
+  .send .btn.main:hover { background: color-mix(in srgb, var(--dark) 82%, #fff); }
+  .btn.ghost:hover { background: rgba(255,255,255,.22); }
+  .btn.line:hover { background: color-mix(in srgb, var(--text) 7%, transparent); }
+  .contact .btn.line:hover { background: rgba(255,255,255,.1); }
+  .btn.booking:hover { background: #002f78; }
+  .tile:hover img { transform: scale(1.03); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero > img { animation: none; }
+  .btn, .tile img { transition: none; }
+}
+@media (max-width: 759px) {
+  .quotes { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin: 0 -16px; padding: 0 16px 6px; scroll-padding: 0 16px; scrollbar-width: none; }
+  .quotes::-webkit-scrollbar { display: none; }
+  .quote { flex: 0 0 86%; scroll-snap-align: start; }
+}
+@media (min-width: 760px) {
+  .wrap { padding: 96px 32px; }
+  .hero .inner { padding: 0 32px 72px; }
+  .hero-actions { grid-template-columns: auto auto; justify-content: start; }
+  .facts { max-width: 720px; }
+  .summary { grid-template-columns: 1fr 1fr; }
+  .stays { grid-template-columns: 1fr 1fr; }
+  .split { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: start; }
+  .gallery { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .features { grid-template-columns: repeat(3, 1fr); column-gap: 32px; }
+  .quotes { grid-template-columns: repeat(3, 1fr); }
+  .quotes.two { grid-template-columns: repeat(2, 1fr); }
+  .form { padding: 32px; margin-top: 0; }
+  .send { grid-template-columns: 1fr 1fr; }
+  .location { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; align-items: start; }
+  .map { height: 380px; }
+  .actions { grid-template-columns: auto auto auto; justify-content: start; }
+}
+
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17.4l-6 3.3 1.3-6.6-4.9-4.6 6.7-.8z"/></symbol><symbol id="g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></symbol></svg>
+<header class="hero">
+  <img src="img/grozio-kirpykla-107-l.jpg" alt="Grožio salonas ir kirpykla" fetchpriority="high">
+  <div class="inner">
+    
+    <h1>Grožio salonas ir kirpykla</h1>
+    <p class="lead">Kirpimas, kosmetologijos paslaugos ir masažas vienoje vietoje, Justiniškių g. 144D.</p>
+    <p class="where"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Kirpykla, kosmetologė ir masažas Justiniškėse</p>
+    <div class="hero-rating"><a class="pill" href="#atsiliepimai" aria-label="Google įvertinimas 4,9 iš 5, 23 atsiliepimai"><span class="gmark"><svg><use href="#g"/></svg></span><span class="rate" style="--w:98%"><span class="stars bg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span class="stars fg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></span><b>4,9</b><span>(23)</span></a></div>
+    <div class="hero-actions"><a class="btn main" href="tel:+37067542236"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg> Skambinti</a><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=54.732184,25.2195187&amp;query_place_id=ChIJ02pNJ7eR3UYRegOgcDjX3Ms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Kaip atvykti</a></div>
+  </div>
+</header>
+
+<section class="wrap">
+  <h2>Jauki, švari aplinka</h2>
+  <p class="intro">Grožio salonas ir kirpykla yra Justiniškių g. 144D, Vilniuje. Klientai rašo, kad čia lankosi visa šeima, kerpa gerai ir aptarnauja be įkyrumo. Dirbame darbo dienomis nuo 10 iki 19 valandos.</p>
+  
+  <ul class="chips" aria-label="Kam"><li>Kirpimui visai šeimai</li><li>Kosmetologės priežiūrai</li><li>Atpalaiduojančiam masažui</li></ul>
+</section>
+
+<section class="wrap" style="padding-top:0">
+  <h2>Paslaugos</h2>
+  <ul class="features"><li>Kirpimas</li><li>Kosmetologijos paslaugos</li><li>Masažas</li><li>Malonus kolektyvas</li><li>Jauki, švari aplinka</li><li>Registracija iš anksto</li><li>Atsiskaitymas kortele ar telefonu</li></ul>
+</section>
+
+
+
+<section class="wrap" style="padding-top:0">
+  <h2>Grožio salonas ir kirpykla iš arti</h2>
+  <div class="gallery"><button class="tile wide" data-full="img/grozio-kirpykla-100-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/grozio-kirpykla-100-s.jpg" alt="" loading="lazy" width="1080" height="608"></button><button class="tile" data-full="img/grozio-kirpykla-102-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/grozio-kirpykla-102-s.jpg" alt="" loading="lazy" width="1440" height="810"></button><button class="tile" data-full="img/grozio-kirpykla-104-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/grozio-kirpykla-104-s.jpg" alt="" loading="lazy" width="1080" height="690"></button><button class="tile wide" data-full="img/grozio-kirpykla-105-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/grozio-kirpykla-105-s.jpg" alt="" loading="lazy" width="1600" height="1982"></button><button class="tile" data-full="img/grozio-kirpykla-106-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/grozio-kirpykla-106-s.jpg" alt="" loading="lazy" width="1600" height="2133"></button><button class="tile" data-full="img/grozio-kirpykla-108-l.jpg" aria-label="Atidaryti nuotrauką"><img src="img/grozio-kirpykla-108-s.jpg" alt="" loading="lazy" width="1600" height="2133"></button></div>
+</section>
+
+<section class="wrap" style="padding-top:0" id="atsiliepimai">
+  <h2>Ką sako svečiai</h2>
+  <div class="summary"><div class="score"><b>4,9</b><div><span class="rate" style="--w:98%"><span class="stars bg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span class="stars fg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></span><small>23 atsiliepimai Google</small></div><span class="gmark"><svg><use href="#g"/></svg></span></div></div>
+  <div class="quotes two"><figure class="quote"><div class="who"><span class="av" style="--c:#6a55b0">U</span><div><b>Ugnius N.</b><small>Google atsiliepimas</small></div><span class="gmark" title="Google"><svg><use href="#g"/></svg></span></div><div class="meta"><span class="stars" aria-label="5 iš 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span>2020 m. gruodis</span></div><blockquote>Apie kirpyklą sužinojau iš pažystamų, apsilankiau ir likau labai patenkintas. Profesionalus ir neįkyrus personalas, tvarkinga aplinka - bus grįžtama dar kartą!</blockquote></figure><figure class="quote"><div class="who"><span class="av" style="--c:#3f8a68">E</span><div><b>Erika A.</b><small>Google atsiliepimas</small></div><span class="gmark" title="Google"><svg><use href="#g"/></svg></span></div><div class="meta"><span class="stars" aria-label="5 iš 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span>2020 m. gruodis</span></div><blockquote>Labai puiki kirpykla! Lankomės visa šeima ir niekad neteko nusivilti! Taip pat rekomenduoju ir kosmetologę, puikiai išmano savo darbą😍😍😍</blockquote></figure><figure class="quote"><div class="who"><span class="av" style="--c:#b8613a">A</span><div><b>Audrius B.</b><small>Google atsiliepimas</small></div><span class="gmark" title="Google"><svg><use href="#g"/></svg></span></div><div class="meta"><span class="stars" aria-label="5 iš 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span>2020 m. birželis</span></div><blockquote>Labai geras aptarnavimas ir gerai kerpa. Net ir tokį kirpimą kurio kituose kirpyklose nekerta niekas 😉</blockquote></figure><figure class="quote"><div class="who"><span class="av" style="--c:#3b6aae">K</span><div><b>Korilė J.</b><small>Google atsiliepimas</small></div><span class="gmark" title="Google"><svg><use href="#g"/></svg></span></div><div class="meta"><span class="stars" aria-label="5 iš 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span>2020 m. gruodis</span></div><blockquote>Masažas super, rekomenduoju 👍</blockquote></figure></div>
+  <a class="btn line all" href="https://www.google.com/maps/search/?api=1&amp;query=54.732184,25.2195187&amp;query_place_id=ChIJ02pNJ7eR3UYRegOgcDjX3Ms" target="_blank" rel="noopener">Visi atsiliepimai Google (23)</a>
+</section>
+
+
+
+<section class="wrap location">
+  <div>
+    <h2>Vilnius</h2>
+    <p class="address">Justiniškių g. 144D, Vilnius</p>
+  </div>
+  <div>
+    <iframe class="map" loading="lazy" title="Žemėlapis" src="https://www.google.com/maps?q=54.732184,25.2195187&amp;z=12&amp;output=embed"></iframe>
+    <a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=54.732184,25.2195187&amp;query_place_id=ChIJ02pNJ7eR3UYRegOgcDjX3Ms" target="_blank" rel="noopener">Atidaryti Google Maps</a>
+  </div>
+</section>
+
+<section class="contact" id="kontaktai">
+  <div class="wrap">
+    <h2>Registracija</h2>
+    <p>Paskambinkite ir užsiregistruokite.</p>
+    <a class="phone" href="tel:+37067542236">+370 675 42236</a><br>
+    
+    <div class="actions"><a class="btn main" href="sms:+37067542236"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zM7 9h10v2H7zm6 5H7v-2h6zm4-6H7V6h10z"/></svg> SMS</a></div>
+  </div>
+</section>
+<footer>Demo versija. Nuotraukos ir atsiliepimai iš Google Maps.</footer>
+
+<dialog id="lb"><img alt=""><button aria-label="Uždaryti">×</button></dialog>
+<script>
+const lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
+document.querySelectorAll('.tile').forEach(t => t.addEventListener('click', () => { lbImg.src = t.dataset.full; lb.showModal(); }));
+lb.addEventListener('click', () => lb.close());
+
+</script>
+</body>
+</html>
