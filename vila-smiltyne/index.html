@@ -197,33 +197,38 @@ dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height:
 
 
 /* Nov 11: icon cards, three booking ways (direct, Booking.com, Airbnb) */
-:root { --ease: cubic-bezier(.23, 1, .32, 1); --airbnb: #e00b41; }
+:root { --ease: cubic-bezier(.23, 1, .32, 1); }
 .ico { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .feat { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .feat li { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px 16px 20px; display: flex; flex-direction: column; gap: 14px; font-size: 15.5px; font-weight: 500; line-height: 1.3; transition: translate 220ms var(--ease), box-shadow 220ms ease, border-color 220ms ease; }
 .fi { width: 52px; height: 52px; border-radius: 16px; background: var(--accent-soft); color: var(--accent-deep); display: grid; place-items: center; transition: transform 320ms cubic-bezier(.34, 1.56, .64, 1), background-color 200ms ease, color 200ms ease; }
 .fi .ico { width: 28px; height: 28px; }
-.ascore { background: var(--airbnb); color: #fff; font-weight: 600; font-size: 14px; line-height: 1; padding: 6px 7px; border-radius: 7px; flex: none; font-variant-numeric: lining-nums; }
-.score .ascore { font-size: 20px; padding: 10px 9px; border-radius: 10px; }
+.bkmark { line-height: 0; flex: none; }
+.bkmark svg { width: 26px; height: 26px; }
+.pill .of { opacity: .7; margin-left: -6px; }
+.score .bkmark { margin-left: auto; }
+.score .bkmark svg { width: 34px; height: 34px; }
+.score .verbal { display: block; font-weight: 600; font-size: 17px; line-height: 1.2; }
 .ways { display: grid; gap: 14px; margin-top: 28px; }
 .plats { display: grid; gap: 14px; align-content: start; }
-.way { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 22px 18px; border-top: 5px solid var(--accent); }
+.way { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 22px 18px; box-shadow: 0 1px 2px rgba(20,18,14,.04), 0 12px 32px -20px rgba(20,18,14,.18); }
 .way-head { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
 .way-head h3 { font-size: 30px; margin: 0; }
 .way-head p { color: var(--muted); font-size: 15px; line-height: 1.4; margin-top: 4px; }
 .way-ico { width: 54px; height: 54px; border-radius: 16px; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; flex: none; }
 .way-ico .ico { width: 26px; height: 26px; }
 .way .form { background: none; border: 0; border-radius: 0; padding: 0; margin: 0; }
-.plat .way-head { margin-bottom: 18px; }
-.pscore { width: 54px; height: 54px; border-radius: 14px; display: grid; place-items: center; color: #fff; font-weight: 600; font-size: 19px; flex: none; font-variant-numeric: lining-nums; }
-.bkc { border-top-color: var(--booking); }
-.bkc .pscore { background: var(--booking); border-radius: 14px 14px 14px 0; }
-.abc { border-top-color: var(--airbnb); }
-.abc .pscore { background: var(--airbnb); font-size: 17px; }
-.btn.pbtn { width: 100%; color: #fff; }
+.plat { display: grid; gap: 14px; justify-items: start; }
+.plogo { display: block; width: auto; }
+.plogo.bk { height: 22px; }
+.plogo.ab { height: 32px; margin: -3px 0 -2px; }
+.plat .prate { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; color: var(--muted); font-size: 15px; font-variant-numeric: lining-nums; }
+.plat .prate b { color: var(--text); font-weight: 600; }
+.plat .prate .stars svg { width: 17px; height: 17px; }
+.btn.pbtn { width: 100%; color: #fff; margin-top: 4px; }
 .btn.pbtn .ico { width: 18px; height: 18px; }
-.bkc .btn.pbtn { background: var(--booking); }
-.abc .btn.pbtn { background: var(--airbnb); }
+.btn.bkb { background: var(--booking); }
+.btn.abb { background: linear-gradient(90deg, #e61e4d, #d70466); }
 .js .rv { opacity: 0; transform: translateY(18px); }
 .js .rv.in { opacity: 1; transform: none; transition: opacity 700ms var(--ease) var(--d, 0ms), transform 700ms var(--ease) var(--d, 0ms); }
 .js .feat li { opacity: 0; transform: translateY(18px); }
@@ -233,16 +238,19 @@ dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height:
 @media (hover: hover) and (pointer: fine) {
   .feat li:hover { translate: 0 -3px; box-shadow: 0 14px 28px -16px rgba(20,18,14,.3); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
   .feat li:hover .fi { transform: rotate(-8deg) scale(1.08); background: var(--accent); color: var(--on-accent); }
-  .bkc .btn.pbtn:hover { background: #002f78; }
-  .abc .btn.pbtn:hover { background: #c10937; }
+  .btn.bkb:hover { background: #002f78; }
+  .btn.abb:hover { filter: brightness(.94); }
 }
 @media (min-width: 760px) {
   .feat { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-  .summary.three { grid-template-columns: repeat(3, 1fr); }
   .ways { grid-template-columns: 1.4fr 1fr; gap: 20px; align-items: start; }
   .way { padding: 32px; }
   .plats { position: sticky; top: 24px; gap: 20px; }
+  .summary.three { grid-template-columns: 1fr; }
   .actions { grid-template-columns: auto auto auto auto; }
+}
+@media (min-width: 1000px) {
+  .summary.three { grid-template-columns: repeat(3, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
   .js .rv, .js .feat li { opacity: 1; transform: none; transition: none; }
@@ -253,7 +261,7 @@ dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height:
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17.4l-6 3.3 1.3-6.6-4.9-4.6 6.7-.8z"/></symbol><symbol id="g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 6.1 6.7.8-4.9 4.6 1.3 6.6L12 17.4l-6 3.3 1.3-6.6-4.9-4.6 6.7-.8z"/></symbol><symbol id="g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></symbol><symbol id="bk" viewBox="-.092 .015 2732.125 2671.996"><path d="m2732.032 513.03c0-283.141-229.978-513.015-513.118-513.015h-1705.89c-283.138 0-513.116 229.874-513.116 513.015v1645.965c0 283.066 229.978 513.016 513.118 513.016h1705.889c283.14 0 513.118-229.95 513.118-513.016z" fill="#0c3b7c"/><path d="m.001 1659.991h1364.531v1012.019h-1364.53z" fill="#0c3b7c"/><g fill-rule="nonzero"><path d="m1241.6 1768.638-220.052-.22v-263.12c0-56.22 21.808-85.48 69.917-92.165h150.136c107.068 0 176.328 67.507 176.328 176.766 0 112.219-67.507 178.63-176.328 178.739zm-220.052-709.694v-69.26c0-60.602 25.643-89.424 81.862-93.15h112.657c96.547 0 154.41 57.753 154.41 154.52 0 73.643-39.671 159.67-150.903 159.67h-198.026zm501.037 262.574-39.78-22.356 34.74-29.699c40.437-34.74 108.163-112.876 108.163-247.67 0-206.464-160.109-339.614-407.888-339.614h-282.738v-.11h-32.219c-73.424 2.74-132.273 62.466-133.04 136.329v1171.499h453.586c275.396 0 453.148-149.917 453.148-382.135 0-125.04-57.424-231.889-153.972-286.244" fill="#fff"/><path d="m1794.688 1828.066c0-89.492 72.178-161.894 161.107-161.894 89.154 0 161.669 72.402 161.669 161.894 0 89.379-72.515 161.894-161.67 161.894-88.928 0-161.106-72.515-161.106-161.894" fill="#00bafc"/></g></symbol><symbol id="ab" viewBox="0 0 24 24"><path fill="#FF385C" d="M12.001 18.275c-1.353-1.697-2.148-3.184-2.413-4.457-.263-1.027-.16-1.848.291-2.465.477-.71 1.188-1.056 2.121-1.056s1.643.345 2.12 1.063c.446.61.558 1.432.286 2.465-.291 1.298-1.085 2.785-2.412 4.458zm9.601 1.14c-.185 1.246-1.034 2.28-2.2 2.783-2.253.98-4.483-.583-6.392-2.704 3.157-3.951 3.74-7.028 2.385-9.018-.795-1.14-1.933-1.695-3.394-1.695-2.944 0-4.563 2.49-3.927 5.382.37 1.565 1.352 3.343 2.917 5.332-.98 1.085-1.91 1.856-2.732 2.333-.636.344-1.245.558-1.828.609-2.679.399-4.778-2.2-3.825-4.88.132-.345.395-.98.845-1.961l.025-.053c1.464-3.178 3.242-6.79 5.285-10.795l.053-.132.58-1.116c.45-.822.635-1.19 1.351-1.643.346-.21.77-.315 1.246-.315.954 0 1.698.558 2.016 1.007.158.239.345.557.582.953l.558 1.089.08.159c2.041 4.004 3.821 7.608 5.279 10.794l.026.025.533 1.22.318.764c.243.613.294 1.222.213 1.858zm1.22-2.39c-.186-.583-.505-1.271-.9-2.094v-.03c-1.889-4.006-3.642-7.608-5.307-10.844l-.111-.163C15.317 1.461 14.468 0 12.001 0c-2.44 0-3.476 1.695-4.535 3.898l-.081.16c-1.669 3.236-3.421 6.843-5.303 10.847v.053l-.559 1.22c-.21.504-.317.768-.345.847C-.172 20.74 2.611 24 5.98 24c.027 0 .132 0 .265-.027h.372c1.75-.213 3.554-1.325 5.384-3.317 1.829 1.989 3.635 3.104 5.382 3.317h.372c.133.027.239.027.265.027 3.37.003 6.152-3.261 4.802-6.975z"/></symbol></svg>
 <header class="hero">
   <img src="img/vila-smiltyne-100-l.jpg" alt="Vila Smiltynė" fetchpriority="high">
   <div class="inner">
@@ -261,7 +269,7 @@ dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height:
     <h1>Vila Smiltynė</h1>
     <p class="lead">Moderniai įrengta vila su kubilu, apie 15 minučių kelio nuo Klaipėdos.</p>
     <p class="where"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Vila Lingiuose, Klaipėdos rajone</p>
-    <div class="hero-rating"><a class="pill" href="#atsiliepimai" aria-label="Google įvertinimas 4,6 iš 5, 14 atsiliepimų"><span class="gmark"><svg><use href="#g"/></svg></span><span class="rate" style="--w:92%"><span class="stars bg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span class="stars fg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></span><b>4,6</b><span>(14)</span></a><a class="pill" href="#atsiliepimai" aria-label="Booking.com įvertinimas 8,5, 25 atsiliepimai"><span class="bscore">8,5</span><span>Booking.com (25)</span></a><a class="pill" href="https://www.airbnb.com/rooms/51529804" target="_blank" rel="noopener" aria-label="Airbnb įvertinimas 4,72 iš 5, 76 atsiliepimai"><span class="ascore">4,72</span><span>Airbnb (76)</span></a></div>
+    <div class="hero-rating"><a class="pill" href="#atsiliepimai" aria-label="Google įvertinimas 4,6 iš 5, 14 atsiliepimų"><span class="gmark"><svg><use href="#g"/></svg></span><span class="rate" style="--w:92%"><span class="stars bg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span class="stars fg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></span><b>4,6</b><span>(14)</span></a><a class="pill" href="#atsiliepimai" aria-label="Booking.com įvertinimas 8,5 iš 10, 25 atsiliepimai"><span class="bkmark"><svg><use href="#bk"/></svg></span><b>8,5</b><span class="of">/10</span><span>(25)</span></a><a class="pill" href="#atsiliepimai" aria-label="Airbnb įvertinimas 4,72 iš 5, 76 atsiliepimai"><span class="gmark"><svg><use href="#ab"/></svg></span><span class="rate" style="--w:94%"><span class="stars bg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span class="stars fg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></span><b>4,72</b><span>(76)</span></a></div>
     <div class="hero-actions"><a class="btn main" href="#rezervacija">Užklausti laisvų datų</a><a class="btn ghost" href="tel:+37060249294"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>+370 602 49294</a></div>
   </div>
 </header>
@@ -296,7 +304,7 @@ dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height:
 
 <section class="wrap" style="padding-top:0" id="atsiliepimai">
   <h2>Ką sako svečiai</h2>
-  <div class="summary three"><div class="score"><b>4,6</b><div><span class="rate" style="--w:92%"><span class="stars bg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span class="stars fg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></span><small>14 atsiliepimų Google</small></div><span class="gmark"><svg><use href="#g"/></svg></span></div><a class="score" href="https://www.booking.com/hotel/lt/vila-smiltyne-ant-ezero-kranto.lt.html" target="_blank" rel="noopener"><span class="bscore">8,5</span><div><b>Labai geras</b><small>25 atsiliepimai Booking.com</small></div></a><a class="score" href="https://www.airbnb.com/rooms/51529804" target="_blank" rel="noopener"><span class="ascore">4,72</span><div><b>Airbnb</b><small>76 atsiliepimai Airbnb</small></div></a></div>
+  <div class="summary three"><div class="score"><b>4,6</b><div><span class="rate" style="--w:92%"><span class="stars bg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span class="stars fg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></span><small>14 atsiliepimų Google</small></div><span class="gmark"><svg><use href="#g"/></svg></span></div><a class="score" href="https://www.booking.com/hotel/lt/vila-smiltyne-ant-ezero-kranto.lt.html" target="_blank" rel="noopener"><b>8,5</b><div><span class="verbal">Labai geras</span><small>25 atsiliepimai Booking.com</small></div><span class="bkmark"><svg><use href="#bk"/></svg></span></a><a class="score" href="https://www.airbnb.com/rooms/51529804" target="_blank" rel="noopener"><b>4,72</b><div><span class="rate" style="--w:94%"><span class="stars bg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span class="stars fg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></span><small>76 atsiliepimai Airbnb</small></div><span class="gmark"><svg><use href="#ab"/></svg></span></a></div>
   <div class="quotes"><figure class="quote"><div class="who"><span class="av" style="--c:#6a55b0">L</span><div><b>Laurinta Ž.</b><small>Google atsiliepimas</small></div><span class="gmark" title="Google"><svg><use href="#g"/></svg></span></div><div class="meta"><span class="stars" aria-label="5 iš 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span>2024 m. liepa</span></div><blockquote>Labai graži, jauki aplinka. Pati vila taip pat labai moderniai įrengta, švari. Likom labai patenkinti viešnage šioje viloje. Šeimininkai labai komunikabilūs, draugiški ir lankstūs kliento atžvilgiu. Puikiai tikanti vieta ramiai draugų pasibūvimui ar laikui su šeima, nes buvo visko nuo indų iki kaladėlių vaikam.❤️</blockquote></figure><figure class="quote"><div class="who"><span class="av" style="--c:#3f8a68">A</span><div><b>Ausra M.</b><small>Vietinis gidas, 28 atsiliepimai</small></div><span class="gmark" title="Google"><svg><use href="#g"/></svg></span></div><div class="meta"><span class="stars" aria-label="5 iš 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span>2022 m. sausis</span></div><blockquote>Gražiai įrengta, patogi, tvarkinga vila, tinka didesnei šeimai ar draugų kompanijai. Rekomenduoju</blockquote></figure><figure class="quote"><div class="who"><span class="av" style="--c:#b8613a">N</span><div><b>Nerijus L.</b><small>Vietinis gidas, 51 atsiliepimas</small></div><span class="gmark" title="Google"><svg><use href="#g"/></svg></span></div><div class="meta"><span class="stars" aria-label="5 iš 5"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span>2021 m. gruodis</span></div><blockquote>Ramybė....</blockquote></figure></div>
   <a class="btn line all" href="https://www.google.com/maps/search/?api=1&amp;query=55.5741093,21.2869428&amp;query_place_id=ChIJJyYQfarp5EYRCCLT6Ti1iQk" target="_blank" rel="noopener">Visi atsiliepimai Google (14)</a>
 </section>
@@ -334,13 +342,15 @@ dialog button { position: absolute; top: 14px; right: 14px; width: 46px; height:
     </form>
       </div>
       <div class="plats">
-        <div class="way plat bkc rv" style="--d:200ms">
-          <div class="way-head"><span class="pscore">8,5</span><div><h3>Booking.com</h3><p>Labai geras, 25 atsiliepimai</p></div></div>
-          <a class="btn pbtn" href="https://www.booking.com/hotel/lt/vila-smiltyne-ant-ezero-kranto.lt.html" target="_blank" rel="noopener">Rezervuoti per Booking.com<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
+        <div class="way plat rv" style="--d:200ms">
+          <img class="plogo bk" src="img/booking-logo.svg" alt="Booking.com" width="129" height="22">
+          <div class="prate"><span class="bscore">8,5</span><span><b>Labai geras</b>, 25 atsiliepimai</span></div>
+          <a class="btn pbtn bkb" href="https://www.booking.com/hotel/lt/vila-smiltyne-ant-ezero-kranto.lt.html" target="_blank" rel="noopener" aria-label="Rezervuoti per Booking.com">Rezervuoti<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
         </div>
-        <div class="way plat abc rv" style="--d:260ms">
-          <div class="way-head"><span class="pscore">4,72</span><div><h3>Airbnb</h3><p>76 atsiliepimai</p></div></div>
-          <a class="btn pbtn" href="https://www.airbnb.com/rooms/51529804" target="_blank" rel="noopener">Rezervuoti per Airbnb<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
+        <div class="way plat rv" style="--d:260ms">
+          <img class="plogo ab" src="img/airbnb-logo.svg" alt="Airbnb" width="84" height="26">
+          <div class="prate"><span class="rate" style="--w:94%"><span class="stars bg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span><span class="stars fg"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></span><span><b>4,72</b>, 76 atsiliepimai</span></div>
+          <a class="btn pbtn abb" href="https://www.airbnb.com/rooms/51529804" target="_blank" rel="noopener" aria-label="Rezervuoti per Airbnb">Rezervuoti<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
         </div>
       </div>
     </div>
