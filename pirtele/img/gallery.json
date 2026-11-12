@@ -1,0 +1,122 @@
+{
+ "moletai": {
+  "file": "img/moletai.jpg",
+  "w": 1400,
+  "h": 1050,
+  "slug": "apple-island",
+  "alt": "Privati pirtis Molėtų r.",
+  "src": "https://www.pirtele.lt/images/igallery/original/601-700/20221228_182637-603.jpg"
+ },
+ "vilnius-druska": {
+  "file": "img/vilnius-druska.jpg",
+  "w": 1400,
+  "h": 788,
+  "slug": "dealas",
+  "alt": "Privati pirtis Vilniuje",
+  "src": "https://www.pirtele.lt/images/igallery/original/601-700/processed__2_-615.jpeg"
+ },
+ "vilnius-rok": {
+  "file": "img/vilnius-rok.jpg",
+  "w": 1400,
+  "h": 1050,
+  "slug": "pirtis-vilniuje-rok",
+  "alt": "Privati pirtis Vilniuje",
+  "src": "https://www.pirtele.lt/images/igallery/original/501-600/20170708_175022-518.jpg"
+ },
+ "pabrade": {
+  "file": "img/pabrade.jpg",
+  "w": 1400,
+  "h": 1050,
+  "slug": "pirtis-pabrades-raj",
+  "alt": "Privati pirtis Pabradės raj.",
+  "src": "https://www.pirtele.lt/images/igallery/original/401-500/P1260063-449.jpg"
+ },
+ "santariskes": {
+  "file": "img/santariskes.jpg",
+  "w": 1400,
+  "h": 1050,
+  "slug": "privati-pirtis-santariskes",
+  "alt": "Privati pirtis Vilniuje",
+  "src": "https://www.pirtele.lt/images/igallery/original/401-500/IMG_0182-469.jpg"
+ },
+ "dubingiai": {
+  "file": "img/dubingiai.jpg",
+  "w": 1400,
+  "h": 928,
+  "slug": "privati-pirtis-dubingiuose",
+  "alt": "Privati pirtis Dubingiuose",
+  "src": "https://www.pirtele.lt/images/igallery/original/301-400/DSC_0026-345.jpg"
+ },
+ "dubingiai-2": {
+  "file": "img/dubingiai-2.jpg",
+  "w": 1400,
+  "h": 928,
+  "slug": "privati-pirtis-dubingiuose",
+  "alt": "Privati pirtis Dubingiuose",
+  "src": "https://www.pirtele.lt/images/igallery/original/301-400/DSC_0057-351.jpg"
+ },
+ "gineitiskes": {
+  "file": "img/gineitiskes.jpg",
+  "w": 1400,
+  "h": 928,
+  "slug": "privati-pirtis-gineitiskes",
+  "alt": "Privati pirtis Vilniuje",
+  "src": "https://www.pirtele.lt/images/igallery/original/301-400/DSC_0118-377.jpg"
+ },
+ "vilnius-cilindro": {
+  "file": "img/vilnius-cilindro.jpg",
+  "w": 1400,
+  "h": 1050,
+  "slug": "privati-pirtis-vilniuje-6",
+  "alt": "Privati pirtis Vilniuje",
+  "src": "https://www.pirtele.lt/images/igallery/original/101-200/DSC05789-146.jpg"
+ },
+ "esperanza": {
+  "file": "img/esperanza.jpg",
+  "w": 1400,
+  "h": 1050,
+  "slug": "idw-esperanza-resort",
+  "alt": "",
+  "src": "https://www.pirtele.lt/images/igallery/original/201-300/20140303_143915-246.jpg"
+ },
+ "pazaislis": {
+  "file": "img/pazaislis.jpg",
+  "w": 1400,
+  "h": 1048,
+  "slug": "pazaislis-park-hotel",
+  "alt": "",
+  "src": "https://www.pirtele.lt/images/igallery/original/101-200/PA140081-191.jpg"
+ },
+ "garine-vilnius": {
+  "file": "img/garine-vilnius.jpg",
+  "w": 1400,
+  "h": 1050,
+  "slug": "privati-garine-vilniuje",
+  "alt": "Privati pirtis Vilniuje",
+  "src": "https://www.pirtele.lt/images/igallery/original/201-300/DSC01521-219.jpg"
+ },
+ "spamed": {
+  "file": "img/spamed.jpg",
+  "w": 1400,
+  "h": 1050,
+  "slug": "spamed",
+  "alt": "",
+  "src": "https://www.pirtele.lt/images/igallery/original/201-300/CAM00409-279.jpg"
+ },
+ "forum-palace": {
+  "file": "img/forum-palace.jpg",
+  "w": 1050,
+  "h": 1400,
+  "slug": "forum-palace-infra",
+  "alt": "",
+  "src": "https://www.pirtele.lt/images/igallery/original/201-300/IMAG0020-211.jpg"
+ },
+ "forum-palace-2": {
+  "file": "img/forum-palace-2.jpg",
+  "w": 1400,
+  "h": 1050,
+  "slug": "forum-palace-infra",
+  "alt": "",
+  "src": "https://www.pirtele.lt/images/igallery/original/201-300/IMAG0027-214.jpg"
+ }
+}
