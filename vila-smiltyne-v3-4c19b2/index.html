@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="lt" data-look="a">
+<html lang="lt">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -8,7 +8,7 @@
 <meta name="description" content="Moderni vila su kubilu ir sodu Lingiuose, 15 min. iki Klaipėdos.">
 <meta property="og:title" content="Vila Smiltynė">
 <meta property="og:image" content="https://svetaines.waitcuss.com/vila-smiltyne-v3-4c19b2/img/vila-smiltyne-100-l.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,600&family=Newsreader:opsz,wght@6..72,500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -174,21 +174,11 @@ dialog::backdrop { background: rgba(0,0,0,.86); }
   .place { grid-template-columns: 1fr 2fr; align-items: end; }
 }
 
-/* three looks */
-:root, [data-look="a"] {
+/* look A, Naktis (Lauri picked Nov 12) */
+:root {
   --bg: #0e1210; --fg: #eeebe4; --muted: #9a9f98; --line: rgba(238,235,228,.14); --line2: rgba(238,235,228,.24);
   --panel: #151a17; --bar: rgba(14,18,16,.82); --accent: #f2e9d8; --on-accent: #0e1210; --no: #e2705a; --r: 2px;
   color-scheme: dark; --display: "Instrument Serif", Georgia, serif; --dw: 400; --dt: -0.01em; --body: "Inter", system-ui, sans-serif; --mapf: grayscale(1) invert(.9) contrast(.85);
-}
-[data-look="b"] {
-  --bg: #f7f7f4; --fg: #121412; --muted: #6b6f69; --line: rgba(18,20,18,.12); --line2: rgba(18,20,18,.22);
-  --panel: #ecece6; --bar: rgba(247,247,244,.86); --accent: #1f3d2f; --on-accent: #f7f7f4; --no: #b4432f; --r: 14px;
-  --display: "Bricolage Grotesque", system-ui, sans-serif; --dw: 600; --dt: -0.035em; --body: "Inter", system-ui, sans-serif; --mapf: grayscale(.4);
-}
-[data-look="c"] {
-  --bg: #f2f0ea; --fg: #161616; --muted: #6e6b64; --line: rgba(22,22,22,.14); --line2: rgba(22,22,22,.26);
-  --panel: #e7e4dc; --bar: rgba(242,240,234,.86); --accent: #161616; --on-accent: #f2f0ea; --no: #a8432f; --r: 0px;
-  --hero-btn: #f2f0ea; --hero-on: #161616; --display: "Newsreader", Georgia, serif; --dw: 500; --dt: -0.02em; --body: "Inter Tight", system-ui, sans-serif; --mapf: grayscale(1);
 }
 </style>
 </head>
@@ -322,8 +312,6 @@ dialog::backdrop { background: rgba(0,0,0,.86); }
 
 <script>
 (() => {
-  const look = new URLSearchParams(location.search).get('look');
-  if (look) document.documentElement.dataset.look = look;
   const lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
   document.querySelectorAll('.shot').forEach(s => s.addEventListener('click', () => { lbImg.src = s.dataset.full; lb.showModal(); }));
   lb.addEventListener('click', () => lb.close());
