@@ -331,7 +331,7 @@ footer a { color: var(--muted) }
   function load(i) {
     if (imgs[i]) return;
     const im = new Image(); im.decoding = 'async';
-    im.onload = () => { im.ok = true; if (Math.abs(i - want) < 6 || shown === -1) schedule(); };
+    im.onload = () => { im.ok = true; if (shown === -1) draw(); else if (Math.abs(i - want) < 6) schedule(); };
     im.src = src(i); imgs[i] = im;
   }
   function schedule() { if (!raf) raf = requestAnimationFrame(draw); }
@@ -366,7 +366,12 @@ footer a { color: var(--muted) }
   addEventListener('resize', size);
   // #p=0.5 opens the build at that point (handy for sharing one moment)
   const m = /^#p=([\d.]+)$/.exec(location.hash);
-  if (m) { const p = Math.min(1, +m[1]); want = Math.round(Math.min(1, p / 0.86) * (N - 1)); load(want); scrollTo(0, sec.offsetTop + p * (sec.offsetHeight - innerHeight)); }
+  if (m) {
+    const p = Math.min(1, +m[1]); want = Math.round(Math.min(1, p / 0.86) * (N - 1)); load(want);
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    const go = () => { scrollTo(0, sec.offsetTop + p * (sec.offsetHeight - innerHeight)); update(); };
+    setTimeout(go, 60);
+  }
   size(); update();
 })();
 </script>
