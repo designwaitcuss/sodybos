@@ -263,6 +263,7 @@ footer { font-size: 11px; letter-spacing: .08em; }
 .form { max-width: 640px; margin-top: 8px; }
 .book .wrap { max-width: 720px; }
 .alt { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+.field label em { font-style: normal; letter-spacing: .02em; text-transform: none; color: var(--fg); opacity: .75; margin-left: 4px; white-space: nowrap; }
 .alt a { color: var(--fg); text-underline-offset: 3px; }
 @media (min-width: 820px) { .facts-band { padding: 88px 0 64px; } }
 @media (max-width: 819px) {
@@ -349,8 +350,8 @@ footer { font-size: 11px; letter-spacing: .08em; }
   <h2>Rezervacija</h2>
   <form class="form" id="form" novalidate>
     <div class="row2">
-      <div class="field" id="f-from"><label for="from">Atvykimas, nuo 15:00</label><input type="date" id="from" required></div>
-      <div class="field" id="f-to"><label for="to">Išvykimas, iki 11:00</label><input type="date" id="to" required></div>
+      <div class="field" id="f-from"><label for="from">Atvykimas <em>nuo 15:00</em></label><input type="date" id="from" required></div>
+      <div class="field" id="f-to"><label for="to">Išvykimas <em>iki 11:00</em></label><input type="date" id="to" required></div>
     </div>
     <div class="nights" id="nights" aria-live="polite"></div>
     <div class="row2">
