@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0a0a09">
 <meta name="description" content="Moderni vila su kubilu ir sodu Lingiuose, 15 min. iki Klaipėdos.">
 <meta property="og:title" content="Vila Smiltynė">
-<meta property="og:image" content="https://svetaines.waitcuss.com/vila-smiltyne-v3-4c19b2/img/vila-smiltyne-100-l.jpg">
+<meta property="og:image" content="https://svetaines.waitcuss.com/vila-smiltyne-v3-4c19b2/img/vila-smiltyne-100-xl.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; }
@@ -22,7 +22,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: var(--dw); letter-spacing
 .kicker { font: 500 13px/1 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 18px; }
 h2 { font-size: clamp(40px, 7vw, 76px); }
 .i { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex: none; }
-.i .slash { stroke: var(--no); stroke-width: 2; }
+.i .slash { stroke: currentColor; stroke-width: 1.4; }
 .todo { display: inline-block; border: 1.5px dashed var(--accent); color: var(--fg); border-radius: 6px; padding: 0 7px; font: 600 12px/20px var(--body); letter-spacing: .02em; vertical-align: middle; }
 
 /* hero */
@@ -156,7 +156,7 @@ dialog::backdrop { background: rgba(0,0,0,.86); }
   .wrap { padding: 0 40px; }
   .sec { padding: 140px 0; }
   .bar nav { display: flex; }
-  .facts { grid-template-columns: repeat(5, 1fr); }
+  .facts { grid-template-columns: repeat(4, 1fr); }
   .facts li { flex-direction: column; gap: 6px; }
   .rooms { grid-template-columns: 1fr 1fr; }
   .story { grid-template-columns: repeat(12, 1fr); gap: 14px; }
@@ -179,7 +179,7 @@ dialog::backdrop { background: rgba(0,0,0,.86); }
 :root {
   color-scheme: dark;
   --bg: #0a0a09; --fg: #ece6da; --muted: #8e887d; --line: rgba(236,230,218,.12); --line2: rgba(236,230,218,.28);
-  --panel: #111110; --bar: rgba(10,10,9,.78); --accent: #ece6da; --on-accent: #0a0a09; --no: #c9705c; --r: 0px;
+  --panel: #1b1c19; --bar: rgba(10,10,9,.78); --accent: #ece6da; --on-accent: #0a0a09; --no: #c9705c; --r: 0px;
   --display: "Instrument Serif", Georgia, serif; --dw: 400; --dt: -0.005em; --body: "Inter", system-ui, sans-serif; --mapf: grayscale(1) invert(.92) contrast(.8) brightness(.9);
 }
 
@@ -187,8 +187,8 @@ dialog::backdrop { background: rgba(0,0,0,.86); }
 main { overflow-x: clip; }
 body { font-size: 16px; line-height: 1.65; letter-spacing: .005em; }
 .kicker { font-size: 11px; letter-spacing: .32em; color: var(--muted); margin-bottom: 22px; }
-h2 { font-size: clamp(44px, 7.5vw, 92px); line-height: .98; }
-.sec { padding: 112px 0; }
+h2 { font-size: 40px; line-height: 1.1; margin-bottom: 30px; }
+.sec { padding: 80px 0; }
 .i { stroke-width: 1.25; }
 .btn { border-radius: 0; min-height: 54px; padding: 0 30px; font: 500 12px/1 var(--body); letter-spacing: .22em; text-transform: uppercase; }
 .btn.ghost { box-shadow: inset 0 0 0 1px var(--line2); }
@@ -223,7 +223,7 @@ details.all summary { font: 500 11px/1 var(--body); letter-spacing: .28em; text-
 .rules { gap: 0; border-top: 1px solid var(--line); }
 .rules li { padding: 26px 0; border-bottom: 1px solid var(--line); gap: 14px; }
 .rules .i { width: 30px; height: 30px; }
-.rules b { font: 400 26px/1.1 var(--display); }
+.rules b { font: 500 22px/1.25 var(--body); letter-spacing: 0; font-variant-numeric: tabular-nums; }
 .rules small { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; }
 .big3 b { font-weight: 400; }
 .big3 span { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; }
@@ -244,9 +244,9 @@ details.all summary { font: 500 11px/1 var(--body); letter-spacing: .28em; text-
 .contact a.tel { font-weight: 400; }
 .host { font-weight: 300; }
 footer { font-size: 11px; letter-spacing: .08em; }
-.rv { transition-duration: 1100ms; transform: translateY(18px); }
+.rv { transition-duration: 500ms; transform: translateY(12px); }
 @media (min-width: 820px) {
-  .sec { padding: 170px 0; }
+  .sec { padding: 120px 0; }
   .rules { grid-template-columns: repeat(3, 1fr); column-gap: 40px; }
   .story { gap: 18px; }
   .story .w12 { margin: 0 calc(50% - 50vw); width: 100vw; height: clamp(520px, 52vw, 760px); }
@@ -257,19 +257,37 @@ footer { font-size: 11px; letter-spacing: .08em; }
   .scores { gap: 6px 18px; }
 }
 @media (prefers-reduced-motion: reduce) { .shot img { transform: none; transition: none; } }
+.facts-band { padding: 56px 0 40px; }
+.facts-band .facts { margin: 0; }
+.shot.crop img { object-position: 50% 28%; }
+.form { max-width: 640px; margin-top: 8px; }
+.book .wrap { max-width: 720px; }
+.alt { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+.alt a { color: var(--fg); text-underline-offset: 3px; }
+@media (min-width: 820px) { .facts-band { padding: 88px 0 64px; } }
+@media (max-width: 819px) {
+  .story .crop { aspect-ratio: 2 / 1; }
+  .rules { column-gap: 24px; align-content: start; }
+  .bar { inset: auto 0 0 0; transform: translateY(110%); border-bottom: 0; border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom); }
+  .bar .wrap { height: auto; padding: 10px 16px; }
+  .bar .name { display: none; }
+  .bar .btn { width: 100%; min-height: 56px; font-size: 12px; }
+  body { padding-bottom: 80px; }
+}
+
 </style>
 </head>
 <body>
 
 <header class="hero" id="top">
-  <img src="img/vila-smiltyne-100-l.jpg" alt="Vila Smiltynė vakare" fetchpriority="high">
+  <img src="img/vila-smiltyne-100-xl.jpg" alt="Vila Smiltynė vakare" fetchpriority="high">
   <div class="wrap">
     <p class="where"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>Lingiai, 15 min. iki Klaipėdos</p>
     <h1>Vila Smiltynė</h1>
     <p class="lead">Privati vila su kubilu ir sodu. Iki 5 svečių.</p>
     <div class="hero-row">
       <a class="btn go" href="#rezervacija">Užklausti laisvų datų</a>
-      <ul class="scores" aria-label="Įvertinimai"><li><b>4,6</b>Google</li><li><b>8,5</b>Booking.com</li><li><b>4,72</b>Airbnb</li></ul>
+      <ul class="scores" aria-label="Įvertinimai"><li><b>4,72</b>Airbnb</li><li><b>8,5</b>Booking.com</li><li><b>4,6</b>Google</li></ul>
     </div>
   </div>
 </header>
@@ -281,42 +299,33 @@ footer { font-size: 11px; letter-spacing: .08em; }
 </div></div>
 
 <main>
-<section class="sec" id="namas"><div class="wrap">
-  <p class="kicker rv">Namas</p>
-  <h2 class="rv">Visa vila jums</h2>
+<section class="facts-band" id="namas"><div class="wrap">
   <ul class="facts rv">
     <li><b>5</b><span>svečiai</span></li>
     <li><b>1</b><span>miegamasis</span></li>
     <li><b>3</b><span>lovos</span></li>
     <li><b>2</b><span>vonios kambariai</span></li>
-    <li><b><span class="todo">laukiame</span></b><span>m²</span></li>
   </ul>
-  <div class="rooms">
-    <div class="room rv"><img src="img/vila-smiltyne-101-s.jpg" alt=""><div><h3>Miegamasis</h3><p>Dvigulė lova, sofa-lova</p></div></div>
-    <div class="room rv"><img src="img/vila-smiltyne-105-s.jpg" alt=""><div><h3>Svetainė</h3><p>Sofa-lova, vaikiška lovelė</p></div></div>
-  </div>
 </div></section>
 
 <section class="wrap" aria-label="Nuotraukos">
   <div class="story">
+    <figure class="shot s-a w12 rv" data-full="img/vila-smiltyne-105-xl.jpg"><img src="img/vila-smiltyne-105-xl.jpg" alt="Svetainė ir valgomasis" loading="lazy"><figcaption>Svetainė ir valgomasis<small>Sofa-lova, vaikiška lovelė</small></figcaption></figure>
+    <figure class="shot s-b w5 rv" data-full="img/vila-smiltyne-101-l.jpg"><img src="img/vila-smiltyne-101-l.jpg" alt="Miegamasis" loading="lazy"><figcaption>Miegamasis<small>Dvigulė lova, sofa-lova</small></figcaption></figure>
+    <figure class="shot s-b w7 rv" data-full="img/vila-smiltyne-104-l.jpg"><img src="img/vila-smiltyne-104-l.jpg" alt="Vonia" loading="lazy"><figcaption>Vonia</figcaption></figure>
+    <figure class="shot s-b w5 rv" data-full="img/vila-smiltyne-107-l.jpg"><img src="img/vila-smiltyne-107-l.jpg" alt="Antra vonia" loading="lazy"><figcaption>Antra vonia</figcaption></figure>
     <figure class="shot s-a w7 rv" data-full="img/vila-smiltyne-102-l.jpg"><img src="img/vila-smiltyne-102-l.jpg" alt="Kubilas" loading="lazy"><figcaption>Kubilas<small>Užsakykite 48 val. iš anksto</small></figcaption></figure>
-    <figure class="shot s-b w5 rv" data-full="img/vila-smiltyne-101-l.jpg"><img src="img/vila-smiltyne-101-l.jpg" alt="Miegamasis" loading="lazy"><figcaption>Miegamasis</figcaption></figure>
-    <figure class="shot s-a w12 rv" data-full="img/vila-smiltyne-105-l.jpg"><img src="img/vila-smiltyne-105-l.jpg" alt="Valgomasis ir svetainė" loading="lazy"><figcaption>Valgomasis ir svetainė</figcaption></figure>
-    <figure class="shot s-b w5 rv" data-full="img/vila-smiltyne-104-l.jpg"><img src="img/vila-smiltyne-104-l.jpg" alt="Vonia" loading="lazy"><figcaption>Vonia</figcaption></figure>
-    <figure class="shot s-a w7 rv" data-full="img/vila-smiltyne-106-l.jpg"><img src="img/vila-smiltyne-106-l.jpg" alt="Sodas" loading="lazy"><figcaption>Sodas</figcaption></figure>
-    <figure class="shot s-a w8 rv" data-full="img/vila-smiltyne-109-l.jpg"><img src="img/vila-smiltyne-109-l.jpg" alt="Pušys" loading="lazy"><figcaption>Pušys</figcaption></figure>
-    <figure class="shot s-b w4 rv" data-full="img/vila-smiltyne-108-l.jpg"><img src="img/vila-smiltyne-108-l.jpg" alt="Antra vonia" loading="lazy"><figcaption>Antra vonia</figcaption></figure>
+    <figure class="shot s-a w12 crop rv" data-full="img/vila-smiltyne-109-xl.jpg"><img src="img/vila-smiltyne-109-xl.jpg" alt="Sodas" loading="lazy"><figcaption>Sodas</figcaption></figure>
   </div>
 </section>
 
 <section class="sec" id="patogumai"><div class="wrap">
-  <p class="kicker rv">Patogumai</p>
-  <h2 class="rv">Viskas vietoje</h2>
-  <ul class="amen"><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18v4a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M8 3c-1 1 1 2 0 3s1 2 0 3"/><path d="M12 3c-1 1 1 2 0 3s1 2 0 3"/><path d="M16 3c-1 1 1 2 0 3s1 2 0 3"/></svg>Kubilas</li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20"/><path d="M2 12h20"/><path d="m4.9 4.9 14.2 14.2"/><path d="m19.1 4.9-14.2 14.2"/></svg>Kondicionierius</li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8.8a15 15 0 0 1 20 0"/><path d="M5 12.4a10 10 0 0 1 14 0"/><path d="M8.5 15.9a5 5 0 0 1 7 0"/><path d="M12 19.5h.01"/></svg>Wi-Fi</li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v3"/><path d="M3 11h18"/><path d="M5 11v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8"/><path d="M9 3v2M15 3v2"/></svg>Įrengta virtuvė</li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M8 6h.01M11 6h.01"/><circle cx="12" cy="14" r="4"/></svg>Skalbyklė ir džiovyklė</li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16a8 8 0 0 1-16 0z"/><path d="M8 21l2-4.5M16 21l-2-4.5"/><path d="M9.5 6c0-1 1-1.5 1-2.5M13.5 6c0-1 1-1.5 1-2.5"/></svg>Kepsninė</li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6h2l1.5 7.5M5.5 17.5 9 10h7l2.5 7.5M9 10 8 7H6"/></svg>Dviračiai</li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 17h2v-4l-2.5-5.5A2 2 0 0 0 16.7 6H7.3a2 2 0 0 0-1.8 1.5L3 13v4h2"/><path d="M9 17h6"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>Nemokama stovėjimo vieta</li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16M20 4v16"/><path d="M4 9h16M4 17h16"/><path d="M8 9v8M12 9v8M16 9v8"/></svg>Kūdikio lovelė</li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v12H3z"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>Televizorius</li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18"/><path d="M5 8v12M19 8v12"/><path d="M5 14h14"/></svg>Darbo vieta</li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17"/><path d="M3 21h18"/><path d="M14.5 12h.01"/></svg>Atskiras įėjimas</li></ul>
+  <h2 class="rv">Patogumai</h2>
+  <ul class="amen"><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18v4a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M8 3c-1 1 1 2 0 3s1 2 0 3"/><path d="M12 3c-1 1 1 2 0 3s1 2 0 3"/><path d="M16 3c-1 1 1 2 0 3s1 2 0 3"/></svg>Kubilas</li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20"/><path d="M2 12h20"/><path d="m4.9 4.9 14.2 14.2"/><path d="m19.1 4.9-14.2 14.2"/></svg>Kondicionierius</li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8.8a15 15 0 0 1 20 0"/><path d="M5 12.4a10 10 0 0 1 14 0"/><path d="M8.5 15.9a5 5 0 0 1 7 0"/><path d="M12 19.5h.01"/></svg>Wi-Fi</li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v3"/><path d="M3 11h18"/><path d="M5 11v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8"/><path d="M9 3v2M15 3v2"/></svg>Įrengta virtuvė</li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M8 6h.01M11 6h.01"/><circle cx="12" cy="14" r="4"/></svg>Skalbyklė ir džiovyklė</li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16a8 8 0 0 1-16 0z"/><path d="M8 21l2-4.5M16 21l-2-4.5"/><path d="M9.5 6c0-1 1-1.5 1-2.5M13.5 6c0-1 1-1.5 1-2.5"/></svg>Kepsninė</li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6h2l1.5 7.5M5.5 17.5 9 10h7l2.5 7.5M9 10 8 7H6"/></svg>Dviračiai</li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 17h2v-4l-2.5-5.5A2 2 0 0 0 16.7 6H7.3a2 2 0 0 0-1.8 1.5L3 13v4h2"/><path d="M9 17h6"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>Nemokama stovėjimo vieta</li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v16M20 4v16"/><path d="M4 9h16M4 17h16"/><path d="M8 9v8M12 9v8M16 9v8"/></svg>Kūdikio lovelė</li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v12H3z"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>Televizorius</li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18"/><path d="M5 8v12M19 8v12"/><path d="M5 14h14"/></svg>Darbo vieta</li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v17"/><path d="M3 21h18"/><path d="M14.5 12h.01"/></svg>Atskiras įėjimas</li></ul>
   <details class="all"><summary>Visi patogumai</summary><div class="allgrid">
     <div><h3>Viduje</h3><p>Oro kondicionierius, centrinis šildymas, Wi-Fi, darbo vieta, televizorius, skalbimo mašina ir džiovyklė, lygintuvas, patalynė ir rankšluosčiai, užtemdančios užuolaidos</p></div>
     <div><h3>Virtuvė</h3><p>Šaldytuvas ir šaldiklis, elektrinė viryklė ir orkaitė, mikrobangų krosnelė, virdulys, kavavirė, skrudintuvas, indai, įrankiai, vyno taurės, valgomojo stalas</p></div>
-    <div><h3>Lauke</h3><p>Kiemas ir lauko baldai, kepsninė ir jos įrankiai, dviračiai, kubilas (užsakyti 48 val. iš anksto, kaina <span class="todo">laukiame</span>), nemokama vieta automobiliui, atskiras įėjimas</p></div>
+    <div><h3>Lauke</h3><p>Kiemas ir lauko baldai, kepsninė ir jos įrankiai, dviračiai, kubilas (užsakyti 48 val. iš anksto), nemokama vieta automobiliui, atskiras įėjimas</p></div>
     <div><h3>Vonios kambariai</h3><p>Vonia, bidė, plaukų džiovintuvas, muilas ir dušo želė</p></div>
     <div><h3>Vaikams</h3><p>Kūdikio lovelė, maitinimo kėdutė</p></div>
     <div><h3>Saugumas</h3><p>Dūmų detektorius, gesintuvas</p></div>
@@ -324,15 +333,12 @@ footer { font-size: 11px; letter-spacing: .08em; }
 </div></section>
 
 <section class="sec" id="taisykles" style="padding-top:0"><div class="wrap">
-  <p class="kicker rv">Taisyklės</p>
-  <h2 class="rv">Ramybė ir tvarka</h2>
-  <ul class="rules"><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg><div><b>nuo 15:00</b><small>Atvykimas</small></div></li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg><div><b>iki 11:00</b><small>Išvykimas</small></div></li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><div><b>22:00–08:00</b><small>Tyla</small></div></li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="8" r="2"/><path d="M8.5 13.5c1.5-2 5.5-2 7 0 1.5 2 2.5 5 0 6-1.5.5-2.5-.5-3.5-.5s-2 1-3.5.5c-2.5-1-1.5-4 0-6z"/><path class="slash" d="M3 3l18 18"/></svg><div><b>Gyvūnų</b><small>negalima</small></div></li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 16h15v4H2z"/><path d="M20 16v4"/><path d="M17 8c0-2.5-2-2.5-2-5"/><path d="M20 8c0-2.5-2-2.5-2-5"/><path class="slash" d="M3 3l18 18"/></svg><div><b>Rūkyti</b><small>negalima, ir el. cigarečių</small></div></li><li class="rv"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><path class="slash" d="M3 3l18 18"/></svg><div><b>Vakarėlių</b><small>negalima</small></div></li></ul>
+  <h2 class="rv">Taisyklės</h2>
+  <ul class="rules"><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg><div><b>nuo 15:00</b><small>Atvykimas</small></div></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg><div><b>iki 11:00</b><small>Išvykimas</small></div></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><div><b>22:00–08:00</b><small>Tyla</small></div></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="8" r="2"/><path d="M8.5 13.5c1.5-2 5.5-2 7 0 1.5 2 2.5 5 0 6-1.5.5-2.5-.5-3.5-.5s-2 1-3.5.5c-2.5-1-1.5-4 0-6z"/><path class="slash" d="M3 3l18 18"/></svg><div><b>Be gyvūnų</b></div></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 16h15v4H2z"/><path d="M20 16v4"/><path d="M17 8c0-2.5-2-2.5-2-5"/><path d="M20 8c0-2.5-2-2.5-2-5"/><path class="slash" d="M3 3l18 18"/></svg><div><b>Nerūkoma</b><small>Taip pat el. cigaretės</small></div></li><li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><path class="slash" d="M3 3l18 18"/></svg><div><b>Be vakarėlių</b></div></li></ul>
 </div></section>
 
 <section class="sec" id="atsiliepimai" style="padding-top:0"><div class="wrap">
-  <p class="kicker rv">Svečiai</p>
-  <h2 class="rv">Ką sako svečiai</h2>
-  <ul class="big3 rv"><li><b>4,6</b><span>Google, 14 atsiliepimų</span></li><li><b>8,5</b><span>Booking.com, 25</span></li><li><b>4,72</b><span>Airbnb, 76</span></li></ul>
+  <h2 class="rv">Svečiai</h2>
   <div class="quotes">
     <figure class="rv" style="margin:0"><blockquote>„Labai graži, jauki aplinka. Pati vila taip pat labai moderniai įrengta, švari.“</blockquote><cite>Laurinta Ž., Google</cite></figure>
     <figure class="rv" style="margin:0"><blockquote>„Gražiai įrengta, patogi, tvarkinga vila, tinka didesnei šeimai ar draugų kompanijai.“</blockquote><cite>Ausra M., Google</cite></figure>
@@ -340,40 +346,26 @@ footer { font-size: 11px; letter-spacing: .08em; }
 </div></section>
 
 <section class="sec book" id="rezervacija"><div class="wrap">
-  <p class="kicker rv">Rezervacija</p>
-  <h2 class="rv">Užklausti laisvų datų</h2>
-  <div class="bookgrid">
-    <form class="form rv" id="form" novalidate>
-      <div class="row2">
-        <div class="field" id="f-from"><label for="from">Atvykimas</label><input type="date" id="from" required></div>
-        <div class="field" id="f-to"><label for="to">Išvykimas</label><input type="date" id="to" required></div>
-      </div>
-      <p class="times"><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg>Atvykimas nuo 15:00</span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>Išvykimas iki 11:00</span></p>
-      <div class="nights" id="nights" aria-live="polite"></div>
-      <div class="field"><label for="guests">Svečių skaičius</label><input type="number" id="guests" min="1" max="5" inputmode="numeric" placeholder="iki 5"></div>
-      <div class="row2">
-        <div class="field" id="f-name"><label for="name">Vardas</label><input type="text" id="name" autocomplete="name" required></div>
-        <div class="field" id="f-phone"><label for="phone">Telefonas</label><input type="tel" id="phone" autocomplete="tel" inputmode="tel" placeholder="+370" required></div>
-      </div>
-      <div class="field"><label for="note">Žinutė (nebūtina)</label><textarea id="note" placeholder="Klausimai, pageidavimai"></textarea></div>
-      <div class="error" id="error" role="alert">Užpildykite datas, vardą ir telefoną.</div>
-      <button class="btn go" type="submit">Siųsti užklausą SMS</button>
-      <div class="done" id="done" role="status">Užklausa paruošta. Jei programėlė neatsidarė, skambinkite <a href="tel:+37060249294">+370 602 49294</a>.</div>
-    </form>
-    <div class="side rv">
-      <div><h3>Arba per</h3>
-        <a class="plat" href="https://www.booking.com/hotel/lt/vila-smiltyne-ant-ezero-kranto.lt.html" target="_blank" rel="noopener"><div><b>Booking.com</b><br><span>8,5 iš 10, 25 atsiliepimai</span></div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
-        <a class="plat" href="https://www.airbnb.com/rooms/51529804" target="_blank" rel="noopener"><div><b>Airbnb</b><br><span>4,72 iš 5, 76 atsiliepimai</span></div><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
-      </div>
-      <div><h3>Sąlygos</h3>
-        <dl class="terms"><dt>Užstatas</dt><dd><span class="todo">laukiame</span></dd><dt>Avansas</dt><dd><span class="todo">laukiame</span></dd><dt>Atšaukimas</dt><dd><span class="todo">laukiame</span></dd><dt>Mokėjimas</dt><dd><span class="todo">laukiame</span></dd></dl>
-      </div>
+  <h2>Rezervacija</h2>
+  <form class="form" id="form" novalidate>
+    <div class="row2">
+      <div class="field" id="f-from"><label for="from">Atvykimas, nuo 15:00</label><input type="date" id="from" required></div>
+      <div class="field" id="f-to"><label for="to">Išvykimas, iki 11:00</label><input type="date" id="to" required></div>
     </div>
-  </div>
+    <div class="nights" id="nights" aria-live="polite"></div>
+    <div class="row2">
+      <div class="field"><label for="guests">Svečiai</label><input type="number" id="guests" min="1" max="5" inputmode="numeric" placeholder="iki 5"></div>
+      <div class="field" id="f-name"><label for="name">Vardas</label><input type="text" id="name" autocomplete="name" required></div>
+    </div>
+    <div class="error" id="error" role="alert">Pasirinkite datas ir įrašykite vardą.</div>
+    <button class="btn go" type="submit">Siųsti SMS užklausą</button>
+    <p class="alt">Arba per <a href="https://www.booking.com/hotel/lt/vila-smiltyne-ant-ezero-kranto.lt.html" target="_blank" rel="noopener">Booking.com</a> ar <a href="https://www.airbnb.com/rooms/51529804" target="_blank" rel="noopener">Airbnb</a></p>
+    <div class="done" id="done" role="status">Užklausa paruošta. Jei programėlė neatsidarė, skambinkite <a href="tel:+37060249294">+370 602 49294</a>.</div>
+  </form>
 </div></section>
 
 <section class="sec" id="vieta"><div class="wrap place">
-  <div class="rv"><p class="kicker">Vieta</p><h2>Lingiai</h2><p style="margin-top:16px">Smiltynės g., Lingiai, Klaipėdos r.<br>15 min. automobiliu iki Klaipėdos</p><p style="margin-top:20px"><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=55.5741093,21.2869428&amp;query_place_id=ChIJJyYQfarp5EYRCCLT6Ti1iQk" target="_blank" rel="noopener">Atidaryti Google Maps</a></p></div>
+  <div class="rv"><h2>Lingiai</h2><p style="margin-top:16px">Smiltynės g., Lingiai, Klaipėdos r.<br>15 min. automobiliu iki Klaipėdos</p><p style="margin-top:20px"><a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=55.5741093,21.2869428&amp;query_place_id=ChIJJyYQfarp5EYRCCLT6Ti1iQk" target="_blank" rel="noopener">Atidaryti Google Maps</a></p></div>
   <iframe class="rv" loading="lazy" title="Žemėlapis" src="https://www.google.com/maps?q=55.5741093,21.2869428&amp;z=12&amp;output=embed"></iframe>
 </div></section>
 
@@ -383,7 +375,7 @@ footer { font-size: 11px; letter-spacing: .08em; }
   <p class="host">Šeimininkas Andrius kalba lietuviškai, angliškai ir rusiškai ir paprastai atsako per valandą.</p>
 </div></section>
 </main>
-<footer><div class="wrap">Demo versija. Nuotraukos ir atsiliepimai iš Google Maps, įvertinimai iš Booking.com ir Airbnb.</div></footer>
+<footer><div class="wrap">Demo versija. Dar laukiame iš šeimininko: ploto (m²), kubilo kainos, užstato, avanso, atšaukimo ir mokėjimo sąlygų. Nuotraukos ir atsiliepimai iš Google Maps, įvertinimai iš Booking.com ir Airbnb.</div></footer>
 <dialog id="lb"><img alt=""></dialog>
 
 
@@ -393,7 +385,10 @@ footer { font-size: 11px; letter-spacing: .08em; }
   document.querySelectorAll('.shot').forEach(s => s.addEventListener('click', () => { lbImg.src = s.dataset.full; lb.showModal(); }));
   lb.addEventListener('click', () => lb.close());
   const bar = document.getElementById('bar'), hero = document.getElementById('top');
-  new IntersectionObserver(([e]) => bar.classList.toggle('on', !e.isIntersecting), { threshold: 0.08 }).observe(hero);
+  const book = document.getElementById('rezervacija'); let heroIn = true, bookIn = false;
+  const upd = () => bar.classList.toggle('on', !heroIn && !bookIn);
+  new IntersectionObserver(([e]) => { heroIn = e.isIntersecting; upd(); }, { threshold: 0.08 }).observe(hero);
+  new IntersectionObserver(([e]) => { bookIn = e.isIntersecting; upd(); }, { threshold: 0.12 }).observe(book);
   const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
   const PHONE = "+37060249294", $ = id => document.getElementById(id), form = $('form'), from = $('from'), to = $('to');
@@ -408,12 +403,11 @@ footer { font-size: 11px; letter-spacing: .08em; }
   form.addEventListener('submit', e => {
     e.preventDefault();
     let ok = true;
-    [['f-from', from], ['f-to', to], ['f-name', $('name')], ['f-phone', $('phone')]].forEach(([f, i]) => { const bad = !i.value.trim() || (i === to && nights() < 1); $(f).classList.toggle('invalid', bad); if (bad) ok = false; });
+    [['f-from', from], ['f-to', to], ['f-name', $('name')]].forEach(([f, i]) => { const bad = !i.value.trim() || (i === to && nights() < 1); $(f).classList.toggle('invalid', bad); if (bad) ok = false; });
     $('error').classList.toggle('show', !ok); if (!ok) return;
     const n = nights(), L = ['Laba diena! Norėčiau rezervuoti nakvynę pas jus.', `Atvykimas ${from.value}, išvykimas ${to.value} (${n} ${word(n)}).`];
     if ($('guests').value) L.push(`Svečių skaičius ${$('guests').value}.`);
-    if ($('note').value.trim()) L.push($('note').value.trim());
-    L.push(`${$('name').value.trim()}, tel. ${$('phone').value.trim()}`);
+    L.push($('name').value.trim());
     location.href = `sms:${PHONE}?&body=${encodeURIComponent(L.join('\n'))}`;
     $('done').classList.add('show');
   });
