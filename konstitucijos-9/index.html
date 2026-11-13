@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Konstitucijos 9, darbo vietos ir biuras valandai</title>
+<meta name="description" content="Darbo vieta 16 aukšte, Konstitucijos pr. 9, Vilnius. Biuras valandai fotosesijoms, podcast'ams ir dirbtuvėms.">
+<meta name="theme-color" content="#0b0b0c">
+<meta name="robots" content="noindex">  <!-- remove once bookings go live -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Evening on the 16th floor: near-black room, one sunset accent for action and selection, green only for "free". */
+:root {
+  --ink: #0b0b0c;
+  --ink-2: #131315;
+  --ink-3: #1b1b1e;
+  --line: rgba(255,255,255,.09);
+  --line-2: rgba(255,255,255,.17);
+  --fg: #f3f1ec;
+  --fg-2: #bdb8b0;
+  --fg-3: #8f8a83;
+  --sun: #ff7a3d;
+  --sun-ink: #1a0d06;
+  --free: #4fd18b;
+  --display: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --text: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --gut: max(20px, env(safe-area-inset-left, 0px));
+  --gut-r: max(20px, env(safe-area-inset-right, 0px));
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--ink); color: var(--fg);
+  font: 400 16px/1.55 var(--text); -webkit-font-smoothing: antialiased;
+  caret-color: var(--sun);
+}
+::selection { background: var(--sun); color: var(--sun-ink); }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #2a2a2e; border-radius: 10px; border: 2px solid var(--ink); }
+::-webkit-scrollbar-track { background: var(--ink); }
+:focus-visible { outline: 2px solid var(--sun); outline-offset: 3px; border-radius: 8px; }
+a { color: inherit; text-underline-offset: 3px; }
+img { max-width: 100%; display: block; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: var(--gut); padding-right: var(--gut-r); }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; text-wrap: balance; }
+h2 { font-size: clamp(32px, 4.6vw, 56px); line-height: 1.02; letter-spacing: -0.03em; }
+.lead { color: var(--fg-2); font-size: 18px; max-width: 60ch; margin: 14px 0 0; }
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.icon { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+/* pills */
+.pill {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid transparent;
+  font: 500 15px/1 var(--text); text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: background-color .2s, border-color .2s, transform .15s, color .2s;
+}
+.pill:active { transform: scale(.98); }
+.pill.primary { background: var(--fg); color: var(--ink); }
+.pill.primary:hover { background: #fff; }
+.pill.ghost { background: rgba(255,255,255,.06); color: var(--fg); border-color: var(--line-2); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.pill.ghost:hover { background: rgba(255,255,255,.12); }
+.pill.small { height: 38px; padding: 0 16px; font-size: 14px; }
+.pill[disabled] { opacity: .45; cursor: not-allowed; }
+
+/* top bar */
+.bar {
+  position: fixed; z-index: 30; top: 0; left: 0; right: 0;
+  padding-top: env(safe-area-inset-top, 0px);
+  transition: background-color .3s, border-color .3s;
+  border-bottom: 1px solid transparent;
+}
+.bar.solid { background: rgba(11,11,12,.72); backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2); border-bottom-color: var(--line); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
+.brand { font: 600 18px/1 var(--display); letter-spacing: -0.02em; text-decoration: none; }
+.bar-right { display: flex; align-items: center; gap: 10px; }
+.lang { display: inline-flex; padding: 3px; border-radius: 999px; background: rgba(255,255,255,.07); border: 1px solid var(--line); }
+.lang button { border: 0; background: transparent; color: var(--fg-2); font: 500 13px/1 var(--text); height: 30px; min-width: 38px; border-radius: 999px; cursor: pointer; }
+.lang button[aria-pressed="true"] { background: var(--fg); color: var(--ink); }
+
+/* hero */
+.hero { position: relative; height: clamp(600px, 92svh, 900px); overflow: hidden; display: flex; align-items: flex-end; }
+.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 38%; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero img { animation: settle 2.2s cubic-bezier(.16,1,.3,1) both; }
+  @keyframes settle { from { transform: scale(1.07); filter: brightness(.7); } to { transform: none; filter: none; } }
+}
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,12,.55) 0%, rgba(11,11,12,0) 22%, rgba(11,11,12,0) 45%, rgba(11,11,12,.88) 82%, var(--ink) 100%); }
+.hero .wrap { position: relative; z-index: 1; width: 100%; padding-bottom: clamp(40px, 7vh, 72px); }
+.hero h1 { font-size: clamp(48px, 8.4vw, 112px); line-height: .94; letter-spacing: -0.04em; max-width: 9.5em; }
+.hero p { color: #ddd8d0; font-size: clamp(17px, 1.6vw, 20px); max-width: 44ch; margin: 18px 0 0; }
+.avail {
+  display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px;
+  padding: 9px 16px 9px 13px; border-radius: 999px; font-size: 14px; font-weight: 500;
+  background: rgba(20,20,22,.5); border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+}
+.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--free); box-shadow: 0 0 0 4px rgba(79,209,139,.18); }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+
+section.block { padding-top: clamp(84px, 11vw, 140px); }
+
+/* offers: a rate card next to a photo */
+.offers { display: grid; grid-template-columns: minmax(0, 1fr); gap: 36px; margin-top: 40px; }
+.offers figure { margin: 0; border-radius: 22px; overflow: hidden; position: relative; aspect-ratio: 21 / 8; background: var(--ink-3); }
+.offers figure img { object-position: 50% 30%; }
+.offers figure img { width: 100%; height: 100%; object-fit: cover; }
+.rate { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-2); }
+.rate li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 28px; padding: 28px 0; border-bottom: 1px solid var(--line-2); }
+.rate h3 { font-size: 26px; letter-spacing: -0.02em; line-height: 1.1; }
+.rate p { color: var(--fg-2); margin: 8px 0 0; max-width: 46ch; }
+.rate .price { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
+.rate .price b { font: 500 28px/1 var(--mono); letter-spacing: -0.02em; white-space: nowrap; }
+.rate .price b small { font: 400 14px var(--text); color: var(--fg-3); letter-spacing: 0; margin-left: 2px; }
+.rate .price .tag { font: 500 15px/1.2 var(--text); color: var(--fg-2); }
+
+/* day bars */
+.daybars { margin-top: 40px; display: grid; gap: 26px; max-width: 920px; }
+.dayrow { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 20px; align-items: center; }
+.dayrow > span { color: var(--fg-2); font-weight: 500; }
+.track24 { position: relative; height: 44px; border-radius: 12px; background: repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px calc(100% / 24)), var(--ink-2); border: 1px solid var(--line); }
+.seg { position: absolute; top: 5px; bottom: 5px; border-radius: 8px; display: flex; align-items: center; padding: 0 10px; font-size: 13px; font-weight: 500; overflow: hidden; white-space: nowrap; }
+.seg.desk { background: #2b2b30; color: var(--fg); }
+.seg.room { background: var(--sun); color: var(--sun-ink); }
+.ticks { position: relative; height: 18px; margin-top: 6px; font: 400 12px var(--mono); color: var(--fg-3); }
+.ticks span { position: absolute; transform: translateX(-50%); }
+.ticks span:first-child { transform: none; }
+.ticks span:last-child { transform: translateX(-100%); }
+
+/* booking */
+.book { margin-top: 36px; background: var(--ink-2); border: 1px solid var(--line); border-radius: 28px; padding: clamp(16px, 2.4vw, 28px); display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; box-shadow: 0 30px 80px -40px rgba(0,0,0,.9); }
+.book-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 18px; }
+.seg-ctl { display: inline-flex; padding: 4px; border-radius: 999px; background: var(--ink-3); border: 1px solid var(--line); }
+.seg-ctl button { border: 0; background: transparent; color: var(--fg-2); font: 500 14px/1 var(--text); height: 38px; padding: 0 16px; border-radius: 999px; cursor: pointer; transition: background-color .2s, color .2s; }
+.seg-ctl button[aria-pressed="true"] { background: var(--fg); color: var(--ink); }
+.weeknav { display: flex; align-items: center; gap: 6px; }
+.weeknav .lbl { min-width: 128px; text-align: center; font-weight: 500; font-size: 15px; }
+.iconbtn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line-2); background: transparent; color: var(--fg); display: grid; place-items: center; cursor: pointer; }
+.iconbtn:hover:not([disabled]) { background: rgba(255,255,255,.07); }
+.iconbtn[disabled] { opacity: .3; cursor: default; }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; margin: 0 0 14px; padding: 0; list-style: none; font-size: 13px; color: var(--fg-2); }
+.legend li { display: inline-flex; align-items: center; gap: 7px; }
+.sw { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
+.sw.free { border: 1px solid var(--line-2); }
+.sw.taken { background: repeating-linear-gradient(135deg, rgba(255,255,255,.22) 0 2px, transparent 2px 5px), #222226; }
+.sw.desk { background: #26262b; }
+.sw.sel { background: var(--sun); }
+
+.grid { display: grid; grid-template-columns: 50px repeat(7, minmax(0, 1fr)); gap: 3px; position: relative; }
+.grid .dh { text-align: center; padding: 4px 0 8px; font-size: 13px; color: var(--fg-2); line-height: 1.25; }
+.grid .dh b { display: block; color: var(--fg); font: 500 17px/1.2 var(--mono); }
+.grid .dh.today b { width: fit-content; margin: 0 auto; padding: 0 8px; border-radius: 8px; background: rgba(255,255,255,.12); }
+.grid .tl { font: 400 12px/30px var(--mono); color: var(--fg-3); text-align: right; padding-right: 8px; height: 30px; }
+.cell { height: 30px; border-radius: 6px; border: 0; padding: 0 6px; font: 500 11.5px/30px var(--text); text-align: left; overflow: hidden; white-space: nowrap; color: var(--fg-3); background: transparent; }
+.cell.free { border: 1px solid rgba(255,255,255,.2); cursor: pointer; transition: border-color .15s, background-color .15s; }
+.cell.free:hover { border-color: var(--sun); background: rgba(255,122,61,.1); }
+.cell.taken { --run: #242428; background: repeating-linear-gradient(135deg, rgba(255,255,255,.16) 0 2px, transparent 2px 6px), var(--run); color: var(--fg-2); }
+.cell.desk { --run: #19191c; background: var(--run); color: var(--fg-3); }
+.cell.closed, .cell.past { background: transparent; }
+.cell.past.open { background: rgba(255,255,255,.025); }
+.cell.sel { --run: var(--sun); background: var(--sun); color: var(--sun-ink); border-color: var(--sun); font-weight: 600; }
+/* runs of the same state read as one block: square inner corners, the 3px gap filled */
+.cell.run { border-radius: 0; box-shadow: 0 3px 0 var(--run); }
+.cell.run.first { border-radius: 6px 6px 0 0; }
+.cell.run.last { border-radius: 0 0 6px 6px; box-shadow: none; }
+.cell.run.first.last { border-radius: 6px; }
+.cell.shake { animation: shake .35s; }
+@keyframes shake { 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+.gridwrap { position: relative; min-height: 200px; }
+.loading { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(19,19,21,.7); border-radius: 12px; color: var(--fg-2); font-size: 14px; }
+
+/* phone day picker */
+.days { display: none; gap: 6px; overflow-x: auto; padding-bottom: 6px; margin: 0 -2px 14px; scrollbar-width: none; }
+.days::-webkit-scrollbar { display: none; }
+.days button { flex: 1 0 40px; border: 1px solid var(--line); background: transparent; color: var(--fg-2); border-radius: 14px; padding: 8px 0; font: 500 12px/1.2 var(--text); cursor: pointer; }
+.days button b { display: block; font: 500 17px/1.3 var(--mono); color: var(--fg); }
+.days button[aria-pressed="true"] { background: var(--fg); color: var(--ink); border-color: var(--fg); }
+.days button[aria-pressed="true"] b { color: var(--ink); }
+.days button .mark { display: block; width: 5px; height: 5px; border-radius: 50%; margin: 4px auto 0; background: var(--free); }
+.days button .mark.none { background: transparent; }
+.slots { display: none; gap: 6px; }
+.slot { display: flex; align-items: center; justify-content: space-between; height: 48px; padding: 0 16px; border-radius: 12px; border: 1px solid var(--line); background: transparent; color: var(--fg); font: 500 15px var(--text); width: 100%; cursor: pointer; }
+.slot .mono { font-size: 15px; }
+.slot span:last-child { color: var(--fg-3); font-size: 14px; }
+.slot.taken { background: repeating-linear-gradient(135deg, rgba(255,255,255,.1) 0 2px, transparent 2px 6px), #1c1c20; color: var(--fg-3); cursor: default; }
+.slot.desk { background: #1b1b1f; border-color: transparent; color: var(--fg-3); cursor: default; }
+.slot.sel { background: var(--sun); border-color: var(--sun); color: var(--sun-ink); }
+.slot.sel span:last-child { color: var(--sun-ink); }
+.empty-day { color: var(--fg-3); padding: 18px 2px; }
+
+/* panel */
+.panel { background: var(--ink-3); border: 1px solid var(--line); border-radius: 22px; padding: 22px; align-self: start; position: sticky; top: 84px; }
+.panel h3 { font-size: 22px; letter-spacing: -0.02em; }
+.p-empty p { color: var(--fg-2); margin: 10px 0 0; }
+.p-when { padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.p-when b { display: block; font: 600 20px/1.2 var(--display); letter-spacing: -0.01em; }
+.p-when span { display: block; margin-top: 4px; color: var(--sun); font: 500 18px var(--mono); }
+.p-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.p-row > span { color: var(--fg-2); }
+.stepper { display: inline-flex; align-items: center; gap: 4px; }
+.stepper output { min-width: 56px; text-align: center; font: 500 16px var(--mono); }
+.stepper .iconbtn { width: 34px; height: 34px; }
+fieldset { border: 0; margin: 0; padding: 14px 0 4px; min-width: 0; }
+legend.fl { color: var(--fg-2); padding: 0; margin-bottom: 10px; font-size: 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips label { position: relative; }
+.chips input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.chips label > span { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line-2); font-size: 13.5px; color: var(--fg-2); transition: background-color .15s, color .15s, border-color .15s; }
+.chips label > span .icon { width: 15px; height: 15px; }
+.chips input:checked + span { background: var(--fg); color: var(--ink); border-color: var(--fg); }
+.chips input:focus-visible + span { outline: 2px solid var(--sun); outline-offset: 2px; }
+.fields { display: grid; gap: 8px; margin-top: 12px; }
+.field input {
+  width: 100%; height: 46px; border-radius: 12px; border: 1px solid var(--line-2); background: var(--ink-2);
+  color: var(--fg); padding: 0 14px; font: 400 15px var(--text);
+}
+.field input::placeholder { color: var(--fg-3); }
+.field input:focus { outline: none; border-color: var(--sun); }
+.field input[aria-invalid="true"] { border-color: #e0614b; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.p-total { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0 12px; }
+.p-total span { color: var(--fg-2); }
+.p-total b { font: 500 24px var(--mono); }
+.p-total small { display: block; color: var(--fg-3); font-size: 12.5px; text-align: right; }
+.p-err { color: #ff9a85; font-size: 14px; margin: 0 0 10px; min-height: 0; }
+.p-err:empty { display: none; }
+.panel .pill.primary { width: 100%; }
+.demo-note { color: var(--fg-3); font-size: 12.5px; margin: 12px 0 0; }
+.p-done .ok { width: 44px; height: 44px; border-radius: 50%; background: rgba(79,209,139,.14); color: var(--free); display: grid; place-items: center; margin-bottom: 14px; }
+.p-done p { color: var(--fg-2); margin: 8px 0 18px; }
+.linkbtn { background: none; border: 0; padding: 0; color: var(--fg); font: 500 15px var(--text); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+
+/* events */
+.events { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: end; }
+.ev-form { background: var(--ink-2); border: 1px solid var(--line); border-radius: 24px; padding: 22px; display: grid; gap: 14px; }
+.ev-form .row { display: flex; gap: 8px; }
+.ev-form .row .field { flex: 1; min-width: 0; }
+.ev-ok { color: var(--free); font-weight: 500; margin: 0; }
+
+/* where */
+.where { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: clamp(28px, 5vw, 72px); align-items: center; margin-top: 36px; }
+.addr { display: flex; gap: 12px; align-items: flex-start; font-size: 18px; }
+.addr .icon { margin-top: 4px; color: var(--sun); }
+.map { border-radius: 22px; overflow: hidden; border: 1px solid var(--line); background: var(--ink-3); aspect-ratio: 16 / 10; }
+.map iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+footer { margin-top: clamp(84px, 11vw, 140px); border-top: 1px solid var(--line); padding: 28px 0 calc(36px + env(safe-area-inset-bottom, 0px)); color: var(--fg-3); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+@media (max-width: 980px) {
+  .book { grid-template-columns: minmax(0, 1fr); }
+  .panel { position: static; }
+}
+@media (max-width: 819px) {
+  .grid, .weeknav .lbl-wide { display: none; }
+  .days { display: flex; }
+  .slots { display: grid; }
+  .legend { gap: 12px; }
+  .events, .where { grid-template-columns: minmax(0, 1fr); }
+  .offers figure { aspect-ratio: 16 / 10; }
+  .dayrow { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .rate li { grid-template-columns: minmax(0, 1fr); }
+  .rate .price { flex-direction: row; justify-content: space-between; align-items: center; text-align: left; }
+}
+@media (max-width: 480px) {
+  .hero::after { background: linear-gradient(180deg, rgba(11,11,12,.5) 0%, rgba(11,11,12,0) 18%, rgba(11,11,12,0) 34%, rgba(11,11,12,.8) 56%, var(--ink) 80%); }
+  .bar .pill.small { display: none; }
+  .hero-ctas .pill { flex: 1 1 auto; }
+  .ev-form .row { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-dots" viewBox="0 0 24 24"><circle cx="6" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="18" cy="12" r="1.2"/></symbol>
+</svg>
+
+<header class="bar" id="bar">
+  <div class="wrap">
+    <a class="brand" href="#top">Konstitucijos 9</a>
+    <div class="bar-right">
+      <div class="lang" role="group" aria-label="Kalba / Language">
+        <button type="button" data-lang="lt" aria-pressed="true">LT</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="pill primary small" href="#rezervacija" data-go="room" data-i18n="nav_book">Rezervuoti</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <img src="img/sunset.jpg" alt="" data-i18n-alt="hero_alt" width="1200" height="1600" fetchpriority="high">
+    <div class="wrap">
+      <div class="avail"><span class="dot" aria-hidden="true"></span><span id="availText"></span></div>
+      <h1 data-i18n="hero_h1">Darbo vieta 16 aukšte</h1>
+      <p data-i18n="hero_sub"></p>
+      <div class="hero-ctas">
+        <a class="pill primary" href="#rezervacija" data-go="room"><span data-i18n="cta_time"></span><svg class="icon"><use href="#i-arrow"/></svg></a>
+        <a class="pill ghost" href="#rezervacija" data-go="viewing" data-i18n="cta_view"></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block wrap" id="kainos">
+    <h2 data-i18n="offers_h"></h2>
+    <div class="offers">
+      <figure><img src="img/desk.jpg" alt="" data-i18n-alt="desk_alt" loading="lazy" width="1412" height="800"></figure>
+      <ul class="rate">
+        <li>
+          <div><h3 data-i18n="desk_name"></h3><p data-i18n="desk_desc"></p></div>
+          <div class="price"><b class="mono"><span id="deskPrice"></span><small data-i18n="per_month"></small></b><a class="pill ghost small" href="#rezervacija" data-go="viewing" data-i18n="btn_view"></a></div>
+        </li>
+        <li>
+          <div><h3 data-i18n="room_name"></h3><p data-i18n="room_desc"></p></div>
+          <div class="price"><b class="mono"><span id="roomPrice"></span><small data-i18n="per_hour"></small></b><a class="pill ghost small" href="#rezervacija" data-go="room" data-i18n="btn_time"></a></div>
+        </li>
+        <li>
+          <div><h3 data-i18n="events_name"></h3><p data-i18n="events_desc"></p></div>
+          <div class="price"><span class="tag" data-i18n="events_price"></span><a class="pill ghost small" href="#renginiai" data-i18n="btn_invite"></a></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block wrap">
+    <h2 data-i18n="when_h"></h2>
+    <div class="daybars" id="daybars"></div>
+  </section>
+
+  <section class="block wrap" id="rezervacija">
+    <h2 data-i18n="book_h"></h2>
+    <p class="lead" data-i18n="book_sub"></p>
+    <div class="book">
+      <div>
+        <div class="book-top">
+          <div class="seg-ctl" role="group" aria-label="Rezervacijos tipas">
+            <button type="button" data-mode="room" aria-pressed="true" data-i18n="tab_room"></button>
+            <button type="button" data-mode="viewing" aria-pressed="false" data-i18n="tab_view"></button>
+          </div>
+          <div class="weeknav">
+            <button class="iconbtn" type="button" id="prevWeek" aria-label="Ankstesnė savaitė"><svg class="icon"><use href="#i-left"/></svg></button>
+            <span class="lbl" id="weekLabel" aria-live="polite"></span>
+            <button class="iconbtn" type="button" id="nextWeek" aria-label="Kita savaitė"><svg class="icon"><use href="#i-right"/></svg></button>
+          </div>
+        </div>
+        <ul class="legend" id="legend"></ul>
+        <div class="days" id="days" role="group"></div>
+        <div class="gridwrap">
+          <div class="grid" id="grid"></div>
+          <div class="slots" id="slots"></div>
+          <div class="loading" id="loading" hidden></div>
+        </div>
+      </div>
+
+      <aside class="panel" aria-live="polite">
+        <div class="p-empty" id="pEmpty">
+          <h3 data-i18n="panel_h"></h3>
+          <p id="pEmptyText"></p>
+        </div>
+        <form class="p-form" id="pForm" hidden novalidate>
+          <div class="p-when"><b id="pDay"></b><span id="pTime"></span></div>
+          <div class="p-row" id="pDurRow">
+            <span data-i18n="duration"></span>
+            <div class="stepper">
+              <button class="iconbtn" type="button" id="durMinus" aria-label="−1 h"><svg class="icon"><use href="#i-minus"/></svg></button>
+              <output id="durOut"></output>
+              <button class="iconbtn" type="button" id="durPlus" aria-label="+1 h"><svg class="icon"><use href="#i-plus"/></svg></button>
+            </div>
+          </div>
+          <fieldset id="pPurpose">
+            <legend class="fl" data-i18n="purpose"></legend>
+            <div class="chips" id="purposeChips"></div>
+          </fieldset>
+          <div class="fields">
+            <label class="field"><input id="fName" name="name" autocomplete="name" data-i18n-ph="f_name"></label>
+            <label class="field"><input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" data-i18n-ph="f_phone"></label>
+            <label class="field"><input id="fEmail" name="email" type="email" autocomplete="email" data-i18n-ph="f_email"></label>
+            <label class="hp" aria-hidden="true">Website <input id="fWeb" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <div class="p-total"><span data-i18n="total"></span><div><b id="pTotal"></b><small id="pTotalNote"></small></div></div>
+          <p class="p-err" id="pErr" role="alert"></p>
+          <button class="pill primary" type="submit" id="pSubmit" data-i18n="btn_reserve"></button>
+          <p class="demo-note" id="demoNote" hidden data-i18n="demo_note"></p>
+        </form>
+        <div class="p-done" id="pDone" hidden>
+          <div class="ok"><svg class="icon"><use href="#i-check"/></svg></div>
+          <h3 id="pDoneH"></h3>
+          <p id="pDoneP"></p>
+          <button class="linkbtn" type="button" id="again" data-i18n="again"></button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="block wrap" id="renginiai">
+    <div class="events">
+      <div>
+        <h2 data-i18n="events_h"></h2>
+        <p class="lead" data-i18n="events_sub"></p>
+      </div>
+      <form class="ev-form" id="evForm" novalidate>
+        <div class="chips">
+          <label><input type="checkbox" name="interest" value="meetup"><span><svg class="icon"><use href="#i-users"/></svg><span data-i18n="ev_meetup"></span></span></label>
+          <label><input type="checkbox" name="interest" value="podcast"><span><svg class="icon"><use href="#i-mic"/></svg><span data-i18n="ev_podcast"></span></span></label>
+        </div>
+        <div class="row">
+          <label class="field"><input id="evContact" autocomplete="email" data-i18n-ph="ev_contact"></label>
+          <button class="pill primary" type="submit" data-i18n="ev_btn"></button>
+        </div>
+        <label class="hp" aria-hidden="true">Website <input id="evWeb" tabindex="-1" autocomplete="off"></label>
+        <p class="p-err" id="evErr" role="alert"></p>
+        <p class="ev-ok" id="evOk" hidden data-i18n="ev_ok"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="block wrap" id="kur">
+    <h2 data-i18n="where_h"></h2>
+    <div class="where">
+      <div>
+        <p class="addr"><svg class="icon"><use href="#i-pin"/></svg><span data-i18n="where_addr"></span></p>
+        <a class="pill ghost" style="margin-top:18px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Konstitucijos+pr.+9,+Vilnius" data-i18n="where_map"></a>
+      </div>
+      <div class="map"><iframe title="Žemėlapis" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Konstitucijos%20pr.%209%2C%20Vilnius&z=15&output=embed"></iframe></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>Konstitucijos pr. 9, Vilnius</span><span>© 2026</span></div>
+</footer>
+
+<script>
+/* ---------- settings Lauri changes ---------- */
+const CONFIG = {
+  API_URL: '',              // Google Apps Script web app URL. Empty = demo mode (bookings stay in this browser)
+  DESKS_TOTAL: 5,
+  DESKS_FREE: 3,
+  DESKS_FROM: { lt: 'gruodžio 1 d.', en: 'Dec 1' },
+  DESK_PRICE: 300,
+  ROOM_PRICE: 30,           // € per hour
+  ROOM_PRICE_LONG: 25,      // € per hour from ROOM_LONG_FROM hours
+  ROOM_LONG_FROM: 4,
+  ROOM_MIN: 2,              // hours
+  ROOM_MAX: 8,
+  DESK_HOURS: [8, 18],      // weekdays, desks in use
+  ROOM_HOURS: { weekday: [18, 22], weekend: [10, 22] },
+  VIEW_HOURS: [10, 18],     // weekdays only
+  VIEW_MIN: 30,             // minutes
+  LEAD_HOURS: 2,            // earliest booking from now
+  WEEKS_AHEAD: 4,
+};
+
+/* ---------- copy ---------- */
+const T = {
+  lt: {
+    nav_book: 'Rezervuoti',
+    hero_alt: 'Biuras 16 aukšte saulėlydžio metu, pro langus matyti Neris ir miestas',
+    hero_h1: 'Darbo vieta 16 aukšte',
+    hero_sub: 'Konstitucijos pr. 9, Vilnius. Penkios darbo vietos su langais į Nerį ir miestą. Vakarais ir savaitgaliais visą biurą galima išsinuomoti valandai.',
+    avail: 'Laisvos {free} vietos iš {total} nuo {from}',
+    cta_time: 'Pasirink laiką', cta_view: 'Užsuk apžiūrėti',
+    offers_h: 'Ką čia galima išsinuomoti',
+    desk_alt: 'Darbo vietos dieną, dideli langai į miestą',
+    desk_name: 'Darbo vieta', desk_desc: 'Tavo stalas, kėdė ir monitorius. Virtuvė, internetas ir komunaliniai įskaičiuoti. Mokama mėnesiui į priekį.',
+    per_month: '/ mėn.',
+    room_name: 'Visas biuras valandai', room_desc: 'Fotosesijoms, podcast\'ams, dirbtuvėms ir susitikimams. Vakarais ir savaitgaliais, nuo 2 valandų. Nuo 4 valandų €25 / val.',
+    per_hour: '/ val.',
+    events_name: 'Renginiai', events_desc: 'Susitikimai ir podcast įrašai gyvai šiame biure. Pirmos datos jau greitai.',
+    events_price: 'Su kvietimu',
+    btn_view: 'Apžiūrėti', btn_time: 'Pasirink laiką', btn_invite: 'Gauti kvietimą',
+    when_h: 'Kas ir kada naudoja biurą',
+    when_weekday: 'Pirmadienis-penktadienis', when_weekend: 'Šeštadienis ir sekmadienis',
+    seg_desk: 'Darbo vietos', seg_room: 'Biuras valandai',
+    book_h: 'Rezervacija',
+    book_sub: 'Pilki laikai jau užimti. Pasirink laisvą, ir jis iškart taps tavo.',
+    tab_room: 'Biuras valandai', tab_view: 'Biuro apžiūra',
+    l_free: 'Laisva', l_taken: 'Užimta', l_desk: 'Darbo vietos', l_sel: 'Tavo laikas',
+    loading: 'Kraunami laikai...',
+    panel_h: 'Tavo laikas',
+    panel_empty_room: 'Pasirink pradžią kalendoriuje. Mažiausiai 2 valandos.',
+    panel_empty_view: 'Pasirink laiką apžiūrai. Ji trunka apie 20 minučių.',
+    duration: 'Trukmė', purpose: 'Kam',
+    p_photo: 'Fotosesija', p_podcast: 'Podcast', p_workshop: 'Dirbtuvės', p_meeting: 'Susitikimas', p_other: 'Kita',
+    f_name: 'Vardas', f_phone: 'Telefonas', f_email: 'El. paštas',
+    total: 'Iš viso', free_price: 'Nemokama', long_note: 'po €{p} / val.',
+    btn_reserve: 'Rezervuoti', btn_reserving: 'Rezervuojama...',
+    ok_room_h: 'Laikas tavo', ok_room: 'Patvirtinimą ir mokėjimo nuorodą atsiųsime šiandien.',
+    ok_view_h: 'Iki susitikimo', ok_view: 'Atsiųsime, kaip įeiti į pastatą.',
+    again: 'Rezervuoti kitą laiką',
+    err_short: 'Nuo čia laisva tik {n} val. Reikia bent {m}.',
+    err_name: 'Įrašyk vardą.', err_contact: 'Reikia telefono arba el. pašto.',
+    err_taken: 'Šį laiką ką tik kažkas užėmė. Pasirink kitą.', err_net: 'Nepavyko išsiųsti. Pabandyk dar kartą.',
+    demo_note: 'Demo režimas. Rezervacijos kol kas saugomos tik šioje naršyklėje.',
+    no_room: 'Šią dieną biuro valandai nuomoti negalima.', no_view: 'Apžiūros vyksta darbo dienomis.', no_left: 'Šią dieną laisvų laikų nebeliko.',
+    desk_block: 'Darbo vietos užimtos',
+    events_h: 'Renginiai',
+    events_sub: 'Susitikimai ir podcast įrašai gyvai šiame biure. Pažymėk, kas įdomu, ir palik kontaktą. Pirmą kvietimą atsiųsime, kai bus data.',
+    ev_meetup: 'Susitikimai', ev_podcast: 'Podcast įrašai gyvai', ev_contact: 'El. paštas arba telefonas', ev_btn: 'Gauti kvietimą',
+    ev_ok: 'Ačiū, kvietimą atsiųsime.', ev_pick: 'Pažymėk bent vieną.', ev_need: 'Įrašyk el. paštą arba telefoną.',
+    where_h: 'Kur', where_addr: 'Konstitucijos pr. 9, 16 aukštas, Vilnius', where_map: 'Atidaryti žemėlapyje',
+    days: ['Pr', 'An', 'Tr', 'Kt', 'Pn', 'Št', 'Sk'],
+    daysLong: ['Pirmadienis', 'Antradienis', 'Trečiadienis', 'Ketvirtadienis', 'Penktadienis', 'Šeštadienis', 'Sekmadienis'],
+    mShort: ['saus.', 'vas.', 'kov.', 'bal.', 'geg.', 'birž.', 'liep.', 'rugp.', 'rugs.', 'spal.', 'lapkr.', 'gruod.'],
+    mGen: ['sausio', 'vasario', 'kovo', 'balandžio', 'gegužės', 'birželio', 'liepos', 'rugpjūčio', 'rugsėjo', 'spalio', 'lapkričio', 'gruodžio'],
+    h: 'val.',
+  },
+  en: {
+    nav_book: 'Book',
+    hero_alt: 'The office on the 16th floor at sunset, the Neris and the city through the windows',
+    hero_h1: 'A desk on the 16th floor',
+    hero_sub: 'Konstitucijos Ave 9, Vilnius. Five desks with windows over the Neris and the city. On evenings and weekends you can rent the whole room by the hour.',
+    avail: '{free} of {total} desks free from {from}',
+    cta_time: 'Pick a time', cta_view: 'Come see it',
+    offers_h: 'What you can rent here',
+    desk_alt: 'The desks by day, big windows over the city',
+    desk_name: 'A desk of your own', desk_desc: 'Your own desk, chair and monitor. Kitchen, internet and utilities included. Paid a month ahead.',
+    per_month: '/ month',
+    room_name: 'The whole room by the hour', room_desc: 'For photo shoots, podcasts, workshops and meetings. Evenings and weekends, 2 hours minimum. From 4 hours €25 an hour.',
+    per_hour: '/ hour',
+    events_name: 'Events', events_desc: 'Meetups and live podcast recordings in this room. First dates soon.',
+    events_price: 'By invite',
+    btn_view: 'See it', btn_time: 'Pick a time', btn_invite: 'Get the invite',
+    when_h: 'Who uses the room when',
+    when_weekday: 'Monday to Friday', when_weekend: 'Saturday and Sunday',
+    seg_desk: 'Desks', seg_room: 'Room by the hour',
+    book_h: 'Booking',
+    book_sub: 'Grey times are taken. Pick a free one and it\'s yours right away.',
+    tab_room: 'Room by the hour', tab_view: 'Viewing',
+    l_free: 'Free', l_taken: 'Taken', l_desk: 'Desks in use', l_sel: 'Your time',
+    loading: 'Loading times...',
+    panel_h: 'Your time',
+    panel_empty_room: 'Pick a start time in the calendar. 2 hours minimum.',
+    panel_empty_view: 'Pick a time for the viewing. It takes about 20 minutes.',
+    duration: 'Length', purpose: 'What for',
+    p_photo: 'Photo shoot', p_podcast: 'Podcast', p_workshop: 'Workshop', p_meeting: 'Meeting', p_other: 'Other',
+    f_name: 'Name', f_phone: 'Phone', f_email: 'Email',
+    total: 'Total', free_price: 'Free', long_note: '€{p} an hour',
+    btn_reserve: 'Book it', btn_reserving: 'Booking...',
+    ok_room_h: 'The time is yours', ok_room: 'We\'ll send a confirmation and a payment link today.',
+    ok_view_h: 'See you then', ok_view: 'We\'ll send you how to get into the building.',
+    again: 'Book another time',
+    err_short: 'Only {n} h free from here. You need at least {m}.',
+    err_name: 'Add your name.', err_contact: 'Add a phone or an email.',
+    err_taken: 'Someone just took this time. Pick another one.', err_net: 'Couldn\'t send it. Try again.',
+    demo_note: 'Demo mode. Bookings are only saved in this browser for now.',
+    no_room: 'The room can\'t be booked this day.', no_view: 'Viewings are on weekdays.', no_left: 'No free times left this day.',
+    desk_block: 'Desks in use',
+    events_h: 'Events',
+    events_sub: 'Meetups and live podcast recordings in this room. Tick what you like and leave a contact. We\'ll send the first invite once there\'s a date.',
+    ev_meetup: 'Meetups', ev_podcast: 'Live podcast recordings', ev_contact: 'Email or phone', ev_btn: 'Get the invite',
+    ev_ok: 'Thanks, we\'ll send the invite.', ev_pick: 'Tick at least one.', ev_need: 'Add an email or a phone.',
+    where_h: 'Where', where_addr: 'Konstitucijos Ave 9, 16th floor, Vilnius', where_map: 'Open in Maps',
+    days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    daysLong: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    mShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    mGen: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    h: 'h',
+  },
+};
+const PURPOSES = [['photo', 'i-camera'], ['podcast', 'i-mic'], ['workshop', 'i-users'], ['meeting', 'i-chat'], ['other', 'i-dots']];
+
+/* ---------- state ---------- */
+const $ = id => document.getElementById(id);
+const store = {
+  get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
+};
+const params = new URLSearchParams(location.search);
+const S = {
+  lang: params.get('lang') === 'en' ? 'en' : (store.get('k9-lang') || 'lt'),
+  mode: 'room', week: 0, day: null, sel: null, hours: CONFIG.ROOM_MIN, purpose: 'photo',
+  bookings: [], loaded: false, busy: false,
+};
+const DEMO = !CONFIG.API_URL;
+const t = (k, vars) => { let s = (T[S.lang][k] ?? T.lt[k] ?? k); if (vars) for (const v in vars) s = s.replace('{' + v + '}', vars[v]); return s; };
+const pad = n => String(n).padStart(2, '0');
+const hm = m => pad(Math.floor(m / 60)) + ':' + pad(m % 60);
+const wd = d => (d.getDay() + 6) % 7;
+const startOfDay = d => { const x = new Date(d); x.setHours(0, 0, 0, 0); return x; };
+const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+// the calendar shows 7 days starting today, so the first view always has bookable times
+const monday = off => addDays(startOfDay(new Date()), off * 7);
+const at = (day, min) => { const x = new Date(day); x.setHours(0, min, 0, 0); return x; };
+const horizonEnd = () => addDays(monday(0), CONFIG.WEEKS_AHEAD * 7);
+
+/* ---------- i18n ---------- */
+function applyLang() {
+  document.documentElement.lang = S.lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => { el.alt = t(el.dataset.i18nAlt); });
+  document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === S.lang)));
+  $('availText').textContent = t('avail', { free: CONFIG.DESKS_FREE, total: CONFIG.DESKS_TOTAL, from: CONFIG.DESKS_FROM[S.lang] });
+  $('deskPrice').textContent = '€' + CONFIG.DESK_PRICE;
+  $('roomPrice').textContent = '€' + CONFIG.ROOM_PRICE;
+  $('demoNote').hidden = !DEMO;
+  renderPurpose(); renderDaybars(); renderLegend(); render();
+}
+
+/* ---------- day bars ---------- */
+function renderDaybars() {
+  const pct = h => (h / 24 * 100).toFixed(3) + '%';
+  const seg = (cls, [a, b], label) => `<div class="seg ${cls}" style="left:${pct(a)};width:${pct(b - a)}">${label}</div>`;
+  const ticks = '<div class="ticks">' + [0, 6, 12, 18, 24].map(h => `<span style="left:${pct(h)}">${pad(h)}:00</span>`).join('') + '</div>';
+  $('daybars').innerHTML =
+    `<div class="dayrow"><span>${t('when_weekday')}</span><div><div class="track24">${seg('desk', CONFIG.DESK_HOURS, t('seg_desk'))}${seg('room', CONFIG.ROOM_HOURS.weekday, t('seg_room'))}</div>${ticks}</div></div>` +
+    `<div class="dayrow"><span>${t('when_weekend')}</span><div><div class="track24">${seg('room', CONFIG.ROOM_HOURS.weekend, t('seg_room'))}</div>${ticks}</div></div>`;
+}
+
+/* ---------- slots ---------- */
+const slotLen = () => S.mode === 'room' ? 60 : CONFIG.VIEW_MIN;
+function rowMins() {
+  const out = [];
+  if (S.mode === 'room') { for (let m = CONFIG.DESK_HOURS[0] * 60; m < Math.max(CONFIG.ROOM_HOURS.weekday[1], CONFIG.ROOM_HOURS.weekend[1]) * 60; m += 60) out.push(m); }
+  else { for (let m = CONFIG.VIEW_HOURS[0] * 60; m < CONFIG.VIEW_HOURS[1] * 60; m += CONFIG.VIEW_MIN) out.push(m); }
+  return out;
+}
+function isTaken(s, e) { return S.bookings.some(b => b.s < e && b.e > s); }
+function cellState(day, min) {
+  const s = at(day, min), e = new Date(s.getTime() + slotLen() * 60000);
+  const weekend = wd(day) >= 5;
+  let open;
+  if (S.mode === 'room') {
+    if (!weekend && min >= CONFIG.DESK_HOURS[0] * 60 && min < CONFIG.DESK_HOURS[1] * 60) return 'desk';
+    const [a, b] = weekend ? CONFIG.ROOM_HOURS.weekend : CONFIG.ROOM_HOURS.weekday;
+    open = min >= a * 60 && min + 60 <= b * 60;
+  } else {
+    open = !weekend && min >= CONFIG.VIEW_HOURS[0] * 60 && min + CONFIG.VIEW_MIN <= CONFIG.VIEW_HOURS[1] * 60;
+  }
+  if (!open) return 'closed';
+  if (s.getTime() < Date.now() + CONFIG.LEAD_HOURS * 3600000 || s >= horizonEnd()) return 'past';
+  if (isTaken(s, e)) return 'taken';
+  return 'free';
+}
+function freeHoursFrom(day, min) {
+  let n = 0;
+  while (n < CONFIG.ROOM_MAX && cellState(day, min + n * 60) === 'free') n++;
+  return n;
+}
+function selRange() {
+  if (!S.sel) return null;
+  const len = S.mode === 'room' ? S.hours * 60 : CONFIG.VIEW_MIN;
+  return { s: at(S.sel.day, S.sel.min), e: at(S.sel.day, S.sel.min + len), len };
+}
+function inSel(day, min) {
+  const r = selRange(); if (!r) return false;
+  const s = at(day, min);
+  return s >= r.s && s < r.e;
+}
+
+/* ---------- render ---------- */
+function renderLegend() {
+  const items = [['free', t('l_free')], ['taken', t('l_taken')]];
+  if (S.mode === 'room') items.push(['desk', t('l_desk')]);
+  items.push(['sel', t('l_sel')]);
+  $('legend').innerHTML = items.map(([c, l]) => `<li><span class="sw ${c}"></span>${l}</li>`).join('');
+}
+function weekLabel() {
+  const a = monday(S.week), b = addDays(a, 6), m = T[S.lang].mShort;
+  return a.getMonth() === b.getMonth()
+    ? (S.lang === 'lt' ? `${m[a.getMonth()]} ${a.getDate()}-${b.getDate()}` : `${a.getDate()}-${b.getDate()} ${m[a.getMonth()]}`)
+    : (S.lang === 'lt' ? `${m[a.getMonth()]} ${a.getDate()} - ${m[b.getMonth()]} ${b.getDate()}` : `${a.getDate()} ${m[a.getMonth()]} - ${b.getDate()} ${m[b.getMonth()]}`);
+}
+function render() {
+  const mon = monday(S.week), today = startOfDay(new Date()).getTime();
+  const days = [...Array(7)].map((_, i) => addDays(mon, i));
+  const rows = rowMins();
+  $('weekLabel').textContent = weekLabel();
+  $('prevWeek').disabled = S.week <= 0;
+  $('nextWeek').disabled = S.week >= CONFIG.WEEKS_AHEAD - 1;
+  $('loading').hidden = S.loaded; $('loading').textContent = t('loading');
+
+  // desktop grid
+  let g = '<div></div>' + days.map(d => `<div class="dh${d.getTime() === today ? ' today' : ''}">${T[S.lang].days[wd(d)]}<b>${d.getDate()}</b></div>`).join('');
+  rows.forEach((min, ri) => {
+    g += `<div class="tl">${hm(min)}</div>`;
+    days.forEach((d, di) => {
+      const st = cellState(d, min);
+      const sel = inSel(d, min);
+      const cls = ['cell', st];
+      let label = '';
+      const kindAt = i => i < 0 || i >= rows.length ? null : (inSel(d, rows[i]) ? 'sel' : cellState(d, rows[i]));
+      const k = sel ? 'sel' : st;
+      if (k === 'desk' || k === 'taken' || k === 'sel') {
+        cls.push('run');
+        const first = kindAt(ri - 1) !== k, last = kindAt(ri + 1) !== k;
+        if (first) cls.push('first');
+        if (last) cls.push('last');
+        if (first) label = k === 'desk' ? t('l_desk') : k === 'taken' ? t('l_taken') : hm(S.sel.min) + '-' + hm(S.sel.min + selRange().len);
+      }
+      if (st === 'past') cls.push('open');
+      if (sel) cls.push('sel');
+      if (st === 'free' || sel) g += `<button type="button" class="${cls.join(' ')}" data-d="${di}" data-m="${min}" aria-label="${T[S.lang].daysLong[wd(d)]} ${hm(min)}">${label}</button>`;
+      else g += `<div class="${cls.join(' ')}">${label}</div>`;
+    });
+  });
+  $('grid').innerHTML = g;
+
+  // phone day pills + slots
+  if (S.day === null) {
+    const first = days.findIndex(d => rows.some(m => cellState(d, m) === 'free'));
+    S.day = first >= 0 ? first : Math.max(0, days.findIndex(d => d.getTime() >= today));
+  }
+  $('days').innerHTML = days.map((d, i) => {
+    const has = rows.some(m => cellState(d, m) === 'free');
+    return `<button type="button" data-i="${i}" aria-pressed="${i === S.day}">${T[S.lang].days[wd(d)]}<b>${d.getDate()}</b><span class="mark${has ? '' : ' none'}"></span></button>`;
+  }).join('');
+  const d = days[S.day];
+  const states = rows.map(m => [m, cellState(d, m)]);
+  let html = '';
+  const deskRows = states.filter(([, st]) => st === 'desk');
+  if (deskRows.length) html += `<div class="slot desk"><span class="mono">${hm(deskRows[0][0])}-${hm(deskRows[deskRows.length - 1][0] + 60)}</span><span>${t('desk_block')}</span></div>`;
+  states.filter(([, st]) => st === 'free' || st === 'taken').forEach(([m, st]) => {
+    const sel = inSel(d, m);
+    const right = sel ? t('l_sel') : st === 'taken' ? t('l_taken') : t('l_free');
+    html += st === 'free'
+      ? `<button type="button" class="slot${sel ? ' sel' : ''}" data-d="${S.day}" data-m="${m}"><span class="mono">${hm(m)}</span><span>${right}</span></button>`
+      : `<div class="slot taken"><span class="mono">${hm(m)}</span><span>${right}</span></div>`;
+  });
+  if (!states.some(([, st]) => st === 'free' || st === 'taken')) {
+    const weekend = wd(d) >= 5;
+    html += `<p class="empty-day">${S.mode === 'viewing' && weekend ? t('no_view') : states.some(([, st]) => st === 'past') ? t('no_left') : t('no_room')}</p>`;
+  }
+  $('slots').innerHTML = html;
+  renderPanel();
+}
+
+function renderPanel() {
+  const r = selRange();
+  $('pEmptyText').textContent = S.mode === 'room' ? t('panel_empty_room') : t('panel_empty_view');
+  if ($('pDone').hidden === false) return;
+  $('pEmpty').hidden = !!r; $('pForm').hidden = !r;
+  if (!r) return;
+  const day = S.sel.day;
+  $('pDay').textContent = S.lang === 'lt'
+    ? `${T.lt.daysLong[wd(day)]}, ${T.lt.mGen[day.getMonth()]} ${day.getDate()} d.`
+    : `${T.en.daysLong[wd(day)]}, ${day.getDate()} ${T.en.mGen[day.getMonth()]}`;
+  $('pTime').textContent = hm(S.sel.min) + '-' + hm(S.sel.min + r.len);
+  $('pDurRow').hidden = S.mode !== 'room';
+  $('pPurpose').hidden = S.mode !== 'room';
+  if (S.mode === 'room') {
+    const max = Math.min(CONFIG.ROOM_MAX, freeHoursFrom(day, S.sel.min));
+    $('durOut').textContent = S.hours + ' ' + T[S.lang].h;
+    $('durMinus').disabled = S.hours <= CONFIG.ROOM_MIN;
+    $('durPlus').disabled = S.hours >= max;
+    const long = S.hours >= CONFIG.ROOM_LONG_FROM;
+    $('pTotal').textContent = '€' + S.hours * (long ? CONFIG.ROOM_PRICE_LONG : CONFIG.ROOM_PRICE);
+    $('pTotalNote').textContent = long ? t('long_note', { p: CONFIG.ROOM_PRICE_LONG }) : '';
+  } else {
+    $('pTotal').textContent = t('free_price');
+    $('pTotalNote').textContent = '';
+  }
+  $('pSubmit').textContent = S.busy ? t('btn_reserving') : t('btn_reserve');
+  $('pSubmit').disabled = S.busy;
+}
+function renderPurpose() {
+  $('purposeChips').innerHTML = PURPOSES.map(([k, ic]) =>
+    `<label><input type="radio" name="purpose" value="${k}"${S.purpose === k ? ' checked' : ''}><span><svg class="icon"><use href="#${ic}"/></svg>${t('p_' + k)}</span></label>`).join('');
+}
+
+/* ---------- interactions ---------- */
+function pick(di, min, el) {
+  const day = addDays(monday(S.week), di);
+  $('pErr').textContent = '';
+  showForm();
+  if (S.mode === 'room') {
+    const n = freeHoursFrom(day, min);
+    if (n < CONFIG.ROOM_MIN) {
+      S.sel = null; render();
+      $('pEmptyText').textContent = t('err_short', { n, m: CONFIG.ROOM_MIN });
+      const c = document.querySelector(`[data-d="${di}"][data-m="${min}"]`);
+      if (c) { c.classList.remove('shake'); void c.offsetWidth; c.classList.add('shake'); }
+      return;
+    }
+    S.hours = Math.min(Math.max(S.hours, CONFIG.ROOM_MIN), n);
+  }
+  S.sel = { day, min };
+  render();
+  if (matchMedia('(max-width: 980px)').matches) document.querySelector('.panel').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
+}
+function setMode(m) {
+  if (S.mode === m) return;
+  S.mode = m; S.sel = null; S.day = null; showForm();
+  document.querySelectorAll('[data-mode]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === m)));
+  renderLegend(); render();
+}
+function showForm() { $('pDone').hidden = true; }
+
+document.addEventListener('click', e => {
+  const c = e.target.closest('.cell[data-d], .slot[data-d]');
+  if (c) return pick(+c.dataset.d, +c.dataset.m, c);
+  const dp = e.target.closest('#days button');
+  if (dp) { S.day = +dp.dataset.i; return render(); }
+  const go = e.target.closest('[data-go]');
+  if (go) setMode(go.dataset.go);
+  const md = e.target.closest('[data-mode]');
+  if (md) return setMode(md.dataset.mode);
+  const lb = e.target.closest('.lang button');
+  if (lb) { S.lang = lb.dataset.lang; store.set('k9-lang', S.lang); applyLang(); }
+});
+$('prevWeek').onclick = () => { S.week = Math.max(0, S.week - 1); S.day = null; render(); };
+$('nextWeek').onclick = () => { S.week = Math.min(CONFIG.WEEKS_AHEAD - 1, S.week + 1); S.day = null; render(); };
+$('durMinus').onclick = () => { S.hours = Math.max(CONFIG.ROOM_MIN, S.hours - 1); render(); };
+$('durPlus').onclick = () => { S.hours = Math.min(CONFIG.ROOM_MAX, freeHoursFrom(S.sel.day, S.sel.min), S.hours + 1); render(); };
+$('purposeChips').addEventListener('change', e => { S.purpose = e.target.value; });
+$('again').onclick = () => { S.sel = null; showForm(); render(); };
+const bar = $('bar');
+const onScroll = () => bar.classList.toggle('solid', scrollY > 40);
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+matchMedia('(max-width: 819px)').addEventListener('change', render);
+
+/* ---------- data: demo or Apps Script ---------- */
+function demoSeed() {
+  // example bookings so the demo looks lived in: (week, weekday 0=Mon, hour, hours, kind)
+  const out = [], today = startOfDay(new Date());
+  const mk = (w, wday, h, len, kind) => {
+    const day = addDays(today, w * 7 + ((wday - wd(today) + 7) % 7));
+    out.push({ s: at(day, h * 60).getTime(), e: at(day, h * 60 + len * 60).getTime(), kind });
+  };
+  mk(0, 1, 19, 2, 'room'); mk(0, 3, 18, 3, 'room'); mk(0, 5, 12, 4, 'room'); mk(0, 6, 10, 3, 'room'); mk(0, 2, 15, .5, 'viewing'); mk(0, 3, 11.5, .5, 'viewing');
+  mk(1, 0, 19, 3, 'room'); mk(1, 4, 18, 4, 'room'); mk(1, 5, 14, 4, 'room'); mk(1, 6, 16, 2, 'room'); mk(1, 1, 16, .5, 'viewing');
+  mk(2, 3, 18, 4, 'room'); mk(2, 5, 10, 6, 'room');
+  return out;
+}
+async function load() {
+  S.loaded = false; render();
+  try {
+    if (DEMO) {
+      await new Promise(r => setTimeout(r, 350));
+      S.bookings = demoSeed().concat(store.get('k9-demo') || []);
+    } else {
+      const from = monday(0).toISOString(), to = horizonEnd().toISOString();
+      const res = await fetch(`${CONFIG.API_URL}?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`);
+      const j = await res.json();
+      S.bookings = (j.bookings || []).map(b => ({ s: Date.parse(b.start), e: Date.parse(b.end), kind: b.kind }));
+    }
+  } catch (err) { /* keep what we have; the grid still renders */ }
+  S.loaded = true; render();
+}
+async function send(payload) {
+  if (DEMO) {
+    await new Promise(r => setTimeout(r, 500));
+    if (payload.kind !== 'interest') {
+      const s = Date.parse(payload.start), e = Date.parse(payload.end);
+      if (isTaken(s, e)) return { ok: false, error: 'taken' };
+      const mine = store.get('k9-demo') || []; mine.push({ s, e, kind: payload.kind }); store.set('k9-demo', mine);
+    }
+    return { ok: true };
+  }
+  const res = await fetch(CONFIG.API_URL, { method: 'POST', body: JSON.stringify(payload) });
+  return res.json();
+}
+
+$('pForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  if (S.busy || !S.sel) return;
+  const name = $('fName').value.trim(), phone = $('fPhone').value.trim(), email = $('fEmail').value.trim();
+  $('fName').setAttribute('aria-invalid', String(!name));
+  const noContact = !phone && !/^\S+@\S+\.\S+$/.test(email);
+  $('fPhone').setAttribute('aria-invalid', String(noContact)); $('fEmail').setAttribute('aria-invalid', String(noContact));
+  if (!name) { $('pErr').textContent = t('err_name'); return $('fName').focus(); }
+  if (noContact) { $('pErr').textContent = t('err_contact'); return $('fPhone').focus(); }
+  const r = selRange();
+  const payload = {
+    kind: S.mode, start: r.s.toISOString(), end: r.e.toISOString(),
+    purpose: S.mode === 'room' ? S.purpose : '', name, phone, email, lang: S.lang, website: $('fWeb').value,
+  };
+  S.busy = true; $('pErr').textContent = ''; renderPanel();
+  let res;
+  try { res = await send(payload); } catch (err) { res = { ok: false, error: 'net' }; }
+  S.busy = false;
+  if (res && res.ok) {
+    S.bookings.push({ s: r.s.getTime(), e: r.e.getTime(), kind: S.mode });
+    const wasRoom = S.mode === 'room';
+    S.sel = null;
+    $('pForm').hidden = true; $('pEmpty').hidden = true; $('pDone').hidden = false;
+    $('pDoneH').textContent = wasRoom ? t('ok_room_h') : t('ok_view_h');
+    $('pDoneP').textContent = wasRoom ? t('ok_room') : t('ok_view');
+    render();
+  } else {
+    $('pErr').textContent = res && res.error === 'taken' ? t('err_taken') : t('err_net');
+    if (res && res.error === 'taken') { await load(); S.sel = null; render(); $('pEmptyText').textContent = t('err_taken'); }
+    else renderPanel();
+  }
+});
+
+$('evForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const picks = [...document.querySelectorAll('input[name="interest"]:checked')].map(i => i.value);
+  const contact = $('evContact').value.trim();
+  $('evOk').hidden = true;
+  if (!picks.length) { $('evErr').textContent = t('ev_pick'); return; }
+  if (contact.length < 5) { $('evErr').textContent = t('ev_need'); return $('evContact').focus(); }
+  $('evErr').textContent = '';
+  try {
+    const res = await send({ kind: 'interest', interests: picks, contact, lang: S.lang, website: $('evWeb').value });
+    if (res && res.ok) { $('evOk').hidden = false; e.target.reset(); } else $('evErr').textContent = t('err_net');
+  } catch (err) { $('evErr').textContent = t('err_net'); }
+});
+
+applyLang();
+load();
+if (!DEMO) setInterval(() => { if (!S.busy) load(); }, 60000);
+</script>
+</body>
+</html>
