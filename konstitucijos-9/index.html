@@ -3,277 +3,323 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Konstitucijos 9, darbo vietos ir biuras valandai</title>
-<meta name="description" content="Darbo vieta 16 aukšte, Konstitucijos pr. 9, Vilnius. Biuras valandai fotosesijoms, podcast'ams ir dirbtuvėms.">
-<meta name="theme-color" content="#0b0b0c">
-<meta name="robots" content="noindex">  <!-- remove once bookings go live -->
-
+<meta name="robots" content="noindex"><!-- remove once bookings go live -->
+<title>Konstitucijos 9, biuras 16 aukšte</title>
+<meta name="description" content="Darbo vieta, visas biuras valandai ir renginiai 16 aukšte, Konstitucijos pr. 9, Vilnius. Rezervuok laiką internetu.">
+<meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=Figtree:wght@400..700&display=swap" rel="stylesheet">
 <style>
-/* Evening on the 16th floor: near-black room, one sunset accent for action and selection, green only for "free". */
-:root {
-  --ink: #0b0b0c;
-  --ink-2: #131315;
-  --ink-3: #1b1b1e;
-  --line: rgba(255,255,255,.09);
-  --line-2: rgba(255,255,255,.17);
-  --fg: #f3f1ec;
-  --fg-2: #bdb8b0;
-  --fg-3: #8f8a83;
-  --sun: #ff7a3d;
-  --sun-ink: #1a0d06;
-  --free: #4fd18b;
-  --display: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --text: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --gut: max(20px, env(safe-area-inset-left, 0px));
-  --gut-r: max(20px, env(safe-area-inset-right, 0px));
-  color-scheme: dark;
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+:root{
+  --ink:#161616; --ink2:#5c5c5c; --ink3:#737373;
+  --line:#e6e6e3; --line2:#d4d4d0; --soft:#f5f5f3; --soft2:#e6e6e1;
+  --hl:#ff9ad2; --pink:#c8006e; --pink2:#a8005c; --green:#10a050;
+  --r:18px;
+  --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --ui:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --shadow:0 6px 18px rgba(0,0,0,.11);
+  --gut:clamp(16px,4vw,40px);
+  --ease:cubic-bezier(.16,1,.3,1);
 }
-* { box-sizing: border-box; }
-[hidden] { display: none !important; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body {
-  margin: 0; background: var(--ink); color: var(--fg);
-  font: 400 16px/1.55 var(--text); -webkit-font-smoothing: antialiased;
-  caret-color: var(--sun);
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:96px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+html,body{overflow-x:clip}
+body{margin:0;background:#fff;color:var(--ink);font:400 16px/1.55 var(--ui);-webkit-font-smoothing:antialiased;caret-color:var(--pink)}
+::selection{background:var(--hl);color:var(--ink)}
+img{display:block;max-width:100%}
+a{color:inherit}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 var(--gut)}
+.icon{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.disp{font-family:var(--display);font-stretch:125%;font-weight:850;text-transform:uppercase;letter-spacing:-.012em;line-height:.9}
+
+/* ---------- top bar ---------- */
+.top{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid transparent;transition:border-color .2s}
+.top.solid{border-color:var(--line)}
+.top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:80px;gap:16px}
+.brand{font-family:var(--display);font-stretch:125%;font-weight:900;font-size:19px;text-transform:uppercase;text-decoration:none;letter-spacing:-.01em;white-space:nowrap;justify-self:start}
+.tabs{display:flex;gap:30px}
+.tabs a{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:600;font-size:15px;color:var(--ink2);padding:12px 2px 10px;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.tabs a:hover{color:var(--ink)}
+.tabs a[aria-current="true"]{color:var(--ink);border-color:var(--ink)}
+.tabs .icon{width:20px;height:20px}
+.right{display:flex;justify-content:flex-end;align-items:center;gap:12px}
+.lang{display:inline-flex;border:1px solid var(--line2);border-radius:999px;padding:3px}
+.lang button{border:0;background:none;padding:5px 11px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;color:var(--ink2)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
+
+/* ---------- buttons ---------- */
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;background:var(--pink);color:#fff;font-weight:600;font-size:16px;height:50px;padding:0 26px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .15s,transform .15s var(--ease)}
+.cta:hover{background:var(--pink2)}
+.cta:active{transform:scale(.97)}
+.cta:disabled{opacity:.6;cursor:default}
+.cta.small{height:40px;padding:0 18px;font-size:15px}
+.cta.block{width:100%}
+.cta .icon{width:18px;height:18px;stroke-width:2}
+.ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:50px;padding:0 24px;border-radius:999px;border:1.5px solid var(--ink);background:#fff;font-weight:600;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .15s}
+.ghost:hover{background:var(--soft)}
+
+/* ---------- hero ---------- */
+.hero{padding:40px 0 28px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) 330px;align-items:end;gap:28px 56px}
+.hero h1{margin:0;font-size:clamp(46px,7.8vw,96px);text-wrap:balance}
+.sticker{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--hl);color:var(--ink);font-family:var(--display);font-stretch:112%;font-weight:800;text-transform:uppercase;font-size:clamp(14px,1.5vw,18px);line-height:1.1;padding:9px 16px 8px;transform:rotate(-2.5deg);transform-origin:left center;animation:slap .8s var(--ease) .2s both}
+@keyframes slap{from{transform:rotate(-10deg) scale(1.22)}to{transform:rotate(-2.5deg) scale(1)}}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 2px #fff;flex:none}
+.hero-sub{font-family:var(--display);font-stretch:100%;font-weight:600;text-transform:uppercase;font-size:17px;line-height:1.3;margin:0 0 18px;letter-spacing:.005em}
+.hero-ctas{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ---------- gallery ---------- */
+.gwrap{position:relative}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;height:clamp(340px,36vw,480px);border-radius:var(--r);overflow:hidden}
+.gallery figure{margin:0;overflow:hidden;background:var(--soft)}
+.gallery figure:first-child{grid-row:1/3}
+.gallery img{width:100%;height:100%;object-fit:cover}
+.gcount{display:none}
+
+/* ---------- listing ---------- */
+.listing{display:grid;grid-template-columns:minmax(0,1fr) 372px;gap:0 72px;padding-top:44px;padding-bottom:16px}
+.main{min-width:0}
+.main > section{padding:34px 0;border-bottom:1px solid var(--line)}
+.main > section:first-child{padding-top:0}
+.main > section:last-child{border-bottom:0}
+.h2{font-family:var(--display);font-stretch:112%;font-weight:800;text-transform:uppercase;font-size:clamp(26px,2.6vw,36px);line-height:1.05;letter-spacing:-.005em;margin:0 0 22px;text-wrap:balance}
+.intro .h2{font-size:clamp(28px,3vw,40px);margin-bottom:10px}
+.meta{margin:0;color:var(--ink2);font-size:17px}
+.host{display:flex;gap:16px;align-items:flex-start}
+.avatar{width:52px;height:52px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:900;font-stretch:125%;font-size:21px;flex:none}
+.host b{display:block;font-size:17px;font-weight:600}
+.host p{margin:3px 0 0;color:var(--ink2);max-width:60ch}
+.hl{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:22px}
+.hl li{display:grid;grid-template-columns:26px 1fr;gap:18px;align-items:start}
+.hl .icon{width:26px;height:26px;margin-top:1px}
+.hl b{display:block;font-weight:600}
+.hl p{margin:2px 0 0;color:var(--ink2)}
+
+.offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.offer{display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.offer .ph{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:var(--soft)}
+.offer img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.offer:hover img{transform:scale(1.04)}
+.o-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:12px}
+.offer h3{font-size:16px;font-weight:600;margin:0;line-height:1.3}
+.o-price{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.o-price small{font-weight:500;color:var(--ink2);font-size:14px}
+.offer p{color:var(--ink2);margin:4px 0 0;font-size:15px;line-height:1.45}
+.o-go{margin-top:auto;padding-top:10px;font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
+
+.am{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:18px 32px}
+.am li{display:flex;gap:16px;align-items:center}
+
+.dayrow{display:grid;grid-template-columns:160px minmax(0,1fr);gap:16px;align-items:start;margin-bottom:14px}
+.dayrow > span{font-weight:600;font-size:15px;padding-top:10px}
+.track24{position:relative;height:42px;background:#fbfbfa;box-shadow:inset 0 0 0 1px var(--line);border-radius:12px;overflow:hidden}
+.seg{position:absolute;top:5px;bottom:5px;display:flex;align-items:center;padding:0 10px;font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;border-radius:8px}
+.seg.desk{background:var(--soft2);color:var(--ink2)}
+.seg.room{background:#fff;box-shadow:inset 0 0 0 1.5px var(--ink);color:var(--ink)}
+.sw.room{background:#fff;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.db-legend{margin-bottom:14px}
+.ticks{position:relative;height:20px;font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums}
+.ticks span{position:absolute;top:5px;transform:translateX(-50%)}
+.ticks span:first-child{transform:none}
+.ticks span:last-child{transform:translateX(-100%)}
+
+/* ---------- calendar ---------- */
+.lead{color:var(--ink2);margin:-12px 0 20px;max-width:60ch}
+.book-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+.seg-ctl{display:inline-flex;background:var(--soft);border-radius:999px;padding:4px}
+.seg-ctl button{border:0;background:none;border-radius:999px;padding:9px 16px;font-weight:600;font-size:14px;cursor:pointer;color:var(--ink2);transition:background .15s,color .15s,box-shadow .15s}
+.seg-ctl button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 5px rgba(0,0,0,.14)}
+.weeknav{display:flex;align-items:center;gap:8px}
+.iconbtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--line2);background:#fff;display:grid;place-items:center;cursor:pointer;padding:0;transition:border-color .15s}
+.iconbtn .icon{width:16px;height:16px;stroke-width:2}
+.iconbtn:disabled{opacity:.35;cursor:default}
+.iconbtn:not(:disabled):hover{border-color:var(--ink)}
+.lbl{font-weight:600;min-width:128px;text-align:center;font-variant-numeric:tabular-nums}
+.legend{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--ink2)}
+.legend li{display:flex;align-items:center;gap:7px}
+.sw{width:14px;height:14px;border-radius:4px}
+.sw.free{background:#fff;box-shadow:inset 0 0 0 1px var(--line2)}
+.sw.taken{background:repeating-linear-gradient(135deg,#dededa 0 3px,#f2f2ef 3px 6px)}
+.sw.desk{background:var(--soft2)}
+.sw.sel{background:var(--ink)}
+.gridwrap{position:relative}
+.grid{display:grid;grid-template-columns:44px repeat(7,minmax(0,1fr));gap:3px 4px}
+.dh{text-align:center;font-size:12px;color:var(--ink2);padding-bottom:6px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.dh b{font-size:15px;color:var(--ink);font-weight:600;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;font-variant-numeric:tabular-nums}
+.dh.today b{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.tl{font-size:11px;color:var(--ink3);text-align:right;padding-right:6px;line-height:30px;font-variant-numeric:tabular-nums}
+.cell{appearance:none;height:30px;border-radius:8px;border:0;padding:0 7px;font-size:12px;font-weight:600;text-align:left;display:flex;align-items:center;white-space:nowrap;overflow:hidden;min-width:0;background:transparent;line-height:1.1}
+.cell.past{background:#fafaf8}
+.cell.free{background:#fff;box-shadow:inset 0 0 0 1px var(--line2);cursor:pointer;color:var(--ink3);font-weight:500;transition:box-shadow .12s,color .12s}
+.cell.free::after{content:attr(data-t);font-variant-numeric:tabular-nums}
+.cell.free:hover{box-shadow:inset 0 0 0 2px var(--ink);color:var(--ink)}
+.cell.taken{background:repeating-linear-gradient(135deg,#dededa 0 4px,#f2f2ef 4px 8px);color:var(--ink2)}
+.cell.desk{background:var(--soft2);color:var(--ink2)}
+.cell.sel{background:var(--ink);color:#fff;box-shadow:none}
+.cell.sel::after{content:none}
+.cell.run{border-radius:0;margin-top:-3px;height:33px}
+.cell.run.first{border-top-left-radius:8px;border-top-right-radius:8px;margin-top:0;height:30px;white-space:normal;align-items:flex-start;padding-top:6px}
+.cell.run.last{border-bottom-left-radius:8px;border-bottom-right-radius:8px}
+.cell.shake{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+.days,.slots{display:none}
+.loading{position:absolute;inset:0;background:rgba(255,255,255,.78);display:grid;place-items:center;font-weight:600;color:var(--ink2);border-radius:12px}
+
+/* ---------- booking card ---------- */
+.side{position:relative}
+.card{position:sticky;top:104px;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:24px;background:#fff}
+.c-price{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.c-price b{font-size:27px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.c-price span{color:var(--ink2)}
+.c-sub{margin:2px 0 18px;color:var(--ink2);font-size:14px}
+.boxes{border:1px solid var(--line2);border-radius:12px;display:grid;grid-template-columns:1fr 1fr;margin-bottom:14px;overflow:hidden}
+.box{padding:10px 14px 11px;min-width:0}
+.box + .box{border-left:1px solid var(--line2)}
+.box.wide{grid-column:1/-1;border-left:0;border-top:1px solid var(--line2);display:flex;justify-content:space-between;align-items:center;padding-top:8px;padding-bottom:8px}
+.box small{display:block;font-size:12px;font-weight:700;color:var(--ink)}
+.box .v{display:block;font-size:15px;color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums}
+.box .v.on{color:var(--ink)}
+.stepper{display:flex;align-items:center;gap:8px}
+.stepper output{min-width:50px;text-align:center;font-weight:600;font-variant-numeric:tabular-nums}
+.stepper .iconbtn{width:32px;height:32px}
+fieldset{border:0;margin:0 0 14px;padding:0;min-width:0}
+.fl{font-size:12px;font-weight:700;margin-bottom:8px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips label{position:relative}
+.chips input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0;width:100%;height:100%}
+.chips label > span{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line2);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;background:#fff;transition:background .15s,border-color .15s,color .15s}
+.chips label:hover > span{border-color:var(--ink)}
+.chips .icon{width:16px;height:16px}
+.chips input:checked + span{background:var(--ink);border-color:var(--ink);color:#fff}
+.chips input:focus-visible + span{outline:2px solid var(--ink);outline-offset:2px}
+.fields{display:grid;gap:8px;margin-bottom:14px}
+.fields .two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.field input{width:100%;height:48px;border:1px solid var(--line2);border-radius:12px;padding:0 14px;font-size:16px;background:#fff;transition:border-color .15s,box-shadow .15s}
+.field input::placeholder{color:#767676}
+.field input:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+.field input[aria-invalid="true"]{border-color:var(--pink2);box-shadow:0 0 0 1px var(--pink2)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.p-err{color:#b0105a;font-size:14px;font-weight:600;margin:0 0 10px}
+.p-err:empty{display:none}
+.c-note{text-align:center;font-size:14px;color:var(--ink2);margin:12px 0 0}
+.lines{margin:16px 0 0}
+.lines div{display:flex;justify-content:space-between;gap:12px;padding:3px 0;color:var(--ink2);font-variant-numeric:tabular-nums}
+.lines .tot{border-top:1px solid var(--line);margin-top:12px;padding-top:16px;color:var(--ink);font-weight:700}
+.demo-note{font-size:12px;color:var(--ink3);text-align:center;margin:14px 0 0}
+.c-done{text-align:center;padding:10px 0 4px}
+.ok{width:56px;height:56px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;margin:0 auto 16px}
+.ok .icon{stroke-width:2.2}
+.c-done h3{font-family:var(--display);font-stretch:112%;font-weight:800;text-transform:uppercase;font-size:22px;margin:0 0 6px}
+.c-done p{color:var(--ink2);margin:0}
+.linkbtn{border:0;background:none;text-decoration:underline;text-underline-offset:4px;font-weight:600;cursor:pointer;margin-top:14px;padding:4px}
+
+/* ---------- events ---------- */
+.events{padding:72px 0 76px;border-top:1px solid var(--line)}
+.ev-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px 56px;align-items:end;margin-bottom:30px}
+.mega{font-size:clamp(46px,8.4vw,96px);margin:0}
+.ev-head p{max-width:46ch;color:var(--ink2);margin:0 0 6px;font-size:17px}
+.tiles{display:flex;flex-wrap:wrap;gap:10px}
+.tile{position:relative;display:block;cursor:pointer}
+.tile input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer;width:100%;height:100%;z-index:1}
+.tile > span{display:flex;align-items:center;gap:14px;border:1.5px solid var(--ink);border-radius:999px;padding:14px 18px 14px 22px;background:#fff;transition:background .18s,color .18s}
+.tile:hover > span{background:var(--soft)}
+.tile input:checked + span{background:var(--ink);color:#fff}
+.tile input:focus-visible + span{outline:2px solid var(--ink);outline-offset:3px}
+.tile > span > .icon{width:28px;height:28px}
+.t-check{width:28px;height:28px;margin-left:auto;flex:none;border-radius:50%;border:2px solid currentColor;display:grid;place-items:center}
+.t-check .icon{width:16px;height:16px;stroke-width:2.6;opacity:0}
+.tile input:checked + span .t-check{background:#fff;border-color:#fff;color:var(--ink)}
+.tile input:checked + span .t-check .icon{opacity:1}
+.t-name{display:block;font-size:clamp(22px,2.4vw,30px);line-height:1}
+.ev-row{display:flex;gap:10px;margin-top:14px;max-width:600px}
+.ev-row .field{flex:1}
+.ev-ok{font-weight:600;margin:14px 0 0}
+
+/* ---------- where ---------- */
+.where{padding:64px 0 76px;border-top:1px solid var(--line)}
+.map{border-radius:var(--r);overflow:hidden;height:420px;background:var(--soft)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+.w-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:20px}
+.addr{display:flex;gap:10px;align-items:center;font-weight:600;font-size:17px;margin:0}
+.w-row p:not(.addr){margin:4px 0 0 32px;color:var(--ink2)}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:#fff;padding:56px 0 30px;overflow:hidden}
+.word{font-size:min(calc((100vw - 2 * var(--gut)) / 11.9),94px);line-height:.86;white-space:nowrap}
+.f-row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:30px;font-size:14px;color:#b5b5b5}
+
+.mbar{display:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:1079px){
+  .tabs{gap:20px}
 }
-::selection { background: var(--sun); color: var(--sun-ink); }
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-thumb { background: #2a2a2e; border-radius: 10px; border: 2px solid var(--ink); }
-::-webkit-scrollbar-track { background: var(--ink); }
-:focus-visible { outline: 2px solid var(--sun); outline-offset: 3px; border-radius: 8px; }
-a { color: inherit; text-underline-offset: 3px; }
-img { max-width: 100%; display: block; }
-.wrap { max-width: 1180px; margin: 0 auto; padding-left: var(--gut); padding-right: var(--gut-r); }
-h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; text-wrap: balance; }
-h2 { font-size: clamp(32px, 4.6vw, 56px); line-height: 1.02; letter-spacing: -0.03em; }
-.lead { color: var(--fg-2); font-size: 18px; max-width: 60ch; margin: 14px 0 0; }
-.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
-.icon { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex: none; }
-
-/* pills */
-.pill {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid transparent;
-  font: 500 15px/1 var(--text); text-decoration: none; cursor: pointer; white-space: nowrap;
-  transition: background-color .2s, border-color .2s, transform .15s, color .2s;
+@media (max-width:979px){
+  html{scroll-padding-top:76px}
+  .top .wrap{grid-template-columns:1fr auto;height:64px}
+  .tabs,.top .cta{display:none}
+  .brand{font-size:16px}
+  .hero{padding-top:28px}
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-side{max-width:520px}
+  .listing{grid-template-columns:minmax(0,1fr);padding-top:32px}
+  .main > section:last-child{border-bottom:1px solid var(--line)}
+  .side{padding:28px 0 8px}
+  .card{position:static;max-width:520px}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);padding:12px var(--gut) calc(12px + env(safe-area-inset-bottom));justify-content:space-between;align-items:center;gap:12px;transition:transform .35s var(--ease)}
+  .mbar.off{transform:translateY(115%)}
+  .mbar b{display:block;font-size:16px;font-variant-numeric:tabular-nums}
+  .mbar span{display:block;font-size:13px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mbar > div{min-width:0}
+  body{padding-bottom:76px}
 }
-.pill:active { transform: scale(.98); }
-.pill.primary { background: var(--fg); color: var(--ink); }
-.pill.primary:hover { background: #fff; }
-.pill.ghost { background: rgba(255,255,255,.06); color: var(--fg); border-color: var(--line-2); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
-.pill.ghost:hover { background: rgba(255,255,255,.12); }
-.pill.small { height: 38px; padding: 0 16px; font-size: 14px; }
-.pill[disabled] { opacity: .45; cursor: not-allowed; }
-
-/* top bar */
-.bar {
-  position: fixed; z-index: 30; top: 0; left: 0; right: 0;
-  padding-top: env(safe-area-inset-top, 0px);
-  transition: background-color .3s, border-color .3s;
-  border-bottom: 1px solid transparent;
+@media (max-width:819px){
+  .grid{display:none}
+  .days{display:flex;gap:6px;margin-bottom:14px}
+  .days button{flex:1 0 40px;min-width:0;border:1.5px solid var(--line2);background:#fff;border-radius:14px;padding:8px 0 7px;display:flex;flex-direction:column;align-items:center;gap:1px;font-size:12px;color:var(--ink2);cursor:pointer}
+  .days b{font-size:16px;color:var(--ink);font-variant-numeric:tabular-nums}
+  .days button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+  .days button[aria-pressed="true"] b{color:#fff}
+  .mark{width:5px;height:5px;border-radius:50%;background:var(--green);margin-top:3px}
+  .mark.none{background:transparent}
+  .slots{display:grid;gap:6px}
+  .slot{display:flex;justify-content:space-between;align-items:center;height:48px;padding:0 16px;border-radius:12px;border:0;font-size:15px;font-weight:600;text-align:left;width:100%;background:#fff;box-shadow:inset 0 0 0 1.5px var(--line2);cursor:pointer}
+  .slot .t{font-variant-numeric:tabular-nums}
+  .slot span:last-child{font-weight:500;font-size:14px}
+  .slot.sel{background:var(--ink);color:#fff;box-shadow:none}
+  .slot.taken{background:repeating-linear-gradient(135deg,#dededa 0 4px,#f2f2ef 4px 8px);color:var(--ink2);box-shadow:none;cursor:default}
+  .slot.desk{background:var(--soft2);color:var(--ink2);box-shadow:none;cursor:default}
+  .empty-day{color:var(--ink2);padding:12px 0;margin:0}
+  .book-top{flex-direction:column;align-items:stretch}
+  .seg-ctl{display:flex}
+  .seg-ctl button{flex:1}
+  .weeknav{justify-content:space-between}
 }
-.bar.solid { background: rgba(11,11,12,.72); backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2); border-bottom-color: var(--line); }
-.bar .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
-.brand { font: 600 18px/1 var(--display); letter-spacing: -0.02em; text-decoration: none; }
-.bar-right { display: flex; align-items: center; gap: 10px; }
-.lang { display: inline-flex; padding: 3px; border-radius: 999px; background: rgba(255,255,255,.07); border: 1px solid var(--line); }
-.lang button { border: 0; background: transparent; color: var(--fg-2); font: 500 13px/1 var(--text); height: 30px; min-width: 38px; border-radius: 999px; cursor: pointer; }
-.lang button[aria-pressed="true"] { background: var(--fg); color: var(--ink); }
-
-/* hero */
-.hero { position: relative; height: clamp(600px, 92svh, 900px); overflow: hidden; display: flex; align-items: flex-end; }
-.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 38%; }
-@media (prefers-reduced-motion: no-preference) {
-  .hero img { animation: settle 2.2s cubic-bezier(.16,1,.3,1) both; }
-  @keyframes settle { from { transform: scale(1.07); filter: brightness(.7); } to { transform: none; filter: none; } }
-}
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,12,.55) 0%, rgba(11,11,12,0) 22%, rgba(11,11,12,0) 45%, rgba(11,11,12,.88) 82%, var(--ink) 100%); }
-.hero .wrap { position: relative; z-index: 1; width: 100%; padding-bottom: clamp(40px, 7vh, 72px); }
-.hero h1 { font-size: clamp(48px, 8.4vw, 112px); line-height: .94; letter-spacing: -0.04em; max-width: 9.5em; }
-.hero p { color: #ddd8d0; font-size: clamp(17px, 1.6vw, 20px); max-width: 44ch; margin: 18px 0 0; }
-.avail {
-  display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px;
-  padding: 9px 16px 9px 13px; border-radius: 999px; font-size: 14px; font-weight: 500;
-  background: rgba(20,20,22,.5); border: 1px solid rgba(255,255,255,.14);
-  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-}
-.dot { width: 9px; height: 9px; border-radius: 50%; background: var(--free); box-shadow: 0 0 0 4px rgba(79,209,139,.18); }
-.hero-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
-
-section.block { padding-top: clamp(84px, 11vw, 140px); }
-
-/* offers: a rate card next to a photo */
-.offers { display: grid; grid-template-columns: minmax(0, 1fr); gap: 36px; margin-top: 40px; }
-.offers figure { margin: 0; border-radius: 22px; overflow: hidden; position: relative; aspect-ratio: 21 / 8; background: var(--ink-3); }
-.offers figure img { object-position: 50% 30%; }
-.offers figure img { width: 100%; height: 100%; object-fit: cover; }
-.rate { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-2); }
-.rate li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 28px; padding: 28px 0; border-bottom: 1px solid var(--line-2); }
-.rate h3 { font-size: 26px; letter-spacing: -0.02em; line-height: 1.1; }
-.rate p { color: var(--fg-2); margin: 8px 0 0; max-width: 46ch; }
-.rate .price { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 14px; }
-.rate .price b { font: 500 28px/1 var(--mono); letter-spacing: -0.02em; white-space: nowrap; }
-.rate .price b small { font: 400 14px var(--text); color: var(--fg-3); letter-spacing: 0; margin-left: 2px; }
-.rate .price .tag { font: 500 15px/1.2 var(--text); color: var(--fg-2); }
-
-/* day bars */
-.daybars { margin-top: 40px; display: grid; gap: 26px; max-width: 920px; }
-.dayrow { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 20px; align-items: center; }
-.dayrow > span { color: var(--fg-2); font-weight: 500; }
-.track24 { position: relative; height: 44px; border-radius: 12px; background: repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 1px, transparent 1px calc(100% / 24)), var(--ink-2); border: 1px solid var(--line); }
-.seg { position: absolute; top: 5px; bottom: 5px; border-radius: 8px; display: flex; align-items: center; padding: 0 10px; font-size: 13px; font-weight: 500; overflow: hidden; white-space: nowrap; }
-.seg.desk { background: #2b2b30; color: var(--fg); }
-.seg.room { background: var(--sun); color: var(--sun-ink); }
-.ticks { position: relative; height: 18px; margin-top: 6px; font: 400 12px var(--mono); color: var(--fg-3); }
-.ticks span { position: absolute; transform: translateX(-50%); }
-.ticks span:first-child { transform: none; }
-.ticks span:last-child { transform: translateX(-100%); }
-
-/* booking */
-.book { margin-top: 36px; background: var(--ink-2); border: 1px solid var(--line); border-radius: 28px; padding: clamp(16px, 2.4vw, 28px); display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 28px; box-shadow: 0 30px 80px -40px rgba(0,0,0,.9); }
-.book-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 18px; }
-.seg-ctl { display: inline-flex; padding: 4px; border-radius: 999px; background: var(--ink-3); border: 1px solid var(--line); }
-.seg-ctl button { border: 0; background: transparent; color: var(--fg-2); font: 500 14px/1 var(--text); height: 38px; padding: 0 16px; border-radius: 999px; cursor: pointer; transition: background-color .2s, color .2s; }
-.seg-ctl button[aria-pressed="true"] { background: var(--fg); color: var(--ink); }
-.weeknav { display: flex; align-items: center; gap: 6px; }
-.weeknav .lbl { min-width: 128px; text-align: center; font-weight: 500; font-size: 15px; }
-.iconbtn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line-2); background: transparent; color: var(--fg); display: grid; place-items: center; cursor: pointer; }
-.iconbtn:hover:not([disabled]) { background: rgba(255,255,255,.07); }
-.iconbtn[disabled] { opacity: .3; cursor: default; }
-.legend { display: flex; flex-wrap: wrap; gap: 16px; margin: 0 0 14px; padding: 0; list-style: none; font-size: 13px; color: var(--fg-2); }
-.legend li { display: inline-flex; align-items: center; gap: 7px; }
-.sw { width: 14px; height: 14px; border-radius: 4px; display: inline-block; }
-.sw.free { border: 1px solid var(--line-2); }
-.sw.taken { background: repeating-linear-gradient(135deg, rgba(255,255,255,.22) 0 2px, transparent 2px 5px), #222226; }
-.sw.desk { background: #26262b; }
-.sw.sel { background: var(--sun); }
-
-.grid { display: grid; grid-template-columns: 50px repeat(7, minmax(0, 1fr)); gap: 3px; position: relative; }
-.grid .dh { text-align: center; padding: 4px 0 8px; font-size: 13px; color: var(--fg-2); line-height: 1.25; }
-.grid .dh b { display: block; color: var(--fg); font: 500 17px/1.2 var(--mono); }
-.grid .dh.today b { width: fit-content; margin: 0 auto; padding: 0 8px; border-radius: 8px; background: rgba(255,255,255,.12); }
-.grid .tl { font: 400 12px/30px var(--mono); color: var(--fg-3); text-align: right; padding-right: 8px; height: 30px; }
-.cell { height: 30px; border-radius: 6px; border: 0; padding: 0 6px; font: 500 11.5px/30px var(--text); text-align: left; overflow: hidden; white-space: nowrap; color: var(--fg-3); background: transparent; }
-.cell.free { border: 1px solid rgba(255,255,255,.2); cursor: pointer; transition: border-color .15s, background-color .15s; }
-.cell.free:hover { border-color: var(--sun); background: rgba(255,122,61,.1); }
-.cell.taken { --run: #242428; background: repeating-linear-gradient(135deg, rgba(255,255,255,.16) 0 2px, transparent 2px 6px), var(--run); color: var(--fg-2); }
-.cell.desk { --run: #19191c; background: var(--run); color: var(--fg-3); }
-.cell.closed, .cell.past { background: transparent; }
-.cell.past.open { background: rgba(255,255,255,.025); }
-.cell.sel { --run: var(--sun); background: var(--sun); color: var(--sun-ink); border-color: var(--sun); font-weight: 600; }
-/* runs of the same state read as one block: square inner corners, the 3px gap filled */
-.cell.run { border-radius: 0; box-shadow: 0 3px 0 var(--run); }
-.cell.run.first { border-radius: 6px 6px 0 0; }
-.cell.run.last { border-radius: 0 0 6px 6px; box-shadow: none; }
-.cell.run.first.last { border-radius: 6px; }
-.cell.shake { animation: shake .35s; }
-@keyframes shake { 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
-.gridwrap { position: relative; min-height: 200px; }
-.loading { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(19,19,21,.7); border-radius: 12px; color: var(--fg-2); font-size: 14px; }
-
-/* phone day picker */
-.days { display: none; gap: 6px; overflow-x: auto; padding-bottom: 6px; margin: 0 -2px 14px; scrollbar-width: none; }
-.days::-webkit-scrollbar { display: none; }
-.days button { flex: 1 0 40px; border: 1px solid var(--line); background: transparent; color: var(--fg-2); border-radius: 14px; padding: 8px 0; font: 500 12px/1.2 var(--text); cursor: pointer; }
-.days button b { display: block; font: 500 17px/1.3 var(--mono); color: var(--fg); }
-.days button[aria-pressed="true"] { background: var(--fg); color: var(--ink); border-color: var(--fg); }
-.days button[aria-pressed="true"] b { color: var(--ink); }
-.days button .mark { display: block; width: 5px; height: 5px; border-radius: 50%; margin: 4px auto 0; background: var(--free); }
-.days button .mark.none { background: transparent; }
-.slots { display: none; gap: 6px; }
-.slot { display: flex; align-items: center; justify-content: space-between; height: 48px; padding: 0 16px; border-radius: 12px; border: 1px solid var(--line); background: transparent; color: var(--fg); font: 500 15px var(--text); width: 100%; cursor: pointer; }
-.slot .mono { font-size: 15px; }
-.slot span:last-child { color: var(--fg-3); font-size: 14px; }
-.slot.taken { background: repeating-linear-gradient(135deg, rgba(255,255,255,.1) 0 2px, transparent 2px 6px), #1c1c20; color: var(--fg-3); cursor: default; }
-.slot.desk { background: #1b1b1f; border-color: transparent; color: var(--fg-3); cursor: default; }
-.slot.sel { background: var(--sun); border-color: var(--sun); color: var(--sun-ink); }
-.slot.sel span:last-child { color: var(--sun-ink); }
-.empty-day { color: var(--fg-3); padding: 18px 2px; }
-
-/* panel */
-.panel { background: var(--ink-3); border: 1px solid var(--line); border-radius: 22px; padding: 22px; align-self: start; position: sticky; top: 84px; }
-.panel h3 { font-size: 22px; letter-spacing: -0.02em; }
-.p-empty p { color: var(--fg-2); margin: 10px 0 0; }
-.p-when { padding-bottom: 16px; border-bottom: 1px solid var(--line); }
-.p-when b { display: block; font: 600 20px/1.2 var(--display); letter-spacing: -0.01em; }
-.p-when span { display: block; margin-top: 4px; color: var(--sun); font: 500 18px var(--mono); }
-.p-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--line); }
-.p-row > span { color: var(--fg-2); }
-.stepper { display: inline-flex; align-items: center; gap: 4px; }
-.stepper output { min-width: 56px; text-align: center; font: 500 16px var(--mono); }
-.stepper .iconbtn { width: 34px; height: 34px; }
-fieldset { border: 0; margin: 0; padding: 14px 0 4px; min-width: 0; }
-legend.fl { color: var(--fg-2); padding: 0; margin-bottom: 10px; font-size: 14px; }
-.chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chips label { position: relative; }
-.chips input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
-.chips label > span { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line-2); font-size: 13.5px; color: var(--fg-2); transition: background-color .15s, color .15s, border-color .15s; }
-.chips label > span .icon { width: 15px; height: 15px; }
-.chips input:checked + span { background: var(--fg); color: var(--ink); border-color: var(--fg); }
-.chips input:focus-visible + span { outline: 2px solid var(--sun); outline-offset: 2px; }
-.fields { display: grid; gap: 8px; margin-top: 12px; }
-.field input {
-  width: 100%; height: 46px; border-radius: 12px; border: 1px solid var(--line-2); background: var(--ink-2);
-  color: var(--fg); padding: 0 14px; font: 400 15px var(--text);
-}
-.field input::placeholder { color: var(--fg-3); }
-.field input:focus { outline: none; border-color: var(--sun); }
-.field input[aria-invalid="true"] { border-color: #e0614b; }
-.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-.p-total { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0 12px; }
-.p-total span { color: var(--fg-2); }
-.p-total b { font: 500 24px var(--mono); }
-.p-total small { display: block; color: var(--fg-3); font-size: 12.5px; text-align: right; }
-.p-err { color: #ff9a85; font-size: 14px; margin: 0 0 10px; min-height: 0; }
-.p-err:empty { display: none; }
-.panel .pill.primary { width: 100%; }
-.demo-note { color: var(--fg-3); font-size: 12.5px; margin: 12px 0 0; }
-.p-done .ok { width: 44px; height: 44px; border-radius: 50%; background: rgba(79,209,139,.14); color: var(--free); display: grid; place-items: center; margin-bottom: 14px; }
-.p-done p { color: var(--fg-2); margin: 8px 0 18px; }
-.linkbtn { background: none; border: 0; padding: 0; color: var(--fg); font: 500 15px var(--text); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
-
-/* events */
-.events { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: end; }
-.ev-form { background: var(--ink-2); border: 1px solid var(--line); border-radius: 24px; padding: 22px; display: grid; gap: 14px; }
-.ev-form .row { display: flex; gap: 8px; }
-.ev-form .row .field { flex: 1; min-width: 0; }
-.ev-ok { color: var(--free); font-weight: 500; margin: 0; }
-
-/* where */
-.where { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: clamp(28px, 5vw, 72px); align-items: center; margin-top: 36px; }
-.addr { display: flex; gap: 12px; align-items: flex-start; font-size: 18px; }
-.addr .icon { margin-top: 4px; color: var(--sun); }
-.map { border-radius: 22px; overflow: hidden; border: 1px solid var(--line); background: var(--ink-3); aspect-ratio: 16 / 10; }
-.map iframe { width: 100%; height: 100%; border: 0; display: block; }
-
-footer { margin-top: clamp(84px, 11vw, 140px); border-top: 1px solid var(--line); padding: 28px 0 calc(36px + env(safe-area-inset-bottom, 0px)); color: var(--fg-3); font-size: 14px; }
-footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-
-@media (max-width: 980px) {
-  .book { grid-template-columns: minmax(0, 1fr); }
-  .panel { position: static; }
-}
-@media (max-width: 819px) {
-  .grid, .weeknav .lbl-wide { display: none; }
-  .days { display: flex; }
-  .slots { display: grid; }
-  .legend { gap: 12px; }
-  .events, .where { grid-template-columns: minmax(0, 1fr); }
-  .offers figure { aspect-ratio: 16 / 10; }
-  .dayrow { grid-template-columns: minmax(0, 1fr); gap: 8px; }
-  .rate li { grid-template-columns: minmax(0, 1fr); }
-  .rate .price { flex-direction: row; justify-content: space-between; align-items: center; text-align: left; }
-}
-@media (max-width: 480px) {
-  .hero::after { background: linear-gradient(180deg, rgba(11,11,12,.5) 0%, rgba(11,11,12,0) 18%, rgba(11,11,12,0) 34%, rgba(11,11,12,.8) 56%, var(--ink) 80%); }
-  .bar .pill.small { display: none; }
-  .hero-ctas .pill { flex: 1 1 auto; }
-  .ev-form .row { flex-direction: column; }
+@media (max-width:743px){
+  .gallery{display:flex;height:auto;overflow-x:auto;scroll-snap-type:x mandatory;gap:0;scrollbar-width:none;border-radius:16px}
+  .gallery::-webkit-scrollbar{display:none}
+  .gallery figure{flex:0 0 100%;aspect-ratio:4/3;scroll-snap-align:start}
+  .gallery figure:first-child{grid-row:auto}
+  .gcount{display:block;position:absolute;right:calc(var(--gut) + 12px);bottom:12px;background:rgba(22,22,22,.74);color:#fff;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;font-variant-numeric:tabular-nums;pointer-events:none}
+  .offers{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 var(--gut);gap:14px;margin:0 calc(var(--gut) * -1);padding:0 var(--gut);scrollbar-width:none}
+  .hero-ctas{flex-wrap:nowrap}
+  .hero-ctas > a{flex:1;padding:0 12px;font-size:15px}
+  .offers::-webkit-scrollbar{display:none}
+  .offer{flex:0 0 78%;scroll-snap-align:start}
+  .am{grid-template-columns:1fr}
+  .dayrow{grid-template-columns:1fr;gap:6px}
+  .dayrow > span{padding:0}
+  .ev-head{grid-template-columns:1fr}
+  .tile{flex:1 1 100%}
+  .ev-row{flex-direction:column}
+  .map{height:320px}
+  .w-row p:not(.addr){margin-left:32px}
+  .sticker{font-size:12.5px;font-stretch:100%;padding:8px 13px 7px}
 }
 </style>
 </head>
@@ -291,70 +337,132 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
   <symbol id="i-dots" viewBox="0 0 24 24"><circle cx="6" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="18" cy="12" r="1.2"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M9 20h6M12 16v4"/></symbol>
+  <symbol id="i-stand" viewBox="0 0 24 24"><path d="M3 13h18M6 13v7M18 13v7M12 3v6M9.5 5.5 12 3l2.5 2.5M9.5 6.5 12 9l2.5-2.5"/></symbol>
+  <symbol id="i-window" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M12 3v18M4 12h16"/></symbol>
+  <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M5 9h11v4.5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M16 10.5h1.5a2.5 2.5 0 0 1 0 5H16M8 3.5v2.5M11 3.5v2.5M14 3.5v2.5M4 21h14"/></symbol>
+  <symbol id="i-kitchen" viewBox="0 0 24 24"><path d="M7 3v18M4.5 3v5a2.5 2.5 0 0 0 5 0V3M17.5 21V3c-2 1.5-3 4-3 8h3"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r=".9"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 14h6l-1 7 8-11h-6z"/></symbol>
+  <symbol id="i-gym" viewBox="0 0 24 24"><path d="M6.5 7v10M17.5 7v10M3.5 9.5v5M20.5 9.5v5M6.5 12h11"/></symbol>
+  <symbol id="i-pick" viewBox="0 0 24 24"><circle cx="8.5" cy="8" r="3.5"/><path d="M2.5 20a6 6 0 0 1 12 0M16 11l2 2 4-4"/></symbol>
 </svg>
 
-<header class="bar" id="bar">
+<header class="top" id="bar">
   <div class="wrap">
     <a class="brand" href="#top">Konstitucijos 9</a>
-    <div class="bar-right">
+    <nav class="tabs" aria-label="Pasiūlymai">
+      <a href="#rezervacija" data-go="viewing" data-tab="viewing"><svg class="icon"><use href="#i-desk"/></svg><span data-i18n="tab_desk"></span></a>
+      <a href="#rezervacija" data-go="room" data-tab="room"><svg class="icon"><use href="#i-camera"/></svg><span data-i18n="tab_room"></span></a>
+      <a href="#renginiai" data-tab="events"><svg class="icon"><use href="#i-mic"/></svg><span data-i18n="tab_events"></span></a>
+    </nav>
+    <div class="right">
       <div class="lang" role="group" aria-label="Kalba / Language">
         <button type="button" data-lang="lt" aria-pressed="true">LT</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <a class="pill primary small" href="#rezervacija" data-go="room" data-i18n="nav_book">Rezervuoti</a>
+      <a class="cta small" href="#rezervacija" data-go="room" data-i18n="nav_book"></a>
     </div>
   </div>
 </header>
 
 <main id="top">
   <section class="hero">
-    <img src="img/sunset.jpg" alt="" data-i18n-alt="hero_alt" width="1200" height="1600" fetchpriority="high">
     <div class="wrap">
-      <div class="avail"><span class="dot" aria-hidden="true"></span><span id="availText"></span></div>
-      <h1 data-i18n="hero_h1">Darbo vieta 16 aukšte</h1>
-      <p data-i18n="hero_sub"></p>
-      <div class="hero-ctas">
-        <a class="pill primary" href="#rezervacija" data-go="room"><span data-i18n="cta_time"></span><svg class="icon"><use href="#i-arrow"/></svg></a>
-        <a class="pill ghost" href="#rezervacija" data-go="viewing" data-i18n="cta_view"></a>
+      <div>
+        <h1 class="disp" data-i18n="hero_h1"></h1>
+        <span class="sticker"><span class="dot" aria-hidden="true"></span><span id="availText"></span></span>
+      </div>
+      <div class="hero-side">
+        <p class="hero-sub" data-i18n="hero_sub"></p>
+        <div class="hero-ctas">
+          <a class="cta" href="#rezervacija" data-go="room"><span data-i18n="cta_time"></span><svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="ghost" href="#rezervacija" data-go="viewing" data-i18n="cta_view"></a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="block wrap" id="kainos">
-    <h2 data-i18n="offers_h"></h2>
-    <div class="offers">
-      <figure><img src="img/desk.jpg" alt="" data-i18n-alt="desk_alt" loading="lazy" width="1412" height="800"></figure>
-      <ul class="rate">
-        <li>
-          <div><h3 data-i18n="desk_name"></h3><p data-i18n="desk_desc"></p></div>
-          <div class="price"><b class="mono"><span id="deskPrice"></span><small data-i18n="per_month"></small></b><a class="pill ghost small" href="#rezervacija" data-go="viewing" data-i18n="btn_view"></a></div>
-        </li>
-        <li>
-          <div><h3 data-i18n="room_name"></h3><p data-i18n="room_desc"></p></div>
-          <div class="price"><b class="mono"><span id="roomPrice"></span><small data-i18n="per_hour"></small></b><a class="pill ghost small" href="#rezervacija" data-go="room" data-i18n="btn_time"></a></div>
-        </li>
-        <li>
-          <div><h3 data-i18n="events_name"></h3><p data-i18n="events_desc"></p></div>
-          <div class="price"><span class="tag" data-i18n="events_price"></span><a class="pill ghost small" href="#renginiai" data-i18n="btn_invite"></a></div>
-        </li>
-      </ul>
+  <div class="wrap gwrap">
+    <div class="gallery" id="gallery">
+      <figure><img src="img/view.jpg" alt="" data-i18n-alt="alt_view" width="1200" height="879" fetchpriority="high"></figure>
+      <figure><img src="img/room.jpg" alt="" data-i18n-alt="alt_room" width="840" height="518" loading="lazy" style="object-position:50% 75%"></figure>
+      <figure><img src="img/sunset.jpg" alt="" data-i18n-alt="alt_sunset" width="1200" height="1600" loading="lazy" style="object-position:50% 42%"></figure>
+      <figure><img src="img/desk.jpg" alt="" data-i18n-alt="alt_desk" width="1412" height="800" loading="lazy"></figure>
+      <figure><img src="img/evening.jpg" alt="" data-i18n-alt="alt_evening" width="1000" height="554" loading="lazy" style="object-position:50% 92%"></figure>
     </div>
-  </section>
+    <span class="gcount" id="gcount" aria-hidden="true">1 / 5</span>
+  </div>
 
-  <section class="block wrap">
-    <h2 data-i18n="when_h"></h2>
-    <div class="daybars" id="daybars"></div>
-  </section>
+  <div class="wrap listing">
+    <div class="main">
+      <section class="intro">
+        <h2 class="h2" data-i18n="intro_h"></h2>
+        <p class="meta" data-i18n="intro_meta"></p>
+      </section>
 
-  <section class="block wrap" id="rezervacija">
-    <h2 data-i18n="book_h"></h2>
-    <p class="lead" data-i18n="book_sub"></p>
-    <div class="book">
-      <div>
+      <section>
+        <div class="host">
+          <span class="avatar" aria-hidden="true">L</span>
+          <div><b data-i18n="host_h"></b><p data-i18n="host_p"></p></div>
+        </div>
+        <ul class="hl">
+          <li><svg class="icon"><use href="#i-pick"/></svg><div><b data-i18n="hl1_h"></b><p data-i18n="hl1_p"></p></div></li>
+          <li><svg class="icon"><use href="#i-window"/></svg><div><b data-i18n="hl2_h"></b><p data-i18n="hl2_p"></p></div></li>
+          <li><svg class="icon"><use href="#i-coffee"/></svg><div><b data-i18n="hl3_h"></b><p data-i18n="hl3_p"></p></div></li>
+        </ul>
+      </section>
+
+      <section id="kainos">
+        <h2 class="h2" data-i18n="offers_h"></h2>
+        <div class="offers">
+          <a class="offer" href="#rezervacija" data-go="viewing">
+            <div class="ph"><img src="img/room.jpg" alt="" data-i18n-alt="alt_room" loading="lazy" width="840" height="518" style="object-position:50% 75%"></div>
+            <div class="o-top"><h3 data-i18n="desk_name"></h3><b class="o-price"><span id="deskPrice"></span> <small data-i18n="per_month"></small></b></div>
+            <p data-i18n="desk_desc"></p>
+            <span class="o-go" data-i18n="desk_go"></span>
+          </a>
+          <a class="offer" href="#rezervacija" data-go="room">
+            <div class="ph"><img src="img/sunset.jpg" alt="" data-i18n-alt="alt_sunset" loading="lazy" width="1200" height="1600" style="object-position:50% 42%"></div>
+            <div class="o-top"><h3 data-i18n="room_name"></h3><b class="o-price"><span id="roomPrice"></span> <small data-i18n="per_hour"></small></b></div>
+            <p data-i18n="room_desc"></p>
+            <span class="o-go" data-i18n="room_go"></span>
+          </a>
+          <a class="offer" href="#renginiai">
+            <div class="ph"><img src="img/evening.jpg" alt="" data-i18n-alt="alt_evening" loading="lazy" width="1000" height="554" style="object-position:50% 92%"></div>
+            <div class="o-top"><h3 data-i18n="events_name"></h3><b class="o-price" data-i18n="events_price"></b></div>
+            <p data-i18n="events_desc"></p>
+            <span class="o-go" data-i18n="events_go"></span>
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="h2" data-i18n="am_h"></h2>
+        <ul class="am">
+          <li><svg class="icon"><use href="#i-desk"/></svg><span data-i18n="am_desk"></span></li>
+          <li><svg class="icon"><use href="#i-stand"/></svg><span data-i18n="am_stand"></span></li>
+          <li><svg class="icon"><use href="#i-window"/></svg><span data-i18n="am_view"></span></li>
+          <li><svg class="icon"><use href="#i-coffee"/></svg><span data-i18n="am_coffee"></span></li>
+          <li><svg class="icon"><use href="#i-kitchen"/></svg><span data-i18n="am_kitchen"></span></li>
+          <li><svg class="icon"><use href="#i-wifi"/></svg><span data-i18n="am_wifi"></span></li>
+          <li><svg class="icon"><use href="#i-bolt"/></svg><span data-i18n="am_bills"></span></li>
+          <li><svg class="icon"><use href="#i-gym"/></svg><span data-i18n="am_gym"></span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="h2" data-i18n="when_h"></h2>
+        <div id="daybars"></div>
+      </section>
+
+      <section id="rezervacija">
+        <h2 class="h2" data-i18n="book_h"></h2>
+        <p class="lead" data-i18n="book_sub"></p>
         <div class="book-top">
           <div class="seg-ctl" role="group" aria-label="Rezervacijos tipas">
-            <button type="button" data-mode="room" aria-pressed="true" data-i18n="tab_room"></button>
-            <button type="button" data-mode="viewing" aria-pressed="false" data-i18n="tab_view"></button>
+            <button type="button" data-mode="room" aria-pressed="true" data-i18n="mode_room"></button>
+            <button type="button" data-mode="viewing" aria-pressed="false" data-i18n="mode_view"></button>
           </div>
           <div class="weeknav">
             <button class="iconbtn" type="button" id="prevWeek" aria-label="Ankstesnė savaitė"><svg class="icon"><use href="#i-left"/></svg></button>
@@ -369,85 +477,109 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
           <div class="slots" id="slots"></div>
           <div class="loading" id="loading" hidden></div>
         </div>
-      </div>
+      </section>
+    </div>
 
-      <aside class="panel" aria-live="polite">
-        <div class="p-empty" id="pEmpty">
-          <h3 data-i18n="panel_h"></h3>
-          <p id="pEmptyText"></p>
-        </div>
-        <form class="p-form" id="pForm" hidden novalidate>
-          <div class="p-when"><b id="pDay"></b><span id="pTime"></span></div>
-          <div class="p-row" id="pDurRow">
-            <span data-i18n="duration"></span>
-            <div class="stepper">
-              <button class="iconbtn" type="button" id="durMinus" aria-label="−1 h"><svg class="icon"><use href="#i-minus"/></svg></button>
-              <output id="durOut"></output>
-              <button class="iconbtn" type="button" id="durPlus" aria-label="+1 h"><svg class="icon"><use href="#i-plus"/></svg></button>
+    <aside class="side">
+      <div class="card" id="card" aria-live="polite">
+        <div id="cMain">
+          <div class="c-price"><b id="cPrice"></b><span id="cUnit"></span></div>
+          <p class="c-sub" id="cSub"></p>
+          <div class="boxes">
+            <div class="box"><small data-i18n="c_day"></small><span class="v" id="cDay"></span></div>
+            <div class="box"><small data-i18n="c_time"></small><span class="v" id="cTime"></span></div>
+            <div class="box wide" id="cDurRow">
+              <small data-i18n="duration"></small>
+              <div class="stepper">
+                <button class="iconbtn" type="button" id="durMinus" aria-label="−1 h"><svg class="icon"><use href="#i-minus"/></svg></button>
+                <output id="durOut"></output>
+                <button class="iconbtn" type="button" id="durPlus" aria-label="+1 h"><svg class="icon"><use href="#i-plus"/></svg></button>
+              </div>
             </div>
           </div>
-          <fieldset id="pPurpose">
-            <legend class="fl" data-i18n="purpose"></legend>
-            <div class="chips" id="purposeChips"></div>
-          </fieldset>
-          <div class="fields">
-            <label class="field"><input id="fName" name="name" autocomplete="name" data-i18n-ph="f_name"></label>
-            <label class="field"><input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" data-i18n-ph="f_phone"></label>
-            <label class="field"><input id="fEmail" name="email" type="email" autocomplete="email" data-i18n-ph="f_email"></label>
-            <label class="hp" aria-hidden="true">Website <input id="fWeb" name="website" tabindex="-1" autocomplete="off"></label>
+          <form id="pForm" novalidate>
+            <div id="cDetails">
+              <fieldset id="pPurpose">
+                <legend class="fl" data-i18n="purpose"></legend>
+                <div class="chips" id="purposeChips"></div>
+              </fieldset>
+              <div class="fields">
+                <label class="field"><input id="fName" name="name" autocomplete="name" data-i18n-ph="f_name"></label>
+                <div class="two">
+                  <label class="field"><input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" data-i18n-ph="f_phone"></label>
+                  <label class="field"><input id="fEmail" name="email" type="email" autocomplete="email" data-i18n-ph="f_email"></label>
+                </div>
+                <label class="hp" aria-hidden="true">Website <input id="fWeb" name="website" tabindex="-1" autocomplete="off"></label>
+              </div>
+            </div>
+            <p class="p-err" id="pErr" role="alert"></p>
+            <button class="cta block" type="submit" id="pSubmit"></button>
+          </form>
+          <p class="c-note" id="cNote"></p>
+          <div class="lines" id="cLines">
+            <div><span id="lineL"></span><span id="lineR"></span></div>
+            <div class="tot"><span data-i18n="total"></span><span id="totR"></span></div>
           </div>
-          <div class="p-total"><span data-i18n="total"></span><div><b id="pTotal"></b><small id="pTotalNote"></small></div></div>
-          <p class="p-err" id="pErr" role="alert"></p>
-          <button class="pill primary" type="submit" id="pSubmit" data-i18n="btn_reserve"></button>
           <p class="demo-note" id="demoNote" hidden data-i18n="demo_note"></p>
-        </form>
-        <div class="p-done" id="pDone" hidden>
+        </div>
+        <div class="c-done" id="pDone" hidden>
           <div class="ok"><svg class="icon"><use href="#i-check"/></svg></div>
           <h3 id="pDoneH"></h3>
           <p id="pDoneP"></p>
           <button class="linkbtn" type="button" id="again" data-i18n="again"></button>
         </div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="block wrap" id="renginiai">
-    <div class="events">
-      <div>
-        <h2 data-i18n="events_h"></h2>
-        <p class="lead" data-i18n="events_sub"></p>
       </div>
-      <form class="ev-form" id="evForm" novalidate>
-        <div class="chips">
-          <label><input type="checkbox" name="interest" value="meetup"><span><svg class="icon"><use href="#i-users"/></svg><span data-i18n="ev_meetup"></span></span></label>
-          <label><input type="checkbox" name="interest" value="podcast"><span><svg class="icon"><use href="#i-mic"/></svg><span data-i18n="ev_podcast"></span></span></label>
+    </aside>
+  </div>
+
+  <section class="events" id="renginiai">
+    <div class="wrap">
+      <div class="ev-head">
+        <h2 class="disp mega" data-i18n="events_h"></h2>
+        <p data-i18n="events_sub"></p>
+      </div>
+      <form id="evForm" novalidate>
+        <div class="tiles">
+          <label class="tile"><input type="checkbox" name="interest" value="meetup"><span><svg class="icon"><use href="#i-users"/></svg><span class="disp t-name" data-i18n="ev_meetup"></span><span class="t-check"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
+          <label class="tile"><input type="checkbox" name="interest" value="podcast"><span><svg class="icon"><use href="#i-mic"/></svg><span class="disp t-name" data-i18n="ev_podcast"></span><span class="t-check"><svg class="icon"><use href="#i-check"/></svg></span></span></label>
         </div>
-        <div class="row">
+        <div class="ev-row">
           <label class="field"><input id="evContact" autocomplete="email" data-i18n-ph="ev_contact"></label>
-          <button class="pill primary" type="submit" data-i18n="ev_btn"></button>
+          <button class="cta" type="submit" data-i18n="ev_btn"></button>
         </div>
         <label class="hp" aria-hidden="true">Website <input id="evWeb" tabindex="-1" autocomplete="off"></label>
-        <p class="p-err" id="evErr" role="alert"></p>
+        <p class="p-err" id="evErr" role="alert" style="margin-top:12px"></p>
         <p class="ev-ok" id="evOk" hidden data-i18n="ev_ok"></p>
       </form>
     </div>
   </section>
 
-  <section class="block wrap" id="kur">
-    <h2 data-i18n="where_h"></h2>
-    <div class="where">
-      <div>
-        <p class="addr"><svg class="icon"><use href="#i-pin"/></svg><span data-i18n="where_addr"></span></p>
-        <a class="pill ghost" style="margin-top:18px" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Konstitucijos+pr.+9,+Vilnius" data-i18n="where_map"></a>
-      </div>
+  <section class="where" id="kur">
+    <div class="wrap">
+      <h2 class="h2" data-i18n="where_h"></h2>
       <div class="map"><iframe title="Žemėlapis" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Konstitucijos%20pr.%209%2C%20Vilnius&z=15&output=embed"></iframe></div>
+      <div class="w-row">
+        <div>
+          <p class="addr"><svg class="icon"><use href="#i-pin"/></svg><span data-i18n="where_addr"></span></p>
+          <p data-i18n="where_near"></p>
+        </div>
+        <a class="ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Konstitucijos+pr.+9,+Vilnius" data-i18n="where_map"></a>
+      </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap"><span>Konstitucijos pr. 9, Vilnius</span><span>© 2026</span></div>
+  <div class="wrap">
+    <div class="disp word">Konstitucijos 9</div>
+    <div class="f-row"><span data-i18n="where_addr"></span><span>© 2026</span></div>
+  </div>
 </footer>
+
+<div class="mbar off" id="mbar">
+  <div><b id="mbPrice"></b><span id="mbSub"></span></div>
+  <button class="cta small" type="button" id="mbBtn"></button>
+</div>
 
 <script>
 /* ---------- settings Lauri changes ---------- */
@@ -473,37 +605,51 @@ const CONFIG = {
 /* ---------- copy ---------- */
 const T = {
   lt: {
+    title: 'Konstitucijos 9, biuras 16 aukšte',
     nav_book: 'Rezervuoti',
-    hero_alt: 'Biuras 16 aukšte saulėlydžio metu, pro langus matyti Neris ir miestas',
-    hero_h1: 'Darbo vieta 16 aukšte',
-    hero_sub: 'Konstitucijos pr. 9, Vilnius. Penkios darbo vietos su langais į Nerį ir miestą. Vakarais ir savaitgaliais visą biurą galima išsinuomoti valandai.',
-    avail: 'Laisvos {free} vietos iš {total} nuo {from}',
+    tab_desk: 'Darbo vieta', tab_room: 'Biuras valandai', tab_events: 'Renginiai',
+    hero_h1: 'Biuras 16 aukšte',
+    avail: 'Nuo {from} laisvos {free} vietos',
+    hero_sub: 'Darbui, fotosesijoms ir renginiams. Konstitucijos pr. 9, Vilnius.',
     cta_time: 'Pasirink laiką', cta_view: 'Užsuk apžiūrėti',
-    offers_h: 'Ką čia galima išsinuomoti',
-    desk_alt: 'Darbo vietos dieną, dideli langai į miestą',
-    desk_name: 'Darbo vieta', desk_desc: 'Tavo stalas, kėdė ir monitorius. Virtuvė, internetas ir komunaliniai įskaičiuoti. Mokama mėnesiui į priekį.',
-    per_month: '/ mėn.',
-    room_name: 'Visas biuras valandai', room_desc: 'Fotosesijoms, podcast\'ams, dirbtuvėms ir susitikimams. Vakarais ir savaitgaliais, nuo 2 valandų. Nuo 4 valandų €25 / val.',
-    per_hour: '/ val.',
-    events_name: 'Renginiai', events_desc: 'Susitikimai ir podcast įrašai gyvai šiame biure. Pirmos datos jau greitai.',
-    events_price: 'Su kvietimu',
-    btn_view: 'Apžiūrėti', btn_time: 'Pasirink laiką', btn_invite: 'Gauti kvietimą',
+    alt_sunset: 'Biuras saulėlydžio metu, pro langą matyti miestas',
+    alt_view: 'Vaizdas iš 16 aukšto į aikštę ir dangoraižius',
+    alt_desk: 'Darbo vieta prie lango su vaizdu į miestą',
+    alt_room: 'Biuras dieną, dideli langai ir augalai',
+    alt_evening: 'Biuras vakare, šilta šviesa',
+    intro_h: 'Privatus biuras su 5 darbo vietomis',
+    intro_meta: '88,87 m², 16 aukštas, Konstitucijos pr. 9, Vilnius',
+    host_h: 'Šeimininkas Lauri',
+    host_p: 'Biurą susiprojektavau pats, anksčiau kūriau biuro baldus Narbutas. Čia kasdien dirbu ir kuriu savo startup\'ą MyMatrix.',
+    hl1_h: 'Maža komanda', hl1_p: 'Žmones atsirenku pats, kad biure liktų mažas, tarpusavyje tinkantis būrys.',
+    hl2_h: 'Vaizdas į miestą', hl2_p: 'Dideli langai 16 aukšte.',
+    hl3_h: 'Viskas šalia', hl3_p: 'Geras espresso aparatas ir virtuvė. Sporto salė ir Dialogai food hall visai šalia.',
+    offers_h: 'Ką galima išsinuomoti',
+    desk_name: 'Darbo vieta', desk_desc: 'Stalas, kėdė ir monitorius. Mokama mėnesiui į priekį.', desk_go: 'Užsukti apžiūrėti',
+    room_name: 'Visas biuras valandai', room_desc: 'Fotosesijoms, podcast\'ams, dirbtuvėms ir susitikimams. Vakarais ir savaitgaliais, nuo 2 val.', room_go: 'Pasirinkti laiką',
+    events_name: 'Renginiai', events_desc: 'Meetup\'ai ir podcast įrašai gyvai šiame biure.', events_go: 'Gauti kvietimą', events_price: 'Su kvietimu',
+    per_month: '/ mėn.', per_hour: '/ val.',
+    am_h: 'Kas įeina į darbo vietą',
+    am_desk: 'Stalas ir kėdė su monitoriumi', am_stand: 'Viena laisva vieta su reguliuojamo aukščio stalu', am_view: 'Dideli langai, vaizdas į miestą', am_coffee: 'Espresso aparatas',
+    am_kitchen: 'Virtuvė su indais ir įrankiais', am_wifi: 'Internetas', am_bills: 'Komunaliniai įskaičiuoti', am_gym: 'Sporto salė šalia',
     when_h: 'Kas ir kada naudoja biurą',
     when_weekday: 'Pirmadienis-penktadienis', when_weekend: 'Šeštadienis ir sekmadienis',
     seg_desk: 'Darbo vietos', seg_room: 'Biuras valandai',
-    book_h: 'Rezervacija',
+    book_h: 'Pasirink laiką',
     book_sub: 'Pilki laikai jau užimti. Pasirink laisvą, ir jis iškart taps tavo.',
-    tab_room: 'Biuras valandai', tab_view: 'Biuro apžiūra',
+    mode_room: 'Biuras valandai', mode_view: 'Darbo vietos apžiūra',
     l_free: 'Laisva', l_taken: 'Užimta', l_desk: 'Darbo vietos', l_sel: 'Tavo laikas',
     loading: 'Kraunami laikai...',
-    panel_h: 'Tavo laikas',
-    panel_empty_room: 'Pasirink pradžią kalendoriuje. Mažiausiai 2 valandos.',
-    panel_empty_view: 'Pasirink laiką apžiūrai. Ji trunka apie 20 minučių.',
+    c_room_sub: 'Nuo {n} val. €{p} / val.', c_view_sub: 'Darbo vieta. Apžiūra nemokama, apie 20 min.',
+    c_day: 'Data', c_time: 'Laikas', c_pick: 'Pasirink',
     duration: 'Trukmė', purpose: 'Kam',
     p_photo: 'Fotosesija', p_podcast: 'Podcast', p_workshop: 'Dirbtuvės', p_meeting: 'Susitikimas', p_other: 'Kita',
     f_name: 'Vardas', f_phone: 'Telefonas', f_email: 'El. paštas',
-    total: 'Iš viso', free_price: 'Nemokama', long_note: 'po €{p} / val.',
-    btn_reserve: 'Rezervuoti', btn_reserving: 'Rezervuojama...',
+    total: 'Iš viso', free_price: 'Nemokama', line_room: '€{p} × {h} val.', line_view: 'Apžiūra',
+    btn_pick: 'Pasirink laiką', btn_reserve: 'Rezervuoti', btn_view_reserve: 'Užsakyti apžiūrą', btn_reserving: 'Rezervuojama...',
+    c_hint_room: 'Pasirink pradžią kalendoriuje. Mažiausiai 2 val.', c_hint_view: 'Pasirink apžiūros laiką kalendoriuje.',
+    c_note_room: 'Dabar mokėti nereikia. Patvirtinimą ir mokėjimo nuorodą atsiųsime šiandien.', c_note_view: 'Atsiųsime, kaip įeiti į pastatą.',
+    mb_room: 'Biuras valandai', mb_view: 'Darbo vieta, apžiūra nemokama',
     ok_room_h: 'Laikas tavo', ok_room: 'Patvirtinimą ir mokėjimo nuorodą atsiųsime šiandien.',
     ok_view_h: 'Iki susitikimo', ok_view: 'Atsiųsime, kaip įeiti į pastatą.',
     again: 'Rezervuoti kitą laiką',
@@ -514,48 +660,63 @@ const T = {
     no_room: 'Šią dieną biuro valandai nuomoti negalima.', no_view: 'Apžiūros vyksta darbo dienomis.', no_left: 'Šią dieną laisvų laikų nebeliko.',
     desk_block: 'Darbo vietos užimtos',
     events_h: 'Renginiai',
-    events_sub: 'Susitikimai ir podcast įrašai gyvai šiame biure. Pažymėk, kas įdomu, ir palik kontaktą. Pirmą kvietimą atsiųsime, kai bus data.',
-    ev_meetup: 'Susitikimai', ev_podcast: 'Podcast įrašai gyvai', ev_contact: 'El. paštas arba telefonas', ev_btn: 'Gauti kvietimą',
+    events_sub: 'Meetup\'ai ir podcast įrašai gyvai šiame biure. Pažymėk, kas įdomu, ir palik kontaktą. Pirmą kvietimą atsiųsime, kai bus data.',
+    ev_meetup: 'Meetup\'ai', ev_meetup_p: 'Susitikimai šiame biure',
+    ev_podcast: 'Podcast gyvai', ev_podcast_p: 'Podcast įrašai su publika',
+    ev_contact: 'El. paštas arba telefonas', ev_btn: 'Gauti kvietimą',
     ev_ok: 'Ačiū, kvietimą atsiųsime.', ev_pick: 'Pažymėk bent vieną.', ev_need: 'Įrašyk el. paštą arba telefoną.',
-    where_h: 'Kur', where_addr: 'Konstitucijos pr. 9, 16 aukštas, Vilnius', where_map: 'Atidaryti žemėlapyje',
+    where_h: 'Kur', where_addr: 'Konstitucijos pr. 9, 16 aukštas, Vilnius', where_near: 'Sporto salė ir Dialogai food hall visai šalia.', where_map: 'Atidaryti žemėlapyje',
     days: ['Pr', 'An', 'Tr', 'Kt', 'Pn', 'Št', 'Sk'],
     daysLong: ['Pirmadienis', 'Antradienis', 'Trečiadienis', 'Ketvirtadienis', 'Penktadienis', 'Šeštadienis', 'Sekmadienis'],
     mShort: ['saus.', 'vas.', 'kov.', 'bal.', 'geg.', 'birž.', 'liep.', 'rugp.', 'rugs.', 'spal.', 'lapkr.', 'gruod.'],
-    mGen: ['sausio', 'vasario', 'kovo', 'balandžio', 'gegužės', 'birželio', 'liepos', 'rugpjūčio', 'rugsėjo', 'spalio', 'lapkričio', 'gruodžio'],
     h: 'val.',
   },
   en: {
+    title: 'Konstitucijos 9, an office on the 16th floor',
     nav_book: 'Book',
-    hero_alt: 'The office on the 16th floor at sunset, the Neris and the city through the windows',
-    hero_h1: 'A desk on the 16th floor',
-    hero_sub: 'Konstitucijos Ave 9, Vilnius. Five desks with windows over the Neris and the city. On evenings and weekends you can rent the whole room by the hour.',
-    avail: '{free} of {total} desks free from {from}',
+    tab_desk: 'A desk', tab_room: 'Room by the hour', tab_events: 'Events',
+    hero_h1: 'Office on the 16th floor',
+    avail: '{free} desks free from {from}',
+    hero_sub: 'For work, shoots and events. Konstitucijos Ave 9, Vilnius.',
     cta_time: 'Pick a time', cta_view: 'Come see it',
-    offers_h: 'What you can rent here',
-    desk_alt: 'The desks by day, big windows over the city',
-    desk_name: 'A desk of your own', desk_desc: 'Your own desk, chair and monitor. Kitchen, internet and utilities included. Paid a month ahead.',
-    per_month: '/ month',
-    room_name: 'The whole room by the hour', room_desc: 'For photo shoots, podcasts, workshops and meetings. Evenings and weekends, 2 hours minimum. From 4 hours €25 an hour.',
-    per_hour: '/ hour',
-    events_name: 'Events', events_desc: 'Meetups and live podcast recordings in this room. First dates soon.',
-    events_price: 'By invite',
-    btn_view: 'See it', btn_time: 'Pick a time', btn_invite: 'Get the invite',
+    alt_sunset: 'The office at sunset, the city through the window',
+    alt_view: 'The view from the 16th floor over a square and towers',
+    alt_desk: 'A desk by the window with a view over the city',
+    alt_room: 'The office by day, big windows and plants',
+    alt_evening: 'The office in the evening, warm light',
+    intro_h: 'A private office with 5 desks',
+    intro_meta: '88.87 m², 16th floor, Konstitucijos Ave 9, Vilnius',
+    host_h: 'Your host is Lauri',
+    host_p: 'I designed this office myself. I used to design office furniture at Narbutas. I work here every day, building my startup MyMatrix.',
+    hl1_h: 'A small group', hl1_p: 'I pick the people myself, so the office stays a small group that fits together.',
+    hl2_h: 'A view over the city', hl2_p: 'Big windows on the 16th floor.',
+    hl3_h: 'Everything close', hl3_p: 'A great espresso machine and a kitchen. A gym and the Dialogai food hall are very close.',
+    offers_h: 'What you can rent',
+    desk_name: 'A desk', desk_desc: 'Desk, chair and monitor. Paid a month ahead.', desk_go: 'Come see it',
+    room_name: 'The whole room by the hour', room_desc: 'For photo shoots, podcasts, workshops and meetings. Evenings and weekends, 2 hours minimum.', room_go: 'Pick a time',
+    events_name: 'Events', events_desc: 'Meetups and live podcast recordings in this room.', events_go: 'Get the invite', events_price: 'By invite',
+    per_month: '/ month', per_hour: '/ hour',
+    am_h: 'What a desk comes with',
+    am_desk: 'Desk and chair with a monitor', am_stand: 'One free desk is a sit-stand desk', am_view: 'Big windows, a view over the city', am_coffee: 'Espresso machine',
+    am_kitchen: 'Kitchen with dishes and cutlery', am_wifi: 'Internet', am_bills: 'Utilities included', am_gym: 'A gym nearby',
     when_h: 'Who uses the room when',
     when_weekday: 'Monday to Friday', when_weekend: 'Saturday and Sunday',
     seg_desk: 'Desks', seg_room: 'Room by the hour',
-    book_h: 'Booking',
+    book_h: 'Pick a time',
     book_sub: 'Grey times are taken. Pick a free one and it\'s yours right away.',
-    tab_room: 'Room by the hour', tab_view: 'Viewing',
+    mode_room: 'Room by the hour', mode_view: 'Desk viewing',
     l_free: 'Free', l_taken: 'Taken', l_desk: 'Desks in use', l_sel: 'Your time',
     loading: 'Loading times...',
-    panel_h: 'Your time',
-    panel_empty_room: 'Pick a start time in the calendar. 2 hours minimum.',
-    panel_empty_view: 'Pick a time for the viewing. It takes about 20 minutes.',
+    c_room_sub: '€{p} an hour from {n} hours', c_view_sub: 'A desk. The viewing is free and takes about 20 min.',
+    c_day: 'Date', c_time: 'Time', c_pick: 'Pick one',
     duration: 'Length', purpose: 'What for',
     p_photo: 'Photo shoot', p_podcast: 'Podcast', p_workshop: 'Workshop', p_meeting: 'Meeting', p_other: 'Other',
     f_name: 'Name', f_phone: 'Phone', f_email: 'Email',
-    total: 'Total', free_price: 'Free', long_note: '€{p} an hour',
-    btn_reserve: 'Book it', btn_reserving: 'Booking...',
+    total: 'Total', free_price: 'Free', line_room: '€{p} × {h} h', line_view: 'Viewing',
+    btn_pick: 'Pick a time', btn_reserve: 'Book it', btn_view_reserve: 'Book the viewing', btn_reserving: 'Booking...',
+    c_hint_room: 'Pick a start time in the calendar. 2 hours minimum.', c_hint_view: 'Pick a time for the viewing in the calendar.',
+    c_note_room: 'Nothing to pay now. We\'ll send a confirmation and a payment link today.', c_note_view: 'We\'ll send you how to get into the building.',
+    mb_room: 'Room by the hour', mb_view: 'A desk, the viewing is free',
     ok_room_h: 'The time is yours', ok_room: 'We\'ll send a confirmation and a payment link today.',
     ok_view_h: 'See you then', ok_view: 'We\'ll send you how to get into the building.',
     again: 'Book another time',
@@ -567,13 +728,14 @@ const T = {
     desk_block: 'Desks in use',
     events_h: 'Events',
     events_sub: 'Meetups and live podcast recordings in this room. Tick what you like and leave a contact. We\'ll send the first invite once there\'s a date.',
-    ev_meetup: 'Meetups', ev_podcast: 'Live podcast recordings', ev_contact: 'Email or phone', ev_btn: 'Get the invite',
+    ev_meetup: 'Meetups', ev_meetup_p: 'Get-togethers in this room',
+    ev_podcast: 'Live podcast', ev_podcast_p: 'Podcast recordings with an audience',
+    ev_contact: 'Email or phone', ev_btn: 'Get the invite',
     ev_ok: 'Thanks, we\'ll send the invite.', ev_pick: 'Tick at least one.', ev_need: 'Add an email or a phone.',
-    where_h: 'Where', where_addr: 'Konstitucijos Ave 9, 16th floor, Vilnius', where_map: 'Open in Maps',
+    where_h: 'Where', where_addr: 'Konstitucijos Ave 9, 16th floor, Vilnius', where_near: 'A gym and the Dialogai food hall are very close.', where_map: 'Open in Maps',
     days: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     daysLong: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     mShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    mGen: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     h: 'h',
   },
 };
@@ -592,6 +754,7 @@ const S = {
   bookings: [], loaded: false, busy: false,
 };
 const DEMO = !CONFIG.API_URL;
+const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 const t = (k, vars) => { let s = (T[S.lang][k] ?? T.lt[k] ?? k); if (vars) for (const v in vars) s = s.replace('{' + v + '}', vars[v]); return s; };
 const pad = n => String(n).padStart(2, '0');
 const hm = m => pad(Math.floor(m / 60)) + ':' + pad(m % 60);
@@ -602,10 +765,12 @@ const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); r
 const monday = off => addDays(startOfDay(new Date()), off * 7);
 const at = (day, min) => { const x = new Date(day); x.setHours(0, min, 0, 0); return x; };
 const horizonEnd = () => addDays(monday(0), CONFIG.WEEKS_AHEAD * 7);
+const shortDay = d => S.lang === 'lt' ? `${T.lt.days[wd(d)]}, ${T.lt.mShort[d.getMonth()]} ${d.getDate()}` : `${T.en.days[wd(d)]}, ${d.getDate()} ${T.en.mShort[d.getMonth()]}`;
 
 /* ---------- i18n ---------- */
 function applyLang() {
   document.documentElement.lang = S.lang;
+  document.title = t('title');
   document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
   document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
   document.querySelectorAll('[data-i18n-alt]').forEach(el => { el.alt = t(el.dataset.i18nAlt); });
@@ -619,12 +784,14 @@ function applyLang() {
 
 /* ---------- day bars ---------- */
 function renderDaybars() {
-  const pct = h => (h / 24 * 100).toFixed(3) + '%';
-  const seg = (cls, [a, b], label) => `<div class="seg ${cls}" style="left:${pct(a)};width:${pct(b - a)}">${label}</div>`;
-  const ticks = '<div class="ticks">' + [0, 6, 12, 18, 24].map(h => `<span style="left:${pct(h)}">${pad(h)}:00</span>`).join('') + '</div>';
+  const [H0, H1] = [Math.min(CONFIG.DESK_HOURS[0], CONFIG.ROOM_HOURS.weekend[0]), Math.max(CONFIG.ROOM_HOURS.weekday[1], CONFIG.ROOM_HOURS.weekend[1])];
+  const pct = h => ((h - H0) / (H1 - H0) * 100).toFixed(3) + '%';
+  const seg = (cls, [a, b]) => `<div class="seg ${cls}" style="left:${pct(a)};width:${((b - a) / (H1 - H0) * 100).toFixed(3)}%">${pad(a)}-${pad(b)}</div>`;
+  const ticks = '<div class="ticks">' + [H0, 12, CONFIG.DESK_HOURS[1], H1].map(h => `<span style="left:${pct(h)}">${pad(h)}:00</span>`).join('') + '</div>';
   $('daybars').innerHTML =
-    `<div class="dayrow"><span>${t('when_weekday')}</span><div><div class="track24">${seg('desk', CONFIG.DESK_HOURS, t('seg_desk'))}${seg('room', CONFIG.ROOM_HOURS.weekday, t('seg_room'))}</div>${ticks}</div></div>` +
-    `<div class="dayrow"><span>${t('when_weekend')}</span><div><div class="track24">${seg('room', CONFIG.ROOM_HOURS.weekend, t('seg_room'))}</div>${ticks}</div></div>`;
+    `<ul class="legend db-legend"><li><span class="sw desk"></span>${t('seg_desk')}</li><li><span class="sw room"></span>${t('seg_room')}</li></ul>` +
+    `<div class="dayrow"><span>${t('when_weekday')}</span><div><div class="track24">${seg('desk', CONFIG.DESK_HOURS)}${seg('room', CONFIG.ROOM_HOURS.weekday)}</div>${ticks}</div></div>` +
+    `<div class="dayrow"><span>${t('when_weekend')}</span><div><div class="track24">${seg('room', CONFIG.ROOM_HOURS.weekend)}</div>${ticks}</div></div>`;
 }
 
 /* ---------- slots ---------- */
@@ -708,9 +875,8 @@ function render() {
         if (last) cls.push('last');
         if (first) label = k === 'desk' ? t('l_desk') : k === 'taken' ? t('l_taken') : hm(S.sel.min) + '-' + hm(S.sel.min + selRange().len);
       }
-      if (st === 'past') cls.push('open');
       if (sel) cls.push('sel');
-      if (st === 'free' || sel) g += `<button type="button" class="${cls.join(' ')}" data-d="${di}" data-m="${min}" aria-label="${T[S.lang].daysLong[wd(d)]} ${hm(min)}">${label}</button>`;
+      if (st === 'free' || sel) g += `<button type="button" class="${cls.join(' ')}" data-d="${di}" data-m="${min}" data-t="${hm(min)}" aria-label="${T[S.lang].daysLong[wd(d)]} ${hm(min)}">${label}</button>`;
       else g += `<div class="${cls.join(' ')}">${label}</div>`;
     });
   });
@@ -729,66 +895,89 @@ function render() {
   const states = rows.map(m => [m, cellState(d, m)]);
   let html = '';
   const deskRows = states.filter(([, st]) => st === 'desk');
-  if (deskRows.length) html += `<div class="slot desk"><span class="mono">${hm(deskRows[0][0])}-${hm(deskRows[deskRows.length - 1][0] + 60)}</span><span>${t('desk_block')}</span></div>`;
+  if (deskRows.length) html += `<div class="slot desk"><span class="t">${hm(deskRows[0][0])}-${hm(deskRows[deskRows.length - 1][0] + 60)}</span><span>${t('desk_block')}</span></div>`;
   states.filter(([, st]) => st === 'free' || st === 'taken').forEach(([m, st]) => {
     const sel = inSel(d, m);
     const right = sel ? t('l_sel') : st === 'taken' ? t('l_taken') : t('l_free');
     html += st === 'free'
-      ? `<button type="button" class="slot${sel ? ' sel' : ''}" data-d="${S.day}" data-m="${m}"><span class="mono">${hm(m)}</span><span>${right}</span></button>`
-      : `<div class="slot taken"><span class="mono">${hm(m)}</span><span>${right}</span></div>`;
+      ? `<button type="button" class="slot${sel ? ' sel' : ''}" data-d="${S.day}" data-m="${m}"><span class="t">${hm(m)}</span><span>${right}</span></button>`
+      : `<div class="slot taken"><span class="t">${hm(m)}</span><span>${right}</span></div>`;
   });
   if (!states.some(([, st]) => st === 'free' || st === 'taken')) {
     const weekend = wd(d) >= 5;
     html += `<p class="empty-day">${S.mode === 'viewing' && weekend ? t('no_view') : states.some(([, st]) => st === 'past') ? t('no_left') : t('no_room')}</p>`;
   }
   $('slots').innerHTML = html;
-  renderPanel();
+  renderCard();
 }
 
-function renderPanel() {
-  const r = selRange();
-  $('pEmptyText').textContent = S.mode === 'room' ? t('panel_empty_room') : t('panel_empty_view');
-  if ($('pDone').hidden === false) return;
-  $('pEmpty').hidden = !!r; $('pForm').hidden = !r;
-  if (!r) return;
-  const day = S.sel.day;
-  $('pDay').textContent = S.lang === 'lt'
-    ? `${T.lt.daysLong[wd(day)]}, ${T.lt.mGen[day.getMonth()]} ${day.getDate()} d.`
-    : `${T.en.daysLong[wd(day)]}, ${day.getDate()} ${T.en.mGen[day.getMonth()]}`;
-  $('pTime').textContent = hm(S.sel.min) + '-' + hm(S.sel.min + r.len);
-  $('pDurRow').hidden = S.mode !== 'room';
-  $('pPurpose').hidden = S.mode !== 'room';
-  if (S.mode === 'room') {
-    const max = Math.min(CONFIG.ROOM_MAX, freeHoursFrom(day, S.sel.min));
+function renderCard() {
+  const r = selRange(), room = S.mode === 'room';
+  $('cPrice').textContent = '€' + (room ? CONFIG.ROOM_PRICE : CONFIG.DESK_PRICE);
+  $('cUnit').textContent = room ? t('per_hour') : t('per_month');
+  $('cSub').textContent = room ? t('c_room_sub', { n: CONFIG.ROOM_LONG_FROM, p: CONFIG.ROOM_PRICE_LONG }) : t('c_view_sub');
+  let total = 0;
+  if (r && room) total = S.hours * (S.hours >= CONFIG.ROOM_LONG_FROM ? CONFIG.ROOM_PRICE_LONG : CONFIG.ROOM_PRICE);
+  updateBar(total);
+  const done = !$('pDone').hidden;
+  $('cMain').hidden = done;
+  if (done) return;
+  $('cDay').textContent = r ? shortDay(S.sel.day) : t('c_pick');
+  $('cTime').textContent = r ? hm(S.sel.min) + '-' + hm(S.sel.min + r.len) : t('c_pick');
+  $('cDay').classList.toggle('on', !!r); $('cTime').classList.toggle('on', !!r);
+  $('cDurRow').hidden = !(room && r);
+  $('cDetails').hidden = !r;
+  $('pPurpose').hidden = !room;
+  $('cLines').hidden = !r;
+  if (r && room) {
+    const max = Math.min(CONFIG.ROOM_MAX, freeHoursFrom(S.sel.day, S.sel.min));
+    const p = S.hours >= CONFIG.ROOM_LONG_FROM ? CONFIG.ROOM_PRICE_LONG : CONFIG.ROOM_PRICE;
     $('durOut').textContent = S.hours + ' ' + T[S.lang].h;
     $('durMinus').disabled = S.hours <= CONFIG.ROOM_MIN;
     $('durPlus').disabled = S.hours >= max;
-    const long = S.hours >= CONFIG.ROOM_LONG_FROM;
-    $('pTotal').textContent = '€' + S.hours * (long ? CONFIG.ROOM_PRICE_LONG : CONFIG.ROOM_PRICE);
-    $('pTotalNote').textContent = long ? t('long_note', { p: CONFIG.ROOM_PRICE_LONG }) : '';
-  } else {
-    $('pTotal').textContent = t('free_price');
-    $('pTotalNote').textContent = '';
+    $('lineL').textContent = t('line_room', { p, h: S.hours });
+    $('lineR').textContent = '€' + total;
+    $('totR').textContent = '€' + total;
+  } else if (r) {
+    $('lineL').textContent = t('line_view');
+    $('lineR').textContent = t('free_price');
+    $('totR').textContent = '€0';
   }
-  $('pSubmit').textContent = S.busy ? t('btn_reserving') : t('btn_reserve');
+  $('pSubmit').textContent = S.busy ? t('btn_reserving') : !r ? t('btn_pick') : room ? t('btn_reserve') : t('btn_view_reserve');
   $('pSubmit').disabled = S.busy;
+  $('cNote').textContent = r ? (room ? t('c_note_room') : t('c_note_view')) : (room ? t('c_hint_room') : t('c_hint_view'));
+}
+function updateBar(total) {
+  const r = selRange(), room = S.mode === 'room';
+  if (r) {
+    $('mbPrice').textContent = room ? '€' + total : t('free_price');
+    $('mbSub').textContent = shortDay(S.sel.day) + ', ' + hm(S.sel.min) + '-' + hm(S.sel.min + r.len);
+  } else {
+    $('mbPrice').textContent = '€' + (room ? CONFIG.ROOM_PRICE : CONFIG.DESK_PRICE) + ' ' + (room ? t('per_hour') : t('per_month'));
+    $('mbSub').textContent = room ? t('mb_room') : t('mb_view');
+  }
+  $('mbBtn').textContent = r ? (room ? t('btn_reserve') : t('btn_view_reserve')) : t('btn_pick');
 }
 function renderPurpose() {
   $('purposeChips').innerHTML = PURPOSES.map(([k, ic]) =>
     `<label><input type="radio" name="purpose" value="${k}"${S.purpose === k ? ' checked' : ''}><span><svg class="icon"><use href="#${ic}"/></svg>${t('p_' + k)}</span></label>`).join('');
 }
+function markTabs() {
+  document.querySelectorAll('[data-tab]').forEach(a => a.setAttribute('aria-current', String(a.dataset.tab === S.mode)));
+}
 
 /* ---------- interactions ---------- */
-function pick(di, min, el) {
+const goTo = el => el.scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'start' });
+function pick(di, min) {
   const day = addDays(monday(S.week), di);
   $('pErr').textContent = '';
-  showForm();
+  hideDone();
   if (S.mode === 'room') {
     const n = freeHoursFrom(day, min);
     if (n < CONFIG.ROOM_MIN) {
       S.sel = null; render();
-      $('pEmptyText').textContent = t('err_short', { n, m: CONFIG.ROOM_MIN });
-      const c = document.querySelector(`[data-d="${di}"][data-m="${min}"]`);
+      $('pErr').textContent = t('err_short', { n, m: CONFIG.ROOM_MIN });
+      const c = document.querySelector(`.cell[data-d="${di}"][data-m="${min}"], .slot[data-d="${di}"][data-m="${min}"]`);
       if (c) { c.classList.remove('shake'); void c.offsetWidth; c.classList.add('shake'); }
       return;
     }
@@ -796,19 +985,18 @@ function pick(di, min, el) {
   }
   S.sel = { day, min };
   render();
-  if (matchMedia('(max-width: 980px)').matches) document.querySelector('.panel').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'nearest' });
 }
 function setMode(m) {
   if (S.mode === m) return;
-  S.mode = m; S.sel = null; S.day = null; showForm();
+  S.mode = m; S.sel = null; S.day = null; hideDone(); $('pErr').textContent = '';
   document.querySelectorAll('[data-mode]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === m)));
-  renderLegend(); render();
+  markTabs(); renderLegend(); render();
 }
-function showForm() { $('pDone').hidden = true; }
+function hideDone() { $('pDone').hidden = true; }
 
 document.addEventListener('click', e => {
   const c = e.target.closest('.cell[data-d], .slot[data-d]');
-  if (c) return pick(+c.dataset.d, +c.dataset.m, c);
+  if (c) return pick(+c.dataset.d, +c.dataset.m);
   const dp = e.target.closest('#days button');
   if (dp) { S.day = +dp.dataset.i; return render(); }
   const go = e.target.closest('[data-go]');
@@ -823,11 +1011,27 @@ $('nextWeek').onclick = () => { S.week = Math.min(CONFIG.WEEKS_AHEAD - 1, S.week
 $('durMinus').onclick = () => { S.hours = Math.max(CONFIG.ROOM_MIN, S.hours - 1); render(); };
 $('durPlus').onclick = () => { S.hours = Math.min(CONFIG.ROOM_MAX, freeHoursFrom(S.sel.day, S.sel.min), S.hours + 1); render(); };
 $('purposeChips').addEventListener('change', e => { S.purpose = e.target.value; });
-$('again').onclick = () => { S.sel = null; showForm(); render(); };
+$('again').onclick = () => { S.sel = null; hideDone(); render(); };
+$('mbBtn').onclick = () => goTo(S.sel ? $("card") : $("rezervacija"));
 const bar = $('bar');
-const onScroll = () => bar.classList.toggle('solid', scrollY > 40);
+const onScroll = () => bar.classList.toggle('solid', scrollY > 20);
 addEventListener('scroll', onScroll, { passive: true }); onScroll();
 matchMedia('(max-width: 819px)').addEventListener('change', render);
+
+// phone: bottom bar hides while the hero buttons, the booking card, the events form or the footer are on screen
+const seen = new Set();
+const io = new IntersectionObserver(es => {
+  es.forEach(en => en.isIntersecting ? seen.add(en.target) : seen.delete(en.target));
+  $('mbar').classList.toggle('off', seen.size > 0);
+}, { threshold: 0.15 });
+io.observe($('card')); io.observe(document.querySelector('.hero-ctas')); io.observe($('renginiai')); io.observe(document.querySelector('footer'));
+
+// phone gallery counter
+const gal = $('gallery');
+gal.addEventListener('scroll', () => {
+  const i = Math.round(gal.scrollLeft / Math.max(1, gal.clientWidth));
+  $('gcount').textContent = (i + 1) + ' / ' + gal.children.length;
+}, { passive: true });
 
 /* ---------- data: demo or Apps Script ---------- */
 function demoSeed() {
@@ -873,7 +1077,8 @@ async function send(payload) {
 
 $('pForm').addEventListener('submit', async e => {
   e.preventDefault();
-  if (S.busy || !S.sel) return;
+  if (S.busy) return;
+  if (!S.sel) return goTo($("rezervacija"));
   const name = $('fName').value.trim(), phone = $('fPhone').value.trim(), email = $('fEmail').value.trim();
   $('fName').setAttribute('aria-invalid', String(!name));
   const noContact = !phone && !/^\S+@\S+\.\S+$/.test(email);
@@ -885,7 +1090,7 @@ $('pForm').addEventListener('submit', async e => {
     kind: S.mode, start: r.s.toISOString(), end: r.e.toISOString(),
     purpose: S.mode === 'room' ? S.purpose : '', name, phone, email, lang: S.lang, website: $('fWeb').value,
   };
-  S.busy = true; $('pErr').textContent = ''; renderPanel();
+  S.busy = true; $('pErr').textContent = ''; renderCard();
   let res;
   try { res = await send(payload); } catch (err) { res = { ok: false, error: 'net' }; }
   S.busy = false;
@@ -893,14 +1098,14 @@ $('pForm').addEventListener('submit', async e => {
     S.bookings.push({ s: r.s.getTime(), e: r.e.getTime(), kind: S.mode });
     const wasRoom = S.mode === 'room';
     S.sel = null;
-    $('pForm').hidden = true; $('pEmpty').hidden = true; $('pDone').hidden = false;
+    $('pDone').hidden = false;
     $('pDoneH').textContent = wasRoom ? t('ok_room_h') : t('ok_view_h');
     $('pDoneP').textContent = wasRoom ? t('ok_room') : t('ok_view');
     render();
   } else {
     $('pErr').textContent = res && res.error === 'taken' ? t('err_taken') : t('err_net');
-    if (res && res.error === 'taken') { await load(); S.sel = null; render(); $('pEmptyText').textContent = t('err_taken'); }
-    else renderPanel();
+    if (res && res.error === 'taken') { await load(); S.sel = null; render(); $('pErr').textContent = t('err_taken'); }
+    else renderCard();
   }
 });
 
@@ -918,6 +1123,7 @@ $('evForm').addEventListener('submit', async e => {
   } catch (err) { $('evErr').textContent = t('err_net'); }
 });
 
+markTabs();
 applyLang();
 load();
 if (!DEMO) setInterval(() => { if (!S.busy) load(); }, 60000);
