@@ -70,7 +70,8 @@ button,input{font:inherit;color:inherit}
 .sticker{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--hl);color:var(--ink);font-family:var(--display);font-stretch:112%;font-weight:800;text-transform:uppercase;font-size:clamp(14px,1.5vw,18px);line-height:1.1;padding:9px 16px 8px;transform:rotate(-2.5deg);transform-origin:left center;animation:slap .8s var(--ease) .2s both}
 @keyframes slap{from{transform:rotate(-10deg) scale(1.22)}to{transform:rotate(-2.5deg) scale(1)}}
 .dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 2px #fff;flex:none}
-.hero-sub{font-family:var(--display);font-stretch:100%;font-weight:600;text-transform:uppercase;font-size:17px;line-height:1.3;margin:0 0 18px;letter-spacing:.005em}
+.hero-sub{font-family:var(--display);font-stretch:100%;font-weight:700;text-transform:uppercase;font-size:18px;line-height:1.25;margin:0 0 18px;letter-spacing:.005em;text-wrap:balance}
+.hero-sub .side-f{display:block;margin-top:8px;font-weight:500;font-size:15px;color:var(--ink2)}
 .hero-ctas{display:flex;gap:10px;flex-wrap:wrap}
 
 /* ---------- gallery ---------- */
@@ -80,6 +81,22 @@ button,input{font:inherit;color:inherit}
 .gallery figure:first-child{grid-row:1/3}
 .gallery img{width:100%;height:100%;object-fit:cover}
 .gcount{display:none}
+.gallery figure{cursor:zoom-in}
+.g-all{position:absolute;right:calc(var(--gut) + 16px);bottom:16px;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 15px;border-radius:999px;border:1px solid var(--ink);background:#fff;font-weight:600;font-size:14px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.14);transition:background .15s}
+.g-all:hover{background:var(--soft)}
+.g-all .icon{width:16px;height:16px;stroke-width:1.8}
+html.locked{overflow:hidden}
+dialog.tour{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:0;background:#fff;color:var(--ink);overflow-y:auto;overscroll-behavior:contain}
+dialog.tour::backdrop{background:#fff}
+.tour-top{position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid var(--line)}
+.tour-top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.tour-top h2{font-family:var(--display);font-stretch:112%;font-weight:800;text-transform:uppercase;font-size:22px;margin:0}
+.tour-top .iconbtn{width:40px;height:40px}
+.tour-list{max-width:980px;margin:0 auto;padding:28px var(--gut) 72px;display:grid;grid-template-columns:1fr 1fr;gap:22px 10px}
+.tour-list figure{margin:0;scroll-margin-top:84px}
+.tour-list figure.wide{grid-column:1/-1}
+.tour-list img{display:block;width:100%;height:auto;border-radius:12px;background:var(--soft)}
+.tour-list figcaption{font-size:14px;color:var(--ink2);margin-top:8px}
 
 /* ---------- listing ---------- */
 .listing{display:grid;grid-template-columns:minmax(0,1fr) 372px;gap:0 72px;padding-top:44px;padding-bottom:16px}
@@ -90,7 +107,10 @@ button,input{font:inherit;color:inherit}
 .h2{font-family:var(--display);font-stretch:112%;font-weight:800;text-transform:uppercase;font-size:clamp(26px,2.6vw,36px);line-height:1.05;letter-spacing:-.005em;margin:0 0 22px;text-wrap:balance}
 .intro .h2{font-size:clamp(28px,3vw,40px);margin-bottom:10px}
 .meta{margin:0;color:var(--ink2);font-size:17px}
-.host{display:flex;gap:16px;align-items:flex-start}
+.host{display:flex;gap:20px;align-items:flex-start}
+.host-head{width:76px;height:auto;flex:none}
+.li-link{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
+.li-logo{width:18px;height:18px;flex:none}
 .avatar{width:52px;height:52px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:900;font-stretch:125%;font-size:21px;flex:none}
 .host b{display:block;font-size:17px;font-weight:600}
 .host p{margin:3px 0 0;color:var(--ink2);max-width:60ch}
@@ -112,8 +132,40 @@ button,input{font:inherit;color:inherit}
 .offer p{color:var(--ink2);margin:4px 0 0;font-size:15px;line-height:1.45}
 .o-go{margin-top:auto;padding-top:10px;font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1.5px}
 
-.am{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:18px 32px}
-.am li{display:flex;gap:16px;align-items:center}
+.host{margin-top:30px}
+.am-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 40px}
+.am-group h3{font-size:16px;font-weight:700;margin:0 0 14px}
+.am{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.am li{display:flex;gap:14px;align-items:flex-start;line-height:1.4}
+
+/* floor plan */
+.plan-wrap{overflow-x:auto;scrollbar-width:none}
+.plan-wrap::-webkit-scrollbar{display:none}
+.plan{position:relative;aspect-ratio:1.6;min-width:480px;border:2px solid var(--ink);border-radius:14px;background:#fff;overflow:hidden}
+.p-win{position:absolute;left:0;right:0;top:0;height:9px;background:repeating-linear-gradient(90deg,#d6dfe5 0 26px,#fff 26px 28px);border-bottom:1px solid #c4cdd3;z-index:2}
+.p-room{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;background:var(--soft);font-size:12.5px;font-weight:600;color:var(--ink2);padding:6px;line-height:1.2}
+.p-room .icon{width:20px;height:20px}
+.p-room.glass{background:#f6f8f9;border-right:1.5px dashed var(--ink3);border-bottom:1.5px dashed var(--ink3)}
+.p-door{position:absolute;bottom:-2px;height:4px;background:#fff;z-index:2}
+.p-door::before{content:'';position:absolute;left:0;bottom:4px;width:100%;aspect-ratio:1;border-top-right-radius:100%;border-top:1.5px solid var(--ink3);border-right:1.5px solid var(--ink3)}
+.p-label{position:absolute;font-size:11.5px;font-weight:600;color:var(--ink2);white-space:nowrap}
+.p-chair{position:absolute;border-radius:6px;box-shadow:inset 0 0 0 1.5px var(--line2);background:#fff}
+.p-sofa{position:absolute;left:12%;right:12%;bottom:9%;height:24%;border-radius:10px;box-shadow:inset 0 0 0 1.5px var(--ink3);background:#fff}
+.p-counter{position:absolute;right:0;top:0;bottom:0;width:20%;background:#e9e9e4;border-left:1.5px solid var(--ink3)}
+.p-room > .icon,.p-room > span{position:relative;z-index:1}
+.p-room.has-sofa{justify-content:flex-start;padding-top:18px}
+.p-room.has-counter{padding-right:6.5%}
+.p-desk{position:absolute;border:0;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font:inherit;padding:0;line-height:1.1;z-index:1}
+.p-desk b{font-family:var(--display);font-stretch:112%;font-weight:800;font-size:18px}
+.p-desk span{font-size:11.5px;font-weight:600}
+.p-desk.free{background:#fff;box-shadow:inset 0 0 0 1.5px var(--ink);color:var(--ink);cursor:pointer;transition:background .15s}
+.p-desk.free::after{content:'';position:absolute;top:6px;right:6px;width:7px;height:7px;border-radius:50%;background:var(--green)}
+.p-desk.free:hover{background:var(--soft)}
+.p-desk.mine{background:var(--ink);color:#fff;cursor:pointer}
+.p-desk.taken{background:repeating-linear-gradient(135deg,#dededa 0 4px,#f2f2ef 4px 8px);color:var(--ink2)}
+.plan-legend{margin:14px 0 0}
+.sw.pfree{background:#fff;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.sw.win{background:repeating-linear-gradient(90deg,#d6dfe5 0 5px,#fff 5px 6px);box-shadow:inset 0 0 0 1px #c4cdd3}
 
 .dayrow{display:grid;grid-template-columns:160px minmax(0,1fr);gap:16px;align-items:start;margin-bottom:14px}
 .dayrow > span{font-weight:600;font-size:15px;padding-top:10px}
@@ -305,13 +357,17 @@ footer{background:var(--ink);color:#fff;padding:56px 0 30px;overflow:hidden}
   .gallery::-webkit-scrollbar{display:none}
   .gallery figure{flex:0 0 100%;aspect-ratio:4/3;scroll-snap-align:start}
   .gallery figure:first-child{grid-row:auto}
+  .g-all{left:calc(var(--gut) + 12px);right:auto;bottom:12px;height:32px;padding:0 12px;font-size:13px}
+  .tour-list{grid-template-columns:1fr;gap:18px}
+  .host-head{width:64px}
   .gcount{display:block;position:absolute;right:calc(var(--gut) + 12px);bottom:12px;background:rgba(22,22,22,.74);color:#fff;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;font-variant-numeric:tabular-nums;pointer-events:none}
   .offers{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 var(--gut);gap:14px;margin:0 calc(var(--gut) * -1);padding:0 var(--gut);scrollbar-width:none}
   .hero-ctas{flex-wrap:nowrap}
   .hero-ctas > a{flex:1;padding:0 12px;font-size:15px}
   .offers::-webkit-scrollbar{display:none}
   .offer{flex:0 0 78%;scroll-snap-align:start}
-  .am{grid-template-columns:1fr}
+  .am-groups{grid-template-columns:1fr;gap:26px}
+  .plan-wrap{margin:0 calc(var(--gut) * -1);padding:0 var(--gut)}
   .dayrow{grid-template-columns:1fr;gap:6px}
   .dayrow > span{padding:0}
   .ev-head{grid-template-columns:1fr}
@@ -345,7 +401,10 @@ footer{background:var(--ink);color:#fff;padding:56px 0 30px;overflow:hidden}
   <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r=".9"/></symbol>
   <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 14h6l-1 7 8-11h-6z"/></symbol>
   <symbol id="i-gym" viewBox="0 0 24 24"><path d="M6.5 7v10M17.5 7v10M3.5 9.5v5M20.5 9.5v5M6.5 12h11"/></symbol>
-  <symbol id="i-pick" viewBox="0 0 24 24"><circle cx="8.5" cy="8" r="3.5"/><path d="M2.5 20a6 6 0 0 1 12 0M16 11l2 2 4-4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-sofa" viewBox="0 0 24 24"><path d="M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3"/><path d="M3 11a1.5 1.5 0 0 1 3 0v2h12v-2a1.5 1.5 0 0 1 3 0v5H3zM5 16v2M19 16v2"/></symbol>
 </svg>
 
 <header class="top" id="bar">
@@ -374,7 +433,7 @@ footer{background:var(--ink);color:#fff;padding:56px 0 30px;overflow:hidden}
         <span class="sticker"><span class="dot" aria-hidden="true"></span><span id="availText"></span></span>
       </div>
       <div class="hero-side">
-        <p class="hero-sub" data-i18n="hero_sub"></p>
+        <p class="hero-sub"><span data-i18n="hero_sub"></span><span class="side-f" data-i18n="hero_sub2"></span></p>
         <div class="hero-ctas">
           <a class="cta" href="#rezervacija" data-go="room"><span data-i18n="cta_time"></span><svg class="icon"><use href="#i-arrow"/></svg></a>
           <a class="ghost" href="#rezervacija" data-go="viewing" data-i18n="cta_view"></a>
@@ -385,13 +444,14 @@ footer{background:var(--ink);color:#fff;padding:56px 0 30px;overflow:hidden}
 
   <div class="wrap gwrap">
     <div class="gallery" id="gallery">
-      <figure><img src="img/view.jpg" alt="" data-i18n-alt="alt_view" width="1200" height="879" fetchpriority="high"></figure>
-      <figure><img src="img/room.jpg" alt="" data-i18n-alt="alt_room" width="840" height="518" loading="lazy" style="object-position:50% 75%"></figure>
-      <figure><img src="img/sunset.jpg" alt="" data-i18n-alt="alt_sunset" width="1200" height="1600" loading="lazy" style="object-position:50% 42%"></figure>
-      <figure><img src="img/desk.jpg" alt="" data-i18n-alt="alt_desk" width="1412" height="800" loading="lazy"></figure>
-      <figure><img src="img/evening.jpg" alt="" data-i18n-alt="alt_evening" width="1000" height="554" loading="lazy" style="object-position:50% 92%"></figure>
+      <figure data-ph="0"><img src="img/room.jpg" alt="" data-i18n-alt="ph_room" width="1800" height="1350" fetchpriority="high" style="object-position:50% 60%"></figure>
+      <figure data-ph="1"><img src="img/desk-pov.jpg" alt="" data-i18n-alt="ph_desk" width="1200" height="880" loading="lazy"></figure>
+      <figure data-ph="3"><img src="img/meeting.jpg" alt="" data-i18n-alt="ph_meet" width="1400" height="1050" loading="lazy"></figure>
+      <figure data-ph="4"><img src="img/kitchen.jpg" alt="" data-i18n-alt="ph_kitchen" width="1400" height="1050" loading="lazy" style="object-position:50% 70%"></figure>
+      <figure data-ph="5"><img src="img/lounge.jpg" alt="" data-i18n-alt="ph_lounge" width="1400" height="1050" loading="lazy"></figure>
     </div>
     <span class="gcount" id="gcount" aria-hidden="true">1 / 5</span>
+    <button class="g-all" type="button" id="gAll"><svg class="icon"><use href="#i-grid"/></svg><span data-i18n="g_all"></span> <span id="gAllN"></span></button>
   </div>
 
   <div class="wrap listing">
@@ -399,37 +459,29 @@ footer{background:var(--ink);color:#fff;padding:56px 0 30px;overflow:hidden}
       <section class="intro">
         <h2 class="h2" data-i18n="intro_h"></h2>
         <p class="meta" data-i18n="intro_meta"></p>
-      </section>
-
-      <section>
         <div class="host">
-          <span class="avatar" aria-hidden="true">L</span>
-          <div><b data-i18n="host_h"></b><p data-i18n="host_p"></p></div>
+          <img class="host-head" src="img/lauri-head.webp" alt="Lauri" width="200" height="278">
+          <div><b data-i18n="host_h"></b><p data-i18n="host_p"></p><a class="li-link" href="https://www.linkedin.com/in/lrnsvtks/" target="_blank" rel="noopener"><svg class="li-logo" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.5H4.6V19h2.5V9.5zM5.85 5.2a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9zM19.4 13.6c0-2.6-1.4-4.3-3.6-4.3-1.3 0-2.1.7-2.5 1.3V9.5h-2.4V19h2.4v-4.9c0-1.3.4-2.4 1.8-2.4 1.3 0 1.7 1.1 1.7 2.5V19h2.6v-5.4z"/></svg><span data-i18n="host_li"></span></a></div>
         </div>
-        <ul class="hl">
-          <li><svg class="icon"><use href="#i-pick"/></svg><div><b data-i18n="hl1_h"></b><p data-i18n="hl1_p"></p></div></li>
-          <li><svg class="icon"><use href="#i-window"/></svg><div><b data-i18n="hl2_h"></b><p data-i18n="hl2_p"></p></div></li>
-          <li><svg class="icon"><use href="#i-coffee"/></svg><div><b data-i18n="hl3_h"></b><p data-i18n="hl3_p"></p></div></li>
-        </ul>
       </section>
 
       <section id="kainos">
         <h2 class="h2" data-i18n="offers_h"></h2>
         <div class="offers">
           <a class="offer" href="#rezervacija" data-go="viewing">
-            <div class="ph"><img src="img/room.jpg" alt="" data-i18n-alt="alt_room" loading="lazy" width="840" height="518" style="object-position:50% 75%"></div>
+            <div class="ph"><img src="img/desk-pov.jpg" alt="" data-i18n-alt="ph_desk" loading="lazy" width="1200" height="880"></div>
             <div class="o-top"><h3 data-i18n="desk_name"></h3><b class="o-price"><span id="deskPrice"></span> <small data-i18n="per_month"></small></b></div>
             <p data-i18n="desk_desc"></p>
             <span class="o-go" data-i18n="desk_go"></span>
           </a>
           <a class="offer" href="#rezervacija" data-go="room">
-            <div class="ph"><img src="img/sunset.jpg" alt="" data-i18n-alt="alt_sunset" loading="lazy" width="1200" height="1600" style="object-position:50% 42%"></div>
+            <div class="ph"><img src="img/night.jpg" alt="" data-i18n-alt="alt_night" loading="lazy" width="1400" height="1050"></div>
             <div class="o-top"><h3 data-i18n="room_name"></h3><b class="o-price"><span id="roomPrice"></span> <small data-i18n="per_hour"></small></b></div>
             <p data-i18n="room_desc"></p>
             <span class="o-go" data-i18n="room_go"></span>
           </a>
           <a class="offer" href="#renginiai">
-            <div class="ph"><img src="img/evening.jpg" alt="" data-i18n-alt="alt_evening" loading="lazy" width="1000" height="554" style="object-position:50% 92%"></div>
+            <div class="ph"><img src="img/lounge.jpg" alt="" data-i18n-alt="alt_lounge" loading="lazy" width="1400" height="1050"></div>
             <div class="o-top"><h3 data-i18n="events_name"></h3><b class="o-price" data-i18n="events_price"></b></div>
             <p data-i18n="events_desc"></p>
             <span class="o-go" data-i18n="events_go"></span>
@@ -439,20 +491,45 @@ footer{background:var(--ink);color:#fff;padding:56px 0 30px;overflow:hidden}
 
       <section>
         <h2 class="h2" data-i18n="am_h"></h2>
-        <ul class="am">
-          <li><svg class="icon"><use href="#i-desk"/></svg><span data-i18n="am_desk"></span></li>
-          <li><svg class="icon"><use href="#i-stand"/></svg><span data-i18n="am_stand"></span></li>
-          <li><svg class="icon"><use href="#i-window"/></svg><span data-i18n="am_view"></span></li>
-          <li><svg class="icon"><use href="#i-coffee"/></svg><span data-i18n="am_coffee"></span></li>
-          <li><svg class="icon"><use href="#i-kitchen"/></svg><span data-i18n="am_kitchen"></span></li>
-          <li><svg class="icon"><use href="#i-wifi"/></svg><span data-i18n="am_wifi"></span></li>
-          <li><svg class="icon"><use href="#i-bolt"/></svg><span data-i18n="am_bills"></span></li>
-          <li><svg class="icon"><use href="#i-gym"/></svg><span data-i18n="am_gym"></span></li>
-        </ul>
+        <div class="am-groups">
+          <div class="am-group">
+            <h3 data-i18n="am_g1"></h3>
+            <ul class="am">
+              <li><svg class="icon"><use href="#i-clock"/></svg><span data-i18n="am_247"></span></li>
+              <li><svg class="icon"><use href="#i-desk"/></svg><span data-i18n="am_desk"></span></li>
+              <li><svg class="icon"><use href="#i-stand"/></svg><span data-i18n="am_stand"></span></li>
+              <li><svg class="icon"><use href="#i-wifi"/></svg><span data-i18n="am_bills"></span></li>
+            </ul>
+          </div>
+          <div class="am-group">
+            <h3 data-i18n="am_g2"></h3>
+            <ul class="am">
+              <li><svg class="icon"><use href="#i-window"/></svg><span data-i18n="am_view"></span></li>
+              <li><svg class="icon"><use href="#i-chat"/></svg><span data-i18n="am_meet"></span></li>
+              <li><svg class="icon"><use href="#i-coffee"/></svg><span data-i18n="am_kitchen"></span></li>
+              <li><svg class="icon"><use href="#i-sofa"/></svg><span data-i18n="am_lounge"></span></li>
+            </ul>
+          </div>
+          <div class="am-group">
+            <h3 data-i18n="am_g3"></h3>
+            <ul class="am">
+              <li><svg class="icon"><use href="#i-gym"/></svg><span data-i18n="am_gym"></span></li>
+              <li><svg class="icon"><use href="#i-kitchen"/></svg><span data-i18n="am_food"></span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="planas">
+        <h2 class="h2" data-i18n="plan_h"></h2>
+        <p class="lead" data-i18n="plan_sub"></p>
+        <div class="plan-wrap"><div class="plan" id="plan"></div></div>
+        <ul class="legend plan-legend" id="planLegend"></ul>
       </section>
 
       <section>
         <h2 class="h2" data-i18n="when_h"></h2>
+        <p class="lead" data-i18n="when_sub"></p>
         <div id="daybars"></div>
       </section>
 
@@ -576,6 +653,11 @@ footer{background:var(--ink);color:#fff;padding:56px 0 30px;overflow:hidden}
   </div>
 </footer>
 
+<dialog class="tour" id="tour" aria-labelledby="tourH">
+  <div class="tour-top"><div class="wrap"><h2 id="tourH" data-i18n="g_title"></h2><button class="iconbtn" type="button" id="tourClose" data-i18n-aria="g_close"><svg class="icon"><use href="#i-close"/></svg></button></div></div>
+  <div class="tour-list" id="tourList"></div>
+</dialog>
+
 <div class="mbar off" id="mbar">
   <div><b id="mbPrice"></b><span id="mbSub"></span></div>
   <button class="cta small" type="button" id="mbBtn"></button>
@@ -585,8 +667,23 @@ footer{background:var(--ink);color:#fff;padding:56px 0 30px;overflow:hidden}
 /* ---------- settings Lauri changes ---------- */
 const CONFIG = {
   API_URL: '',              // Google Apps Script web app URL. Empty = demo mode (bookings stay in this browser)
-  DESKS_TOTAL: 5,
-  DESKS_FREE: 3,
+  // floor plan sketch: positions in % of the plan box (x, y = top-left corner). Move things to where they really are.
+  PLAN: {
+    desk: { w: 12, h: 17 },
+    desks: [                // taken: true = someone rents it. The hero sticker counts the free ones.
+      { n: 1, x: 25.5, y: 9, taken: true },
+      { n: 2, x: 40, y: 9, taken: true },
+      { n: 3, x: 54.5, y: 9, taken: false },
+      { n: 4, x: 69, y: 9, taken: false },
+      { n: 5, x: 83.5, y: 9, taken: false },
+    ],
+    rooms: [
+      { key: 'plan_meet', icon: 'i-chat', x: 0, y: 0, w: 22, h: 46, glass: true },
+      { key: 'plan_lounge', icon: 'i-sofa', x: 26, y: 62, w: 30, h: 38, furniture: 'sofa' },
+      { key: 'plan_kitchen', icon: 'i-coffee', x: 72, y: 58, w: 28, h: 42, furniture: 'counter' },
+    ],
+    door: { x: 6, w: 9 },   // on the bottom wall
+  },
   DESKS_FROM: { lt: 'gruodžio 1 d.', en: 'Dec 1' },
   DESK_PRICE: 300,
   ROOM_PRICE: 30,           // € per hour
@@ -610,37 +707,44 @@ const T = {
     tab_desk: 'Darbo vieta', tab_room: 'Biuras valandai', tab_events: 'Renginiai',
     hero_h1: 'Biuras 16 aukšte',
     avail: 'Nuo {from} laisvos {free} vietos',
-    hero_sub: 'Darbui, fotosesijoms ir renginiams. Konstitucijos pr. 9, Vilnius.',
+    hero_sub: 'Geriausia vieta Vilniuje freelanceriams ir solopreneur\'iams.',
+    hero_sub2: 'Taip pat fotosesijoms ir renginiams.',
     cta_time: 'Pasirink laiką', cta_view: 'Užsuk apžiūrėti',
-    alt_sunset: 'Biuras saulėlydžio metu, pro langą matyti miestas',
-    alt_view: 'Vaizdas iš 16 aukšto į aikštę ir dangoraižius',
-    alt_desk: 'Darbo vieta prie lango su vaizdu į miestą',
-    alt_room: 'Biuras dieną, dideli langai ir augalai',
-    alt_evening: 'Biuras vakare, šilta šviesa',
+    alt_room: 'Biuras dieną, darbo vietos prie didelių langų į miestą',
+    ph_room: 'Visas biuras', ph_desk: 'Darbo vieta, juodas stalas su monitoriumi', ph_desks: 'Darbo vietos, už jų virtuvė', ph_meet: 'Susitikimų kambarys su mediniu stalu',
+    ph_kitchen: 'Virtuvė su espresso aparatu', ph_lounge: 'Poilsio zona prie įėjimo', ph_night: 'Biuras vakare',
+    g_all: 'Visos nuotraukos', g_title: 'Nuotraukos', g_close: 'Uždaryti',
+    alt_desks: 'Darbo vietos, už jų virtuvė',
+    alt_kitchen: 'Virtuvė su espresso aparatu',
+    alt_lounge: 'Poilsio zona su sofa prie įėjimo',
+    alt_night: 'Biuras vakare, pro langus miesto šviesos',
     intro_h: 'Privatus biuras su 5 darbo vietomis',
-    intro_meta: '88,87 m², 16 aukštas, Konstitucijos pr. 9, Vilnius',
-    host_h: 'Šeimininkas Lauri',
-    host_p: 'Biurą susiprojektavau pats, anksčiau kūriau biuro baldus Narbutas. Čia kasdien dirbu ir kuriu savo startup\'ą MyMatrix.',
-    hl1_h: 'Maža komanda', hl1_p: 'Žmones atsirenku pats, kad biure liktų mažas, tarpusavyje tinkantis būrys.',
-    hl2_h: 'Vaizdas į miestą', hl2_p: 'Dideli langai 16 aukšte.',
-    hl3_h: 'Viskas šalia', hl3_p: 'Geras espresso aparatas ir virtuvė. Sporto salė ir Dialogai food hall visai šalia.',
+    intro_meta: '88,87 m², 16 aukštas, 5 darbo vietos ir susitikimų kambarys',
+    host_h: 'Host Lauri',
+    host_p: 'Biurą susiprojektavau pats ir dirbu jame jau dvejus metus. Vienas projektas buvo atšauktas ir turėjau šį biurą paleisti, bet atsisakiau šios minties ir vietoj to sukūriau coworking startup\'ą :D Ieškau šaunių žmonių, su kuriais dirbti. Atsirinksiu tuos, su kuriais lengva sutarti, kad liktume maža, tarpusavyje tinkanti komanda.',
+    host_li: 'LinkedIn profilis',
     offers_h: 'Ką galima išsinuomoti',
-    desk_name: 'Darbo vieta', desk_desc: 'Stalas, kėdė ir monitorius. Mokama mėnesiui į priekį.', desk_go: 'Užsukti apžiūrėti',
+    desk_name: 'Darbo vieta', desk_desc: 'Stalas, kėdė ir monitorius. Dirbk 24/7. Mokama mėnesiui į priekį.', desk_go: 'Užsukti apžiūrėti',
     room_name: 'Visas biuras valandai', room_desc: 'Fotosesijoms, podcast\'ams, dirbtuvėms ir susitikimams. Vakarais ir savaitgaliais, nuo 2 val.', room_go: 'Pasirinkti laiką',
     events_name: 'Renginiai', events_desc: 'Meetup\'ai ir podcast įrašai gyvai šiame biure.', events_go: 'Gauti kvietimą', events_price: 'Su kvietimu',
     per_month: '/ mėn.', per_hour: '/ val.',
-    am_h: 'Kas įeina į darbo vietą',
-    am_desk: 'Stalas ir kėdė su monitoriumi', am_stand: 'Viena laisva vieta su reguliuojamo aukščio stalu', am_view: 'Dideli langai, vaizdas į miestą', am_coffee: 'Espresso aparatas',
-    am_kitchen: 'Virtuvė su indais ir įrankiais', am_wifi: 'Internetas', am_bills: 'Komunaliniai įskaičiuoti', am_gym: 'Sporto salė šalia',
+    am_h: 'Kas čia yra',
+    am_g1: 'Tavo darbo vieta', am_247: 'Prieiga 24/7, dirbk kiek nori', am_desk: 'Stalas, kėdė ir monitorius', am_stand: 'Viena laisva vieta su reguliuojamo aukščio stalu', am_bills: 'Internetas ir komunaliniai įskaičiuoti',
+    am_g2: 'Bendra erdvė', am_view: 'Dideli langai į miestą', am_meet: 'Susitikimų kambarys', am_kitchen: 'Virtuvė ir geras espresso aparatas', am_lounge: 'Poilsio zona su sofa',
+    am_g3: 'Aplink', am_gym: 'Sporto salė tame pačiame pastate', am_food: 'Dialogai food hall pietums',
+    plan_h: 'Biuro planas', plan_sub: 'Schema, ne mastelis. Paspausk laisvą stalą ir užsuk jo apžiūrėti.',
+    plan_meet: 'Susitikimų kambarys', plan_lounge: 'Poilsio zona', plan_kitchen: 'Virtuvė', plan_door: 'Įėjimas', plan_win: 'Langai į miestą',
+    plan_free: 'Laisva nuo {from}', l_mine: 'Tavo', desk_n: 'Stalas {n}',
     when_h: 'Kas ir kada naudoja biurą',
+    when_sub: 'Darbo vieta tavo 24/7, dirbk kiek nori. Vakarais ir savaitgaliais visą biurą galima išsinuomoti valandai. Rezervuoti laikai matosi kalendoriuje, tuo metu biuras užimtas.',
     when_weekday: 'Pirmadienis-penktadienis', when_weekend: 'Šeštadienis ir sekmadienis',
-    seg_desk: 'Darbo vietos', seg_room: 'Biuras valandai',
+    seg_desk: 'Darbo vietos 24/7', seg_room: 'Galima išsinuomoti visą biurą',
     book_h: 'Pasirink laiką',
     book_sub: 'Pilki laikai jau užimti. Pasirink laisvą, ir jis iškart taps tavo.',
     mode_room: 'Biuras valandai', mode_view: 'Darbo vietos apžiūra',
     l_free: 'Laisva', l_taken: 'Užimta', l_desk: 'Darbo vietos', l_sel: 'Tavo laikas',
     loading: 'Kraunami laikai...',
-    c_room_sub: 'Nuo {n} val. €{p} / val.', c_view_sub: 'Darbo vieta. Apžiūra nemokama, apie 20 min.',
+    c_room_sub: 'Nuo {n} val. €{p} / val.', c_view_sub: 'Darbo vieta. Apžiūra nemokama, apie 20 min.', c_view_sub_desk: 'Stalas {n}. Apžiūra nemokama, apie 20 min.',
     c_day: 'Data', c_time: 'Laikas', c_pick: 'Pasirink',
     duration: 'Trukmė', purpose: 'Kam',
     p_photo: 'Fotosesija', p_podcast: 'Podcast', p_workshop: 'Dirbtuvės', p_meeting: 'Susitikimas', p_other: 'Kita',
@@ -677,37 +781,44 @@ const T = {
     tab_desk: 'A desk', tab_room: 'Room by the hour', tab_events: 'Events',
     hero_h1: 'Office on the 16th floor',
     avail: '{free} desks free from {from}',
-    hero_sub: 'For work, shoots and events. Konstitucijos Ave 9, Vilnius.',
+    hero_sub: 'The best place in Vilnius for freelancers and solopreneurs.',
+    hero_sub2: 'Also for photo shoots and events.',
     cta_time: 'Pick a time', cta_view: 'Come see it',
-    alt_sunset: 'The office at sunset, the city through the window',
-    alt_view: 'The view from the 16th floor over a square and towers',
-    alt_desk: 'A desk by the window with a view over the city',
-    alt_room: 'The office by day, big windows and plants',
-    alt_evening: 'The office in the evening, warm light',
+    alt_room: 'The office by day, desks by big windows over the city',
+    ph_room: 'The whole room', ph_desk: 'A desk, black desk with a monitor', ph_desks: 'Desks, the kitchen behind them', ph_meet: 'Meeting room with the wooden table',
+    ph_kitchen: 'Kitchen with the espresso machine', ph_lounge: 'Lounge by the entrance', ph_night: 'The office in the evening',
+    g_all: 'All photos', g_title: 'Photos', g_close: 'Close',
+    alt_desks: 'Desks with the kitchen behind them',
+    alt_kitchen: 'The kitchen with the espresso machine',
+    alt_lounge: 'The lounge corner with a sofa by the entrance',
+    alt_night: 'The office in the evening, city lights through the windows',
     intro_h: 'A private office with 5 desks',
-    intro_meta: '88.87 m², 16th floor, Konstitucijos Ave 9, Vilnius',
-    host_h: 'Your host is Lauri',
-    host_p: 'I designed this office myself. I used to design office furniture at Narbutas. I work here every day, building my startup MyMatrix.',
-    hl1_h: 'A small group', hl1_p: 'I pick the people myself, so the office stays a small group that fits together.',
-    hl2_h: 'A view over the city', hl2_p: 'Big windows on the 16th floor.',
-    hl3_h: 'Everything close', hl3_p: 'A great espresso machine and a kitchen. A gym and the Dialogai food hall are very close.',
+    intro_meta: '88.87 m², 16th floor, 5 desks and a meeting room',
+    host_h: 'Host Lauri',
+    host_p: 'I designed this office myself and I\'ve been working here for the last two years. One project got cancelled and I had to let this office go, but I refused that idea and built a coworking startup instead :D Looking for cool people to work with. I\'ll pick the ones who are easy to vibe with, so we stay a small group that fits together.',
+    host_li: 'LinkedIn profile',
     offers_h: 'What you can rent',
-    desk_name: 'A desk', desk_desc: 'Desk, chair and monitor. Paid a month ahead.', desk_go: 'Come see it',
+    desk_name: 'A desk', desk_desc: 'Desk, chair and monitor. Work 24/7. Paid a month ahead.', desk_go: 'Come see it',
     room_name: 'The whole room by the hour', room_desc: 'For photo shoots, podcasts, workshops and meetings. Evenings and weekends, 2 hours minimum.', room_go: 'Pick a time',
     events_name: 'Events', events_desc: 'Meetups and live podcast recordings in this room.', events_go: 'Get the invite', events_price: 'By invite',
     per_month: '/ month', per_hour: '/ hour',
-    am_h: 'What a desk comes with',
-    am_desk: 'Desk and chair with a monitor', am_stand: 'One free desk is a sit-stand desk', am_view: 'Big windows, a view over the city', am_coffee: 'Espresso machine',
-    am_kitchen: 'Kitchen with dishes and cutlery', am_wifi: 'Internet', am_bills: 'Utilities included', am_gym: 'A gym nearby',
+    am_h: 'What\'s here',
+    am_g1: 'Your desk', am_247: 'Access 24/7, work as much as you want', am_desk: 'Desk, chair and monitor', am_stand: 'One free desk is a sit-stand desk', am_bills: 'Internet and utilities included',
+    am_g2: 'Shared space', am_view: 'Big windows over the city', am_meet: 'A meeting room', am_kitchen: 'Kitchen and a great espresso machine', am_lounge: 'A lounge corner with a sofa',
+    am_g3: 'Around', am_gym: 'A gym in the same building', am_food: 'Dialogai food hall for lunch',
+    plan_h: 'Floor plan', plan_sub: 'A sketch, not to scale. Tap a free desk to come and see it.',
+    plan_meet: 'Meeting room', plan_lounge: 'Lounge', plan_kitchen: 'Kitchen', plan_door: 'Entrance', plan_win: 'Windows over the city',
+    plan_free: 'Free from {from}', l_mine: 'Yours', desk_n: 'Desk {n}',
     when_h: 'Who uses the room when',
+    when_sub: 'Your desk is yours 24/7, work as much as you want. On evenings and weekends the whole room can be booked by the hour. Booked times show in the calendar, and the room is taken then.',
     when_weekday: 'Monday to Friday', when_weekend: 'Saturday and Sunday',
-    seg_desk: 'Desks', seg_room: 'Room by the hour',
+    seg_desk: 'Desks 24/7', seg_room: 'The whole room can be booked',
     book_h: 'Pick a time',
     book_sub: 'Grey times are taken. Pick a free one and it\'s yours right away.',
     mode_room: 'Room by the hour', mode_view: 'Desk viewing',
     l_free: 'Free', l_taken: 'Taken', l_desk: 'Desks in use', l_sel: 'Your time',
     loading: 'Loading times...',
-    c_room_sub: '€{p} an hour from {n} hours', c_view_sub: 'A desk. The viewing is free and takes about 20 min.',
+    c_room_sub: '€{p} an hour from {n} hours', c_view_sub: 'A desk. The viewing is free and takes about 20 min.', c_view_sub_desk: 'Desk {n}. The viewing is free and takes about 20 min.',
     c_day: 'Date', c_time: 'Time', c_pick: 'Pick one',
     duration: 'Length', purpose: 'What for',
     p_photo: 'Photo shoot', p_podcast: 'Podcast', p_workshop: 'Workshop', p_meeting: 'Meeting', p_other: 'Other',
@@ -750,7 +861,7 @@ const store = {
 const params = new URLSearchParams(location.search);
 const S = {
   lang: params.get('lang') === 'en' ? 'en' : (store.get('k9-lang') || 'lt'),
-  mode: 'room', week: 0, day: null, sel: null, hours: CONFIG.ROOM_MIN, purpose: 'photo',
+  mode: 'room', week: 0, day: null, sel: null, hours: CONFIG.ROOM_MIN, purpose: 'photo', desk: null,
   bookings: [], loaded: false, busy: false,
 };
 const DEMO = !CONFIG.API_URL;
@@ -774,24 +885,45 @@ function applyLang() {
   document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
   document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
   document.querySelectorAll('[data-i18n-alt]').forEach(el => { el.alt = t(el.dataset.i18nAlt); });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
+  renderTour();
   document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === S.lang)));
-  $('availText').textContent = t('avail', { free: CONFIG.DESKS_FREE, total: CONFIG.DESKS_TOTAL, from: CONFIG.DESKS_FROM[S.lang] });
+  $('availText').textContent = t('avail', { free: CONFIG.PLAN.desks.filter(d => !d.taken).length, from: CONFIG.DESKS_FROM[S.lang] });
   $('deskPrice').textContent = '€' + CONFIG.DESK_PRICE;
   $('roomPrice').textContent = '€' + CONFIG.ROOM_PRICE;
   $('demoNote').hidden = !DEMO;
-  renderPurpose(); renderDaybars(); renderLegend(); render();
+  renderPurpose(); renderDaybars(); renderPlan(); renderLegend(); render();
 }
 
 /* ---------- day bars ---------- */
 function renderDaybars() {
-  const [H0, H1] = [Math.min(CONFIG.DESK_HOURS[0], CONFIG.ROOM_HOURS.weekend[0]), Math.max(CONFIG.ROOM_HOURS.weekday[1], CONFIG.ROOM_HOURS.weekend[1])];
-  const pct = h => ((h - H0) / (H1 - H0) * 100).toFixed(3) + '%';
-  const seg = (cls, [a, b]) => `<div class="seg ${cls}" style="left:${pct(a)};width:${((b - a) / (H1 - H0) * 100).toFixed(3)}%">${pad(a)}-${pad(b)}</div>`;
-  const ticks = '<div class="ticks">' + [H0, 12, CONFIG.DESK_HOURS[1], H1].map(h => `<span style="left:${pct(h)}">${pad(h)}:00</span>`).join('') + '</div>';
+  // desks are open 24/7; the outlined windows are when the whole room can be booked
+  const pct = h => (h / 24 * 100).toFixed(3) + '%';
+  const seg = (cls, [a, b], label) => `<div class="seg ${cls}" style="left:${pct(a)};width:${pct(b - a)}">${label}</div>`;
+  const ticks = '<div class="ticks">' + [0, 6, 12, 18, 24].map(h => `<span style="left:${pct(h)}">${pad(h)}:00</span>`).join('') + '</div>';
+  const row = (label, win) => `<div class="dayrow"><span>${label}</span><div><div class="track24">${seg('desk', [0, 24], t('seg_desk'))}${seg('room', win, pad(win[0]) + '-' + pad(win[1]))}</div>${ticks}</div></div>`;
   $('daybars').innerHTML =
     `<ul class="legend db-legend"><li><span class="sw desk"></span>${t('seg_desk')}</li><li><span class="sw room"></span>${t('seg_room')}</li></ul>` +
-    `<div class="dayrow"><span>${t('when_weekday')}</span><div><div class="track24">${seg('desk', CONFIG.DESK_HOURS)}${seg('room', CONFIG.ROOM_HOURS.weekday)}</div>${ticks}</div></div>` +
-    `<div class="dayrow"><span>${t('when_weekend')}</span><div><div class="track24">${seg('room', CONFIG.ROOM_HOURS.weekend)}</div>${ticks}</div></div>`;
+    row(t('when_weekday'), CONFIG.ROOM_HOURS.weekday) + row(t('when_weekend'), CONFIG.ROOM_HOURS.weekend);
+}
+
+/* ---------- floor plan ---------- */
+function renderPlan() {
+  const P = CONFIG.PLAN;
+  const box = o => `left:${o.x}%;top:${o.y}%;width:${o.w}%;height:${o.h}%`;
+  let h = '<div class="p-win"></div>';
+  h += P.rooms.map(r => `<div class="p-room${r.glass ? ' glass' : ''}${r.furniture ? ' has-' + r.furniture : ''}" style="${box(r)}">${r.furniture ? `<i class="p-${r.furniture}"></i>` : ''}<svg class="icon"><use href="#${r.icon}"/></svg><span>${t(r.key)}</span></div>`).join('');
+  h += `<div class="p-door" style="left:${P.door.x}%;width:${P.door.w}%"></div><span class="p-label" style="left:${P.door.x + P.door.w + 1}%;bottom:3%">${t('plan_door')}</span>`;
+  h += P.desks.map(d => `<span class="p-chair" style="left:${d.x + P.desk.w / 2 - 2.5}%;top:${d.y + P.desk.h + 2}%;width:5%;height:8%"></span>`).join('');
+  h += P.desks.map(d => {
+    const style = box({ x: d.x, y: d.y, w: P.desk.w, h: P.desk.h });
+    if (d.taken) return `<div class="p-desk taken" style="${style}"><b>${d.n}</b><span>${t('l_taken')}</span></div>`;
+    const mine = S.desk === d.n && S.mode === 'viewing';
+    const label = mine ? t('l_mine') : t('l_free');
+    return `<button type="button" class="p-desk ${mine ? 'mine' : 'free'}" data-desk="${d.n}" style="${style}" aria-label="${t('desk_n', { n: d.n })}, ${label}"><b>${d.n}</b><span>${label}</span></button>`;
+  }).join('');
+  $('plan').innerHTML = h;
+  $('planLegend').innerHTML = `<li><span class="sw pfree"></span>${t('plan_free', { from: CONFIG.DESKS_FROM[S.lang] })}</li><li><span class="sw taken"></span>${t('l_taken')}</li><li><span class="sw win"></span>${t('plan_win')}</li>`;
 }
 
 /* ---------- slots ---------- */
@@ -915,7 +1047,7 @@ function renderCard() {
   const r = selRange(), room = S.mode === 'room';
   $('cPrice').textContent = '€' + (room ? CONFIG.ROOM_PRICE : CONFIG.DESK_PRICE);
   $('cUnit').textContent = room ? t('per_hour') : t('per_month');
-  $('cSub').textContent = room ? t('c_room_sub', { n: CONFIG.ROOM_LONG_FROM, p: CONFIG.ROOM_PRICE_LONG }) : t('c_view_sub');
+  $('cSub').textContent = room ? t('c_room_sub', { n: CONFIG.ROOM_LONG_FROM, p: CONFIG.ROOM_PRICE_LONG }) : S.desk ? t('c_view_sub_desk', { n: S.desk }) : t('c_view_sub');
   let total = 0;
   if (r && room) total = S.hours * (S.hours >= CONFIG.ROOM_LONG_FROM ? CONFIG.ROOM_PRICE_LONG : CONFIG.ROOM_PRICE);
   updateBar(total);
@@ -989,14 +1121,17 @@ function pick(di, min) {
 function setMode(m) {
   if (S.mode === m) return;
   S.mode = m; S.sel = null; S.day = null; hideDone(); $('pErr').textContent = '';
+  if (m === 'room') S.desk = null;
   document.querySelectorAll('[data-mode]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === m)));
-  markTabs(); renderLegend(); render();
+  markTabs(); renderPlan(); renderLegend(); render();
 }
 function hideDone() { $('pDone').hidden = true; }
 
 document.addEventListener('click', e => {
   const c = e.target.closest('.cell[data-d], .slot[data-d]');
   if (c) return pick(+c.dataset.d, +c.dataset.m);
+  const pd = e.target.closest('.p-desk[data-desk]');
+  if (pd) { S.desk = +pd.dataset.desk; setMode('viewing'); renderPlan(); renderCard(); return goTo($('rezervacija')); }
   const dp = e.target.closest('#days button');
   if (dp) { S.day = +dp.dataset.i; return render(); }
   const go = e.target.closest('[data-go]');
@@ -1026,8 +1161,30 @@ const io = new IntersectionObserver(es => {
 }, { threshold: 0.15 });
 io.observe($('card')); io.observe(document.querySelector('.hero-ctas')); io.observe($('renginiai')); io.observe(document.querySelector('footer'));
 
+// all photos, opened from the gallery
+const PHOTOS = [
+  ['img/room.jpg', 'ph_room', 1800, 1350], ['img/desk-pov.jpg', 'ph_desk', 1200, 880], ['img/desks.jpg', 'ph_desks', 1400, 1050],
+  ['img/meeting.jpg', 'ph_meet', 1400, 1050], ['img/kitchen.jpg', 'ph_kitchen', 1400, 1050], ['img/lounge.jpg', 'ph_lounge', 1400, 1050],
+  ['img/night.jpg', 'ph_night', 1400, 1050],
+];
+function renderTour() {
+  $('tourList').innerHTML = PHOTOS.map(([src, k, w, h], i) =>
+    `<figure id="ph-${i}"${i % 3 === 0 ? ' class="wide"' : ''}><img src="${src}" alt="${t(k)}" width="${w}" height="${h}" loading="lazy"><figcaption>${t(k)}</figcaption></figure>`).join('');
+  $('gAllN').textContent = '(' + PHOTOS.length + ')';
+}
+function openTour(i) {
+  const d = $('tour');
+  if (!d.open) { d.showModal(); document.documentElement.classList.add('locked'); }
+  d.scrollTop = 0;
+  if (i) $('ph-' + i).scrollIntoView({ block: 'start' });
+}
+$('tour').addEventListener('close', () => document.documentElement.classList.remove('locked'));
+$('tourClose').onclick = () => $('tour').close();
+$('gAll').onclick = () => openTour(0);
+
 // phone gallery counter
 const gal = $('gallery');
+gal.addEventListener('click', e => { const f = e.target.closest('figure[data-ph]'); if (f) openTour(+f.dataset.ph); });
 gal.addEventListener('scroll', () => {
   const i = Math.round(gal.scrollLeft / Math.max(1, gal.clientWidth));
   $('gcount').textContent = (i + 1) + ' / ' + gal.children.length;
@@ -1088,7 +1245,7 @@ $('pForm').addEventListener('submit', async e => {
   const r = selRange();
   const payload = {
     kind: S.mode, start: r.s.toISOString(), end: r.e.toISOString(),
-    purpose: S.mode === 'room' ? S.purpose : '', name, phone, email, lang: S.lang, website: $('fWeb').value,
+    purpose: S.mode === 'room' ? S.purpose : (S.desk ? 'stalas ' + S.desk : ''), name, phone, email, lang: S.lang, website: $('fWeb').value,
   };
   S.busy = true; $('pErr').textContent = ''; renderCard();
   let res;
