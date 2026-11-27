@@ -122,14 +122,6 @@
     gap: 40px;
     align-items: end;
   }
-  .as-hero__eyebrow {
-    display: inline-flex; align-items: center; gap: 10px;
-    margin: 0 0 20px;
-    font-size: 13px; font-weight: 500;
-    letter-spacing: .14em; text-transform: uppercase;
-    color: var(--as-muted);
-  }
-  .as-hero__eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--as-accent); }
   .as-hero__title {
     margin: 0;
     font-family: "Lora", Georgia, serif;
@@ -186,8 +178,8 @@
     font-size: 40px; line-height: 1;
   }
   .as-rating__stars { color: var(--as-accent); font-size: 14px; letter-spacing: 2px; font-family: "Manrope", sans-serif; }
-  .as-rating__src { margin-top: 10px; font-size: 13px; color: var(--as-muted); }
-  .as-rating__src b { color: var(--as-ink); font-weight: 500; }
+  .as-rating__src { margin-top: 12px; display: grid; gap: 6px; font-size: 13px; color: var(--as-muted); }
+  .as-rating__src .src { color: var(--as-ink); }
 
   @media (max-width: 860px) {
     .as-hero { background-position: 70% 30%; }
@@ -237,7 +229,9 @@
   .site-header__inner { max-width: 1344px; margin: 0 auto; padding: 18px clamp(20px, 5vw, 72px); display: flex; align-items: center; gap: 32px; }
   .site-logo { font: 500 24px/1 "Lora", Georgia, serif; color: #f4f1ea; text-decoration: none; margin-right: auto; white-space: nowrap; }
   .site-nav { display: flex; gap: 28px; }
-  .site-nav a { color: rgba(244,241,234,.85); text-decoration: none; font-size: 15px; font-weight: 500; }
+  .site-header::before { content: ""; position: absolute; inset: 0 0 -56px; z-index: -1; pointer-events: none; background: linear-gradient(180deg, rgba(15,22,18,.78) 0%, rgba(15,22,18,.45) 55%, rgba(15,22,18,0) 100%); transition: opacity .3s; }
+  .site-header.is-solid::before { opacity: 0; }
+  .site-nav a { color: #f4f1ea; text-decoration: none; font-size: 15px; font-weight: 500; text-shadow: 0 1px 12px rgba(0,0,0,.4); }
   .site-nav a:hover { color: #fff; }
   .site-header.is-solid { background: rgba(31,42,34,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(255,255,255,.06); }
   .as-btn--sm { min-height: 44px; padding: 0 22px; font-size: 15px; }
@@ -291,14 +285,39 @@
   .gallery__item:hover img { transform: scale(1.05); }
   .gallery__item:focus-visible { outline: 3px solid var(--gold-2); outline-offset: 3px; }
 
+  /* Houses */
+  .houses { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 36px); }
+  .house { background: var(--paper); border: 1px solid var(--line); border-radius: calc(var(--radius) + 6px); overflow: hidden; display: flex; flex-direction: column; }
+  .house__photos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 6px; }
+  .house__photos .gallery__item { aspect-ratio: 1; border-radius: 12px; }
+  .house__photos .gallery__item:first-child { grid-column: 1 / -1; aspect-ratio: 3 / 2; border-radius: 22px 22px 12px 12px; }
+  .house__body { padding: 20px clamp(20px, 3vw, 32px) clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 18px; flex: 1; }
+  .house__where { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; font-size: 14px; font-weight: 600; color: #6d7c58; }
+  .house__where svg { width: 16px; height: 16px; flex: none; }
+  .house__title { margin: 0; font: 500 clamp(28px, 3.2vw, 38px)/1.1 "Lora", Georgia, serif; letter-spacing: -.01em; }
+  .house__facts { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .house__facts li { padding: 8px 14px; border-radius: 999px; background: #e4ead8; color: #2f4a2a; font-size: 14px; font-weight: 600; }
+  .house__foot { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .house__score { display: flex; align-items: center; gap: 12px; }
+  .house__score b { font: 500 34px/1 "Lora", serif; font-variant-numeric: lining-nums; }
+  .house__score > span { font-size: 13px; color: var(--ink-2); display: grid; gap: 5px; }
+
+  /* Google and Booking.com marks */
+  .brand { display: inline-grid; place-items: center; width: 22px; height: 22px; flex: none; }
+  .brand svg { width: 100%; height: 100%; display: block; }
+  .brand--g { border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px rgba(31,42,34,.12); }
+  .brand--g svg { width: 13px; height: 13px; }
+  .brand--b svg { border-radius: 5px; }
+  .src { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--ink); }
+
   /* Reviews */
   .scores { display: flex; gap: 12px; flex-wrap: wrap; }
   .score { display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: var(--paper); border-radius: 16px; color: var(--ink); text-decoration: none; border: 1px solid var(--line); }
   .score b { font: 500 34px/1 "Lora", serif; }
-  .score span { font-size: 13px; color: var(--ink-2); display: grid; gap: 2px; }
-  .score i { font-style: normal; color: var(--gold-2); font-weight: 600; }
+  .score > span { font-size: 13px; color: var(--ink-2); display: grid; gap: 5px; }
   .reviews { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
   .review { margin: 0; background: var(--paper); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 18px; border: 1px solid var(--line); }
+  .review__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
   .review__stars { color: var(--gold-2); letter-spacing: 3px; font-size: 14px; }
   .review blockquote { margin: 0; font: 500 18px/1.5 "Lora", serif; flex: 1; }
   .review figcaption { display: flex; gap: 12px; align-items: center; }
@@ -318,7 +337,8 @@
   .booking-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding: 22px; border-radius: var(--radius); border: 1px solid rgba(244,241,234,.14); background: rgba(255,255,255,.03); }
   .booking-card__score { display: flex; align-items: center; gap: 14px; }
   .booking-card__score b { font: 500 40px/1 "Lora", serif; color: var(--gold); }
-  .booking-card__score span { font-size: 13px; color: rgba(244,241,234,.7); line-height: 1.4; }
+  .booking-card__score > span { font-size: 13px; color: rgba(244,241,234,.7); display: grid; gap: 5px; }
+  .booking-card .src { color: #f4f1ea; }
   .form { background: var(--paper); color: var(--ink); border-radius: calc(var(--radius) + 6px); padding: clamp(24px, 4vw, 40px); display: grid; gap: 16px; box-shadow: 0 40px 80px -40px rgba(0,0,0,.6); }
   .form__title { margin: 0 0 6px; font: 500 26px/1.2 "Lora", serif; }
   .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -379,9 +399,10 @@
     .gallery { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 200px; }
   }
   @media (max-width: 860px) {
-    .about, .booking, .location { grid-template-columns: 1fr; }
+    .about, .booking, .location, .houses { grid-template-columns: 1fr; }
     .about__media { order: -1; }
   }
+  @media (max-width: 1100px) and (min-width: 861px) { .site-nav { gap: 20px; } }
   @media (max-width: 640px) {
     .amenities { grid-template-columns: repeat(2, 1fr); }
     .amenity { padding: 22px 18px; min-height: 130px; }
@@ -395,16 +416,19 @@
     .form__actions { flex-direction: column; }
     .form .as-btn { width: 100%; }
     .booking-card .as-btn { width: 100%; }
+    .house__foot .as-btn { width: 100%; }
   }
 </style>
 </head>
 <body style="margin:0">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="logo-google" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></symbol><symbol id="logo-booking" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#003580"/><path fill="#fff" fill-rule="evenodd" d="M6.2 5.2H12.2C14.6 5.2 16 6.5 16 8.4C16 9.8 15.3 10.7 14.1 11.2C15.7 11.6 16.7 12.8 16.7 14.6C16.7 17.2 14.9 18.8 12.3 18.8H6.2ZM9.1 7.6V10.1H11.8C12.6 10.1 13.1 9.6 13.1 8.85C13.1 8.1 12.6 7.6 11.8 7.6ZM9.1 12.4V16.4H12C13.1 16.4 13.7 15.7 13.7 14.4C13.7 13.1 13.1 12.4 12 12.4Z"/><circle cx="19.1" cy="17.1" r="1.75" fill="#009fe3"/></symbol></svg>
 
 <header class="site-header" id="top">
   <div class="site-header__inner">
     <a class="site-logo" href="#top">Adelės sodyba</a>
     <nav class="site-nav" aria-label="Pagrindinis meniu">
       <a href="#apie">Apie</a>
+      <a href="#nameliai">Nameliai</a>
       <a href="#ka-rasite">Ką rasite</a>
       <a href="#galerija">Galerija</a>
       <a href="#atsiliepimai">Atsiliepimai</a>
@@ -437,7 +461,6 @@
 
   <div class="as-hero__inner">
     <div>
-      <p class="as-hero__eyebrow">Sodyba prie Kuršių marių · Šilutės&nbsp;r.</p>
       <h1 class="as-hero__title" id="as-hero-title">Adelės sodyba</h1>
       <p class="as-hero__lead">
         Nameliai miške prie Kuršių marių, vos <strong>3&nbsp;km nuo Ventės rago</strong>.
@@ -457,11 +480,11 @@
     <div class="as-hero__ratings" role="list" aria-label="Svečių įvertinimai">
       <div class="as-rating" role="listitem">
         <div class="as-rating__score">4,7 <span class="as-rating__stars" aria-hidden="true">★★★★★</span></div>
-        <div class="as-rating__src"><b>Google</b> · 93 atsiliepimai</div>
+        <div class="as-rating__src"><span class="src"><span class="brand brand--g"><svg><use href="#logo-google"/></svg></span>Google</span>93 atsiliepimai</div>
       </div>
       <div class="as-rating" role="listitem">
         <div class="as-rating__score">9,5</div>
-        <div class="as-rating__src"><b>Booking.com</b> · 31 atsiliepimas</div>
+        <div class="as-rating__src"><span class="src"><span class="brand brand--b"><svg><use href="#logo-booking"/></svg></span>Booking.com</span>31 atsiliepimas</div>
       </div>
     </div>
   </div>
@@ -486,6 +509,70 @@
       <img class="about__img about__img--main" src="img/adeles-sodyba-109-l.jpg" alt="Adelės sodybos namelis miške" loading="lazy">
       <img class="about__img about__img--small" src="img/adeles-sodyba-105-s.jpg" alt="Sodybos aplinka" loading="lazy">
       <div class="about__badge"><b>3 km</b><span>iki Ventės rago</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--cream" id="nameliai">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="eyebrow">Nameliai</p>
+      <h2 class="h2">Du nameliai Adelės sodyboje</h2>
+      <p class="lead">Abu nameliai stovi sodybos kieme, tarp miško ir Kuršių marių. Kainas ir laisvas datas rasite Booking.com.</p>
+    </div>
+    <div class="houses">
+      <article class="house">
+        <div class="house__photos" data-gallery>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 1 nuotrauką 1"><img src="img/adeles-sodyba-n1-09-s.jpg" alt="Namelis Nr. 1 – nuotrauka 1" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 1 nuotrauką 2"><img src="img/adeles-sodyba-n1-10-s.jpg" alt="Namelis Nr. 1 – nuotrauka 2" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 1 nuotrauką 3"><img src="img/adeles-sodyba-n1-00-s.jpg" alt="Namelis Nr. 1 – nuotrauka 3" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 1 nuotrauką 4"><img src="img/adeles-sodyba-n1-02-s.jpg" alt="Namelis Nr. 1 – nuotrauka 4" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 1 nuotrauką 5"><img src="img/adeles-sodyba-n1-06-s.jpg" alt="Namelis Nr. 1 – nuotrauka 5" loading="lazy"></button>
+        </div>
+        <div class="house__body">
+          <div>
+            <p class="house__where"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Adelės sodyboje, Šturmuose</p>
+            <h3 class="house__title">Namelis Nr. 1</h3>
+          </div>
+          <ul class="house__facts">
+            <li>1 miegamasis</li>
+            <li>Virtuvė</li>
+            <li>Terasa</li>
+            <li>Nemokamas Wi-Fi</li>
+            <li>Vieta automobiliui</li>
+          </ul>
+          <div class="house__foot">
+            <div class="house__score"><b>9,4</b><span><span class="src"><span class="brand brand--b"><svg><use href="#logo-booking"/></svg></span>Booking.com</span>40 atsiliepimų</span></div>
+            <a class="as-btn as-btn--dark" href="https://www.booking.com/hotel/lt/namelis-nr-1.lt.html" target="_blank" rel="noopener">Žiūrėti per Booking.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="house">
+        <div class="house__photos" data-gallery>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 2 nuotrauką 1"><img src="img/adeles-sodyba-n2-01-s.jpg" alt="Namelis Nr. 2 – nuotrauka 1" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 2 nuotrauką 2"><img src="img/adeles-sodyba-n2-08-s.jpg" alt="Namelis Nr. 2 – nuotrauka 2" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 2 nuotrauką 3"><img src="img/adeles-sodyba-n2-09-s.jpg" alt="Namelis Nr. 2 – nuotrauka 3" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 2 nuotrauką 4"><img src="img/adeles-sodyba-n2-07-s.jpg" alt="Namelis Nr. 2 – nuotrauka 4" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 2 nuotrauką 5"><img src="img/adeles-sodyba-n2-13-s.jpg" alt="Namelis Nr. 2 – nuotrauka 5" loading="lazy"></button>
+        </div>
+        <div class="house__body">
+          <div>
+            <p class="house__where"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Adelės sodyboje, Šturmuose</p>
+            <h3 class="house__title">Namelis Nr. 2</h3>
+          </div>
+          <ul class="house__facts">
+            <li>1 miegamasis</li>
+            <li>Virtuvėlė</li>
+            <li>Terasa</li>
+            <li>Atskiras įėjimas</li>
+            <li>Nemokamas Wi-Fi</li>
+          </ul>
+          <div class="house__foot">
+            <div class="house__score"><b>9,4</b><span><span class="src"><span class="brand brand--b"><svg><use href="#logo-booking"/></svg></span>Booking.com</span>19 atsiliepimų</span></div>
+            <a class="as-btn as-btn--dark" href="https://www.booking.com/hotel/lt/namelis-nr-2.lt.html" target="_blank" rel="noopener">Žiūrėti per Booking.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -520,22 +607,27 @@
       <p class="eyebrow">Galerija</p>
       <h2 class="h2">Adelės sodyba iš arti</h2>
     </div>
-    <div class="gallery">
+    <div class="gallery" data-gallery>
 <button class="gallery__item gallery__item--wide" type="button" data-index="0" aria-label="Atidaryti nuotrauką 1"><img src="img/adeles-sodyba-118-s.jpg" alt="Adelės sodyba – nuotrauka 1" loading="lazy"></button>
 <button class="gallery__item" type="button" data-index="1" aria-label="Atidaryti nuotrauką 2"><img src="img/adeles-sodyba-105-s.jpg" alt="Adelės sodyba – nuotrauka 2" loading="lazy"></button>
-<button class="gallery__item" type="button" data-index="2" aria-label="Atidaryti nuotrauką 3"><img src="img/adeles-sodyba-108-s.jpg" alt="Adelės sodyba – nuotrauka 3" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="2" aria-label="Atidaryti nuotrauką 3"><img src="img/adeles-sodyba-b-31-s.jpg" alt="Adelės sodyba – nuotrauka 3" loading="lazy"></button>
 <button class="gallery__item" type="button" data-index="3" aria-label="Atidaryti nuotrauką 4"><img src="img/adeles-sodyba-124-s.jpg" alt="Adelės sodyba – nuotrauka 4" loading="lazy"></button>
-<button class="gallery__item" type="button" data-index="4" aria-label="Atidaryti nuotrauką 5"><img src="img/adeles-sodyba-120-s.jpg" alt="Adelės sodyba – nuotrauka 5" loading="lazy"></button>
-<button class="gallery__item" type="button" data-index="5" aria-label="Atidaryti nuotrauką 6"><img src="img/adeles-sodyba-117-s.jpg" alt="Adelės sodyba – nuotrauka 6" loading="lazy"></button>
-<button class="gallery__item gallery__item--wide" type="button" data-index="6" aria-label="Atidaryti nuotrauką 7"><img src="img/adeles-sodyba-111-s.jpg" alt="Adelės sodyba – nuotrauka 7" loading="lazy"></button>
-<button class="gallery__item" type="button" data-index="7" aria-label="Atidaryti nuotrauką 8"><img src="img/adeles-sodyba-127-s.jpg" alt="Adelės sodyba – nuotrauka 8" loading="lazy"></button>
-<button class="gallery__item" type="button" data-index="8" aria-label="Atidaryti nuotrauką 9"><img src="img/adeles-sodyba-128-s.jpg" alt="Adelės sodyba – nuotrauka 9" loading="lazy"></button>
-<button class="gallery__item" type="button" data-index="9" aria-label="Atidaryti nuotrauką 10"><img src="img/adeles-sodyba-122-s.jpg" alt="Adelės sodyba – nuotrauka 10" loading="lazy"></button>
-<button class="gallery__item" type="button" data-index="10" aria-label="Atidaryti nuotrauką 11"><img src="img/adeles-sodyba-126-s.jpg" alt="Adelės sodyba – nuotrauka 11" loading="lazy"></button>
-<button class="gallery__item" type="button" data-index="11" aria-label="Atidaryti nuotrauką 12"><img src="img/adeles-sodyba-114-s.jpg" alt="Adelės sodyba – nuotrauka 12" loading="lazy"></button>
-<button class="gallery__item gallery__item--wide" type="button" data-index="12" aria-label="Atidaryti nuotrauką 13"><img src="img/adeles-sodyba-121-s.jpg" alt="Adelės sodyba – nuotrauka 13" loading="lazy"></button>
-<button class="gallery__item" type="button" data-index="13" aria-label="Atidaryti nuotrauką 14"><img src="img/adeles-sodyba-129-s.jpg" alt="Adelės sodyba – nuotrauka 14" loading="lazy"></button>
-<button class="gallery__item" type="button" data-index="14" aria-label="Atidaryti nuotrauką 15"><img src="img/adeles-sodyba-123-s.jpg" alt="Adelės sodyba – nuotrauka 15" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="4" aria-label="Atidaryti nuotrauką 5"><img src="img/adeles-sodyba-b-25-s.jpg" alt="Adelės sodyba – nuotrauka 5" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="5" aria-label="Atidaryti nuotrauką 6"><img src="img/adeles-sodyba-120-s.jpg" alt="Adelės sodyba – nuotrauka 6" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="6" aria-label="Atidaryti nuotrauką 7"><img src="img/adeles-sodyba-117-s.jpg" alt="Adelės sodyba – nuotrauka 7" loading="lazy"></button>
+<button class="gallery__item gallery__item--wide" type="button" data-index="7" aria-label="Atidaryti nuotrauką 8"><img src="img/adeles-sodyba-b-22-s.jpg" alt="Adelės sodyba – nuotrauka 8" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="8" aria-label="Atidaryti nuotrauką 9"><img src="img/adeles-sodyba-127-s.jpg" alt="Adelės sodyba – nuotrauka 9" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="9" aria-label="Atidaryti nuotrauką 10"><img src="img/adeles-sodyba-b-20-s.jpg" alt="Adelės sodyba – nuotrauka 10" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="10" aria-label="Atidaryti nuotrauką 11"><img src="img/adeles-sodyba-128-s.jpg" alt="Adelės sodyba – nuotrauka 11" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="11" aria-label="Atidaryti nuotrauką 12"><img src="img/adeles-sodyba-b-moose-s.jpg" alt="Adelės sodyba – nuotrauka 12" loading="lazy"></button>
+<button class="gallery__item gallery__item--wide" type="button" data-index="12" aria-label="Atidaryti nuotrauką 13"><img src="img/adeles-sodyba-111-s.jpg" alt="Adelės sodyba – nuotrauka 13" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="13" aria-label="Atidaryti nuotrauką 14"><img src="img/adeles-sodyba-b-21-s.jpg" alt="Adelės sodyba – nuotrauka 14" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="14" aria-label="Atidaryti nuotrauką 15"><img src="img/adeles-sodyba-b-12-s.jpg" alt="Adelės sodyba – nuotrauka 15" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="15" aria-label="Atidaryti nuotrauką 16"><img src="img/adeles-sodyba-122-s.jpg" alt="Adelės sodyba – nuotrauka 16" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="16" aria-label="Atidaryti nuotrauką 17"><img src="img/adeles-sodyba-129-s.jpg" alt="Adelės sodyba – nuotrauka 17" loading="lazy"></button>
+<button class="gallery__item gallery__item--wide" type="button" data-index="17" aria-label="Atidaryti nuotrauką 18"><img src="img/adeles-sodyba-121-s.jpg" alt="Adelės sodyba – nuotrauka 18" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="18" aria-label="Atidaryti nuotrauką 19"><img src="img/adeles-sodyba-b-08-s.jpg" alt="Adelės sodyba – nuotrauka 19" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="19" aria-label="Atidaryti nuotrauką 20"><img src="img/adeles-sodyba-123-s.jpg" alt="Adelės sodyba – nuotrauka 20" loading="lazy"></button>
     </div>
   </div>
 </section>
@@ -548,33 +640,33 @@
         <h2 class="h2">Ką sako svečiai</h2>
       </div>
       <div class="scores">
-        <a class="score" href="https://www.google.com/maps/search/?api=1&query=55.3689064%2C21.2166782&query_place_id=ChIJTbHMKb2T5EYRwulmxeGiJs0" target="_blank" rel="noopener"><b>4,7</b><span><i aria-hidden="true">★★★★★</i>Google · 93 atsiliepimai</span></a>
-        <a class="score" href="https://www.booking.com/hotel/lt/adeles-sodyba-silutes-rajono-savivaldybe.lt.html" target="_blank" rel="noopener"><b>9,5</b><span><i>Ypatingai nuostabus</i>Booking.com · 31 atsiliepimas</span></a>
+        <a class="score" href="https://www.google.com/maps/search/?api=1&query=55.3689064%2C21.2166782&query_place_id=ChIJTbHMKb2T5EYRwulmxeGiJs0" target="_blank" rel="noopener"><b>4,7</b><span><span class="src"><span class="brand brand--g"><svg><use href="#logo-google"/></svg></span>Google</span>93 atsiliepimai</span></a>
+        <a class="score" href="https://www.booking.com/hotel/lt/adeles-sodyba-silutes-rajono-savivaldybe.lt.html" target="_blank" rel="noopener"><b>9,5</b><span><span class="src"><span class="brand brand--b"><svg><use href="#logo-booking"/></svg></span>Booking.com</span>31 atsiliepimas</span></a>
       </div>
     </div>
     <div class="reviews">
 <figure class="review">
-  <div class="review__stars" aria-label="5 iš 5">★★★★★</div>
+  <div class="review__top"><div class="review__stars" aria-label="5 iš 5">★★★★★</div><span title="Google" class="brand brand--g"><svg><use href="#logo-google"/></svg></span></div>
   <blockquote>„Puiki sodyba miško apsuptyje . Rami vieta . Kambariuose viskas ko gali prireikti …“</blockquote>
   <figcaption><span class="review__avatar" aria-hidden="true">E</span><span><b>Erika B.</b><small>Google atsiliepimas · 2024 m. liepa</small></span></figcaption>
 </figure>
 <figure class="review">
-  <div class="review__stars" aria-label="5 iš 5">★★★★★</div>
+  <div class="review__top"><div class="review__stars" aria-label="5 iš 5">★★★★★</div><span title="Google" class="brand brand--g"><svg><use href="#logo-google"/></svg></span></div>
   <blockquote>„Puiki vieta kas nori ramiau pabūti nuo miesto šurmulio, židinys, šalia kuršių marios, Ventės ragas tik 3km“</blockquote>
   <figcaption><span class="review__avatar" aria-hidden="true">D</span><span><b>Darius B.</b><small>Vietinis gidas · 2026 m. sausis</small></span></figcaption>
 </figure>
 <figure class="review">
-  <div class="review__stars" aria-label="5 iš 5">★★★★★</div>
+  <div class="review__top"><div class="review__stars" aria-label="5 iš 5">★★★★★</div><span title="Google" class="brand brand--g"><svg><use href="#logo-google"/></svg></span></div>
   <blockquote>„Yra viskas ko reikia. Labai malonūs šeimininkai.“</blockquote>
   <figcaption><span class="review__avatar" aria-hidden="true">E</span><span><b>Edita V.</b><small>Vietinis gidas · 2025 m. rugpjūtis</small></span></figcaption>
 </figure>
 <figure class="review">
-  <div class="review__stars" aria-label="5 iš 5">★★★★★</div>
+  <div class="review__top"><div class="review__stars" aria-label="5 iš 5">★★★★★</div><span title="Google" class="brand brand--g"><svg><use href="#logo-google"/></svg></span></div>
   <blockquote>„Puiki sodyba,maloni šeimininkė,graži vieta,yra vaikų žaidimų aikštelė,krepšinio, dviračiai,netgi valtis“</blockquote>
   <figcaption><span class="review__avatar" aria-hidden="true">G</span><span><b>Giedrius R.</b><small>Google atsiliepimas · 2024 m. liepa</small></span></figcaption>
 </figure>
     </div>
-    <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query=55.3689064%2C21.2166782&query_place_id=ChIJTbHMKb2T5EYRwulmxeGiJs0" target="_blank" rel="noopener">Visi atsiliepimai Google (93) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query=55.3689064%2C21.2166782&query_place_id=ChIJTbHMKb2T5EYRwulmxeGiJs0" target="_blank" rel="noopener"><span class="brand brand--g"><svg><use href="#logo-google"/></svg></span>Visi atsiliepimai Google (93) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
 </section>
 
@@ -589,7 +681,7 @@
         <li><span>2</span><div><b>Gaukite patvirtinimą</b><p>Šeimininkė patvirtins, ar datos laisvos, ir pasakys kainą.</p></div></li>
       </ol>
       <div class="booking-card">
-        <div class="booking-card__score"><b>9,5</b><span>Booking.com<br>31 atsiliepimas</span></div>
+        <div class="booking-card__score"><b>9,5</b><span><span class="src"><span class="brand brand--b"><svg><use href="#logo-booking"/></svg></span>Booking.com</span>31 atsiliepimas</span></div>
         <a class="as-btn as-btn--ghost" href="https://www.booking.com/hotel/lt/adeles-sodyba-silutes-rajono-savivaldybe.lt.html" target="_blank" rel="noopener">Rezervuoti per Booking.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
@@ -651,7 +743,7 @@
 <footer class="site-footer">
   <div class="wrap site-footer__inner">
     <span>© Adelės sodyba · Švyturio g. 4, Šturmai, Šilutės r.</span>
-    <span>Nuotraukos ir atsiliepimai – Google Maps, įvertinimas – Booking.com.</span>
+    <span>Nuotraukos – Adelės sodyba ir Google Maps, atsiliepimai – Google Maps, įvertinimai – Booking.com.</span>
   </div>
 </footer>
 
@@ -823,7 +915,9 @@
   onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
 
   /* Gallery lightbox */
-  var items = [].slice.call(document.querySelectorAll('.gallery__item'));
+  var all = [].slice.call(document.querySelectorAll('.gallery__item'));
+  var items = all;
+  function groupOf(b) { var g = b.closest('[data-gallery]'); return g ? [].slice.call(g.querySelectorAll('.gallery__item')) : all; }
   var lb = document.getElementById('lightbox');
   var lbImg = lb.querySelector('.lightbox__img');
   var lbCount = lb.querySelector('.lightbox__count');
@@ -839,7 +933,7 @@
   }
   function open(i) { lastFocus = document.activeElement; show(i); lb.hidden = false; document.body.style.overflow = 'hidden'; lb.querySelector('.lightbox__close').focus(); }
   function close() { lb.hidden = true; document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
-  items.forEach(function (b, i) { b.addEventListener('click', function () { open(i); }); });
+  all.forEach(function (b) { b.addEventListener('click', function () { items = groupOf(b); open(items.indexOf(b)); }); });
   lb.querySelector('.lightbox__close').addEventListener('click', close);
   lb.querySelector('.lightbox__prev').addEventListener('click', function () { show(cur - 1); });
   lb.querySelector('.lightbox__next').addEventListener('click', function () { show(cur + 1); });
