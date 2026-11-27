@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Adelės sodyba – nameliai miške prie Kuršių marių</title>
+<meta name="description" content="Nameliai miške prie Kuršių marių, vos 3 km nuo Ventės rago. Pirtis, židinys, valtis, dviračiai ir vaikų žaidimų aikštelė. Šturmai, Šilutės r.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Adelės sodyba">
+<meta property="og:description" content="Nameliai miške prie Kuršių marių, vos 3 km nuo Ventės rago.">
+<meta property="og:image" content="https://svetaines.waitcuss.com/adeles-sodyba-v2-9016b5/img/adeles-sodyba-109-l.jpg">
+<meta property="og:url" content="https://svetaines.waitcuss.com/adeles-sodyba-v2-9016b5/">
+<meta name="theme-color" content="#1f2a22">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ===== Adelės sodyba – Hero ===== */
+  .as-hero {
+    --as-ink: #f4f1ea;
+    --as-muted: rgba(244, 241, 234, .82);
+    --as-accent: #d9b77a;
+    --as-accent-ink: #1f2a22;
+    --as-glass: rgba(20, 30, 24, .38);
+    --as-photo: url("img/adeles-sodyba-109-l.jpg");
+    --as-grow: 5s;                /* how long the flowers take to grow and bloom */
+
+    position: relative;
+    box-sizing: border-box;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    padding: 120px clamp(20px, 5vw, 72px) clamp(32px, 5vw, 72px);
+    color: var(--as-ink);
+    font-family: "Manrope", system-ui, sans-serif;
+    background: #1f2a22 var(--as-photo) 62% 30% / cover no-repeat;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .as-hero * { box-sizing: border-box; }
+  .as-hero::before {
+    content: "";
+    position: absolute; inset: 0; z-index: -1;
+    background:
+      linear-gradient(180deg, rgba(15,22,18,.25) 0%, rgba(15,22,18,0) 25%),
+      linear-gradient(90deg, rgba(15,22,18,.55) 0%, rgba(15,22,18,0) 60%),
+      linear-gradient(0deg, rgba(15,22,18,.85) 0%, rgba(15,22,18,.4) 40%, rgba(15,22,18,0) 70%);
+  }
+
+  /* ---- Growing flowers ---- */
+  .as-hero__meadow {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: visible;
+    filter: saturate(.9) brightness(.94);
+  }
+  .as-hero__meadow * { transform-box: fill-box; }
+
+  .as-f-stem {
+    fill: none;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: as-stem var(--as-grow) cubic-bezier(.3,.7,.3,1) both;
+  }
+  .as-f-leaf, .as-f-blade {
+    transform-origin: 50% 100%;
+    transform: scale(0);
+    animation: as-leaf var(--as-grow) cubic-bezier(.3,.7,.3,1) both;
+  }
+  .as-f-blade { transform: scaleY(0); animation-name: as-blade; }
+  .as-f-head {
+    transform-origin: 50% 50%;
+    transform: scale(0);
+    animation: as-bloom var(--as-grow) cubic-bezier(.34,1.4,.5,1) both;
+  }
+  .as-f-bell {
+    transform-origin: 50% 0%;
+    transform: scale(0);
+    animation: as-bell var(--as-grow) cubic-bezier(.34,1.4,.5,1) both;
+  }
+
+  /* Grow once, then stay in bloom */
+  @keyframes as-stem {
+    0%, 8%   { stroke-dashoffset: 1; }
+    70%,100% { stroke-dashoffset: 0; }
+  }
+  @keyframes as-leaf {
+    0%, 15%  { transform: scale(0); }
+    75%,100% { transform: scale(1); }
+  }
+  @keyframes as-blade {
+    0%, 4%   { transform: scaleY(0); }
+    60%,100% { transform: scaleY(1); }
+  }
+  @keyframes as-bloom {
+    0%, 50%  { transform: scale(0) rotate(-60deg); }
+    100%     { transform: scale(1) rotate(0deg); }
+  }
+  @keyframes as-bell {
+    0%, 55%  { transform: scale(0); }
+    100%     { transform: scale(1); }
+  }
+
+  /* Flower cursor on desktop */
+  @media (hover: hover) and (pointer: fine) {
+    body, body * {
+      cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2236%22%20height%3D%2236%22%20viewBox%3D%22-18%20-18%2036%2036%22%3E%3Cdefs%3E%3CradialGradient%20id%3D%22g%22%20cx%3D%2250%25%22%20cy%3D%2285%25%22%20r%3D%2280%25%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23d4d6ff%22/%3E%3Cstop%20offset%3D%22.55%22%20stop-color%3D%22%238a8ef0%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235557c4%22/%3E%3C/radialGradient%3E%3C/defs%3E%3Cg%20stroke%3D%22%232a2c6e%22%20stroke-opacity%3D%22.35%22%20stroke-width%3D%22.8%22%3E%3Cellipse%20cy%3D%22-8%22%20rx%3D%224.6%22%20ry%3D%228.2%22%20fill%3D%22url%28%23g%29%22%20transform%3D%22rotate%280%29%22/%3E%3Cellipse%20cy%3D%22-8%22%20rx%3D%224.6%22%20ry%3D%228.2%22%20fill%3D%22url%28%23g%29%22%20transform%3D%22rotate%2860%29%22/%3E%3Cellipse%20cy%3D%22-8%22%20rx%3D%224.6%22%20ry%3D%228.2%22%20fill%3D%22url%28%23g%29%22%20transform%3D%22rotate%28120%29%22/%3E%3Cellipse%20cy%3D%22-8%22%20rx%3D%224.6%22%20ry%3D%228.2%22%20fill%3D%22url%28%23g%29%22%20transform%3D%22rotate%28180%29%22/%3E%3Cellipse%20cy%3D%22-8%22%20rx%3D%224.6%22%20ry%3D%228.2%22%20fill%3D%22url%28%23g%29%22%20transform%3D%22rotate%28240%29%22/%3E%3Cellipse%20cy%3D%22-8%22%20rx%3D%224.6%22%20ry%3D%228.2%22%20fill%3D%22url%28%23g%29%22%20transform%3D%22rotate%28300%29%22/%3E%3C/g%3E%3Ccircle%20r%3D%223.6%22%20fill%3D%22%23f6f2ff%22/%3E%3Ccircle%20r%3D%221.6%22%20fill%3D%22%23f2c63a%22/%3E%3C/svg%3E") 18 18, auto;
+    }
+  }
+
+  /* ---- Content ---- */
+  .as-hero__inner {
+    position: relative; z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: end;
+  }
+  .as-hero__eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin: 0 0 20px;
+    font-size: 13px; font-weight: 500;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--as-muted);
+  }
+  .as-hero__eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--as-accent); }
+  .as-hero__title {
+    margin: 0;
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(48px, 9vw, 120px);
+    line-height: .95;
+    letter-spacing: -.02em;
+    text-shadow: 0 2px 30px rgba(0,0,0,.25);
+  }
+  .as-hero__lead {
+    margin: 22px 0 0;
+    max-width: 34ch;
+    font-size: clamp(17px, 1.6vw, 21px);
+    line-height: 1.5;
+    color: var(--as-muted);
+  }
+  .as-hero__lead strong { color: var(--as-ink); font-weight: 500; }
+  .as-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+  .as-btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 54px; padding: 0 28px;
+    border-radius: 999px;
+    font: 600 16px/1 "Manrope", system-ui, sans-serif;
+    text-decoration: none;
+    transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+  }
+  .as-btn:hover { transform: translateY(-2px); }
+  .as-btn:focus-visible { outline: 2px solid var(--as-accent); outline-offset: 3px; }
+  .as-btn--primary { background: var(--as-accent); color: var(--as-accent-ink); }
+  .as-btn--primary:hover { background: #e6c68c; }
+  .as-btn--ghost {
+    color: var(--as-ink);
+    border: 1px solid rgba(244,241,234,.4);
+    background: rgba(20,30,24,.25);
+    backdrop-filter: blur(6px);
+  }
+  .as-btn--ghost:hover { border-color: var(--as-ink); }
+  .as-btn svg { width: 18px; height: 18px; flex: none; }
+
+  .as-hero__ratings {
+    display: flex;
+    background: var(--as-glass);
+    border: 1px solid rgba(244,241,234,.16);
+    border-radius: 20px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+  .as-rating { padding: 20px 26px; min-width: 150px; }
+  .as-rating + .as-rating { border-left: 1px solid rgba(244,241,234,.16); }
+  .as-rating__score {
+    display: flex; align-items: baseline; gap: 8px;
+    font-family: "Lora", Georgia, serif;
+    font-weight: 500;
+    font-size: 40px; line-height: 1;
+  }
+  .as-rating__stars { color: var(--as-accent); font-size: 14px; letter-spacing: 2px; font-family: "Manrope", sans-serif; }
+  .as-rating__src { margin-top: 10px; font-size: 13px; color: var(--as-muted); }
+  .as-rating__src b { color: var(--as-ink); font-weight: 500; }
+
+  @media (max-width: 860px) {
+    .as-hero { background-position: 70% 30%; }
+    .as-hero__inner { grid-template-columns: 1fr; gap: 32px; }
+    .as-hero__ratings { justify-self: start; }
+  }
+  @media (max-width: 480px) {
+    .as-hero__actions { flex-direction: column; }
+    .as-btn { width: 100%; }
+    .as-rating { min-width: 0; flex: 1; padding: 16px 18px; }
+    .as-rating__score { font-size: 32px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .as-f-stem, .as-f-leaf, .as-f-blade, .as-f-head, .as-f-bell { animation: none; }
+    .as-f-stem { stroke-dashoffset: 0; }
+    .as-f-leaf, .as-f-head, .as-f-bell, .as-f-blade { transform: none; }
+    .as-btn { transition: none; }
+    .as-btn:hover { transform: none; }
+  }
+
+  /* ===================== Site ===================== */
+  :root {
+    --as-ink: #f4f1ea;
+    --as-muted: rgba(244, 241, 234, .82);
+    --as-accent: #d9b77a;
+    --as-accent-ink: #1f2a22;
+    --forest: #1f2a22;
+    --forest-2: #263329;
+    --paper: #f6f3ec;
+    --cream: #ece6d8;
+    --ink: #1f2a22;
+    --ink-2: #4c5a4f;
+    --line: rgba(31,42,34,.12);
+    --gold: #d9b77a;
+    --gold-2: #c9a464;
+    --radius: 22px;
+  }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Manrope", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  *, *::before, *::after { box-sizing: border-box; }
+  img { max-width: 100%; display: block; }
+  .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px); }
+  .as-hero__inner { padding: 0; }
+
+  /* Header */
+  .site-header { position: fixed; inset: 0 0 auto; z-index: 50; transition: background-color .3s, box-shadow .3s; }
+  .site-header__inner { max-width: 1344px; margin: 0 auto; padding: 18px clamp(20px, 5vw, 72px); display: flex; align-items: center; gap: 32px; }
+  .site-logo { font: 500 24px/1 "Lora", Georgia, serif; color: #f4f1ea; text-decoration: none; margin-right: auto; white-space: nowrap; }
+  .site-nav { display: flex; gap: 28px; }
+  .site-nav a { color: rgba(244,241,234,.85); text-decoration: none; font-size: 15px; font-weight: 500; }
+  .site-nav a:hover { color: #fff; }
+  .site-header.is-solid { background: rgba(31,42,34,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 0 rgba(255,255,255,.06); }
+  .as-btn--sm { min-height: 44px; padding: 0 22px; font-size: 15px; }
+  @media (max-width: 860px) { .site-nav { display: none; } }
+
+  /* Shared */
+  .sec { padding: clamp(72px, 10vw, 136px) 0; }
+  .sec--light { background: var(--paper); }
+  .sec--cream { background: var(--cream); }
+  .sec--dark { background: var(--forest); color: #f4f1ea; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 18px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #6d7c58; }
+  .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--gold-2); }
+  .eyebrow--light { color: rgba(244,241,234,.7); }
+  .h2 { margin: 0; font: 500 clamp(36px, 5vw, 60px)/1.05 "Lora", Georgia, serif; letter-spacing: -.015em; }
+  .lead { margin: 20px 0 0; font-size: 18px; line-height: 1.65; color: var(--ink-2); max-width: 52ch; }
+  .lead--light { color: rgba(244,241,234,.75); }
+  .sec__head { margin-bottom: 56px; }
+  .sec__head--split { display: flex; justify-content: space-between; align-items: end; gap: 32px; flex-wrap: wrap; }
+  .as-btn--dark { background: var(--forest); color: #f4f1ea; }
+  .as-btn--dark:hover { background: #2d3c31; }
+  .as-btn--outline { color: #f4f1ea; border: 1px solid rgba(244,241,234,.4); background: transparent; }
+  .as-btn--outline:hover { border-color: #f4f1ea; }
+  button.as-btn { border: 0; }
+  button.as-btn--outline { border: 1px solid rgba(244,241,234,.4); }
+
+  /* About */
+  .about { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(40px, 7vw, 96px); align-items: center; }
+  .ticks { list-style: none; padding: 0; margin: 28px 0 36px; display: grid; gap: 12px; }
+  .ticks li { display: flex; gap: 12px; align-items: center; font-weight: 500; }
+  .ticks li::before { content: ""; width: 22px; height: 22px; flex: none; border-radius: 50%; background: #dfe6d2 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b5a32' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center / 13px no-repeat; }
+  .about__media { position: relative; padding: 0 0 60px 0; }
+  .about__img { border-radius: var(--radius); object-fit: cover; }
+  .about__img--main { width: 88%; aspect-ratio: 4 / 5; margin-left: auto; }
+  .about__img--small { position: absolute; left: 0; bottom: 0; width: 46%; aspect-ratio: 1; border: 8px solid var(--paper); border-radius: calc(var(--radius) + 6px); }
+  .about__badge { position: absolute; top: 28px; left: 2%; background: var(--forest); color: #f4f1ea; border-radius: 18px; padding: 16px 20px; box-shadow: 0 20px 40px -20px rgba(0,0,0,.4); }
+  .about__badge b { display: block; font: 500 30px/1 "Lora", serif; color: var(--gold); }
+  .about__badge span { font-size: 13px; color: rgba(244,241,234,.75); }
+
+  /* Amenities */
+  .amenities { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(244,241,234,.1); border: 1px solid rgba(244,241,234,.1); border-radius: var(--radius); overflow: hidden; }
+  .amenity { background: var(--forest); padding: 28px 24px; display: flex; flex-direction: column; gap: 18px; min-height: 150px; transition: background-color .25s; }
+  .amenity:hover { background: var(--forest-2); }
+  .amenity svg { width: 30px; height: 30px; color: var(--gold); }
+  .amenity span { font-size: 16px; font-weight: 500; line-height: 1.35; }
+
+  /* Gallery */
+  .gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 220px; grid-auto-flow: dense; gap: 14px; }
+  .gallery__item { padding: 0; border: 0; border-radius: 16px; overflow: hidden; background: var(--cream); }
+  .gallery__item--wide { grid-column: span 2; grid-row: span 2; }
+  .gallery__item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+  .gallery__item:hover img { transform: scale(1.05); }
+  .gallery__item:focus-visible { outline: 3px solid var(--gold-2); outline-offset: 3px; }
+
+  /* Houses */
+  .houses { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 36px); }
+  .house { background: var(--paper); border: 1px solid var(--line); border-radius: calc(var(--radius) + 6px); overflow: hidden; display: flex; flex-direction: column; }
+  .house__photos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 6px; }
+  .house__photos .gallery__item { aspect-ratio: 1; border-radius: 12px; }
+  .house__photos .gallery__item:first-child { grid-column: 1 / -1; aspect-ratio: 3 / 2; border-radius: 22px 22px 12px 12px; }
+  .house__body { padding: 20px clamp(20px, 3vw, 32px) clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 18px; flex: 1; }
+  .house__where { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; font-size: 14px; font-weight: 600; color: #6d7c58; }
+  .house__where svg { width: 16px; height: 16px; flex: none; }
+  .house__title { margin: 0; font: 500 clamp(28px, 3.2vw, 38px)/1.1 "Lora", Georgia, serif; letter-spacing: -.01em; }
+  .house__facts { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .house__facts li { padding: 8px 14px; border-radius: 999px; background: #e4ead8; color: #2f4a2a; font-size: 14px; font-weight: 600; }
+  .house__foot { margin-top: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .house__score { display: flex; align-items: center; gap: 12px; }
+  .house__score b { font: 500 34px/1 "Lora", serif; font-variant-numeric: lining-nums; }
+  .house__score span { font-size: 13px; color: var(--ink-2); line-height: 1.4; }
+  .booking-houses { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; margin-top: 18px; }
+  .booking-houses span { font-size: 14px; color: rgba(244,241,234,.7); margin-right: 4px; }
+
+  /* Reviews */
+  .scores { display: flex; gap: 12px; flex-wrap: wrap; }
+  .score { display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: var(--paper); border-radius: 16px; color: var(--ink); text-decoration: none; border: 1px solid var(--line); }
+  .score b { font: 500 34px/1 "Lora", serif; }
+  .score span { font-size: 13px; color: var(--ink-2); display: grid; gap: 2px; }
+  .score i { font-style: normal; color: var(--gold-2); font-weight: 600; }
+  .reviews { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .review { margin: 0; background: var(--paper); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 18px; border: 1px solid var(--line); }
+  .review__stars { color: var(--gold-2); letter-spacing: 3px; font-size: 14px; }
+  .review blockquote { margin: 0; font: 500 18px/1.5 "Lora", serif; flex: 1; }
+  .review figcaption { display: flex; gap: 12px; align-items: center; }
+  .review__avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--forest); color: var(--gold); display: grid; place-items: center; font: 500 17px "Lora", serif; flex: none; }
+  .review figcaption b { display: block; font-size: 15px; }
+  .review figcaption small { color: var(--ink-2); font-size: 13px; }
+  .link-arrow { display: inline-flex; gap: 8px; align-items: center; margin-top: 36px; color: var(--ink); font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 4px; }
+  .link-arrow svg { width: 16px; height: 16px; }
+
+  /* Booking */
+  .booking { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 96px); align-items: start; }
+  .steps { list-style: none; padding: 0; margin: 36px 0; display: grid; gap: 22px; }
+  .steps li { display: flex; gap: 18px; }
+  .steps li > span { width: 40px; height: 40px; flex: none; border-radius: 50%; border: 1px solid var(--gold); color: var(--gold); display: grid; place-items: center; font: 500 18px "Lora", serif; }
+  .steps b { font-size: 17px; font-weight: 600; }
+  .steps p { margin: 4px 0 0; color: rgba(244,241,234,.7); line-height: 1.55; }
+  .booking-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding: 22px; border-radius: var(--radius); border: 1px solid rgba(244,241,234,.14); background: rgba(255,255,255,.03); }
+  .booking-card__score { display: flex; align-items: center; gap: 14px; }
+  .booking-card__score b { font: 500 40px/1 "Lora", serif; color: var(--gold); }
+  .booking-card__score span { font-size: 13px; color: rgba(244,241,234,.7); line-height: 1.4; }
+  .form { background: var(--paper); color: var(--ink); border-radius: calc(var(--radius) + 6px); padding: clamp(24px, 4vw, 40px); display: grid; gap: 16px; box-shadow: 0 40px 80px -40px rgba(0,0,0,.6); }
+  .form__title { margin: 0 0 6px; font: 500 26px/1.2 "Lora", serif; }
+  .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form label { display: grid; gap: 8px; font-size: 14px; font-weight: 600; }
+  .form label small { font-weight: 400; color: var(--ink-2); }
+  .form input, .form textarea { width: 100%; font: 400 16px "Manrope", sans-serif; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 13px 14px; min-height: 50px; cursor: text !important; }
+  .form textarea { resize: vertical; }
+  .form input:focus, .form textarea:focus { outline: none; border-color: #6d7c58; box-shadow: 0 0 0 3px rgba(109,124,88,.18); }
+  .form input.is-invalid { border-color: #b4553f; }
+  .form__hint { margin: 0; font-size: 14px; color: var(--ink-2); }
+  .form__hint.is-error { color: #b4553f; }
+  .form__hint.is-ok { color: #3b5a32; font-weight: 600; }
+  .form__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .form .as-btn--primary { flex: 1; }
+  .form .as-btn--outline { color: var(--ink); border-color: var(--line); flex: 1; }
+  .form .as-btn--outline:hover { border-color: var(--ink); }
+  .form__note { margin: 0; font-size: 13px; color: var(--ink-2); }
+
+  /* Location */
+  .location { display: grid; grid-template-columns: 1fr 1.3fr; gap: clamp(40px, 6vw, 80px); align-items: center; }
+  .address { display: flex; gap: 12px; align-items: flex-start; margin: 24px 0 0; font-size: 18px; font-weight: 600; line-height: 1.5; }
+  .address svg { width: 22px; height: 22px; color: #6d7c58; flex: none; margin-top: 3px; }
+  .location .as-btn { margin-top: 32px; }
+  .location__map { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; background: var(--cream); }
+  .location__map iframe { width: 100%; height: 100%; border: 0; display: block; filter: saturate(.8); }
+
+  /* Contact */
+  .contact { position: relative; padding: clamp(88px, 12vw, 160px) 0; color: #f4f1ea; text-align: center; background: var(--forest) url("img/adeles-sodyba-109-l.jpg") center 40% / cover; isolation: isolate; }
+  .contact::before { content: ""; position: absolute; inset: 0; z-index: -1; background: rgba(20,28,22,.78); }
+  .contact__inner { display: flex; flex-direction: column; align-items: center; }
+  .contact .eyebrow::after { content: ""; width: 28px; height: 1px; background: var(--gold-2); }
+  .contact__title { margin: 0; font: 500 clamp(40px, 6vw, 76px)/1.05 "Lora", serif; letter-spacing: -.015em; }
+  .contact .lead { margin-left: auto; margin-right: auto; }
+  .contact__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 32px; margin: 36px 0; }
+  .contact__links a { display: inline-flex; gap: 10px; align-items: center; color: #f4f1ea; text-decoration: none; font-size: 18px; font-weight: 600; }
+  .contact__links svg { width: 20px; height: 20px; color: var(--gold); }
+  .contact__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+
+  /* Footer */
+  .site-footer { background: #182019; color: rgba(244,241,234,.55); font-size: 13px; }
+  .site-footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-top: 24px; padding-bottom: 24px; }
+
+  /* Lightbox */
+  .lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(12,16,13,.94); display: grid; place-items: center; padding: 60px 72px; }
+  .lightbox[hidden] { display: none; }
+  .lightbox__img { max-width: 100%; max-height: 82vh; border-radius: 12px; }
+  .lightbox__btn { position: absolute; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(244,241,234,.3); background: rgba(255,255,255,.06); color: #f4f1ea; font-size: 30px; line-height: 1; display: grid; place-items: center; }
+  .lightbox__btn:hover { background: rgba(255,255,255,.14); }
+  .lightbox__close { top: 18px; right: 18px; }
+  .lightbox__prev { left: 14px; top: 50%; transform: translateY(-50%); }
+  .lightbox__next { right: 14px; top: 50%; transform: translateY(-50%); }
+  .lightbox__count { position: absolute; bottom: 18px; left: 0; right: 0; text-align: center; color: rgba(244,241,234,.7); font-size: 14px; margin: 0; }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .amenities { grid-template-columns: repeat(3, 1fr); }
+    .reviews { grid-template-columns: repeat(2, 1fr); }
+    .gallery { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 200px; }
+  }
+  @media (max-width: 860px) {
+    .about, .booking, .location, .houses { grid-template-columns: 1fr; }
+    .about__media { order: -1; }
+  }
+  @media (max-width: 1100px) and (min-width: 861px) { .site-nav { gap: 20px; } }
+  @media (max-width: 640px) {
+    .amenities { grid-template-columns: repeat(2, 1fr); }
+    .amenity { padding: 22px 18px; min-height: 130px; }
+    .reviews { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; gap: 10px; }
+    .form__row { grid-template-columns: 1fr; }
+    .lightbox { padding: 60px 12px; }
+    .lightbox__prev, .lightbox__next { top: auto; bottom: 10px; transform: none; }
+    .site-logo { font-size: 20px; }
+    .site-header .as-btn--sm { width: auto; }
+    .form__actions { flex-direction: column; }
+    .form .as-btn { width: 100%; }
+    .booking-card .as-btn { width: 100%; }
+    .house__foot .as-btn { width: 100%; }
+  }
+</style>
+</head>
+<body style="margin:0">
+
+<header class="site-header" id="top">
+  <div class="site-header__inner">
+    <a class="site-logo" href="#top">Adelės sodyba</a>
+    <nav class="site-nav" aria-label="Pagrindinis meniu">
+      <a href="#apie">Apie</a>
+      <a href="#nameliai">Nameliai</a>
+      <a href="#ka-rasite">Ką rasite</a>
+      <a href="#galerija">Galerija</a>
+      <a href="#atsiliepimai">Atsiliepimai</a>
+      <a href="#vieta">Vieta</a>
+    </nav>
+    <a class="as-btn as-btn--primary as-btn--sm" href="#rezervacija">Rezervuoti</a>
+  </div>
+</header>
+
+<section class="as-hero" aria-labelledby="as-hero-title">
+  <svg class="as-hero__meadow" aria-hidden="true" preserveAspectRatio="none">
+    <defs>
+      <radialGradient id="as-g-blue" cx="50%" cy="85%" r="80%">
+        <stop offset="0" stop-color="#c9ccff"/><stop offset=".55" stop-color="#8a8ef0"/><stop offset="1" stop-color="#5d5fc9"/>
+      </radialGradient>
+      <radialGradient id="as-g-white" cx="50%" cy="85%" r="80%">
+        <stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#fbf6f4"/><stop offset="1" stop-color="#efd9e0"/>
+      </radialGradient>
+      <radialGradient id="as-g-yellow" cx="50%" cy="85%" r="80%">
+        <stop offset="0" stop-color="#fff3b0"/><stop offset=".6" stop-color="#f6d34a"/><stop offset="1" stop-color="#e2ac1c"/>
+      </radialGradient>
+      <linearGradient id="as-g-leaf" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0" stop-color="#1f3d1f"/><stop offset="1" stop-color="#4f8338"/>
+      </linearGradient>
+      <filter id="as-blur-far"><feGaussianBlur stdDeviation="0.6"/></filter>
+      <filter id="as-blur-near"><feGaussianBlur stdDeviation="2.4"/></filter>
+    </defs>
+    <g id="as-meadow"></g>
+  </svg>
+
+  <div class="as-hero__inner">
+    <div>
+      <p class="as-hero__eyebrow">Sodyba prie Kuršių marių · Šilutės&nbsp;r.</p>
+      <h1 class="as-hero__title" id="as-hero-title">Adelės sodyba</h1>
+      <p class="as-hero__lead">
+        Nameliai miške prie Kuršių marių, vos <strong>3&nbsp;km nuo Ventės rago</strong>.
+      </p>
+      <div class="as-hero__actions">
+        <a class="as-btn as-btn--primary" href="#rezervacija">
+          Užklausti laisvų datų
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="as-btn as-btn--ghost" href="tel:+37068626813">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          +370 686 26813
+        </a>
+      </div>
+    </div>
+
+    <div class="as-hero__ratings" role="list" aria-label="Svečių įvertinimai">
+      <div class="as-rating" role="listitem">
+        <div class="as-rating__score">4,7 <span class="as-rating__stars" aria-hidden="true">★★★★★</span></div>
+        <div class="as-rating__src"><b>Google</b> · 93 atsiliepimai</div>
+      </div>
+      <div class="as-rating" role="listitem">
+        <div class="as-rating__score">9,5</div>
+        <div class="as-rating__src"><b>Booking.com</b> · 31 atsiliepimas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<main>
+<section class="sec sec--light" id="apie">
+  <div class="wrap about">
+    <div class="about__text">
+      <p class="eyebrow">Apie sodybą</p>
+      <h2 class="h2">Tarp miško ir Kuršių marių</h2>
+      <p class="lead">Vienoje pusėje – miškas, kitoje – Kuršių marios, iki kurių veda medinis takelis. Sodyboje rasite pirtį, jaukų židinį ir pilnai įrengtą virtuvę, o vaikai čia neturės kada nuobodžiauti.</p>
+      <ul class="ticks">
+        <li>Šeimos poilsis su vaikais</li>
+        <li>Ramus savaitgalis gamtoje</li>
+        <li>Pamario ir Ventės rago lankymas</li>
+      </ul>
+      <a class="as-btn as-btn--dark" href="#rezervacija">Užklausti laisvų datų <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="about__media">
+      <img class="about__img about__img--main" src="img/adeles-sodyba-109-l.jpg" alt="Adelės sodybos namelis miške" loading="lazy">
+      <img class="about__img about__img--small" src="img/adeles-sodyba-105-s.jpg" alt="Sodybos aplinka" loading="lazy">
+      <div class="about__badge"><b>3 km</b><span>iki Ventės rago</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--cream" id="nameliai">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="eyebrow">Nameliai</p>
+      <h2 class="h2">Du nameliai Adelės sodyboje</h2>
+      <p class="lead">Abu nameliai stovi sodybos kieme, tarp miško ir Kuršių marių. Kainas ir laisvas datas rasite Booking.com.</p>
+    </div>
+    <div class="houses">
+      <article class="house">
+        <div class="house__photos" data-gallery>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 1 nuotrauką 1"><img src="img/adeles-sodyba-n1-09-s.jpg" alt="Namelis Nr. 1 – nuotrauka 1" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 1 nuotrauką 2"><img src="img/adeles-sodyba-n1-10-s.jpg" alt="Namelis Nr. 1 – nuotrauka 2" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 1 nuotrauką 3"><img src="img/adeles-sodyba-n1-00-s.jpg" alt="Namelis Nr. 1 – nuotrauka 3" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 1 nuotrauką 4"><img src="img/adeles-sodyba-n1-02-s.jpg" alt="Namelis Nr. 1 – nuotrauka 4" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 1 nuotrauką 5"><img src="img/adeles-sodyba-n1-06-s.jpg" alt="Namelis Nr. 1 – nuotrauka 5" loading="lazy"></button>
+        </div>
+        <div class="house__body">
+          <div>
+            <p class="house__where"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Adelės sodyboje, Šturmuose</p>
+            <h3 class="house__title">Namelis Nr. 1</h3>
+          </div>
+          <ul class="house__facts">
+            <li>1 miegamasis</li>
+            <li>Virtuvė</li>
+            <li>Terasa</li>
+            <li>Nemokamas Wi-Fi</li>
+            <li>Vieta automobiliui</li>
+          </ul>
+          <div class="house__foot">
+            <div class="house__score"><b>9,4</b><span>Booking.com<br>40 atsiliepimų</span></div>
+            <a class="as-btn as-btn--dark" href="https://www.booking.com/hotel/lt/namelis-nr-1.lt.html" target="_blank" rel="noopener">Žiūrėti per Booking.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+      <article class="house">
+        <div class="house__photos" data-gallery>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 2 nuotrauką 1"><img src="img/adeles-sodyba-n2-01-s.jpg" alt="Namelis Nr. 2 – nuotrauka 1" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 2 nuotrauką 2"><img src="img/adeles-sodyba-n2-08-s.jpg" alt="Namelis Nr. 2 – nuotrauka 2" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 2 nuotrauką 3"><img src="img/adeles-sodyba-n2-09-s.jpg" alt="Namelis Nr. 2 – nuotrauka 3" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 2 nuotrauką 4"><img src="img/adeles-sodyba-n2-07-s.jpg" alt="Namelis Nr. 2 – nuotrauka 4" loading="lazy"></button>
+<button class="gallery__item" type="button" aria-label="Atidaryti Namelio Nr. 2 nuotrauką 5"><img src="img/adeles-sodyba-n2-13-s.jpg" alt="Namelis Nr. 2 – nuotrauka 5" loading="lazy"></button>
+        </div>
+        <div class="house__body">
+          <div>
+            <p class="house__where"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Adelės sodyboje, Šturmuose</p>
+            <h3 class="house__title">Namelis Nr. 2</h3>
+          </div>
+          <ul class="house__facts">
+            <li>1 miegamasis</li>
+            <li>Virtuvėlė</li>
+            <li>Terasa</li>
+            <li>Atskiras įėjimas</li>
+            <li>Nemokamas Wi-Fi</li>
+          </ul>
+          <div class="house__foot">
+            <div class="house__score"><b>9,4</b><span>Booking.com<br>19 atsiliepimų</span></div>
+            <a class="as-btn as-btn--dark" href="https://www.booking.com/hotel/lt/namelis-nr-2.lt.html" target="_blank" rel="noopener">Žiūrėti per Booking.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--dark" id="ka-rasite">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="eyebrow eyebrow--light">Patogumai</p>
+      <h2 class="h2">Ką rasite</h2>
+      <p class="lead lead--light">Viskas, ko reikia ramiam poilsiui gamtoje – ir suaugusiems, ir vaikams.</p>
+    </div>
+    <ul class="amenities">
+<li class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 15c2 0 2-1.5 4-1.5S8 15 10 15s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/><path d="M2 19c2 0 2-1.5 4-1.5S8 19 10 19s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5"/><circle cx="17" cy="6" r="2.5"/></svg><span>Kuršių marios šalia</span></li>
+<li class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21l3-18M17 21L14 3M8.5 15h7M9.3 9h5.4"/></svg><span>Medinis takelis iki marių</span></li>
+<li class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15h18l-2.5 4.5H5.5z"/><path d="M12 3v12M12 4l6 9h-6"/></svg><span>Valtis ir liemenės</span></li>
+<li class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l4-7h5l3 7M10 9l2 7h-6M14 6h2.5"/></svg><span>Dviračiai</span></li>
+<li class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11"/><path d="M10 15c0-1.2 1-1.4 1-2.6M13 15c0-1.2 1-1.4 1-2.6"/></svg><span>Pirtis</span></li>
+<li class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-3.9 0-6-2.6-6-5.6 0-3.4 3-5.4 3-8.4 2 1 3 3 3 4.5 1-.6 1.5-2 1.5-3 2.4 1.7 4.5 4.3 4.5 7 0 3-2.1 5.5-6 5.5z"/></svg><span>Židinys</span></li>
+<li class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v8M5 3v4a2 2 0 0 0 4 0V3M7 11v10M17 21V3c-2 1-3 4-3 7h3"/></svg><span>Virtuvė su indais ir įrankiais</span></li>
+<li class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5l8-2 8 2v16M4 9h16M9 21v-6h6v6"/></svg><span>Vaikų žaidimų aikštelė</span></li>
+<li class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h18M6 4l2 13M18 4l-2 13M7.5 17h9"/></svg><span>Batutas, supynės, čiuožykla</span></li>
+<li class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18M5.6 5.6c3.5 3.5 3.5 9.3 0 12.8M18.4 5.6c-3.5 3.5-3.5 9.3 0 12.8"/></svg><span>Krepšinio aikštelė</span></li>
+<li class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h16a8 8 0 0 1-16 0zM8 17l-2 4M16 17l2 4M9 5c0-1 1-1 1-2M14 5c0-1 1-1 1-2"/></svg><span>Lauko stalai ir šašlykinės</span></li>
+<li class="amenity"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5l4 3M22 5l-4 3M6 8c3 5 9 5 12 0"/><path d="M4 21V4M20 21V4"/></svg><span>Hamakas</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec sec--light" id="galerija">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="eyebrow">Galerija</p>
+      <h2 class="h2">Adelės sodyba iš arti</h2>
+    </div>
+    <div class="gallery" data-gallery>
+<button class="gallery__item gallery__item--wide" type="button" data-index="0" aria-label="Atidaryti nuotrauką 1"><img src="img/adeles-sodyba-118-s.jpg" alt="Adelės sodyba – nuotrauka 1" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="1" aria-label="Atidaryti nuotrauką 2"><img src="img/adeles-sodyba-105-s.jpg" alt="Adelės sodyba – nuotrauka 2" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="2" aria-label="Atidaryti nuotrauką 3"><img src="img/adeles-sodyba-b-31-s.jpg" alt="Adelės sodyba – nuotrauka 3" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="3" aria-label="Atidaryti nuotrauką 4"><img src="img/adeles-sodyba-124-s.jpg" alt="Adelės sodyba – nuotrauka 4" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="4" aria-label="Atidaryti nuotrauką 5"><img src="img/adeles-sodyba-b-25-s.jpg" alt="Adelės sodyba – nuotrauka 5" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="5" aria-label="Atidaryti nuotrauką 6"><img src="img/adeles-sodyba-120-s.jpg" alt="Adelės sodyba – nuotrauka 6" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="6" aria-label="Atidaryti nuotrauką 7"><img src="img/adeles-sodyba-117-s.jpg" alt="Adelės sodyba – nuotrauka 7" loading="lazy"></button>
+<button class="gallery__item gallery__item--wide" type="button" data-index="7" aria-label="Atidaryti nuotrauką 8"><img src="img/adeles-sodyba-b-22-s.jpg" alt="Adelės sodyba – nuotrauka 8" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="8" aria-label="Atidaryti nuotrauką 9"><img src="img/adeles-sodyba-127-s.jpg" alt="Adelės sodyba – nuotrauka 9" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="9" aria-label="Atidaryti nuotrauką 10"><img src="img/adeles-sodyba-b-20-s.jpg" alt="Adelės sodyba – nuotrauka 10" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="10" aria-label="Atidaryti nuotrauką 11"><img src="img/adeles-sodyba-128-s.jpg" alt="Adelės sodyba – nuotrauka 11" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="11" aria-label="Atidaryti nuotrauką 12"><img src="img/adeles-sodyba-b-moose-s.jpg" alt="Adelės sodyba – nuotrauka 12" loading="lazy"></button>
+<button class="gallery__item gallery__item--wide" type="button" data-index="12" aria-label="Atidaryti nuotrauką 13"><img src="img/adeles-sodyba-111-s.jpg" alt="Adelės sodyba – nuotrauka 13" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="13" aria-label="Atidaryti nuotrauką 14"><img src="img/adeles-sodyba-b-21-s.jpg" alt="Adelės sodyba – nuotrauka 14" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="14" aria-label="Atidaryti nuotrauką 15"><img src="img/adeles-sodyba-b-12-s.jpg" alt="Adelės sodyba – nuotrauka 15" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="15" aria-label="Atidaryti nuotrauką 16"><img src="img/adeles-sodyba-122-s.jpg" alt="Adelės sodyba – nuotrauka 16" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="16" aria-label="Atidaryti nuotrauką 17"><img src="img/adeles-sodyba-129-s.jpg" alt="Adelės sodyba – nuotrauka 17" loading="lazy"></button>
+<button class="gallery__item gallery__item--wide" type="button" data-index="17" aria-label="Atidaryti nuotrauką 18"><img src="img/adeles-sodyba-121-s.jpg" alt="Adelės sodyba – nuotrauka 18" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="18" aria-label="Atidaryti nuotrauką 19"><img src="img/adeles-sodyba-b-08-s.jpg" alt="Adelės sodyba – nuotrauka 19" loading="lazy"></button>
+<button class="gallery__item" type="button" data-index="19" aria-label="Atidaryti nuotrauką 20"><img src="img/adeles-sodyba-123-s.jpg" alt="Adelės sodyba – nuotrauka 20" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--cream" id="atsiliepimai">
+  <div class="wrap">
+    <div class="sec__head sec__head--split">
+      <div>
+        <p class="eyebrow">Atsiliepimai</p>
+        <h2 class="h2">Ką sako svečiai</h2>
+      </div>
+      <div class="scores">
+        <a class="score" href="https://www.google.com/maps/search/?api=1&query=55.3689064%2C21.2166782&query_place_id=ChIJTbHMKb2T5EYRwulmxeGiJs0" target="_blank" rel="noopener"><b>4,7</b><span><i aria-hidden="true">★★★★★</i>Google · 93 atsiliepimai</span></a>
+        <a class="score" href="https://www.booking.com/hotel/lt/adeles-sodyba-silutes-rajono-savivaldybe.lt.html" target="_blank" rel="noopener"><b>9,5</b><span><i>Ypatingai nuostabus</i>Booking.com · 31 atsiliepimas</span></a>
+      </div>
+    </div>
+    <div class="reviews">
+<figure class="review">
+  <div class="review__stars" aria-label="5 iš 5">★★★★★</div>
+  <blockquote>„Puiki sodyba miško apsuptyje . Rami vieta . Kambariuose viskas ko gali prireikti …“</blockquote>
+  <figcaption><span class="review__avatar" aria-hidden="true">E</span><span><b>Erika B.</b><small>Google atsiliepimas · 2024 m. liepa</small></span></figcaption>
+</figure>
+<figure class="review">
+  <div class="review__stars" aria-label="5 iš 5">★★★★★</div>
+  <blockquote>„Puiki vieta kas nori ramiau pabūti nuo miesto šurmulio, židinys, šalia kuršių marios, Ventės ragas tik 3km“</blockquote>
+  <figcaption><span class="review__avatar" aria-hidden="true">D</span><span><b>Darius B.</b><small>Vietinis gidas · 2026 m. sausis</small></span></figcaption>
+</figure>
+<figure class="review">
+  <div class="review__stars" aria-label="5 iš 5">★★★★★</div>
+  <blockquote>„Yra viskas ko reikia. Labai malonūs šeimininkai.“</blockquote>
+  <figcaption><span class="review__avatar" aria-hidden="true">E</span><span><b>Edita V.</b><small>Vietinis gidas · 2025 m. rugpjūtis</small></span></figcaption>
+</figure>
+<figure class="review">
+  <div class="review__stars" aria-label="5 iš 5">★★★★★</div>
+  <blockquote>„Puiki sodyba,maloni šeimininkė,graži vieta,yra vaikų žaidimų aikštelė,krepšinio, dviračiai,netgi valtis“</blockquote>
+  <figcaption><span class="review__avatar" aria-hidden="true">G</span><span><b>Giedrius R.</b><small>Google atsiliepimas · 2024 m. liepa</small></span></figcaption>
+</figure>
+    </div>
+    <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query=55.3689064%2C21.2166782&query_place_id=ChIJTbHMKb2T5EYRwulmxeGiJs0" target="_blank" rel="noopener">Visi atsiliepimai Google (93) <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<section class="sec sec--dark" id="rezervacija">
+  <div class="wrap booking">
+    <div class="booking__info">
+      <p class="eyebrow eyebrow--light">Rezervacija</p>
+      <h2 class="h2">Rezervuokite, kaip patogu</h2>
+      <p class="lead lead--light">Rezervuokite tiesiogiai pas šeimininkę arba per Booking.com.</p>
+      <ol class="steps">
+        <li><span>1</span><div><b>Atsiųskite užklausą</b><p>Nurodykite datas ir svečių skaičių.</p></div></li>
+        <li><span>2</span><div><b>Gaukite patvirtinimą</b><p>Šeimininkė patvirtins, ar datos laisvos, ir pasakys kainą.</p></div></li>
+      </ol>
+      <div class="booking-card">
+        <div class="booking-card__score"><b>9,5</b><span>Booking.com<br>31 atsiliepimas</span></div>
+        <a class="as-btn as-btn--ghost" href="https://www.booking.com/hotel/lt/adeles-sodyba-silutes-rajono-savivaldybe.lt.html" target="_blank" rel="noopener">Rezervuoti per Booking.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="booking-houses">
+        <span>Nameliai per Booking.com</span>
+        <a class="as-btn as-btn--ghost as-btn--sm" href="https://www.booking.com/hotel/lt/namelis-nr-1.lt.html" target="_blank" rel="noopener">Namelis Nr. 1</a>
+        <a class="as-btn as-btn--ghost as-btn--sm" href="https://www.booking.com/hotel/lt/namelis-nr-2.lt.html" target="_blank" rel="noopener">Namelis Nr. 2</a>
+      </div>
+    </div>
+
+    <form class="form" id="booking-form" novalidate>
+      <h3 class="form__title">Užklausa dėl laisvų datų</h3>
+      <div class="form__row">
+        <label>Atvykimas<input type="date" name="from" required></label>
+        <label>Išvykimas<input type="date" name="to" required></label>
+      </div>
+      <div class="form__row">
+        <label>Svečių skaičius<input type="number" name="guests" min="1" max="30" value="2" inputmode="numeric"></label>
+        <label>Vardas<input type="text" name="name" autocomplete="name" required></label>
+      </div>
+      <label>Telefonas<input type="tel" name="phone" autocomplete="tel" required></label>
+      <label><span>Žinutė <small>(nebūtina)</small></span><textarea name="msg" rows="3"></textarea></label>
+      <p class="form__hint" id="form-hint">Nurodykite datas, vardą ir telefoną.</p>
+      <div class="form__actions">
+        <button class="as-btn as-btn--primary" type="submit" data-via="sms">Siųsti SMS <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <button class="as-btn as-btn--outline" type="submit" data-via="email">Siųsti el. laišku</button>
+      </div>
+      <p class="form__note">Atsidarys žinučių arba el. pašto programa su paruoštu tekstu.</p>
+    </form>
+  </div>
+</section>
+
+<section class="sec sec--light" id="vieta">
+  <div class="wrap location">
+    <div class="location__text">
+      <p class="eyebrow">Vieta</p>
+      <h2 class="h2">Šturmai</h2>
+      <p class="address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Švyturio g. 4, Šturmai,<br>Šilutės r.</span></p>
+      <p class="lead">Ramus pamario kampelis tarp miško ir marių – vos 3 km nuo Ventės rago ornitologinės stoties.</p>
+      <a class="as-btn as-btn--dark" href="https://www.google.com/maps/search/?api=1&query=55.3689064%2C21.2166782&query_place_id=ChIJTbHMKb2T5EYRwulmxeGiJs0" target="_blank" rel="noopener">Atidaryti Google Maps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="location__map">
+      <iframe title="Adelės sodyba žemėlapyje" src="https://www.google.com/maps?q=55.3689064,21.2166782&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontaktai">
+  <div class="wrap contact__inner">
+    <p class="eyebrow eyebrow--light">Susisiekite</p>
+    <h2 class="contact__title">Laukiame jūsų prie marių</h2>
+    <p class="lead lead--light">Skambinkite ir pasiteiraukite apie laisvas datas.</p>
+    <div class="contact__links">
+      <a href="tel:+37068626813"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>+370 686 26813</a>
+      <a href="mailto:adelemazoniene@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>adelemazoniene@gmail.com</a>
+    </div>
+    <div class="contact__actions">
+      <a class="as-btn as-btn--primary" href="#rezervacija">Užklausti laisvų datų <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="as-btn as-btn--ghost" href="https://www.booking.com/hotel/lt/adeles-sodyba-silutes-rajono-savivaldybe.lt.html" target="_blank" rel="noopener">Booking.com</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <span>© Adelės sodyba · Švyturio g. 4, Šturmai, Šilutės r.</span>
+    <span>Nuotraukos – Adelės sodyba ir Google Maps, atsiliepimai – Google Maps, įvertinimai – Booking.com.</span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Nuotraukų peržiūra">
+  <button class="lightbox__btn lightbox__close" type="button" aria-label="Uždaryti">×</button>
+  <button class="lightbox__btn lightbox__prev" type="button" aria-label="Ankstesnė">‹</button>
+  <img class="lightbox__img" alt="">
+  <button class="lightbox__btn lightbox__next" type="button" aria-label="Kita">›</button>
+  <p class="lightbox__count"></p>
+</div>
+
+<script>
+/* Forest-floor flowers that grow, bloom, fade and regrow:
+   žibuoklės (blue hepatica), plukės (white anemones), geltonos plukės, pakalnutės (lily of the valley), grass. */
+(function () {
+  var hero = document.querySelector('.as-hero');
+  var svg = hero.querySelector('.as-hero__meadow');
+  var root = svg.querySelector('#as-meadow');
+  var NS = 'http://www.w3.org/2000/svg';
+  var seed = 7;
+  function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+  function r(a, b) { return a + rnd() * (b - a); }
+  function el(tag, attrs, parent) {
+    var n = document.createElementNS(NS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+  function delay(n, d) { n.style.animationDelay = d.toFixed(2) + 's'; }
+
+  function leaf(g, len, angle, d, wide) {
+    var w = len * (wide ? .32 : .2);
+    var p = el('path', {
+      d: 'M0 0 C' + (-w) + ' ' + (-len * .35) + ' ' + (-w * .6) + ' ' + (-len * .8) + ' 0 ' + (-len) +
+         ' C' + (w * .6) + ' ' + (-len * .8) + ' ' + w + ' ' + (-len * .35) + ' 0 0Z',
+      fill: 'url(#as-g-leaf)', 'class': 'as-f-leaf'
+    }, el('g', { transform: 'rotate(' + angle + ')' }, g));
+    delay(p, d);
+  }
+
+  function stem(g, h, bend, d) {
+    var tx = bend, ty = -h;
+    var p = el('path', {
+      d: 'M0 0 C' + (bend * .1) + ' ' + (-h * .45) + ' ' + (bend * .8) + ' ' + (-h * .7) + ' ' + tx + ' ' + ty,
+      stroke: '#3f7a34', 'stroke-width': Math.max(1.6, h / 55), pathLength: 1, 'class': 'as-f-stem'
+    }, g);
+    delay(p, d);
+    return [tx, ty];
+  }
+
+  function petalHead(g, x, y, size, n, fill, center, d) {
+    var wrap = el('g', { transform: 'translate(' + x + ' ' + y + ')' }, g);
+    var head = el('g', { 'class': 'as-f-head' }, wrap);
+    for (var i = 0; i < n; i++) {
+      el('ellipse', {
+        cx: 0, cy: -size * .55, rx: size * .3, ry: size * .55, fill: fill,
+        transform: 'rotate(' + (i * 360 / n) + ')'
+      }, head);
+    }
+    el('circle', { r: size * .22, fill: center }, head);
+    for (var j = 0; j < 7; j++) {
+      var a = j / 7 * Math.PI * 2;
+      el('circle', { cx: Math.cos(a) * size * .16, cy: Math.sin(a) * size * .16, r: size * .045, fill: '#fff8d6' }, head);
+    }
+    delay(head, d);
+  }
+
+  function flower(g, type, h, d) {
+    var bend = r(-h * .18, h * .18);
+    if (type === 'lily') {
+      leaf(g, h * .85, r(-14, -6), d, true);
+      leaf(g, h * .75, r(6, 14), d + .1, true);
+      var dir = rnd() < .5 ? -1 : 1;
+      var sx = dir * h * .32;
+      var p = el('path', {
+        d: 'M0 0 C0 ' + (-h * .6) + ' ' + (sx * .3) + ' ' + (-h) + ' ' + sx + ' ' + (-h * .88),
+        stroke: '#4a8a3b', 'stroke-width': Math.max(1.4, h / 70), pathLength: 1, 'class': 'as-f-stem'
+      }, g);
+      delay(p, d);
+      for (var i = 0; i < 5; i++) {
+        var t = .45 + i * .13;
+        var bx = sx * t * t * 1.1, by = -h * (.62 + .4 * Math.sin(t * Math.PI * .5)) + i * h * .035;
+        var s = h * .075 * (1 - i * .1);
+        var wrap = el('g', { transform: 'translate(' + bx.toFixed(1) + ' ' + by.toFixed(1) + ')' }, g);
+        var bell = el('path', {
+          d: 'M0 0 C' + (-s) + ' 0 ' + (-s * 1.1) + ' ' + (s * 1.2) + ' ' + (-s * 1.15) + ' ' + (s * 1.5) +
+             ' Q' + (-s * .6) + ' ' + (s * 1.3) + ' 0 ' + (s * 1.55) + ' Q' + (s * .6) + ' ' + (s * 1.3) + ' ' + (s * 1.15) + ' ' + (s * 1.5) +
+             ' C' + (s * 1.1) + ' ' + (s * 1.2) + ' ' + s + ' 0 0 0Z',
+          fill: 'url(#as-g-white)', 'class': 'as-f-bell'
+        }, wrap);
+        delay(bell, d + i * .35);
+      }
+      return;
+    }
+    leaf(g, h * .45, r(-55, -30), d, false);
+    leaf(g, h * .4, r(30, 55), d + .15, false);
+    var top = stem(g, h, bend, d);
+    var size = h * r(.13, .17);
+    if (type === 'blue')   petalHead(g, top[0], top[1], size, 6, 'url(#as-g-blue)', '#f4f0ff', d);
+    if (type === 'white')  petalHead(g, top[0], top[1], size, 6, 'url(#as-g-white)', '#f2c63a', d);
+    if (type === 'yellow') petalHead(g, top[0], top[1], size * .85, 5, 'url(#as-g-yellow)', '#d98e12', d);
+  }
+
+  function grass(g, h, d) {
+    var n = 3 + Math.floor(rnd() * 3);
+    for (var i = 0; i < n; i++) {
+      var lean = r(-h * .35, h * .35), w = r(2, 4.5);
+      var p = el('path', {
+        d: 'M' + (-w) + ' 0 Q' + (lean * .3) + ' ' + (-h * .6) + ' ' + lean + ' ' + (-h * r(.7, 1)) + ' Q' + (lean * .3 + w * .4) + ' ' + (-h * .55) + ' ' + w + ' 0Z',
+        fill: i % 2 ? '#3b6e2e' : '#55893c', 'class': 'as-f-blade'
+      }, g);
+      delay(p, d + i * .08);
+    }
+  }
+
+  function build() {
+    var W = hero.clientWidth, H = hero.clientHeight;
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    root.textContent = '';
+    seed = 7;
+    var mobile = W < 860;
+    var base = Math.min(H * .2, mobile ? 110 : 190);
+    var items = [];
+    var count = Math.round(W / (mobile ? 16 : 13));
+    var types = ['blue', 'blue', 'white', 'white', 'white', 'yellow', 'lily', 'grass', 'grass', 'grass'];
+    for (var i = 0; i < count; i++) {
+      var x = r(-20, W + 20);
+      var layer = rnd();               // 0 = far, 1 = near
+      var depth = layer < .45 ? 0 : layer < .88 ? 1 : 2;
+      var nx = x / W;
+      // keep it lower under the text on the left, taller towards the right
+      var zone = mobile ? .75 : (nx < .55 ? .55 + nx * .5 : 1);
+      if (depth === 2 && nx > .15 && nx < .85) depth = 1; // big blurred foreground only at the edges
+      var scale = [.55, .85, 1.5][depth] * zone * r(.8, 1.15);
+      items.push({ x: x, depth: depth, h: base * scale, type: types[Math.floor(rnd() * types.length)], d: (nx * 2.2 + r(0, 1.6)) });
+    }
+    items.sort(function (a, b) { return a.depth - b.depth; });
+    items.forEach(function (it) {
+      var y = H + r(4, 18) + it.depth * 10;
+      var g = el('g', { transform: 'translate(' + it.x.toFixed(1) + ' ' + y.toFixed(1) + ')' }, root);
+      if (it.depth === 0) { g.setAttribute('opacity', '.7'); g.setAttribute('filter', 'url(#as-blur-far)'); }
+      if (it.depth === 2) { g.setAttribute('filter', 'url(#as-blur-near)'); }
+      var sway = el('g', {}, g);
+      if (it.type === 'grass') grass(sway, it.h * .7, it.d * .6);
+      else flower(sway, it.type, it.h, it.d);
+    });
+  }
+
+  var t, lastW = 0;
+  function maybeBuild() {
+    // rebuild only when the width changes (mobile URL bar show/hide shouldn't restart the bloom)
+    if (hero.clientWidth === lastW) return;
+    lastW = hero.clientWidth;
+    build();
+  }
+  maybeBuild();
+  window.addEventListener('resize', function () {
+    clearTimeout(t);
+    t = setTimeout(maybeBuild, 200);
+  });
+})();
+</script>
+
+<script>
+(function () {
+  /* Header turns solid after the hero */
+  var header = document.querySelector('.site-header');
+  function onScroll() { header.classList.toggle('is-solid', window.scrollY > 40); }
+  onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* Gallery lightbox */
+  var all = [].slice.call(document.querySelectorAll('.gallery__item'));
+  var items = all;
+  function groupOf(b) { var g = b.closest('[data-gallery]'); return g ? [].slice.call(g.querySelectorAll('.gallery__item')) : all; }
+  var lb = document.getElementById('lightbox');
+  var lbImg = lb.querySelector('.lightbox__img');
+  var lbCount = lb.querySelector('.lightbox__count');
+  var cur = 0, lastFocus = null;
+  function show(i) {
+    cur = (i + items.length) % items.length;
+    var src = items[cur].querySelector('img').src.replace('-s.jpg', '-l.jpg');
+    var fallback = items[cur].querySelector('img').src;
+    lbImg.onerror = function () { lbImg.onerror = null; lbImg.src = fallback; };
+    lbImg.src = src;
+    lbImg.alt = items[cur].querySelector('img').alt;
+    lbCount.textContent = (cur + 1) + ' / ' + items.length;
+  }
+  function open(i) { lastFocus = document.activeElement; show(i); lb.hidden = false; document.body.style.overflow = 'hidden'; lb.querySelector('.lightbox__close').focus(); }
+  function close() { lb.hidden = true; document.body.style.overflow = ''; if (lastFocus) lastFocus.focus(); }
+  all.forEach(function (b) { b.addEventListener('click', function () { items = groupOf(b); open(items.indexOf(b)); }); });
+  lb.querySelector('.lightbox__close').addEventListener('click', close);
+  lb.querySelector('.lightbox__prev').addEventListener('click', function () { show(cur - 1); });
+  lb.querySelector('.lightbox__next').addEventListener('click', function () { show(cur + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(cur - 1);
+    if (e.key === 'ArrowRight') show(cur + 1);
+  });
+
+  /* Booking form → prepared SMS or e-mail */
+  var form = document.getElementById('booking-form');
+  var hint = document.getElementById('form-hint');
+  var via = 'sms';
+  form.querySelectorAll('[data-via]').forEach(function (b) {
+    b.addEventListener('click', function () { via = b.getAttribute('data-via'); });
+  });
+  var today = new Date().toISOString().slice(0, 10);
+  form.from.min = today; form.to.min = today;
+  form.from.addEventListener('change', function () { form.to.min = form.from.value || today; });
+  function fmt(d) { return d ? d.split('-').reverse().join('.') : ''; }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var bad = [];
+    ['from', 'to', 'name', 'phone'].forEach(function (n) {
+      var ok = form[n].value.trim() !== '';
+      form[n].classList.toggle('is-invalid', !ok);
+      if (!ok) bad.push(n);
+    });
+    if (form.from.value && form.to.value && form.to.value <= form.from.value) { form.to.classList.add('is-invalid'); bad.push('to'); }
+    if (bad.length) {
+      hint.className = 'form__hint is-error';
+      hint.textContent = 'Patikrinkite datas, vardą ir telefoną.';
+      form[bad[0]].focus();
+      return;
+    }
+    var text = 'Sveiki, norėčiau užklausti dėl laisvų datų Adelės sodyboje.\n' +
+      'Atvykimas: ' + fmt(form.from.value) + '\n' +
+      'Išvykimas: ' + fmt(form.to.value) + '\n' +
+      'Svečių skaičius: ' + (form.guests.value || '-') + '\n' +
+      'Vardas: ' + form.name.value.trim() + '\n' +
+      'Telefonas: ' + form.phone.value.trim() +
+      (form.msg.value.trim() ? '\n\n' + form.msg.value.trim() : '');
+    var url = via === 'email'
+      ? 'mailto:adelemazoniene@gmail.com?subject=' + encodeURIComponent('Užklausa dėl laisvų datų') + '&body=' + encodeURIComponent(text)
+      : 'sms:+37068626813?&body=' + encodeURIComponent(text);
+    hint.className = 'form__hint is-ok';
+    hint.textContent = 'Užklausa paruošta. Jei programa neatsidarė, skambinkite +370 686 26813.';
+    window.location.href = url;
+  });
+})();
+</script>
+</body>
+</html>
